@@ -120,25 +120,83 @@
 
   // ---------- Menu et compteurs
   const inDays = (s, n) => s.k === "actu" && ageDays(s) <= n;
-  function renderSide() {
-    return `<aside class="side">
-      <div class="logo"><span class="logo-mark"></span>Balise ASD</div>
-      <nav class="tabs" role="tablist">${TABS.map(([k, l, ico]) => `<button role="tab" data-act="tab" data-v="${k}" aria-selected="${st.tab === k}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ico}"/></svg>${l}</button>`).join("")}</nav>
-      <div class="status"><span class="live"></span><span>Veille active<br><small>Données du ${esc(fmtD(DATA.updated))}</small></span></div>
-    </aside>`;
+  const GROUPS = [["radar", "Radar", ["radar"]], ["marche", "Marché", ["etat", "carte", "news"]], ["risk", "Risques", ["risques", "dep"]], ["acteurs", "Acteurs", ["pays", "leaders"]]];
+  const groupOf = tab => GROUPS.find(g => g[2].includes(tab)) || GROUPS[0];
+  const tabName = k => (TABS.find(t => t[0] === k) || [k, k])[1];
+  function renderNav() {
+    const cur = groupOf(st.tab);
+    return `<header class="topnav"><div class="topnav-in">
+      <button class="logo" data-act="tab" data-v="radar"><span class="logo-mark"></span>Balise</button>
+      <nav class="groups" role="tablist">${GROUPS.map(g => `<button role="tab" data-act="tab" data-v="${g[2].includes(st.tab) ? st.tab : g[2][0]}" aria-selected="${g === cur}">${g[1]}</button>`).join("")}</nav>
+      <button class="searchbtn" data-act="pal-open"><span>Rechercher</span><kbd>⌘K</kbd></button>
+    </div></header>`;
+  }
+  function renderSubnav() {
+    const cur = groupOf(st.tab);
+    if (cur[2].length < 2) return "";
+    return `<div class="subnav" role="tablist">${cur[2].map(k => `<button role="tab" data-act="tab" data-v="${k}" aria-selected="${st.tab === k}">${esc(tabName(k))}</button>`).join("")}</div>`;
+  }
+
+  // ---------- Recherche rapide
+  function palItems(q) {
+    q = q.trim().toLowerCase();
+    if (!q) return [];
+    const has = t => String(t || "").toLowerCase().includes(q);
+    const out = [];
+    (DATA.countries || []).filter(p => has(p.name)).forEach(p => out.push(["pays", p.id, p.name, "Pays"]));
+    (DATA.leaders || []).filter(l => has(l.name) || has(l.metier)).forEach(l => out.push(["leader", l.id, l.name, "Leader"]));
+    (DATA.risks || []).filter(r => has(r.t) || has(r.why)).forEach(r => out.push(["risque", r.id, r.t, "Risque"]));
+    signals.filter(s => has(s.t) || has(s.r) || (s.act || []).some(has)).sort(byDate).slice(0, 12).forEach(s => out.push(["signal", s.id, sum(s), fmtD(s.d)]));
+    return out.slice(0, 20);
+  }
+  function palPaint() {
+    const box = document.getElementById("pal-res"), inp = document.getElementById("pal-in");
+    if (!box || !inp) return;
+    const items = palItems(inp.value);
+    box.innerHTML = items.map(([k, id, l, m]) => `<button class="pal-row" data-act="pal-go" data-k="${k}" data-id="${esc(id)}"><span>${esc(l)}</span><small>${esc(m)}</small></button>`).join("")
+      || `<p class="pal-empty">${inp.value.trim() ? "Aucun résultat." : "Une entreprise, un pays, un risque ou un sujet : Safran, Pologne, titane…"}</p>`;
+  }
+  function palOpen() {
+    if (document.getElementById("pal")) return;
+    const el = document.createElement("div");
+    el.id = "pal";
+    el.innerHTML = `<div class="pal-box"><input id="pal-in" type="search" placeholder="Rechercher sur la plateforme" autocomplete="off"><div id="pal-res"></div></div>`;
+    document.body.appendChild(el);
+    palPaint();
+    document.getElementById("pal-in").focus();
+  }
+  function palClose() { const el = document.getElementById("pal"); if (el) el.remove(); }
+  function palGo(k, id) {
+    palClose();
+    let target = "";
+    if (k === "pays") { go("pays"); target = "c-" + id; }
+    else if (k === "leader") { go("leaders"); st.lf.seg = ""; target = "l-" + id; }
+    else if (k === "risque") { Object.assign(st.dv, { seg: "", geo: "" }); st.riskSel = id; go("risques"); }
+    else if (k === "signal") { st.fiche = id; }
+    render();
+    if (target) { const t = document.getElementById(target); if (t) t.scrollIntoView({ block: "center" }); }
+  }
+  function renderFiche() {
+    const s = signals.find(x => x.id === st.fiche);
+    if (!s) return "";
+    return `<div class="scrim" data-act="fiche-close"></div><aside class="drawer" role="dialog" aria-label="Fiche">
+      <header><div class="row"><div class="sig-meta">${natPill(s)}<span class="when-i">${esc(segName(s.seg))} · ${esc(fmtD(s.d))}</span></div><button class="x" data-act="fiche-close" aria-label="Fermer">×</button></div></header>
+      <div class="body"><div class="stack"><b class="fiche-t">${esc(sum(s))}</b>${whyBlock(s)}${srcLine(s)}</div>
+      <div><button class="btn small" data-act="goto" data-seg="${esc(s.seg)}" data-m="${esc(s.m)}">Voir dans la cartographie</button></div></div></aside>`;
   }
   function renderMetrics() {
-    const r30 = signals.filter(s => inDays(s, 30));
-    const frag = r30.filter(s => s.n === "manque" || s.n === "dependance").length;
-    const best = r30.filter(s => s.n === "besoin").length;
-    const force = r30.filter(s => s.n === "atout").length;
+    const inRange = (s, a, b) => s.k === "actu" && ageDays(s) > a && ageDays(s) <= b;
+    const count = (nats, a, b) => signals.filter(s => nats.includes(s.n) && inRange(s, a, b)).length;
     const ao = (DATA.tenders || []).filter(t => t.id.startsWith("ted-")).length;
-    const m = (cls, v, l, tab) => `<button class="metric ${cls}" data-act="tab" data-v="${tab}"><b>${v}</b><span>${l}</span></button>`;
+    const m = (cls, nats, l, tab) => {
+      const now = count(nats, -1, 30), d = now - count(nats, 30, 60);
+      return `<button class="metric ${cls}" data-act="tab" data-v="${tab}"><span class="m-l"><i></i>${l}</span><span class="m-v"><b>${now}</b><em>${d > 0 ? "▲ " + d : d < 0 ? "▼ " + -d : "="}</em></span></button>`;
+    };
     return `<div class="metrics">
-      ${m("atout", force, "forces, 30 jours", "etat")}
-      ${m("manque", frag, "fragilités, 30 jours", "risques")}
-      ${m("besoin", best, "besoins, 30 jours", "pays")}
-      ${m("ao", ao, "appels d'offres ouverts", "pays")}
+      ${m("atout", ["atout"], "Forces", "etat")}
+      ${m("manque", ["manque", "dependance"], "Fragilités", "risques")}
+      ${m("besoin", ["besoin"], "Besoins", "pays")}
+      <button class="metric ao" data-act="tab" data-v="pays"><span class="m-l"><i></i>Appels d'offres ouverts</span><span class="m-v"><b>${ao}</b></span></button>
     </div>`;
   }
 
@@ -176,10 +234,10 @@
     const trends = MAIL.map(([k, l]) => { const now = r30.filter(s => s.m === k).length, before = prev.filter(s => s.m === k).length / 2; return { k, l, now, d: now - before }; })
       .filter(t => t.now).sort((a, b) => b.d - a.d || b.now - a.now).slice(0, 5);
     const max = Math.max(1, ...trends.map(t => t.now));
-    return `<section class="intro"><div class="stack"><h2>Radar de tendances</h2><p>Chaque point est un fait récent : plus il est près du centre, plus il est frais, plus il est gros, plus il compte. <b>Cliquez un point</b> pour le lire.</p></div></section>
+    return `<section class="intro"><div class="stack"><h2>Radar de tendances</h2><p>Près du centre : récent. Gros point : important. Cliquez un point pour le lire.</p></div></section>
       <div class="legend-chips">${NAT_ALL.map(n => `<button class="chip ${n}" data-act="radar-off" data-v="${n}" aria-pressed="${!st.radarOff.includes(n)}"><i></i>${NAT[n]}</button>`).join("")}</div>
       <div class="radar-wrap">
-        <div class="radar-box"><svg class="radar" viewBox="-90 0 820 640" role="img" aria-label="Radar des tendances">
+        <div class="radar-box"><svg class="radar" viewBox="-40 0 720 640" role="img" aria-label="Radar des tendances">
           <circle cx="320" cy="320" r="280" class="r-bg"/>
           <g class="sweep"><path d="M320 320 L320 40 A280 280 0 0 1 518 122 Z"/></g>
           ${rings}${spokes}${ringL}${labels}${dots}
@@ -188,7 +246,7 @@
           ${sel ? `<div class="detail ${sel.n}"><div class="sig-meta">${natPill(sel)}<span class="when-i">${esc(segName(sel.seg))} · ${esc(fmtD(sel.d))}</span></div>
             <b>${esc(sum(sel))}</b>${whyBlock(sel)}${srcLine(sel)}
             <button class="btn small" data-act="goto" data-seg="${esc(sel.seg)}" data-m="${esc(sel.m)}">Voir dans la cartographie →</button></div>` : `<p class="msg">Aucun point pour ce filtre.</p>`}
-          <div class="box trends"><h3>Sujets qui montent (30 jours)</h3>
+          <div class="box trends"><h3>Sujets qui montent</h3>
             ${trends.map(t => `<button class="trend" data-act="trend" data-v="${t.k}"><span class="t-l">${esc(t.l)}</span><span class="t-b"><i style="width:${(t.now / max * 100).toFixed(0)}%"></i></span><span class="t-n">${t.now}</span><span class="t-d ${t.d > 0 ? "up" : t.d < 0 ? "down" : ""}">${t.d > 0 ? "▲" : t.d < 0 ? "▼" : "="}</span></button>`).join("") || `<p class="note">Pas assez de données récentes.</p>`}
           </div>
         </div>
@@ -506,7 +564,7 @@ ${raw.slice(0, 8000)}`;
   function renderLeaders() {
     const L = (DATA.leaders || []).filter(l => !st.lf.seg || l.segs.includes(st.lf.seg));
     const groups = [...new Set(L.map(l => l.paysGroupe || (l.pays || "").split(" · ")[0]))];
-    const card = l => `<article class="lcard">
+    const card = l => `<article class="lcard" id="l-${esc(l.id)}">
         <div class="lcard-h"><h3>${esc(l.name)}</h3></div>
         <p class="note">${esc(l.metier)}</p>
         <div class="gb">
@@ -664,7 +722,7 @@ ${raw.slice(0, 8000)}`;
       return `<div class="tile l${lv}" title="Besoin ${LEVEL[lv].toLowerCase()}${n ? ` · ${n} appel(s) d'offres ouvert(s)` : ""}"><span>${esc(l)}</span>${n ? `<b class="ao">${n} AO</b>` : ""}</div>`;
     }).join("");
     const dots = { forte: 3, moyenne: 2, faible: 1 }[p.pos];
-    return `<article class="ccard">
+    return `<article class="ccard" id="c-${esc(p.id)}">
       <header><div><h3>${esc(p.name)}</h3><span class="plabel ${POS[p.pos][1]}"><i class="dots">${[1, 2, 3].map(i => `<em class="${i <= dots ? "on" : ""}"></em>`).join("")}</i>France : ${esc(p.pos)}</span></div>
         <div class="cstat"><b>${esc(p.stat || "")}</b><small>${esc(p.statL || "")}</small></div></header>
       <p class="ret">${esc(p.ret || "")}</p>
@@ -696,17 +754,24 @@ ${raw.slice(0, 8000)}`;
     if (!DATA) return;
     const view = { radar: renderRadar, etat: renderEtat, news: renderNews, carte: renderMap, leaders: renderLeaders, dep: renderDeps, risques: renderRisk, pays: renderCountries,  }[st.tab] || renderEtat;
     const y = window.scrollY;
-    app.innerHTML = `<div class="shell">${renderSide()}<div class="content">${renderMetrics()}<main>${view()}</main>
-      <footer class="foot"><span>Balise ASD · données du ${esc(fmtD(DATA.updated))}</span><span>Sources citées sur chaque fait. Estimations à vérifier avant décision.</span></footer></div></div>
-      ${st.sel ? renderDrawer() : ""}`;
+    const enter = st.lastTab !== st.tab ? " enter" : "";
+    st.lastTab = st.tab;
+    app.innerHTML = `<div class="shell">${renderNav()}<div class="content">${renderMetrics()}<main class="${enter.trim()}">${renderSubnav()}${view()}</main>
+      <footer class="foot"><span>Données du ${esc(fmtD(DATA.updated))}</span><span>Sources citées sur chaque fait. Estimations à vérifier avant décision.</span></footer></div></div>
+      ${st.sel ? renderDrawer() : ""}${st.fiche ? renderFiche() : ""}`;
     window.scrollTo(0, y);
   }
   function go(tab) { st.tab = tab; ls.set("tab", tab); }
 
   document.addEventListener("click", e => {
+    if (e.target.id === "pal") { palClose(); return; }
     const b = e.target.closest("[data-act]"); if (!b) return;
     const a = b.dataset.act;
     if (a === "tab") { go(b.dataset.v); st.sel = null; st.flash = null; render(); window.scrollTo(0, 0); }
+    else if (a === "pal-open") palOpen();
+    else if (a === "pal-close") palClose();
+    else if (a === "pal-go") palGo(b.dataset.k, b.dataset.id);
+    else if (a === "fiche-close") { st.fiche = null; render(); }
     else if (a === "radar-sel") { st.radarSel = b.dataset.id; render(); }
     else if (a === "radar-off") { const v = b.dataset.v; st.radarOff = st.radarOff.includes(v) ? st.radarOff.filter(x => x !== v) : [...st.radarOff, v]; render(); }
     else if (a === "trend") { Object.assign(st.f, { period: "90", seg: "", fam: "", geo: "", m: b.dataset.v, q: "" }); st.newsView = "analyse"; go("news"); render(); window.scrollTo(0, 0); }
@@ -717,7 +782,7 @@ ${raw.slice(0, 8000)}`;
     else if (a === "cell" || a === "open-sig") { st.sel = { seg: b.dataset.seg, m: b.dataset.m }; render(); }
     else if (a === "close") { st.sel = null; render(); }
     else if (a === "ai-cell") aiCell();
-    else if (a === "goto") { go("carte"); st.sel = { seg: b.dataset.seg, m: b.dataset.m }; render(); }
+    else if (a === "goto") { st.fiche = null; go("carte"); st.sel = { seg: b.dataset.seg, m: b.dataset.m }; render(); }
     else if (a === "see") { Object.assign(st.f, { period: "all", seg: b.dataset.seg, fam: b.dataset.fam, geo: "", m: "", q: "" }); go("news"); render(); window.scrollTo(0, 0); }
     else if (a === "seg-map") { go("carte"); render(); window.scrollTo(0, 0); }
     else if (a === "period") { st.f.period = b.dataset.v; render(); }
@@ -741,6 +806,7 @@ ${raw.slice(0, 8000)}`;
   const DRAFT_IDS = { "add-raw": "raw", "add-t": "t", "add-s": "s", "add-d": "d", "add-seg": "seg", "add-m": "m", "add-n": "n", "add-geo": "geo", "add-imp": "imp", "add-act": "act", "add-orig": "orig", "add-src": "src", "add-u": "u" };
   function onField(e) {
     const el = e.target, id = el.id || "";
+    if (id === "pal-in") { palPaint(); return; }
     if (DRAFT_IDS[id]) { st.draft[DRAFT_IDS[id]] = el.value; if (id === "add-n" && e.type === "change") render(); return; }
     if (id.startsWith("f-")) {
       st.f[id.slice(2)] = el.value;
@@ -753,6 +819,10 @@ ${raw.slice(0, 8000)}`;
   document.addEventListener("input", onField);
   document.addEventListener("change", onField);
   document.addEventListener("keydown", e => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); palOpen(); return; }
+    if (e.key === "Escape" && document.getElementById("pal")) { palClose(); return; }
+    if (e.key === "Escape" && st.fiche) { st.fiche = null; render(); return; }
+    if (e.key === "Enter" && e.target.id === "pal-in") { const f = document.querySelector(".pal-row"); if (f) palGo(f.dataset.k, f.dataset.id); return; }
     if (e.key === "Escape" && st.sel) { st.sel = null; render(); }
     const bl = e.target.closest && e.target.closest(".blip");
     if (bl && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); st.radarSel = bl.dataset.id; render(); }
