@@ -57,6 +57,11 @@ SPACE = re.compile(r"spatial|satellite|lanceur|launcher|rocket|fusée|ariane|\be
 DEFENSE = re.compile(r"rafale|missile|mbda|dga\b|défense|defen[cs]e|military|militaire|fighter|drone|scaf|fcas|gcap|eurofighter|armée|air force", re.I)
 
 
+# Les catégories TED sont larges : le titre doit aussi nommer un produit du périmètre.
+TED_TOPIC = re.compile(r"aéronef|avion|hélicoptère|spationef|satellite|lanceur|sans pilote|drone|missile|simulateurs? de vol|moteurs? d.aéronef|radar", re.I)
+AIR_FORCE = re.compile(r"air force|força aérea|fuerza aérea|luftwaffe|armée de l.air|aeronautica militare|sił powietrznych|ejército|bundesamt für ausrüstung|ministère des armées|ministerio de defensa|ministry of defen[cs]e", re.I)
+
+
 def guess_seg(text):
     return "spatial" if SPACE.search(text) else "defense" if DEFENSE.search(text) else "civil"
 
@@ -157,7 +162,7 @@ def update_ted(data):
     """Appels d'offres aéronautiques et spatiaux ouverts, depuis l'API publique de TED."""
     body = {"query": f"classification-cpv IN ({TED_CPV}) SORT BY publication-date DESC",
             "fields": ["publication-number", "notice-title", "buyer-name", "buyer-country", "publication-date"],
-            "limit": 15, "page": 1, "scope": "ACTIVE"}
+            "limit": 40, "page": 1, "scope": "ACTIVE"}
     req = urllib.request.Request("https://api.ted.europa.eu/v3/notices/search", json.dumps(body).encode(),
                                  {"Content-Type": "application/json", "Accept": "application/json"})
     try:
@@ -170,11 +175,11 @@ def update_ted(data):
     tenders = []
     for n in notices:
         num, title = n.get("publication-number"), ted_text(n.get("notice-title"))
-        if not num or not title or OUT_OF_SCOPE.search(title):
+        if not num or not title or OUT_OF_SCOPE.search(title) or not TED_TOPIC.search(title):
             continue
         country = ted_text(n.get("buyer-country"))
         tenders.append({"id": f"ted-{num}", "pays": iso.get(country, "EU"), "acheteur": ted_text(n.get("buyer-name")) or "Non précisé",
-                        "seg": guess_seg(title) if SPACE.search(title) else "defense" if DEFENSE.search(title) else "civil", "m": "sys", "statut": "ouvert",
+                        "seg": "defense" if AIR_FORCE.search(ted_text(n.get("buyer-name"))) else guess_seg(title), "m": "sys", "statut": "ouvert",
                         "objet": title, "montant": "Voir l'avis", "date": str(n.get("publication-date", ""))[:10], "echeance": "",
                         "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
                         "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
