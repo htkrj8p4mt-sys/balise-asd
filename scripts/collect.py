@@ -403,8 +403,8 @@ def refresh_overview():
     lines = "\n".join(f"- [{s['seg']} · {s['n']} · {s['d']}] {s.get('r') or s['t']}" for s in recent)
     prompt = f"""Voici la synthèse actuelle et les signaux de veille les plus récents.
 Réécris la synthèse pour qu'elle reflète la situation actuelle, en français simple et sans rien inventer.
-Réponds uniquement avec un objet JSON : {{"bref":["civil","spatial","défense"],"civil":{{"fr":"...","eu":"..."}},"spatial":{{"fr":"...","eu":"..."}},"defense":{{"fr":"...","eu":"..."}}}}.
-bref : exactement 3 phrases. fr = position de la France, eu = position de l'Europe, 2 à 3 phrases chacune.
+Réponds uniquement avec un objet JSON : {{"bref":["civil","spatial","défense"],"civil":{{"fr":"...","eu":"...","forces":["..."],"fragilites":["..."],"besoins":["..."]}},"spatial":{{même forme}},"defense":{{même forme}}}}.
+bref : exactement 3 phrases. fr = position de la France, eu = position de l'Europe, 2 à 3 phrases chacune. forces, fragilites et besoins : 3 à 6 points courts chacun, avec un chiffre ou un exemple, sans citer d'article.
 
 Synthèse actuelle :
 {json.dumps(data['overview'], ensure_ascii=False)}
@@ -415,7 +415,9 @@ Signaux :
     ok = (isinstance(ov.get("bref"), list) and len(ov["bref"]) == 3 and all(isinstance(x, str) for x in ov["bref"])
           and all(isinstance(ov.get(s), dict) and ov[s].get("fr") and ov[s].get("eu") for s in SEGS))
     if ok:
-        data["overview"] = ov
+        data["overview"]["bref"] = ov["bref"]
+        for s in SEGS:
+            data["overview"][s].update({k: v for k, v in ov[s].items() if isinstance(v, (str, list)) and v})
         data["updated"] = date.today().isoformat()
         save_json(DATA, data)
         print("Synthèse mise à jour")

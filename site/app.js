@@ -42,8 +42,7 @@
 
   // ---------- État ----------
   let DATA = null, signals = [];
-  const TABS = [["etat", "État des lieux"], ["news", "Actualités"], ["carte", "Cartographie"], ["dep", "Dépendances"], ["risques", "Risques"], ["pays", "Pays"], ["marches", "Appels d'offres"], ["leaders", "Leaders"]];
-  const TSTAT = { ouvert: ["Ouvert", "besoin"], attribution: ["En cours d'attribution", "dependance"], programme: ["Programme de dépenses", "tag"], attribue: ["Attribué", "atout"] };
+  const TABS = [["etat", "État des lieux"], ["news", "Actualités"], ["carte", "Cartographie"], ["dep", "Dépendances"], ["risques", "Risques"], ["pays", "Pays"], ["leaders", "Leaders"]];
   const POS = { forte: ["Position française forte", "atout"], moyenne: ["Position française moyenne", "dependance"], faible: ["Position française faible", "manque"] };
   const st = {
     tab: TABS.some(t => t[0] === ls.get("tab", "etat")) ? ls.get("tab", "etat") : "etat",
@@ -56,8 +55,6 @@
     riskSel: null,
     editor: false, adding: false, draft: emptyDraft(), analysing: false, saving: false, flash: null, confirmDel: null,
     ai: {},
-    tf: { statut: "", pays: "" },
-    cSel: null,
     newsView: "analyse",
     etatSeg: "civil",
   };
@@ -141,7 +138,6 @@
   }
   function renderEtat() {
     const ov = DATA.overview || {};
-    const latest = signals.filter(s => s.k === "actu").sort(byDate).slice(0, 5);
     const kpis = (DATA.kpis || []).filter(k => k.seg === st.etatSeg).map(k => `<div class="kpi">
         <span class="eyebrow">${esc(segName(k.seg))}</span>
         <span class="kpi-v">${esc(k.value)}</span>
@@ -149,17 +145,12 @@
         <span class="kpi-n">${esc(k.note || "")} ${srcInfo(k.u, "Source")}</span>
       </div>`).join("");
     const segSections = SEG.filter(([sk]) => sk === st.etatSeg).map(([sk, sl]) => {
-      const list = signals.filter(s => s.seg === sk);
-      const vf = verdict(stats(list.filter(s => s.geo === "FR"))), ve = verdict(stats(list.filter(s => s.geo !== "FR")));
       const o = ov[sk] || {};
+      const stat = l => verdict(stats(signals.filter(s => s.seg === sk && l(s))));
+      const vf = stat(s => s.geo === "FR"), ve = stat(s => s.geo !== "FR");
       const cols = FAM_KEYS.map(fk => {
-        const items = list.filter(s => famOf(s.n) === fk).sort((a, b) => (isNew(b) - isNew(a)) || byWeight(a, b));
-        return `<div class="fam ${FAM[fk].col}">
-          <h3>${FAM[fk].l} <span class="count">${items.length}</span></h3>
-          <p class="note">${FAM[fk].help}</p>
-          ${items.slice(0, 4).map(s => sigLine(s)).join("") || `<p class="note">Aucun signal.</p>`}
-          ${items.length > 4 ? `<button class="link" data-act="see" data-seg="${sk}" data-fam="${fk}">Voir les ${items.length}</button>` : ""}
-        </div>`;
+        const key = fk === "force" ? "forces" : fk === "fragilite" ? "fragilites" : "besoins";
+        return `<div class="fam ${FAM[fk].col}"><h3>${FAM[fk].l}</h3><ul class="clist">${(o[key] || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>`;
       }).join("");
       return `<section class="segsec">
         <div class="segsec-h"><h2>${esc(sl)}</h2><button class="link" data-act="seg-map" data-seg="${sk}">Voir sur la cartographie</button></div>
@@ -175,11 +166,8 @@
         <div><span class="pill tag">${esc(segName(w.seg))}</span> <b>${esc(w.t)}</b><p class="note">${esc(w.why)}</p></div>
       </li>`).join("");
     return `<section class="intro"><div class="stack"><span class="eyebrow">Au ${esc(fmtD(DATA.updated))}</span><h2>État des lieux du marché</h2>
-        <p>La situation actuelle du marché. Choisissez un secteur pour voir la position de la France et de l'Europe, puis les forces, les fragilités et les besoins.</p></div></section>
-      <div class="brief">
-        <div class="box"><h3>En bref</h3><ul class="bullets">${(ov.bref || []).map(b => `<li>${esc(b)}</li>`).join("")}</ul></div>
-        <div class="box"><h3>Dernières actualités</h3>${latest.map(s => sigLine(s, true)).join("")}<button class="link" data-act="tab" data-v="news">Toutes les actualités</button></div>
-      </div>
+        <p>La synthèse du marché, sans les articles (ils sont dans Actualités). Choisissez un secteur.</p></div></section>
+      <div class="box"><h3>En bref</h3><ul class="bullets">${(ov.bref || []).map(b => `<li>${esc(b)}</li>`).join("")}</ul></div>
       <div class="seg-ctl etat-switch" role="group" aria-label="Secteur">${SEG.map(([k, l]) => `<button data-act="etat-seg" data-v="${k}" aria-pressed="${st.etatSeg === k}">${l}</button>`).join("")}</div>
       <div class="kpis">${kpis}</div>
       ${segSections}
@@ -450,28 +438,20 @@ ${raw.slice(0, 8000)}`;
 
   // ---------- Leaders ----------
   function renderLeaders() {
-    const L = (DATA.leaders || []).filter(l => (!st.lf.seg || l.segs.includes(st.lf.seg)) && (!st.lf.geo || (st.lf.geo === "FR" ? l.fr : !l.fr)));
-    const cards = L.map(l => {
-      const rel = signals.filter(s => (s.act || []).some(a => (l.keys || [l.name]).includes(a))).sort(byDate).slice(0, 3);
-      return `<article class="lcard">
-        <div class="lcard-h"><h3>${esc(l.name)}</h3><span class="pill ${l.fr ? "tag" : "geo"}">${esc(l.pays)}</span></div>
-        <p class="note">${esc(l.metier)} · ${l.segs.map(segName).join(", ")}</p>
-        <p class="kpi-line mono">${esc(l.chiffre)} ${srcInfo(l.u, "Source")}</p>
-        <dl class="swot">
-          <dt class="atout">Force</dt><dd>${esc(l.force)}</dd>
-          ${l.fragilite && l.fragilite !== "—" ? `<dt class="manque">Fragilité</dt><dd>${esc(l.fragilite)}</dd>` : ""}
-          <dt class="besoin">À suivre</dt><dd>${esc(l.suivre)}</dd>
-        </dl>
-        ${rel.length ? `<div class="stack"><span class="eyebrow">Dernières actualités liées</span>${rel.map(s => sigLine(s)).join("")}</div>` : ""}
+    const L = (DATA.leaders || []).filter(l => !st.lf.seg || l.segs.includes(st.lf.seg));
+    const groups = [...new Set(L.map(l => l.paysGroupe || (l.pays || "").split(" · ")[0]))];
+    const card = l => `<article class="lcard">
+        <div class="lcard-h"><h3>${esc(l.name)}</h3></div>
+        <p class="note">${esc(l.metier)}</p>
+        <div class="gb">
+          <div class="gb-c bon"><h4>Bon en</h4>${(l.bon || []).map(x => `<div><b>${esc(x.t)}</b><span>${esc(x.ex)}</span></div>`).join("")}</div>
+          <div class="gb-c moins"><h4>Moins bon en</h4>${(l.moins || []).map(x => `<div><b>${esc(x.t)}</b><span>${esc(x.ex)}</span></div>`).join("") || `<span class="note">Pas de faiblesse documentée à ce stade.</span>`}</div>
+        </div>
       </article>`;
-    }).join("");
-    return `<section class="intro"><div class="stack"><h2>Leaders européens</h2>
-        <p>Les groupes qui structurent le marché, français et européens : chiffre clé, force, fragilité et points à suivre, reliés aux actualités de la veille.</p></div></section>
-      <div class="filters-row">
-        <div class="seg-ctl" role="group" aria-label="Secteur">${[["", "Tous"], ...SEG].map(([k, l]) => `<button data-act="lf-seg" data-v="${k}" aria-pressed="${st.lf.seg === k}">${l}</button>`).join("")}</div>
-        <div class="seg-ctl" role="group" aria-label="Origine">${[["", "Tous"], ["FR", "Groupes français"], ["EU", "Autres européens"]].map(([k, l]) => `<button data-act="lf-geo" data-v="${k}" aria-pressed="${st.lf.geo === k}">${l}</button>`).join("")}</div>
-      </div>
-      <div class="lgrid">${cards || `<p class="msg">Aucun leader pour ce filtre.</p>`}</div>`;
+    return `<section class="intro"><div class="stack"><h2>Leaders</h2>
+        <p>Les groupes qui structurent le marché, par pays : ce qu'ils font bien, ce qu'ils font moins bien, avec des exemples.</p></div></section>
+      <div class="seg-ctl" role="group" aria-label="Secteur">${[["", "Tous"], ...SEG].map(([k, l]) => `<button data-act="lf-seg" data-v="${k}" aria-pressed="${st.lf.seg === k}">${l}</button>`).join("")}</div>
+      ${groups.map(g => `<section class="lgroup"><h2>${esc(g)}</h2><div class="lgrid">${L.filter(l => (l.paysGroupe || (l.pays || "").split(" · ")[0]) === g).map(card).join("")}</div></section>`).join("") || `<p class="msg">Aucun leader pour ce filtre.</p>`}`;
   }
 
   // ---------- Dépendances ----------
@@ -485,8 +465,8 @@ ${raw.slice(0, 8000)}`;
   }
 
   function flowSVG(deps) {
-    const acc = {};
-    deps.forEach(s => origins(s).forEach(o => { const k = o + "|" + s.m; acc[k] = (acc[k] || 0) + (Number(s.imp) || 1); }));
+    const acc = {}; // une dépendance compte une fois par pays et par maillon, même si plusieurs articles en parlent
+    deps.forEach(s => origins(s).forEach(o => { const k = o + "|" + s.m; acc[k] = Math.max(acc[k] || 0, Number(s.imp) || 1); }));
     const L = Object.entries(acc).map(([k, w]) => { const [o, m] = k.split("|"); return { o, m, w }; });
     if (!L.length) return `<p class="msg">Aucune dépendance pour ce filtre.</p>`;
     const oW = {}, mW = {};
@@ -508,9 +488,9 @@ ${raw.slice(0, 8000)}`;
       const ya = a.y + a.off, yb = b.y + b.off; a.off += h1; b.off += h2;
       const xa = x1 + nw, xb = x2, cx = (xa + xb) / 2;
       const cls = hot ? (hot === l.o ? " on" : " off") : "";
-      return `<path class="flow${cls}" data-act="dep-orig" data-v="${esc(l.o)}" d="M${xa},${ya.toFixed(1)} C${cx},${ya.toFixed(1)} ${cx},${yb.toFixed(1)} ${xb},${yb.toFixed(1)} L${xb},${(yb + h2).toFixed(1)} C${cx},${(yb + h2).toFixed(1)} ${cx},${(ya + h1).toFixed(1)} ${xa},${(ya + h1).toFixed(1)} Z"><title>${esc(l.o)} → ${esc(mailName(l.m))} : poids ${l.w}</title></path>`;
+      return `<path class="flow${cls}" data-act="dep-orig" data-v="${esc(l.o)}" d="M${xa},${ya.toFixed(1)} C${cx},${ya.toFixed(1)} ${cx},${yb.toFixed(1)} ${xb},${yb.toFixed(1)} L${xb},${(yb + h2).toFixed(1)} C${cx},${(yb + h2).toFixed(1)} ${cx},${(ya + h1).toFixed(1)} ${xa},${(ya + h1).toFixed(1)} Z"><title>${esc(l.o)} → ${esc(mailName(l.m))}</title></path>`;
     }).join("");
-    const oN = os.map(o => { const p = oP[o]; const cls = hot && hot !== o ? " off" : ""; return `<g class="node${cls}" data-act="dep-orig" data-v="${esc(o)}"><rect x="${x1}" y="${p.y.toFixed(1)}" width="${nw}" height="${Math.max(p.h, 2).toFixed(1)}" rx="2" class="n-o"></rect><text x="${x1 - 10}" y="${(p.y + p.h / 2).toFixed(1)}" text-anchor="end" dominant-baseline="middle" class="n-l">${esc(o)}</text><text x="${x1 - 10}" y="${(p.y + p.h / 2 + 15).toFixed(1)}" text-anchor="end" dominant-baseline="middle" class="n-v">poids ${oW[o]}</text></g>`; }).join("");
+    const oN = os.map(o => { const p = oP[o]; const cls = hot && hot !== o ? " off" : ""; return `<g class="node${cls}" data-act="dep-orig" data-v="${esc(o)}"><rect x="${x1}" y="${p.y.toFixed(1)}" width="${nw}" height="${Math.max(p.h, 2).toFixed(1)}" rx="2" class="n-o"></rect><text x="${x1 - 10}" y="${(p.y + p.h / 2).toFixed(1)}" text-anchor="end" dominant-baseline="middle" class="n-l">${esc(o)}</text></g>`; }).join("");
     const mN = ms.map(m => { const p = mP[m]; return `<g class="node"><rect x="${x2}" y="${p.y.toFixed(1)}" width="${nw}" height="${Math.max(p.h, 2).toFixed(1)}" rx="2" class="n-m"></rect><text x="${x2 + nw + 10}" y="${(p.y + p.h / 2).toFixed(1)}" dominant-baseline="middle" class="n-l">${esc(mailName(m))}</text></g>`; }).join("");
     return `<div class="svg-scroll"><svg class="flowsvg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Flux de dépendances des pays d'origine vers les maillons">
       <text x="${x1 + nw}" y="14" text-anchor="end" class="ax">Pays d'origine</text>
@@ -521,15 +501,12 @@ ${raw.slice(0, 8000)}`;
 
   function renderDeps() {
     const deps = signals.filter(s => s.n === "dependance" && inView(s));
-    const shown = deps.filter(s => !st.depOrig || origins(s).includes(st.depOrig)).sort((a, b) => b.imp - a.imp || byDate(a, b));
-    return `<section class="intro"><div class="stack"><h2>Carte des dépendances</h2>
-      <p>D'où viennent les dépendances et quels maillons de la chaîne elles touchent. L'épaisseur d'un flux reflète le nombre de signaux et leur impact. Cliquez un pays pour isoler ses flux.</p></div></section>
+    return `<section class="intro"><div class="stack"><h2>Dépendances</h2>
+      <p>D'où viennent les dépendances et quels maillons de la chaîne elles touchent. Plus un flux est épais, plus la dépendance pèse. Cliquez un pays pour isoler ses flux.</p></div></section>
       ${viewFilters()}
       <div class="box">${flowSVG(deps)}
-        ${st.depOrig ? `<div class="actions"><span class="pill dependance">Pays : ${esc(st.depOrig)}</span><button class="btn ghost small" data-act="dep-orig" data-v="">Voir tous les pays</button></div>` : ""}
-      </div>
-      <p class="count">${shown.length} dépendance(s)${st.depOrig ? " liée(s) à " + esc(st.depOrig) : ""}</p>
-      <div class="dep-cards">${shown.map(feedItem).join("")}</div>`;
+        ${st.depOrig ? `<div class="actions"><span class="pill dependance">${esc(st.depOrig)}</span><button class="btn ghost small" data-act="dep-orig" data-v="">Voir tous les pays</button></div>` : ""}
+      </div>`;
   }
 
   // ---------- Matrice des risques (critères objectivés) ----------
@@ -543,8 +520,12 @@ ${raw.slice(0, 8000)}`;
     const k = critOf(s);
     return `<dl class="crit">${Object.keys(CRIT_L).map(x => `<dt>${CRIT_L[x]}</dt><dd><span class="cbar">${[1, 2, 3].map(i => `<i class="${i <= k[x] ? "on" : ""}"></i>`).join("")}</span><span class="mono">${k[x]}/3</span></dd>`).join("")}</dl>`;
   }
+  function riskList() {
+    const auto = signals.filter(s => s.k === "actu" && (s.n === "manque" || s.n === "dependance") && dateKey(s.d) > dateKey(DATA.risksUpdated || "2000"));
+    return [...(DATA.risks || []), ...auto].filter(inView).sort((a, b) => riskScore(b) - riskScore(a));
+  }
   function renderRisk() {
-    const risks = signals.filter(s => (s.n === "manque" || s.n === "dependance") && inView(s)).sort((a, b) => riskScore(b) - riskScore(a) || byDate(a, b));
+    const risks = riskList();
     const num = new Map(risks.map((s, i) => [s.id, i + 1]));
     const W = 820, H = 480, ml = 96, mb = 58, mt = 16, mr = 12;
     const cw = (W - ml - mr) / 3, ch = (H - mt - mb) / 3, step = 34;
@@ -559,7 +540,7 @@ ${raw.slice(0, 8000)}`;
         const r = 8 + criticite(s) * 2.3;
         const cx = x + 6 + step / 2 + (k % per) * step, cy = y + 6 + step / 2 + Math.floor(k / per) * step;
         const sel = st.riskSel === s.id ? " sel" : "";
-        dots += `<g class="rdot ${s.n}${sel}" data-act="risk-dot" data-id="${esc(s.id)}" tabindex="0"><circle cx="${cx}" cy="${cy}" r="${r.toFixed(1)}"></circle><text x="${cx}" y="${cy}" text-anchor="middle" dominant-baseline="central">${num.get(s.id)}</text><title>${esc(sum(s))}</title></g>`;
+        dots += `<g class="rdot ${s.n}${sel}" data-act="risk-dot" data-id="${esc(s.id)}" tabindex="0"><circle cx="${cx}" cy="${cy}" r="${r.toFixed(1)}"></circle><text x="${cx}" y="${cy}" text-anchor="middle" dominant-baseline="central">${num.get(s.id)}</text><title>${esc(s.t)}</title></g>`;
       });
     }
     const axes = COLS.map((l, c) => `<text x="${ml + c * cw + cw / 2}" y="${H - mb + 22}" text-anchor="middle" class="ax">${l}</text>`).join("")
@@ -567,18 +548,16 @@ ${raw.slice(0, 8000)}`;
       + `<text x="${ml + (W - ml - mr) / 2}" y="${H - 8}" text-anchor="middle" class="ax-t">Probabilité d'aggravation à 12 mois →</text>`
       + `<text transform="translate(16 ${mt + (H - mt - mb) / 2}) rotate(-90)" text-anchor="middle" class="ax-t">Impact →</text>`
       + `<text x="${W - mr - 8}" y="${mt + 16}" text-anchor="end" class="zone">Priorité</text>`;
-    const selS = risks.find(s => s.id === st.riskSel);
     const list = risks.map(s => { const [lv, cls] = riskLevel(s); return `<button class="rrow${st.riskSel === s.id ? " sel" : ""}" data-act="risk-dot" data-id="${esc(s.id)}">
         <span class="rnum ${s.n}">${num.get(s.id)}</span>
-        <span class="stack"><span class="sig-meta"><span class="pill ${cls}">Risque ${lv.toLowerCase()}</span>${natPill(s)}${geoPill(s)}<span class="when-i">${esc(segName(s.seg))} · criticité ${criticite(s).toFixed(1)}/3</span></span><span class="sig-t">${esc(sum(s))}</span></span>
+        <span class="stack"><span class="sig-t">${esc(s.t)} <span class="pill ${cls}">${lv}</span></span>${st.riskSel === s.id ? `<span class="note">${esc(s.why)}</span>${critBars(s)}` : ""}</span>
       </button>`; }).join("");
-    return `<section class="intro"><div class="stack"><h2>Matrice des risques</h2>
-      <p>Chaque risque (manque de capacité ou dépendance hors UE) est noté sur quatre critères : concentration des fournisseurs, exposition hors UE, délai de remplacement et probabilité d'aggravation à 12 mois. Il est placé selon son impact et sa probabilité ; la taille du point indique sa criticité.</p></div></section>
+    return `<section class="intro"><div class="stack"><h2>Risques</h2>
+      <p>Les principaux risques de la filière, placés selon leur impact et leur probabilité. Plus un point est gros, plus le risque est difficile à contourner. Cliquez un point pour comprendre.</p></div></section>
       ${viewFilters()}
       <div class="legend"><span><span class="dot manque"></span>Manque</span><span><span class="dot dependance"></span>Dépendance</span><span class="note">Plus le point est gros, plus le risque est difficile à contourner · ${risks.length} risque(s)</span></div>
       <div class="box">${risks.length ? `<div class="svg-scroll"><svg class="risksvg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Matrice impact et probabilité des risques">${cells}${axes}${dots}</svg></div>` : `<p class="msg">Aucun risque pour ce filtre.</p>`}</div>
-      ${selS ? `<div class="panel"><div class="sig-meta"><span class="pill ${riskLevel(selS)[1]}">Risque ${riskLevel(selS)[0].toLowerCase()}</span></div>${miniItem(selS)}${critBars(selS)}<div class="actions"><button class="btn ghost small" data-act="goto" data-seg="${esc(selS.seg)}" data-m="${esc(selS.m)}">Voir la case sur la cartographie</button></div></div>` : ""}
-      <div class="box"><h3>Classement des risques</h3><div class="rlist">${list}</div></div>`;
+      <div class="box"><h3>Du plus au moins grave</h3><div class="rlist">${list}</div></div>`;
   }
 
   const countryName = id => id === "FR" ? "France" : id === "EU" ? "Union européenne" : ((DATA.countries || []).find(c => c.id === id) || { name: id }).name;
@@ -596,73 +575,60 @@ ${raw.slice(0, 8000)}`;
       <div class="feed">${list.map(i => `<article class="tcard flux"><div class="sig-meta"><span class="when-i">${esc(fmtD(i.d))}</span><span class="pill tag">${esc(segName(i.seg))}</span></div><b>${link(i.u, i.t)}</b><span class="src">Source : ${esc(i.src)}</span></article>`).join("") || `<p class="msg">Aucun article pour l'instant : le flux se remplit au prochain passage.</p>`}</div>`;
   }
 
-  // ---------- Pays ----------
-  const countrySignals = p => signals.filter(s => p.keys.some(k => textOf(s).includes(k.toLowerCase()))).sort(byDate);
-  function renderCountries() {
-    const C = DATA.countries || [];
-    const rows = C.map(p => `<tr${st.cSel === p.id ? ' class="on"' : ""}>
-        <th scope="row"><button class="link" data-act="c-sel" data-v="${esc(p.id)}">${esc(p.name)}</button></th>
-        <td><span class="pill ${POS[p.pos][1]}">${POS[p.pos][0].replace("Position française ", "")}</span></td>
-        <td>${esc(p.budget)}</td>
-        <td>${p.besoins.slice(0, 2).map(esc).join(" · ")}</td>
-        <td class="mono">${countrySignals(p).length}</td>
-      </tr>`).join("");
-    const sel = C.find(p => p.id === st.cSel);
-    const detail = sel ? (() => {
-      const sig = countrySignals(sel), tds = (DATA.tenders || []).filter(t => t.pays === sel.id);
-      const ul = (arr, cls) => `<ul class="clist ${cls}">${arr.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
-      return `<div class="panel" id="country-detail">
-        <div class="lcard-h"><h3 class="panel-h">${esc(sel.name)}</h3><span class="pill ${POS[sel.pos][1]}">${POS[sel.pos][0]}</span></div>
-        <p>${esc(sel.budget)}</p>
-        <div class="cols3">
-          <div class="fam besoin"><h3>Besoins</h3>${ul(sel.besoins, "")}</div>
-          <div class="fam manque"><h3>Vigilance</h3>${ul(sel.vigilance, "")}</div>
-          <div class="fam atout"><h3>Opportunités pour la France</h3>${ul(sel.opportunites, "")}</div>
-        </div>
-        <p><b>Fournisseurs choisis :</b> ${esc(sel.fournisseurs)}</p>
-        <p><b>Place de l'offre française :</b> ${esc(sel.posTxt)}</p>
-        <span class="src">Source : ${link(sel.u, sel.src)}</span>
-        ${tds.length ? `<div class="stack"><span class="eyebrow">Marchés et programmes</span>${tds.map(t => tenderCard(t)).join("")}</div>` : ""}
-        ${sig.length ? `<div class="stack"><span class="eyebrow">Signaux de veille liés</span>${sig.slice(0, 6).map(s => sigLine(s, true)).join("")}</div>` : ""}
-      </div>`;
-    })() : `<p class="msg">Cliquez sur un pays pour afficher son profil complet.</p>`;
-    return `<section class="intro"><div class="stack"><h2>Pays européens</h2>
-      <p>Les principaux marchés européens : budget, besoins, fournisseurs choisis, place de l'offre française, points de vigilance et opportunités.</p></div></section>
-      <div class="table-scroll"><table class="ctable"><thead><tr><th>Pays</th><th>Position française</th><th>Budget et fait marquant</th><th>Besoins prioritaires</th><th>Signaux</th></tr></thead><tbody>${rows}</tbody></table></div>
-      ${detail}`;
+  // ---------- Pays
+  const NEEDS = [["avions", "Avions"], ["helico", "Hélicoptères"], ["drones", "Drones"], ["missiles", "Missiles et défense aérienne"], ["spatial", "Spatial"]];
+  const LEVEL = ["Faible", "Moyen", "Fort"];
+  function tenderNeed(t) {
+    const o = t.objet || "";
+    if (/satellite|spatial|spationef|lanceur/i.test(o.replace(/spationefs et/i, ""))) return "spatial";
+    if (/missile|radar|sol-air/i.test(o)) return "missiles";
+    if (/sans pilote|drone|UAS/i.test(o)) return "drones";
+    if (/hélicoptère|UH-60|AB-205|AW-?169/i.test(o)) return "helico";
+    if (/avion|aéronef|simulateur de vol|vol\b/i.test(o)) return "avions";
+    return "";
   }
-
-  // ---------- Marchés & appels d'offres ----------
-  function tenderCard(t) {
-    const [sl, sc] = TSTAT[t.statut] || [t.statut, "tag"];
-    return `<article class="tcard">
-      <div class="sig-meta"><span class="pill ${sc}">${sl}</span><span class="pill tag">${esc(countryName(t.pays))}</span><span class="pill tag">${esc(segName(t.seg))}</span><span class="when-i">${esc(fmtD(t.date))}${t.echeance ? " · échéance " + esc(fmtD(t.echeance)) : ""}</span></div>
-      <b>${esc(t.objet)}</b>
-      <p class="note">${esc(t.acheteur)} · <span class="mono">${esc(t.montant)}</span></p>
-      <p class="why besoin"><b>Pourquoi c'est une opportunité :</b> ${esc(t.why)}</p>
-      <p class="why"><b>Comment se positionner :</b> ${esc(t.acces)}</p>
-      <span class="src">Source : ${link(t.u, t.src)}</span>
+  function openTenders() { return (DATA.tenders || []).filter(t => t.id.startsWith("ted-") && tenderNeed(t)); }
+  const tenderCountry = t => (t.objet || "").split(" – ")[0];
+  function countryCard(p, tenders) {
+    const names = p.name.split(" et ");
+    const mine = tenders.filter(t => names.includes(tenderCountry(t)));
+    const tiles = NEEDS.map(([k, l], i) => {
+      const n = mine.filter(t => tenderNeed(t) === k).length;
+      const lv = Math.min(2, (p.lv || [])[i] + (n && (p.lv || [])[i] === 0 ? 1 : 0));
+      return `<div class="tile l${lv}" title="Besoin ${LEVEL[lv].toLowerCase()}${n ? ` · ${n} appel(s) d'offres ouvert(s)` : ""}"><span>${esc(l)}</span>${n ? `<b class="ao">${n} AO</b>` : ""}</div>`;
+    }).join("");
+    const dots = { forte: 3, moyenne: 2, faible: 1 }[p.pos];
+    return `<article class="ccard">
+      <header><div><h3>${esc(p.name)}</h3><span class="plabel ${POS[p.pos][1]}"><i class="dots">${[1, 2, 3].map(i => `<em class="${i <= dots ? "on" : ""}"></em>`).join("")}</i>France : ${esc(p.pos)}</span></div>
+        <div class="cstat"><b>${esc(p.stat || "")}</b><small>${esc(p.statL || "")}</small></div></header>
+      <p class="ret">${esc(p.ret || "")}</p>
+      <div class="tiles">${tiles}</div>
+      <div class="supp">${(p.f || []).map(([n, o]) => `<span class="o-${o}">${esc(n)}</span>`).join("")}</div>
+      <div class="ov"><p><b class="plus">+</b>${esc(p.op || "")}</p><p><b class="minus">!</b>${esc(p.vi || "")}</p></div>
+      ${mine.length ? `<details class="ao-list"><summary>${mine.length} appel(s) d'offres ouvert(s)</summary><ul>${mine.map(t => `<li>${link(t.u, (t.objet || "").split(" – ").slice(1).join(" – "))}</li>`).join("")}</ul></details>` : ""}
     </article>`;
   }
-  function renderTenders() {
-    const T = (DATA.tenders || []).filter(t => (!st.tf.statut || t.statut === st.tf.statut) && (!st.tf.pays || t.pays === st.tf.pays))
-      .sort((a, b) => ["ouvert", "attribution", "programme", "attribue"].indexOf(a.statut) - ["ouvert", "attribution", "programme", "attribue"].indexOf(b.statut) || dateKey(b.date).localeCompare(dateKey(a.date)));
-    const paysOpts = [...new Set((DATA.tenders || []).map(t => t.pays))];
-    return `<section class="intro"><div class="stack"><h2>Marchés et appels d'offres</h2>
-      <p>Les besoins exprimés par les acheteurs publics et les maîtres d'œuvre : appels d'offres, programmes de dépenses et contrats attribués qui ouvrent de la sous-traitance. Chaque fiche dit pourquoi c'est une opportunité et comment se positionner.</p></div></section>
-      <div class="filters-row">
-        <div class="seg-ctl" role="group" aria-label="Statut">${[["", "Tous"], ...Object.entries(TSTAT).map(([k, v]) => [k, v[0]])].map(([k, l]) => `<button data-act="tf-statut" data-v="${k}" aria-pressed="${st.tf.statut === k}">${l}</button>`).join("")}</div>
-        <div class="field"><label for="tf-pays">Pays</label><select id="tf-pays">${opt("", "Tous", st.tf.pays)}${paysOpts.map(p => opt(p, countryName(p), st.tf.pays)).join("")}</select></div>
-      </div>
-      <p class="note">Les appels d'offres publics français se consultent sur marches-publics.gouv.fr et BOAMP ; les européens sur TED (ted.europa.eu). La veille quotidienne ajoute les nouveaux marchés repérés.</p>
-      <div class="feed">${T.map(t => tenderCard(t)).join("") || `<p class="msg">Aucun marché pour ce filtre.</p>`}</div>`;
+  function renderCountries() {
+    const tenders = openTenders();
+    const counts = NEEDS.map(([k, l]) => [l, tenders.filter(t => tenderNeed(t) === k).length]);
+    const max = Math.max(1, ...counts.map(c => c[1]));
+    const top = counts.slice().sort((a, b) => b[1] - a[1])[0];
+    return `<section class="intro"><div class="stack"><h2>Pays</h2>
+      <p>Pour chaque marché : ce qu'il achète, qui le fournit, et la place de la France. Plus une case est foncée, plus le besoin est fort (estimation Balise).</p></div></section>
+      <div class="legend"><span class="tile-key l0"></span>Faible<span class="tile-key l1"></span>Moyen<span class="tile-key l2"></span>Fort
+        <span class="supp"><span class="o-fr">France</span><span class="o-eu">Europe</span><span class="o-us">États-Unis</span></span></div>
+      <div class="cgrid2">${(DATA.countries || []).map(p => countryCard(p, tenders)).join("")}</div>
+      <div class="box"><h3>Ce que l'Europe achète en ce moment</h3>
+        <p class="note">${tenders.length} appels d'offres publics ouverts sur le portail européen TED${top && top[1] ? ` : la demande la plus visible porte sur ${esc(top[0].toLowerCase())}` : ""}. Ils alimentent aussi les cases « AO » des pays.</p>
+        <div class="bars-plain">${counts.map(([l, n]) => `<div class="bar"><span>${esc(l)}</span><div class="track"><div class="fill demand" style="width:${(n / max * 100).toFixed(0)}%"></div></div><span class="n">${n}</span></div>`).join("")}</div>
+      </div>`;
   }
 
   // ---------- Rendu global ----------
   function render() {
     const app = document.getElementById("app");
     if (!DATA) return;
-    const view = { etat: renderEtat, news: renderNews, carte: renderMap, leaders: renderLeaders, dep: renderDeps, risques: renderRisk, pays: renderCountries, marches: renderTenders,  }[st.tab] || renderEtat;
+    const view = { etat: renderEtat, news: renderNews, carte: renderMap, leaders: renderLeaders, dep: renderDeps, risques: renderRisk, pays: renderCountries,  }[st.tab] || renderEtat;
     const y = window.scrollY;
     app.innerHTML = `<div class="wrap">${renderTop()}${renderTabs()}<main>${view()}</main>
       <footer class="foot"><span>Balise ASD · veille du ${esc(fmtD(DATA.updated))}</span><span>Sources citées sur chaque signal. Lectures générées à vérifier.</span></footer></div>
@@ -687,7 +653,6 @@ ${raw.slice(0, 8000)}`;
     else if (a === "seg-map") { go("carte"); render(); window.scrollTo(0, 0); }
     else if (a === "period") { st.f.period = b.dataset.v; render(); }
     else if (a === "lf-seg") { st.lf.seg = b.dataset.v; render(); }
-    else if (a === "lf-geo") { st.lf.geo = b.dataset.v; render(); }
     else if (a === "add-open") { st.adding = true; st.flash = null; render(); }
     else if (a === "add-cancel") { st.adding = false; st.flash = null; render(); }
     else if (a === "add-analyse") analyseDraft();
@@ -702,8 +667,6 @@ ${raw.slice(0, 8000)}`;
     else if (a === "dv-seg") { st.dv.seg = b.dataset.v; st.depOrig = ""; st.riskSel = null; render(); }
     else if (a === "dv-geo") { st.dv.geo = b.dataset.v; st.depOrig = ""; st.riskSel = null; render(); }
     else if (a === "risk-dot") { st.riskSel = st.riskSel === b.dataset.id ? null : b.dataset.id; render(); }
-    else if (a === "tf-statut") { st.tf.statut = b.dataset.v; render(); }
-    else if (a === "c-sel") { go("pays"); st.cSel = b.dataset.v; render(); const el = document.getElementById("country-detail"); if (el) el.scrollIntoView({ block: "start" }); }
   });
 
   const DRAFT_IDS = { "add-raw": "raw", "add-t": "t", "add-s": "s", "add-d": "d", "add-seg": "seg", "add-m": "m", "add-n": "n", "add-geo": "geo", "add-imp": "imp", "add-act": "act", "add-orig": "orig", "add-src": "src", "add-u": "u" };
@@ -717,7 +680,6 @@ ${raw.slice(0, 8000)}`;
       if (cnt) cnt.textContent = filtered().length + " signal(s)";
       return;
     }
-    if (id === "tf-pays") { st.tf.pays = el.value; render(); }
   }
   document.addEventListener("input", onField);
   document.addEventListener("change", onField);
