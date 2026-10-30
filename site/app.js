@@ -42,10 +42,10 @@
 
   // ---------- État ----------
   let DATA = null, signals = [];
-  const TABS = [["etat", "État des lieux"], ["news", "Actualités"], ["carte", "Cartographie"], ["dep", "Dépendances"], ["risques", "Risques"], ["pays", "Pays"], ["leaders", "Leaders"]];
+  const TABS = [["radar", "Radar", "M12 12l6-6M12 3a9 9 0 1 0 9 9M12 7a5 5 0 1 0 5 5"], ["etat", "État des lieux", "M4 19V9m6 10V5m6 14v-7m4 7H3"], ["news", "Actualités", "M5 5h14v14H5zM8 9h8M8 13h8M8 17h5"], ["carte", "Cartographie", "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"], ["dep", "Dépendances", "M4 7h5c5 0 5 10 11 10M4 17h5c5 0 5-10 11-10"], ["risques", "Risques", "M12 4l9 16H3zM12 10v4M12 17v.5"], ["pays", "Pays", "M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"], ["leaders", "Leaders", "M12 4l2.5 5 5.5.8-4 3.9 1 5.5-5-2.6-5 2.6 1-5.5-4-3.9 5.5-.8z"]];
   const POS = { forte: ["Position française forte", "atout"], moyenne: ["Position française moyenne", "dependance"], faible: ["Position française faible", "manque"] };
   const st = {
-    tab: TABS.some(t => t[0] === ls.get("tab", "etat")) ? ls.get("tab", "etat") : "etat",
+    tab: TABS.some(t => t[0] === ls.get("tab", "radar")) ? ls.get("tab", "radar") : "radar",
     mode: "bilan",
     sel: null,
     f: { period: "90", seg: "", fam: "", geo: "", m: "", q: "" },
@@ -57,6 +57,8 @@
     ai: {},
     newsView: "analyse",
     etatSeg: "civil",
+    radarSel: null,
+    radarOff: [],
   };
   function emptyDraft() {
     return { raw: "", t: "", s: "", d: new Date().toISOString().slice(0, 10), seg: "civil", m: "sys", n: "besoin", geo: "FR", imp: "2", act: "", orig: "", src: "", u: "" };
@@ -116,18 +118,82 @@
   const geoPill = s => s.geo ? `<span class="pill geo">${GEO[s.geo] || s.geo}</span>` : "";
   const newPill = s => isNew(s) ? `<span class="newb">Nouveau</span>` : "";
 
-  // ---------- En-tête et onglets ----------
-  function renderTop() {
-    const n = signals.length, recent = signals.filter(isNew).length;
-    return `<header class="top">
-      <div class="brand">
-        <h1>Balise <span>ASD</span></h1>
-        <p>Market intelligence aéronautique et spatiale, civile et de défense : où la France et l'Europe sont fortes, fragiles ou attendues, mis à jour automatiquement.</p>
-      </div>
-      <div class="fresh"><span class="live"></span>Veille à jour du <b>${esc(fmtD(DATA.updated))}</b> · ${n} signaux dont ${recent} nouveaux (${NEW_DAYS} derniers jours) · ${(DATA.leaders || []).length} leaders suivis</div>
-    </header>`;
+  // ---------- Menu et compteurs
+  const inDays = (s, n) => s.k === "actu" && ageDays(s) <= n;
+  function renderSide() {
+    return `<aside class="side">
+      <div class="logo"><span class="logo-mark"></span>Balise ASD</div>
+      <nav class="tabs" role="tablist">${TABS.map(([k, l, ico]) => `<button role="tab" data-act="tab" data-v="${k}" aria-selected="${st.tab === k}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ico}"/></svg>${l}</button>`).join("")}</nav>
+      <div class="status"><span class="live"></span><span>Veille active<br><small>Données du ${esc(fmtD(DATA.updated))}</small></span></div>
+    </aside>`;
   }
-  const renderTabs = () => `<nav class="tabs" role="tablist">${TABS.map(([k, l]) => `<button role="tab" data-act="tab" data-v="${k}" aria-selected="${st.tab === k}">${l}</button>`).join("")}</nav>`;
+  function renderMetrics() {
+    const r30 = signals.filter(s => inDays(s, 30));
+    const frag = r30.filter(s => s.n === "manque" || s.n === "dependance").length;
+    const best = r30.filter(s => s.n === "besoin").length;
+    const force = r30.filter(s => s.n === "atout").length;
+    const ao = (DATA.tenders || []).filter(t => t.id.startsWith("ted-")).length;
+    const m = (cls, v, l, tab) => `<button class="metric ${cls}" data-act="tab" data-v="${tab}"><b>${v}</b><span>${l}</span></button>`;
+    return `<div class="metrics">
+      ${m("atout", force, "forces, 30 jours", "etat")}
+      ${m("manque", frag, "fragilités, 30 jours", "risques")}
+      ${m("besoin", best, "besoins, 30 jours", "pays")}
+      ${m("ao", ao, "appels d'offres ouverts", "pays")}
+    </div>`;
+  }
+
+  // ---------- Radar de tendances
+  const RING = [[30, "30 jours"], [90, "3 mois"], [365, "12 mois"]];
+  const NAT_ALL = ["atout", "manque", "dependance", "besoin"];
+  function radarData() {
+    const out = [];
+    const W = 360 / SEG.length;
+    SEG.forEach(([sk], si) => {
+      RING.forEach(([days], ri) => {
+        const min = ri ? RING[ri - 1][0] : -1;
+        const list = signals.filter(s => s.k === "actu" && s.seg === sk && !st.radarOff.includes(s.n) && ageDays(s) > min && ageDays(s) <= days).sort(byDate);
+        list.forEach((s, i) => {
+          const ang = si * W + 8 + (i + 1) / (list.length + 1) * (W - 16) - 90;
+          const band = [[34, 104], [122, 192], [210, 280]][ri];
+          const r = band[0] + (band[1] - band[0]) * [.25, .75, .5][i % 3];
+          const a = ang * Math.PI / 180;
+          out.push({ s, x: 320 + r * Math.cos(a), y: 320 + r * Math.sin(a) });
+        });
+      });
+    });
+    return out;
+  }
+  function renderRadar() {
+    const blips = radarData();
+    const W = 360 / SEG.length;
+    const sel = signals.find(s => s.id === st.radarSel) || (blips.slice().sort((a, b) => b.s.imp - a.s.imp || byDate(a.s, b.s))[0] || {}).s;
+    const rings = [104, 192, 280].map(r => `<circle cx="320" cy="320" r="${r}" class="r-ring"/>`).join("");
+    const spokes = SEG.map((_, i) => { const a = (i * W - 90) * Math.PI / 180; return `<line x1="320" y1="320" x2="${320 + 280 * Math.cos(a)}" y2="${320 + 280 * Math.sin(a)}" class="r-ring"/>`; }).join("");
+    const labels = SEG.map(([, l], i) => { const a = (i * W + W / 2 - 90) * Math.PI / 180; return `<text x="${320 + 302 * Math.cos(a)}" y="${320 + 302 * Math.sin(a)}" text-anchor="middle" dominant-baseline="middle" class="r-seg">${esc(l)}</text>`; }).join("");
+    const ringL = RING.map(([, l], i) => `<text x="324" y="${320 - [104, 192, 280][i] + 13}" class="r-lab">${l}</text>`).join("");
+    const dots = blips.map(({ s, x, y }) => `<g class="blip ${s.n}${sel && sel.id === s.id ? " sel" : ""}" data-act="radar-sel" data-id="${esc(s.id)}" tabindex="0"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${3 + s.imp * 2}"/><title>${esc(s.t)}</title></g>`).join("");
+    const r30 = signals.filter(s => inDays(s, 30)), prev = signals.filter(s => s.k === "actu" && ageDays(s) > 30 && ageDays(s) <= 90);
+    const trends = MAIL.map(([k, l]) => { const now = r30.filter(s => s.m === k).length, before = prev.filter(s => s.m === k).length / 2; return { k, l, now, d: now - before }; })
+      .filter(t => t.now).sort((a, b) => b.d - a.d || b.now - a.now).slice(0, 5);
+    const max = Math.max(1, ...trends.map(t => t.now));
+    return `<section class="intro"><div class="stack"><h2>Radar de tendances</h2><p>Chaque point est un fait récent : plus il est près du centre, plus il est frais, plus il est gros, plus il compte. <b>Cliquez un point</b> pour le lire.</p></div></section>
+      <div class="legend-chips">${NAT_ALL.map(n => `<button class="chip ${n}" data-act="radar-off" data-v="${n}" aria-pressed="${!st.radarOff.includes(n)}"><i></i>${NAT[n]}</button>`).join("")}</div>
+      <div class="radar-wrap">
+        <div class="radar-box"><svg class="radar" viewBox="0 0 640 640" role="img" aria-label="Radar des tendances">
+          <circle cx="320" cy="320" r="280" class="r-bg"/>
+          <g class="sweep"><path d="M320 320 L320 40 A280 280 0 0 1 518 122 Z"/></g>
+          ${rings}${spokes}${ringL}${labels}${dots}
+        </svg></div>
+        <div class="radar-side">
+          ${sel ? `<div class="detail ${sel.n}"><div class="sig-meta">${natPill(sel)}<span class="when-i">${esc(segName(sel.seg))} · ${esc(fmtD(sel.d))}</span></div>
+            <b>${esc(sum(sel))}</b>${whyBlock(sel)}${srcLine(sel)}
+            <button class="btn small" data-act="goto" data-seg="${esc(sel.seg)}" data-m="${esc(sel.m)}">Voir dans la cartographie →</button></div>` : `<p class="msg">Aucun point pour ce filtre.</p>`}
+          <div class="box trends"><h3>Sujets qui montent (30 jours)</h3>
+            ${trends.map(t => `<button class="trend" data-act="trend" data-v="${t.k}"><span class="t-l">${esc(t.l)}</span><span class="t-b"><i style="width:${(t.now / max * 100).toFixed(0)}%"></i></span><span class="t-n">${t.now}</span><span class="t-d ${t.d > 0 ? "up" : t.d < 0 ? "down" : ""}">${t.d > 0 ? "▲" : t.d < 0 ? "▼" : "="}</span></button>`).join("") || `<p class="note">Pas assez de données récentes.</p>`}
+          </div>
+        </div>
+      </div>`;
+  }
 
   // ---------- État des lieux ----------
   function sigLine(s, showSeg) {
@@ -153,7 +219,7 @@
         return `<div class="fam ${FAM[fk].col}"><h3>${FAM[fk].l}</h3><ul class="clist">${(o[key] || []).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>`;
       }).join("");
       return `<section class="segsec">
-        <div class="segsec-h"><h2>${esc(sl)}</h2><button class="link" data-act="seg-map" data-seg="${sk}">Voir sur la cartographie</button></div>
+        <div class="segsec-h"><h2>${esc(sl)}</h2><button class="btn small ghost" data-act="seg-map" data-seg="${sk}">Voir sur la cartographie →</button></div>
         <div class="pos">
           <div><div class="pos-h"><span class="eyebrow">Position de la France</span><span class="pill ${vf.cls}">${vf.l}</span></div><p>${esc(o.fr || "")}</p></div>
           <div><div class="pos-h"><span class="eyebrow">Position de l'Europe</span><span class="pill ${ve.cls}">${ve.l}</span></div><p>${esc(o.eu || "")}</p></div>
@@ -628,10 +694,10 @@ ${raw.slice(0, 8000)}`;
   function render() {
     const app = document.getElementById("app");
     if (!DATA) return;
-    const view = { etat: renderEtat, news: renderNews, carte: renderMap, leaders: renderLeaders, dep: renderDeps, risques: renderRisk, pays: renderCountries,  }[st.tab] || renderEtat;
+    const view = { radar: renderRadar, etat: renderEtat, news: renderNews, carte: renderMap, leaders: renderLeaders, dep: renderDeps, risques: renderRisk, pays: renderCountries,  }[st.tab] || renderEtat;
     const y = window.scrollY;
-    app.innerHTML = `<div class="wrap">${renderTop()}${renderTabs()}<main>${view()}</main>
-      <footer class="foot"><span>Balise ASD · veille du ${esc(fmtD(DATA.updated))}</span><span>Sources citées sur chaque signal. Lectures générées à vérifier.</span></footer></div>
+    app.innerHTML = `<div class="shell">${renderSide()}<div class="content">${renderMetrics()}<main>${view()}</main>
+      <footer class="foot"><span>Balise ASD · données du ${esc(fmtD(DATA.updated))}</span><span>Sources citées sur chaque fait. Estimations à vérifier avant décision.</span></footer></div></div>
       ${st.sel ? renderDrawer() : ""}`;
     window.scrollTo(0, y);
   }
@@ -641,6 +707,9 @@ ${raw.slice(0, 8000)}`;
     const b = e.target.closest("[data-act]"); if (!b) return;
     const a = b.dataset.act;
     if (a === "tab") { go(b.dataset.v); st.sel = null; st.flash = null; render(); window.scrollTo(0, 0); }
+    else if (a === "radar-sel") { st.radarSel = b.dataset.id; render(); }
+    else if (a === "radar-off") { const v = b.dataset.v; st.radarOff = st.radarOff.includes(v) ? st.radarOff.filter(x => x !== v) : [...st.radarOff, v]; render(); }
+    else if (a === "trend") { Object.assign(st.f, { period: "90", seg: "", fam: "", geo: "", m: b.dataset.v, q: "" }); st.newsView = "analyse"; go("news"); render(); window.scrollTo(0, 0); }
     else if (a === "etat-seg") { st.etatSeg = b.dataset.v; render(); }
     else if (a === "news-view") { st.newsView = b.dataset.v; render(); }
     else if (a === "flux-seg") { st.fluxSeg = b.dataset.v; render(); }
@@ -685,6 +754,8 @@ ${raw.slice(0, 8000)}`;
   document.addEventListener("change", onField);
   document.addEventListener("keydown", e => {
     if (e.key === "Escape" && st.sel) { st.sel = null; render(); }
+    const bl = e.target.closest && e.target.closest(".blip");
+    if (bl && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); st.radarSel = bl.dataset.id; render(); }
     const g = e.target.closest && e.target.closest(".rdot");
     if (g && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); st.riskSel = st.riskSel === g.dataset.id ? null : g.dataset.id; render(); }
   });
