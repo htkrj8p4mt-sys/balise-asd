@@ -808,3 +808,15 @@ main > .legend .supp .o-us { background: #27272a; border-color: #27272a; color: 
   .gb { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { main.enter, #pal { animation: none; } }
+
+.legend-light, main > .legend.legend-light { background: #fff; border-radius: 10px; padding: 10px 16px; color: var(--ink-2); }
+main > .legend.legend-light span { color: var(--ink-2); }
+.legend-light .tile-key { border: 0; }
+main > .legend-light .tile-key.l0 { background: #f4f4f5; box-shadow: inset 0 0 0 1px var(--line); }
+main > .legend-light .tile-key.l1 { background: #d4d4d8; }
+main > .legend-light .tile-key.l2 { background: #0a0a0b; }
+main > .legend-light .supp { margin-left: 12px; }
+main > .legend-light .supp .o-fr { background: #0a0a0b; border-color: #0a0a0b; color: #fff; }
+main > .legend-light .supp .o-eu { background: #fff; border-color: #d4d4d8; color: var(--ink-2); }
+main > .legend-light .supp .o-us { background: #f4f4f5; border-color: #f4f4f5; color: var(--ink-2); }
+.r-seg { font-size: 15px; }

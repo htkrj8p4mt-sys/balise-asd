@@ -227,7 +227,7 @@
     const sel = signals.find(s => s.id === st.radarSel) || (blips.slice().sort((a, b) => b.s.imp - a.s.imp || byDate(a.s, b.s))[0] || {}).s;
     const rings = [104, 192, 280].map(r => `<circle cx="320" cy="320" r="${r}" class="r-ring"/>`).join("");
     const spokes = SEG.map((_, i) => { const a = (i * W - 90) * Math.PI / 180; return `<line x1="320" y1="320" x2="${320 + 280 * Math.cos(a)}" y2="${320 + 280 * Math.sin(a)}" class="r-ring"/>`; }).join("");
-    const labels = SEG.map(([, l], i) => { const a = (i * W + W / 2 - 90) * Math.PI / 180; return `<text x="${320 + 302 * Math.cos(a)}" y="${320 + 302 * Math.sin(a)}" text-anchor="middle" dominant-baseline="middle" class="r-seg">${esc(l)}</text>`; }).join("");
+    const labels = [["c", "Civil"], ["s", "Spatial"], ["d", "Défense"]].map(([, l], i) => { const a = (i * W + W / 2 - 90) * Math.PI / 180; return `<text x="${320 + 304 * Math.cos(a)}" y="${320 + 304 * Math.sin(a)}" text-anchor="middle" dominant-baseline="middle" class="r-seg">${esc(l)}</text>`; }).join("");
     const ringL = RING.map(([, l], i) => `<text x="324" y="${320 - [104, 192, 280][i] + 13}" class="r-lab">${l}</text>`).join("");
     const dots = blips.map(({ s, x, y }) => `<g class="blip ${s.n}${sel && sel.id === s.id ? " sel" : ""}" data-act="radar-sel" data-id="${esc(s.id)}" tabindex="0"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${3 + s.imp * 2}"/><title>${esc(s.t)}</title></g>`).join("");
     const r30 = signals.filter(s => inDays(s, 30)), prev = signals.filter(s => s.k === "actu" && ageDays(s) > 30 && ageDays(s) <= 90);
@@ -739,7 +739,7 @@ ${raw.slice(0, 8000)}`;
     const top = counts.slice().sort((a, b) => b[1] - a[1])[0];
     return `<section class="intro"><div class="stack"><h2>Pays</h2>
       <p>Pour chaque marché : ce qu'il achète, qui le fournit, et la place de la France. Plus une case est foncée, plus le besoin est fort (estimation Balise).</p></div></section>
-      <div class="legend"><span class="tile-key l0"></span>Faible<span class="tile-key l1"></span>Moyen<span class="tile-key l2"></span>Fort
+      <div class="legend legend-light"><span class="tile-key l0"></span>Faible<span class="tile-key l1"></span>Moyen<span class="tile-key l2"></span>Fort
         <span class="supp"><span class="o-fr">France</span><span class="o-eu">Europe</span><span class="o-us">États-Unis</span></span></div>
       <div class="cgrid2">${(DATA.countries || []).map(p => countryCard(p, tenders)).join("")}</div>
       <div class="box"><h3>Ce que l'Europe achète en ce moment</h3>
