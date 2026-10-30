@@ -42,14 +42,7 @@
 
   // ---------- État ----------
   let DATA = null, signals = [];
-  const TABS = [["etat", "État des lieux"], ["flux", "Flux direct"], ["news", "Nouveautés"], ["alertes", "Mes alertes"], ["ent", "Mon entreprise"], ["carte", "Cartographie"], ["pays", "Pays"], ["marches", "Marchés & appels d'offres"], ["leaders", "Leaders européens"], ["dep", "Carte des dépendances"], ["risques", "Matrice des risques"], ["methode", "Méthode"]];
-  const MATS = [
-    ["titane", "Titane", ["titane"]], ["alu", "Aluminium et alliages", ["alumin", "alliage"]], ["carbone", "Composites, fibre de carbone", ["carbone", "composite"]],
-    ["terres", "Terres rares, aimants", ["terres rares", "aimant"]], ["elec", "Électronique, semi-conducteurs", ["électroni", "composant", "puce", "semi-conducteur"]],
-    ["forge", "Pièces forgées, fonderie", ["forg", "fonderie"]], ["energie", "Énergie, carburants", ["carburant", "saf", "énergie", "électricité"]],
-    ["propergol", "Propergols, pyrotechnie", ["propergol", "pyrotechn", "poudre", "missile"]]
-  ];
-  const SIZES = ["TPE (moins de 10 salariés)", "PME (10 à 249)", "ETI (250 à 4 999)", "Grand groupe"];
+  const TABS = [["etat", "État des lieux"], ["news", "Actualités"], ["carte", "Cartographie"], ["dep", "Dépendances"], ["risques", "Risques"], ["pays", "Pays"], ["marches", "Appels d'offres"], ["leaders", "Leaders"]];
   const TSTAT = { ouvert: ["Ouvert", "besoin"], attribution: ["En cours d'attribution", "dependance"], programme: ["Programme de dépenses", "tag"], attribue: ["Attribué", "atout"] };
   const POS = { forte: ["Position française forte", "atout"], moyenne: ["Position française moyenne", "dependance"], faible: ["Position française faible", "manque"] };
   const st = {
@@ -63,12 +56,9 @@
     riskSel: null,
     editor: false, adding: false, draft: emptyDraft(), analysing: false, saving: false, flash: null, confirmDel: null,
     ai: {},
-    company: Object.assign({ name: "", size: "PME (10 à 249)", segs: ["civil"], mails: ["struct"], clients: [], mats: [], pays: [], kw: "", desc: "" }, ls.get("company2", {})),
-    seen: ls.get("seen", []),
     tf: { statut: "", pays: "" },
     cSel: null,
-    coRun: true, coAi: { text: "", busy: false, err: "" },
-    scope: null
+    newsView: "analyse",
   };
   function emptyDraft() {
     return { raw: "", t: "", s: "", d: new Date().toISOString().slice(0, 10), seg: "civil", m: "sys", n: "besoin", geo: "FR", imp: "2", act: "", orig: "", src: "", u: "" };
@@ -139,7 +129,7 @@
       <div class="fresh"><span class="live"></span>Veille à jour du <b>${esc(fmtD(DATA.updated))}</b> · ${n} signaux dont ${recent} nouveaux (${NEW_DAYS} derniers jours) · ${(DATA.leaders || []).length} leaders suivis</div>
     </header>`;
   }
-  const renderTabs = () => { const n = unseenCount(); return `<nav class="tabs" role="tablist">${TABS.map(([k, l]) => `<button role="tab" data-act="tab" data-v="${k}" aria-selected="${st.tab === k}">${l}${k === "alertes" && n ? ` <span class="badge">${n}</span>` : ""}</button>`).join("")}</nav>`; };
+  const renderTabs = () => `<nav class="tabs" role="tablist">${TABS.map(([k, l]) => `<button role="tab" data-act="tab" data-v="${k}" aria-selected="${st.tab === k}">${l}</button>`).join("")}</nav>`;
 
   // ---------- État des lieux ----------
   function sigLine(s, showSeg) {
@@ -187,7 +177,7 @@
         <p>La synthèse s'appuie sur les faits de fond toujours valables et sur les actualités des derniers mois. Chaque secteur sépare les forces, les fragilités et les besoins du marché.</p></div></section>
       <div class="brief">
         <div class="box"><h3>En bref</h3><ul class="bullets">${(ov.bref || []).map(b => `<li>${esc(b)}</li>`).join("")}</ul></div>
-        <div class="box"><h3>Dernières nouveautés</h3>${latest.map(s => sigLine(s, true)).join("")}<button class="link" data-act="tab" data-v="news">Toutes les nouveautés</button></div>
+        <div class="box"><h3>Dernières nouveautés</h3>${latest.map(s => sigLine(s, true)).join("")}<button class="link" data-act="tab" data-v="news">Toutes les actualités</button></div>
       </div>
       <div class="kpis">${kpis}</div>
       ${segSections}
@@ -196,14 +186,14 @@
 
   // ---------- Cartographie ----------
   function renderMap() {
-    const scopeNote = st.scope ? `<span class="pill tag">Mon périmètre : ${esc(st.scope.segs.map(segName).join(", "))} · ${esc([].concat(st.scope.m).map(mailName).join(", "))} <button class="link" data-act="scope-clear">retirer</button></span>` : "";
+    
     let grid = `<div></div>` + SEG.map(([, l]) => `<div class="colh">${esc(l)}</div>`).join("");
     MAIL.forEach(([mk, ml]) => {
       grid += `<div class="rowh">${esc(ml)}</div>`;
       SEG.forEach(([sk]) => {
         const list = signals.filter(s => s.seg === sk && s.m === mk);
         const x = stats(list);
-        const dim = st.scope && !(st.scope.segs.includes(sk) && [].concat(st.scope.m).includes(mk)) ? " dim" : "";
+        const dim = "";
         if (!x.total) { grid += `<div class="cell empty${dim}"><span class="state">Aucun signal</span></div>`; return; }
         const sel = st.sel && st.sel.seg === sk && st.sel.m === mk ? " sel" : "";
         const hasNew = list.some(isNew);
@@ -227,7 +217,7 @@
           ${[["bilan", "Bilan"], ["force", "Forces"], ["fragilite", "Fragilités"], ["besoin", "Besoins"]].map(([k, l]) => `<button data-act="mode" data-v="${k}" aria-pressed="${st.mode === k}">${l}</button>`).join("")}
         </div>
       </section>
-      <div class="legend">${scale}${scopeNote}</div>
+      <div class="legend">${scale}</div>
       <div class="map-scroll"><div class="map">${grid}</div></div>`;
   }
 
@@ -338,10 +328,14 @@ ${list.map(s => `- [${FAM[famOf(s.n)].l} / ${NAT[s.n]}, ${GEO[s.geo] || ""}, imp
     const list = filtered();
     return list.length ? list.map(feedItem).join("") : `<p class="msg">Aucun signal ne correspond à ces filtres. Élargissez la période.</p>`;
   }
+  function newsSwitch() {
+    return `<div class="seg-ctl" role="group" aria-label="Type d'actualités">${[["analyse", "Analysées"], ["flux", "Flux direct"]].map(([k, l]) => `<button data-act="news-view" data-v="${k}" aria-pressed="${st.newsView === k}">${l}</button>`).join("")}</div>`;
+  }
   function renderNews() {
+    if (st.newsView === "flux") return renderFlux();
     const periods = [["30", "30 jours"], ["90", "3 mois"], ["365", "12 mois"], ["all", "Tout"]];
     return `<section class="intro">
-        <div class="stack"><h2>Nouveautés</h2><p>Le fil de veille, du plus récent au plus ancien. Chaque signal est classé comme force, fragilité ou besoin du marché, pour la France ou l'Europe.</p></div>
+        <div class="stack"><h2>Actualités</h2><p>Les faits résumés et expliqués, du plus récent au plus ancien, classés comme force, fragilité ou besoin du marché.</p></div>${newsSwitch()}
         ${st.editor && !st.adding ? `<button class="btn accent" data-act="add-open">Ajouter un signal</button>` : ""}
       </section>
       ${st.flash ? `<p class="msg${st.flash.err ? " err" : ""}">${esc(st.flash.text)}</p>` : ""}
@@ -585,191 +579,23 @@ ${raw.slice(0, 8000)}`;
       <div class="box"><h3>Classement des risques</h3><div class="rlist">${list}</div></div>`;
   }
 
-  // ---------- Moteur de pertinence (profil entreprise) ----------
-  const EXTRA_CLIENTS = [["dga", "DGA, ministère des Armées", ["DGA", "Ministère des Armées"]], ["esa", "ESA, CNES", ["ESA", "CNES"]], ["ce", "Commission européenne", ["Commission européenne"]]];
-  const clientList = () => [...(DATA.leaders || []).map(l => [l.id, l.name, l.keys || [l.name]]), ...EXTRA_CLIENTS];
   const countryName = id => id === "FR" ? "France" : id === "EU" ? "Union européenne" : ((DATA.countries || []).find(c => c.id === id) || { name: id }).name;
-  const hasProfile = () => { const c = st.company; return c.segs.length > 0 && (c.mails.length || c.clients.length || c.mats.length || c.pays.length || c.kw.trim()); };
   const textOf = s => [s.t, s.r, s.why, s.s, (s.act || []).join(" "), s.orig].join(" ").toLowerCase();
-  function relevance(s) {
-    const c = st.company, why = []; let sc = 0;
-    const tx = textOf(s), inSeg = c.segs.includes(s.seg);
-    if (inSeg) sc += 1;
-    if (inSeg && c.mails.includes(s.m)) { sc += 1; why.push("votre maillon"); }
-    const cl = clientList().filter(([id]) => c.clients.includes(id)).filter(([, , keys]) => (s.act || []).some(a => keys.some(k => a.toLowerCase().includes(k.toLowerCase()))));
-    if (cl.length) { sc += 2; why.push("client : " + cl.map(x => x[1]).join(", ")); }
-    const mt = MATS.filter(([k]) => c.mats.includes(k)).filter(([, , kws]) => kws.some(w => tx.includes(w)));
-    if (mt.length) { sc += 2; why.push("matière : " + mt.map(x => x[1].toLowerCase()).join(", ")); }
-    const ps = (DATA.countries || []).filter(p => c.pays.includes(p.id) && p.keys.some(k => tx.includes(k.toLowerCase())));
-    if (ps.length) { sc += 1; why.push("marché : " + ps.map(p => p.name).join(", ")); }
-    const kws = c.kw.split(",").map(x => x.trim().toLowerCase()).filter(x => x.length > 2 && tx.includes(x));
-    if (kws.length) { sc += 1; why.push("mot-clé : " + kws.join(", ")); }
-    if (!why.length && inSeg) why.push("votre secteur");
-    return { level: Math.min(sc, 3), why };
-  }
-  function tenderRel(t) {
-    const c = st.company; let sc = 0; const why = [];
-    if (c.segs.includes(t.seg)) sc++;
-    if (c.mails.includes(t.m)) { sc++; why.push("votre maillon"); }
-    if (c.pays.includes(t.pays) || t.pays === "FR" || t.pays === "EU") { sc++; why.push(t.pays === "FR" ? "marché français" : t.pays === "EU" ? "marché européen" : "votre marché : " + countryName(t.pays)); }
-    return { level: Math.min(sc, 3), why };
-  }
-  const relChips = r => r.why.map(w => `<span class="rchip">${esc(w)}</span>`).join("");
-  const LVL = { 3: ["Vous concerne directement", "lv3"], 2: ["Vous concerne indirectement", "lv2"], 1: ["Contexte de votre secteur", "lv1"] };
-  function indices() {
-    let risk = 0, opp = 0;
-    signals.forEach(s => {
-      const r = relevance(s); if (r.level < 2) return;
-      const w = r.level * (Number(s.imp) || 1);
-      if (s.n === "manque" || s.n === "dependance") risk += w * (critOf(s).p / 2);
-      else if (s.n === "besoin") opp += w;
-    });
-    (DATA.tenders || []).forEach(t => { const r = tenderRel(t); if (r.level >= 2 && t.statut !== "attribue") opp += r.level * 2; });
-    return { risk: Math.min(100, Math.round(risk / 40 * 100)), opp: Math.min(100, Math.round(opp / 40 * 100)) };
-  }
-  const idxWord = v => v >= 60 ? "forte" : v >= 30 ? "modérée" : "faible";
-  const alertList = () => hasProfile() ? signals.map(s => ({ s, r: relevance(s) })).filter(x => x.r.level >= 2).sort((a, b) => byDate(a.s, b.s)) : [];
-  const unseenCount = () => alertList().filter(x => !st.seen.includes(x.s.id)).length;
-
-  // ---------- Mon entreprise ----------
-  const checks = (group, items, cur) => `<div class="checks">${items.map(([k, l]) => `<label><input type="checkbox" id="co-${group}-${k}" data-group="${group}" data-v="${esc(k)}"${cur.includes(k) ? " checked" : ""}> ${esc(l)}</label>`).join("")}</div>`;
-  function renderCompany() {
-    const c = st.company;
-    const form = `<div class="panel">
-      <h3 class="panel-h">Profil de l'entreprise</h3>
-      <div class="field"><label for="co-name">Nom (facultatif)</label><input id="co-name" value="${esc(c.name)}" placeholder="Ex. : Mécanique de précision du Sud-Ouest"></div>
-      <div class="field"><label for="co-size">Taille</label><select id="co-size">${SIZES.map(x => opt(x, x, c.size)).join("")}</select></div>
-      <div class="field"><label>Secteurs servis</label>${checks("segs", SEG, c.segs)}</div>
-      <div class="field"><label>Maillons d'activité</label>${checks("mails", MAIL, c.mails)}</div>
-      <div class="field"><label>Principaux clients</label>${checks("clients", clientList().map(([k, l]) => [k, l]), c.clients)}</div>
-      <div class="field"><label>Matières et composants utilisés</label>${checks("mats", MATS.map(([k, l]) => [k, l]), c.mats)}</div>
-      <div class="field"><label>Marchés visés à l'export</label>${checks("pays", (DATA.countries || []).map(p => [p.id, p.name]), c.pays)}</div>
-      <div class="field"><label for="co-kw">Mots-clés à surveiller (séparés par des virgules)</label><input id="co-kw" value="${esc(c.kw)}" placeholder="Ex. : train d'atterrissage, usinage, radar"></div>
-      <div class="field"><label for="co-desc">Activité et produits</label><textarea id="co-desc" placeholder="Ex. : usinage de pièces en titane pour trains d'atterrissage, 80 salariés…">${esc(c.desc)}</textarea></div>
-      <div class="actions"><button class="btn accent" data-act="co-run">Mettre à jour mon analyse</button></div>
-      <p class="note">Le profil reste dans votre navigateur. Il sert aussi à vos alertes.</p>
-    </div>`;
-    let res = `<div class="msg">Renseignez au moins un secteur et un élément (maillon, client, matière, marché ou mot-clé), puis cliquez sur « Mettre à jour mon analyse ».</div>`;
-    if (st.coRun && hasProfile()) {
-      const idx = indices();
-      const rel = signals.map(s => ({ s, r: relevance(s) }));
-      const direct = rel.filter(x => x.r.level === 3).sort((a, b) => byDate(a.s, b.s));
-      const pick = f => rel.filter(x => x.r.level >= 2 && f(x.s));
-      const risks = pick(s => s.n === "manque" || s.n === "dependance").sort((a, b) => (b.r.level - a.r.level) || (riskScore(b.s) - riskScore(a.s))).slice(0, 6);
-      const needs = pick(s => s.n === "besoin").sort((a, b) => (b.r.level - a.r.level) || byWeight(a.s, b.s)).slice(0, 6);
-      const assets = pick(s => s.n === "atout").sort((a, b) => (b.r.level - a.r.level) || byDate(a.s, b.s)).slice(0, 5);
-      const tenders = (DATA.tenders || []).map(t => ({ t, r: tenderRel(t) })).filter(x => x.r.level >= 2).sort((a, b) => b.r.level - a.r.level);
-      const myCountries = (DATA.countries || []).filter(p => c.pays.includes(p.id));
-      const row = x => `<div class="mini ${x.s.n}"><small>${natPill(x.s)} ${relChips(x.r)} ${newPill(x.s)}</small><b>${esc(sum(x.s))}</b>${whyBlock(x.s)}${srcLine(x.s)}</div>`;
-      const box = (cls, title, hint, arr) => `<div class="box fam-b ${cls}"><h3><span class="dot ${cls}"></span>${title} <span class="count">${arr.length}</span></h3><p class="note">${hint}</p>${arr.map(row).join("") || `<p class="note">Rien de significatif pour votre profil.</p>`}</div>`;
-      const gauge = (label, v, cls, hint) => `<div class="gauge2 ${cls}"><span class="eyebrow">${label}</span><span class="g-v mono">${v}<small>/100</small></span><span class="g-bar"><i style="width:${v}%"></i></span><span class="note">${hint.replace("%w", idxWord(v))}</span></div>`;
-      const ai = sample ? `<div class="ai">
-          <h4>Analyse personnalisée</h4>
-          ${st.coAi.text ? `<div class="out" id="co-out">${esc(st.coAi.text)}</div>` : `<p class="note" id="co-out">${st.coAi.busy ? "Analyse en cours… (15 à 60 secondes)" : "Claude croise votre profil, la veille, les pays et les marchés pour proposer un plan d'action."}</p>`}
-          ${st.coAi.err ? `<p class="msg err">${esc(st.coAi.err)}</p>` : ""}
-          <div class="actions"><button class="btn accent small" data-act="co-ai"${st.coAi.busy ? " disabled" : ""}>${st.coAi.text ? "Relancer l'analyse" : "Lancer l'analyse"}</button></div>
-        </div>` : "";
-      res = `<div class="gauges2">
-          ${gauge("Exposition aux risques", idx.risk, "manque", "Exposition %w : manques et dépendances qui touchent vos maillons, clients, matières ou marchés.")}
-          ${gauge("Potentiel d'opportunités", idx.opp, "besoin", "Potentiel %w : besoins du marché et appels d'offres qui correspondent à votre profil.")}
-        </div>
-        <div class="box"><h3>Ce qui vous concerne directement <span class="count">${direct.length}</span></h3>
-          <p class="note">Signaux qui touchent à la fois votre secteur et vos maillons, vos clients ou vos matières.</p>
-          ${direct.slice(0, 6).map(row).join("") || `<p class="note">Aucun signal direct pour l'instant. Précisez vos clients et vos matières.</p>`}
-        </div>
-        <div class="cols">
-          ${box("manque", "Risques à surveiller", "Classés par proximité avec votre activité, puis par gravité.", risks)}
-          ${box("besoin", "Besoins à saisir", "Demandes du marché qui correspondent à votre offre.", needs)}
-        </div>
-        ${box("atout", "Points d'appui", "Clients et programmes porteurs sur lesquels vous appuyer.", assets)}
-        <div class="box"><h3>Marchés et appels d'offres à regarder <span class="count">${tenders.length}</span></h3>
-          ${tenders.map(x => tenderCard(x.t, x.r)).join("") || `<p class="note">Aucun marché correspondant pour l'instant.</p>`}
-        </div>
-        ${myCountries.length ? `<div class="box"><h3>Vos marchés à l'export</h3><div class="cgrid">${myCountries.map(p => countryMini(p)).join("")}</div></div>` : ""}
-        ${ai}
-        <div class="actions"><button class="btn ghost small" data-act="co-scope">Afficher mon périmètre sur la cartographie</button><button class="btn ghost small" data-act="tab" data-v="alertes">Voir mes alertes</button></div>`;
-    }
-    return `<section class="intro"><div class="stack"><h2>Mon entreprise</h2>
-      <p>Décrivez votre entreprise : la plateforme calcule votre exposition aux risques et votre potentiel d'opportunités, et explique pour chaque signal pourquoi il vous concerne.</p></div></section>
-      <div class="company">${form}<div class="results">${res}</div></div>`;
-  }
-  let coCtl = null;
-  async function companyAi() {
-    const c = st.company;
-    const rel = signals.map(s => ({ s, r: relevance(s) })).filter(x => x.r.level >= 2).sort((a, b) => b.r.level - a.r.level || byDate(a.s, b.s)).slice(0, 25);
-    const tenders = (DATA.tenders || []).filter(t => tenderRel(t).level >= 2);
-    const countries = (DATA.countries || []).filter(p => c.pays.includes(p.id));
-    coCtl && coCtl.abort(); coCtl = new AbortController();
-    st.coAi = { text: "", busy: true, err: "" }; render();
-    const prompt = `Tu es consultant en market intelligence pour la filière aéronautique et spatiale, civile et de défense en France. Nous sommes le ${fmtD(DATA.updated)}.
-Entreprise : ${c.name || "non nommée"} (${c.size})
-Secteurs : ${c.segs.map(segName).join(", ")}
-Maillons : ${c.mails.map(mailName).join(", ") || "non précisés"}
-Clients : ${clientList().filter(([k]) => c.clients.includes(k)).map(x => x[1]).join(", ") || "non précisés"}
-Matières : ${MATS.filter(([k]) => c.mats.includes(k)).map(x => x[1]).join(", ") || "non précisées"}
-Marchés export visés : ${c.pays.map(countryName).join(", ") || "aucun"}
-Activité : ${c.desc || "non précisée"}
-
-Signaux de veille qui la concernent (niveau 3 = direct, 2 = indirect) :
-${rel.map(x => `- [niveau ${x.r.level} ; ${x.r.why.join(" ; ")}] [${NAT[x.s.n]}, ${fmtD(x.s.d)}] ${sum(x.s)} Pourquoi : ${x.s.why || ""}`).join("\n")}
-
-Marchés et appels d'offres pertinents :
-${tenders.map(t => `- ${countryName(t.pays)} · ${t.acheteur} · ${TSTAT[t.statut][0]} · ${t.objet} (${t.montant}). Comment se positionner : ${t.acces}`).join("\n") || "aucun"}
-
-Pays visés :
-${countries.map(p => `- ${p.name} (${POS[p.pos][0]}) : besoins ${p.besoins.join(" ; ")}. Vigilance : ${p.vigilance.join(" ; ")}.`).join("\n") || "aucun"}
-
-Rédige en français simple une analyse de market intelligence, en texte brut sans Markdown, avec ces titres en majuscules :
-POSITION ACTUELLE (2 à 3 phrases)
-BESOINS DU MARCHÉ À SAISIR (3 puces commençant par « – », avec clients, programmes ou pays visés)
-RISQUES ET POINTS DE VIGILANCE (3 puces, du plus urgent au moins urgent)
-PAYS ET MARCHÉS PRIORITAIRES (2 à 3 puces)
-PLAN D'ACTION À 6 MOIS (4 actions concrètes)
-Reste prudent et signale ce qu'il faudrait vérifier.`;
-    try {
-      const out = await sample(prompt, { signal: coCtl.signal, onText: ({ text }) => { st.coAi.text = text; const el = document.getElementById("co-out"); if (el) { el.className = "out"; el.textContent = text; } } });
-      st.coAi = { text: out.text, busy: false, err: out.truncated ? "Réponse tronquée." : "" };
-    } catch (e) { st.coAi = { text: (e && e.text) || "", busy: false, err: sampleErr(e) }; }
-    render();
-  }
 
   // ---------- Flux direct ----------
   let FLUX = null;
   function renderFlux() {
-    if (!FLUX) return `<p class="msg">Chargement du flux…</p>`;
+    if (!FLUX) return `${newsSwitch()}<p class="msg">Chargement du flux…</p>`;
     const list = FLUX.items.filter(i => !st.fluxSeg || i.seg === st.fluxSeg);
-    return `<section class="intro"><div class="stack"><h2>Flux direct</h2>
-      <p>Les derniers articles repérés automatiquement toutes les heures, avec leur source. Ils ne sont pas encore analysés : le secteur est déduit de mots-clés et peut se tromper.</p></div></section>
+    return `<section class="intro"><div class="stack"><h2>Actualités</h2>
+      <p>Les derniers articles repérés toutes les heures, pas encore analysés. Le secteur est déduit de mots-clés et peut se tromper.</p></div>${newsSwitch()}</section>
       <div class="seg-ctl" role="group" aria-label="Secteur">${[["", "Tous"], ...SEG].map(([k, l]) => `<button data-act="flux-seg" data-v="${k}" aria-pressed="${(st.fluxSeg || "") === k}">${l}</button>`).join("")}</div>
       <p class="count">${list.length} article(s)${FLUX.updated ? " · dernier ajout le " + esc(fmtD(FLUX.updated)) : ""}</p>
       <div class="feed">${list.map(i => `<article class="tcard flux"><div class="sig-meta"><span class="when-i">${esc(fmtD(i.d))}</span><span class="pill tag">${esc(segName(i.seg))}</span></div><b>${link(i.u, i.t)}</b><span class="src">Source : ${esc(i.src)}</span></article>`).join("") || `<p class="msg">Aucun article pour l'instant : le flux se remplit au prochain passage.</p>`}</div>`;
   }
 
-  // ---------- Mes alertes ----------
-  function renderAlerts() {
-    if (!hasProfile()) return `<section class="intro"><div class="stack"><h2>Mes alertes</h2><p>Les alertes ne montrent que ce qui concerne votre entreprise : vos maillons, vos clients, vos matières, vos marchés et vos mots-clés.</p></div></section>
-      <div class="msg">Commencez par remplir votre profil dans « Mon entreprise ».</div><div><button class="btn accent" data-act="tab" data-v="ent">Remplir mon profil</button></div>`;
-    const list = alertList(), unseen = list.filter(x => !st.seen.includes(x.s.id));
-    const deadlines = (DATA.watch || []).filter(w => st.company.segs.includes(w.seg)).sort((a, b) => dateKey(a.d).localeCompare(dateKey(b.d)));
-    const item = x => `<div class="alert${st.seen.includes(x.s.id) ? "" : " unread"}">
-        <div class="sig-meta">${st.seen.includes(x.s.id) ? "" : `<span class="newb">Nouveau pour vous</span>`}<span class="pill ${LVL[x.r.level][1]}">${LVL[x.r.level][0]}</span>${relChips(x.r)}</div>
-        ${feedItem(x.s)}
-      </div>`;
-    return `<section class="intro"><div class="stack"><h2>Mes alertes</h2>
-        <p>Les signaux qui concernent votre entreprise, du plus récent au plus ancien. La veille automatique en ajoute chaque matin : le nombre de nouveautés s'affiche sur l'onglet.</p></div>
-        ${unseen.length ? `<button class="btn ghost" data-act="seen-all">Tout marquer comme lu (${unseen.length})</button>` : ""}
-      </section>
-      <p class="count">${unseen.length} nouvelle(s) alerte(s) · ${list.length} signal(s) pertinent(s) au total</p>
-      ${deadlines.length ? `<div class="box"><h3>Échéances qui vous concernent</h3><ol class="watch">${deadlines.map(w => `<li><span class="mono w-d">${esc(fmtD(w.d))}</span><div><b>${esc(w.t)}</b><p class="note">${esc(w.why)}</p></div></li>`).join("")}</ol></div>` : ""}
-      <div class="feed">${list.map(item).join("") || `<p class="msg">Aucun signal pertinent pour l'instant. Élargissez votre profil (clients, matières, mots-clés).</p>`}</div>`;
-  }
-
   // ---------- Pays ----------
   const countrySignals = p => signals.filter(s => p.keys.some(k => textOf(s).includes(k.toLowerCase()))).sort(byDate);
-  function countryMini(p) {
-    return `<div class="cmini"><div class="lcard-h"><b>${esc(p.name)}</b><span class="pill ${POS[p.pos][1]}">${POS[p.pos][0]}</span></div>
-      <p class="note">${esc(p.opportunites[0] || "")}</p><button class="link" data-act="c-sel" data-v="${esc(p.id)}">Voir le profil pays</button></div>`;
-  }
   function renderCountries() {
     const C = DATA.countries || [];
     const rows = C.map(p => `<tr${st.cSel === p.id ? ' class="on"' : ""}>
@@ -805,10 +631,10 @@ Reste prudent et signale ce qu'il faudrait vérifier.`;
   }
 
   // ---------- Marchés & appels d'offres ----------
-  function tenderCard(t, r) {
+  function tenderCard(t) {
     const [sl, sc] = TSTAT[t.statut] || [t.statut, "tag"];
     return `<article class="tcard">
-      <div class="sig-meta"><span class="pill ${sc}">${sl}</span><span class="pill tag">${esc(countryName(t.pays))}</span><span class="pill tag">${esc(segName(t.seg))}</span><span class="when-i">${esc(fmtD(t.date))}${t.echeance ? " · échéance " + esc(fmtD(t.echeance)) : ""}</span>${r && r.level >= 2 ? `<span class="pill ${LVL[r.level][1]}">Correspond à votre profil</span>` : ""}</div>
+      <div class="sig-meta"><span class="pill ${sc}">${sl}</span><span class="pill tag">${esc(countryName(t.pays))}</span><span class="pill tag">${esc(segName(t.seg))}</span><span class="when-i">${esc(fmtD(t.date))}${t.echeance ? " · échéance " + esc(fmtD(t.echeance)) : ""}</span></div>
       <b>${esc(t.objet)}</b>
       <p class="note">${esc(t.acheteur)} · <span class="mono">${esc(t.montant)}</span></p>
       <p class="why besoin"><b>Pourquoi c'est une opportunité :</b> ${esc(t.why)}</p>
@@ -827,34 +653,14 @@ Reste prudent et signale ce qu'il faudrait vérifier.`;
         <div class="field"><label for="tf-pays">Pays</label><select id="tf-pays">${opt("", "Tous", st.tf.pays)}${paysOpts.map(p => opt(p, countryName(p), st.tf.pays)).join("")}</select></div>
       </div>
       <p class="note">Les appels d'offres publics français se consultent sur marches-publics.gouv.fr et BOAMP ; les européens sur TED (ted.europa.eu). La veille quotidienne ajoute les nouveaux marchés repérés.</p>
-      <div class="feed">${T.map(t => tenderCard(t, hasProfile() ? tenderRel(t) : null)).join("") || `<p class="msg">Aucun marché pour ce filtre.</p>`}</div>`;
-  }
-
-  // ---------- Méthode ----------
-  function renderMethod() {
-    return `<section class="intro"><div class="stack"><h2>Méthode</h2><p>Comment la veille devient un outil de market intelligence.</p></div></section>
-      <div class="results"><div class="cols">
-        <div class="box"><h3>1 · Collecter</h3><p>Toutes les heures, une veille automatique recherche l'actualité du secteur (résultats, contrats, programmes, réglementation, pénuries), les appels d'offres et les décisions des pays européens, et ajoute les faits marquants, datés et sourcés.</p></div>
-        <div class="box"><h3>2 · Classer</h3><p>Chaque signal est rattaché à un secteur, à un maillon de la chaîne de valeur, à une portée (France ou Europe) et à une lecture : force, fragilité ou besoin du marché, avec un impact de 1 à 3.</p></div>
-        <div class="box"><h3>3 · Agréger</h3><p>La cartographie mesure séparément les trois lectures dans chaque case. Le bilan oppose les fragilités aux forces pour donner l'état, de « point fort » à « fragile ».</p></div>
-        <div class="box"><h3>4 · Décider</h3><p>L'état des lieux, les pays, les marchés, les leaders et les échéances donnent la vue d'ensemble. « Mon entreprise » croise tout cela avec votre profil pour calculer votre exposition et vos opportunités, et « Mes alertes » vous signale ce qui vous concerne.</p></div>
-        <div class="box"><h3>Comment un signal vous concerne</h3><p><b>Directement</b> : il touche votre secteur et, en plus, vos maillons, vos clients ou vos matières. <b>Indirectement</b> : il touche votre secteur et un élément de votre profil, ou un client ou une matière dans un autre secteur. <b>Contexte</b> : il concerne seulement votre secteur.</p></div>
-        <div class="box"><h3>Comment un risque est noté</h3><p>Quatre critères de 1 à 3 : concentration des fournisseurs, exposition hors UE, délai de remplacement, probabilité d'aggravation à 12 mois. Le niveau (faible, moyen, élevé) combine ces critères avec l'impact.</p></div>
-      </div>
-      <div class="box"><h3>Les trois lectures</h3>
-        <p><span class="pill fam atout">Forces</span> ${esc(NAT_HELP.atout)}</p>
-        <p><span class="pill fam manque">Fragilités</span> Deux natures : <b>manque</b> (${esc(NAT_HELP.manque.toLowerCase())}) et <b>dépendance</b> (${esc(NAT_HELP.dependance.toLowerCase())})</p>
-        <p><span class="pill fam besoin">Besoins du marché</span> ${esc(NAT_HELP.besoin)}</p>
-      </div>
-      <div class="box"><h3>Fond et actualité</h3><p>Les signaux « de fond » (2023-2025) décrivent des réalités toujours valables et servent de socle à l'état des lieux. Les signaux d'actualité sont marqués <span class="newb">Nouveau</span> pendant ${NEW_DAYS} jours. Les lectures générées par Claude sont des aides à la réflexion, à vérifier avant toute décision.</p></div>
-      </div>`;
+      <div class="feed">${T.map(t => tenderCard(t)).join("") || `<p class="msg">Aucun marché pour ce filtre.</p>`}</div>`;
   }
 
   // ---------- Rendu global ----------
   function render() {
     const app = document.getElementById("app");
     if (!DATA) return;
-    const view = { etat: renderEtat, news: renderNews, flux: renderFlux, carte: renderMap, leaders: renderLeaders, dep: renderDeps, risques: renderRisk, ent: renderCompany, alertes: renderAlerts, pays: renderCountries, marches: renderTenders, methode: renderMethod }[st.tab] || renderEtat;
+    const view = { etat: renderEtat, news: renderNews, carte: renderMap, leaders: renderLeaders, dep: renderDeps, risques: renderRisk, pays: renderCountries, marches: renderTenders,  }[st.tab] || renderEtat;
     const y = window.scrollY;
     app.innerHTML = `<div class="wrap">${renderTop()}${renderTabs()}<main>${view()}</main>
       <footer class="foot"><span>Balise ASD · veille du ${esc(fmtD(DATA.updated))}</span><span>Sources citées sur chaque signal. Lectures générées à vérifier.</span></footer></div>
@@ -867,6 +673,7 @@ Reste prudent et signale ce qu'il faudrait vérifier.`;
     const b = e.target.closest("[data-act]"); if (!b) return;
     const a = b.dataset.act;
     if (a === "tab") { go(b.dataset.v); st.sel = null; st.flash = null; render(); window.scrollTo(0, 0); }
+    else if (a === "news-view") { st.newsView = b.dataset.v; render(); }
     else if (a === "flux-seg") { st.fluxSeg = b.dataset.v; render(); }
     else if (a === "mode") { st.mode = b.dataset.v; render(); }
     else if (a === "cell" || a === "open-sig") { st.sel = { seg: b.dataset.seg, m: b.dataset.m }; render(); }
@@ -874,7 +681,7 @@ Reste prudent et signale ce qu'il faudrait vérifier.`;
     else if (a === "ai-cell") aiCell();
     else if (a === "goto") { go("carte"); st.sel = { seg: b.dataset.seg, m: b.dataset.m }; render(); }
     else if (a === "see") { Object.assign(st.f, { period: "all", seg: b.dataset.seg, fam: b.dataset.fam, geo: "", m: "", q: "" }); go("news"); render(); window.scrollTo(0, 0); }
-    else if (a === "seg-map") { go("carte"); st.scope = null; render(); window.scrollTo(0, 0); }
+    else if (a === "seg-map") { go("carte"); render(); window.scrollTo(0, 0); }
     else if (a === "period") { st.f.period = b.dataset.v; render(); }
     else if (a === "lf-seg") { st.lf.seg = b.dataset.v; render(); }
     else if (a === "lf-geo") { st.lf.geo = b.dataset.v; render(); }
@@ -892,13 +699,8 @@ Reste prudent et signale ce qu'il faudrait vérifier.`;
     else if (a === "dv-seg") { st.dv.seg = b.dataset.v; st.depOrig = ""; st.riskSel = null; render(); }
     else if (a === "dv-geo") { st.dv.geo = b.dataset.v; st.depOrig = ""; st.riskSel = null; render(); }
     else if (a === "risk-dot") { st.riskSel = st.riskSel === b.dataset.id ? null : b.dataset.id; render(); }
-    else if (a === "co-run") { st.coRun = true; ls.set("company2", st.company); render(); }
-    else if (a === "seen-all") { st.seen = [...new Set([...st.seen, ...alertList().map(x => x.s.id)])]; ls.set("seen", st.seen); render(); }
     else if (a === "tf-statut") { st.tf.statut = b.dataset.v; render(); }
     else if (a === "c-sel") { go("pays"); st.cSel = b.dataset.v; render(); const el = document.getElementById("country-detail"); if (el) el.scrollIntoView({ block: "start" }); }
-    else if (a === "co-ai") companyAi();
-    else if (a === "co-scope") { st.scope = { segs: [...st.company.segs], m: [...st.company.mails] }; go("carte"); render(); window.scrollTo(0, 0); }
-    else if (a === "scope-clear") { st.scope = null; render(); }
   });
 
   const DRAFT_IDS = { "add-raw": "raw", "add-t": "t", "add-s": "s", "add-d": "d", "add-seg": "seg", "add-m": "m", "add-n": "n", "add-geo": "geo", "add-imp": "imp", "add-act": "act", "add-orig": "orig", "add-src": "src", "add-u": "u" };
@@ -912,17 +714,7 @@ Reste prudent et signale ce qu'il faudrait vérifier.`;
       if (cnt) cnt.textContent = filtered().length + " signal(s)";
       return;
     }
-    if (id === "tf-pays") { st.tf.pays = el.value; render(); return; }
-    if (id === "co-name") st.company.name = el.value;
-    else if (id === "co-desc") st.company.desc = el.value;
-    else if (id === "co-kw") st.company.kw = el.value;
-    else if (id === "co-size") st.company.size = el.value;
-    else if (el.dataset && el.dataset.group) {
-      const g = el.dataset.group, v = el.dataset.v, arr = st.company[g] || [];
-      st.company[g] = el.checked ? [...new Set([...arr, v])] : arr.filter(x => x !== v);
-    } else return;
-    ls.set("company2", st.company);
-    if (st.coRun && e.type === "change" && el.type === "checkbox") render();
+    if (id === "tf-pays") { st.tf.pays = el.value; render(); }
   }
   document.addEventListener("input", onField);
   document.addEventListener("change", onField);
@@ -934,7 +726,7 @@ Reste prudent et signale ce qu'il faudrait vérifier.`;
 
   // ---------- Chargement ----------
   fetch("flux.json", { cache: "no-store" }).then(r => r.ok ? r.json() : { items: [] }).catch(() => ({ items: [] }))
-    .then(f => { FLUX = { updated: f.updated, items: f.items || [] }; if (st.tab === "flux" && DATA) render(); });
+    .then(f => { FLUX = { updated: f.updated, items: f.items || [] }; if (st.tab === "news" && st.newsView === "flux" && DATA) render(); });
   fetch("data.json", { cache: "no-store" })
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(d => { DATA = d; signals = Array.isArray(d.signals) ? d.signals : []; render(); })
