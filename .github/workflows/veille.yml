@@ -4,14 +4,11 @@ on:
   schedule:
     - cron: "17 * * * *"    # collecte toutes les heures
     - cron: "37 5 * * 1"    # synthèse de l'état des lieux chaque lundi
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
+  actions: write
 
 concurrency:
   group: veille
@@ -19,13 +16,10 @@ concurrency:
 
 jobs:
   collecte:
-    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-    outputs:
-      changed: ${{ steps.commit.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -37,37 +31,16 @@ jobs:
       - name: Mettre à jour la synthèse
         if: github.event.schedule == '37 5 * * 1'
         run: python scripts/collect.py --overview
-      - name: Enregistrer
-        id: commit
+      - name: Enregistrer et publier
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A site scripts
-          if git diff --cached --quiet; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
+          if ! git diff --cached --quiet; then
             git commit -m "Veille : mise à jour automatique"
             git push
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            # Publication séparée : GitHub Pages doit recevoir le nouveau commit.
+            gh workflow run publication.yml --ref main
           fi
-
-  publication:
-    needs: collecte
-    if: >-
-      always() && (github.event_name == 'push' ||
-      github.event_name == 'workflow_dispatch' ||
-      needs.collecte.outputs.changed == 'true')
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
-      - id: deploy
-        uses: actions/deploy-pages@v4
