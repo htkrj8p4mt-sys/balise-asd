@@ -1,0 +1,85 @@
+name: Veille
+
+on:
+  schedule:
+    - cron: "17 * * * *"    # collecte toutes les heures
+    - cron: "37 5 * * 1"    # synthèse de l'état des lieux chaque lundi
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: veille
+  cancel-in-progress: false
+
+jobs:
+  collecte:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Vérifier la clé API
+        id: key
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::warning::Le secret ANTHROPIC_API_KEY n'est pas configuré : pas de collecte."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-python@v5
+        if: steps.key.outputs.ok == 'true'
+        with:
+          python-version: "3.12"
+      - run: pip install -r scripts/requirements.txt
+        if: steps.key.outputs.ok == 'true'
+      - name: Collecter
+        if: steps.key.outputs.ok == 'true'
+        run: python scripts/collect.py
+      - name: Mettre à jour la synthèse
+        if: steps.key.outputs.ok == 'true' && github.event.schedule == '37 5 * * 1'
+        run: python scripts/collect.py --overview
+      - name: Enregistrer
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data.json scripts/seen.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Veille : mise à jour automatique"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  publication:
+    needs: collecte
+    if: >-
+      always() && (github.event_name == 'push' ||
+      github.event_name == 'workflow_dispatch' ||
+      needs.collecte.outputs.changed == 'true')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4

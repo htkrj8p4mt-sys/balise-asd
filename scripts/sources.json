@@ -1,0 +1,12 @@
+[
+ {"name": "European Spaceflight", "url": "https://europeanspaceflight.com/feed/"},
+ {"name": "SpaceNews", "url": "https://spacenews.com/feed/"},
+ {"name": "ESA", "url": "https://www.esa.int/rssfeed/Our_Activities/Space_Transportation"},
+ {"name": "Breaking Defense", "url": "https://breakingdefense.com/feed/"},
+ {"name": "Defence Industry Europe", "url": "https://defence-industry.eu/feed/"},
+ {"name": "Opex360", "url": "https://www.opex360.com/feed/"},
+ {"name": "AeroTime", "url": "https://www.aerotime.aero/feed"},
+ {"name": "FlightGlobal", "url": "https://www.flightglobal.com/rss"},
+ {"name": "Aviation Week", "url": "https://aviationweek.com/rss.xml"},
+ {"name": "Google Actualités (France)", "url": "https://news.google.com/rss/search?q=Airbus+OR+Safran+OR+Thales+OR+Dassault+Aviation+OR+MBDA+OR+ArianeGroup+OR+GIFAS+when:2d&hl=fr&gl=FR&ceid=FR:fr"}
+]

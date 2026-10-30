@@ -1,0 +1,2521 @@
+{
+ "version": 2,
+ "updated": "2026-10-30",
+ "overview": {
+  "bref": [
+   "Aéronautique civile : la demande est record (carnet Airbus de 9 310 avions). La France est forte, mais Airbus doit livrer environ 323 avions au 4e trimestre pour tenir son objectif, et la cadence reste bridée par les moteurs, les pièces forgées et le manque de main-d'œuvre.",
+   "Spatial : l'Europe investit massivement dans sa souveraineté (IRIS², budget ESA record, spatial militaire). La France reste au cœur du secteur mais perd du terrain sur les nouveaux lanceurs.",
+   "Défense aéronautique et spatiale : le réarmement européen accélère (SAFE, LPM actualisée) et la France commande davantage de SAMP/T NG. Mais après l'abandon de l'avion SCAF, l'Allemagne envisage de rejoindre le GCAP concurrent, et l'échéance chinoise du 10 novembre sur les terres rares inquiète."
+  ],
+  "civil": {
+   "fr": "Point fort historique : Airbus et Safran (via CFM) dominent le marché des avions monocouloirs et le carnet de commandes assure près de dix ans d'activité. La fragilité est industrielle : la cadence dépend de moteurs, de pièces forgées et d'une main-d'œuvre qui manquent, et les PME de rang 2 et 3 sont financièrement tendues.",
+   "eu": "Avec Airbus, l'Europe est au premier rang mondial des avions commerciaux. Elle reste pourtant dépendante de matières (titane, fibre de carbone, terres rares) et d'électronique importées. La décarbonation (obligations ReFuelEU) crée un marché des carburants durables que la production européenne ne couvre pas encore."
+  },
+  "spatial": {
+   "fr": "La France reste le cœur du spatial européen (CNES, Toulouse, Kourou) et Ariane 6 monte en cadence, mais une anomalie de turbopompe limite 2026 à six lancements au plus. Mais les premiers contrats de l'ESA pour les nouveaux lanceurs sont allés à des acteurs allemands et espagnols (MaiaSpace attend encore le sien), et l'industrie des satellites se restructure autour du projet Bromo.",
+   "eu": "L'Europe investit massivement pour réduire sa dépendance à SpaceX et Starlink : contrats IRIS², budget ESA record, 35 Md€ de spatial militaire prévus en Allemagne d'ici 2030, et 131 Md€ proposés par la Commission pour la défense et l'espace en 2028-2034. Le défi est d'industrialiser vite, puisque IRIS² ne sera pleinement opérationnel que vers 2032."
+  },
+  "defense": {
+   "fr": "La France maîtrise toute la chaîne de l'aéronautique de défense : avion de combat (Rafale), moteurs (Safran), radars et électronique (Thales), missiles (MBDA), satellites militaires. L'export et la LPM actualisée (2,5 % du PIB en 2030) la portent, et les premiers contrats du Rafale F5 (dont le moteur T-REX) sont notifiés. Ses limites : la cadence de production, l'abandon du volet avion du SCAF avec l'Allemagne et le financement des PME. Depuis octobre, le risque d'isolement s'accroît : l'Allemagne envisage de rejoindre le GCAP.",
+   "eu": "Le réarmement européen (SAFE, 150 Md€ de prêts) donne la priorité aux drones, à l'antidrone, à la défense aérienne et au spatial militaire. Mais pour l'aviation de combat et les hélicoptères, plusieurs pays continuent d'acheter américain (F-35, Patriot, Apache)."
+  }
+ },
+ "kpis": [
+  {
+   "seg": "civil",
+   "label": "Livraisons Airbus visées en 2026",
+   "value": "≈ 870",
+   "note": "547 à fin septembre · ≈ 323 restent à livrer au 4e trimestre",
+   "u": "https://www.aerotime.aero/articles/airbus-nine-month-results-deliveries-proffits/amp"
+  },
+  {
+   "seg": "civil",
+   "label": "Cadence A320 visée fin 2027",
+   "value": "70–75 / mois",
+   "note": "Pratt & Whitney principal frein",
+   "u": "https://www.airbus.com/en/newsroom/press-releases/2026-07-airbus-reports-half-year-h1-2026-results"
+  },
+  {
+   "seg": "spatial",
+   "label": "Contrats IRIS² attribués par Eutelsat",
+   "value": "5,4 Md€",
+   "note": "Sept. 2026 · 264 + 66 satellites",
+   "u": "https://spacenews.com/eutelsat-orders-extra-oneweb-satellites-and-kicks-off-iris%c2%b2-leo-contracts/"
+  },
+  {
+   "seg": "spatial",
+   "label": "Lancements Ariane 6 visés en 2026",
+   "value": "6 au plus",
+   "note": "Anomalie de turbopompe (sept. 2026) · 8 visés initialement",
+   "u": "https://www.spaceintelreport.com/turbopump-issue-stalls-ariane-6-ramp-up-likely-only-1-2-more-launches-this-year/"
+  },
+  {
+   "seg": "defense",
+   "label": "Budget des Armées 2026",
+   "value": "57,1 Md€",
+   "note": "+13 % · 2,5 % du PIB visé en 2030",
+   "u": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054694832"
+  },
+  {
+   "seg": "defense",
+   "label": "Carnet de commandes Rafale",
+   "value": "220 avions",
+   "note": "Fin 2025 · ~28 livrés en 2026",
+   "u": "https://dsm.forecastinternational.com/2026/02/04/rafale-rising-production-ramp-up-and-the-road-to-the-f5-standard/"
+  }
+ ],
+ "watch": [
+  {
+   "d": "2026-11-10",
+   "seg": "defense",
+   "t": "Fin de la suspension des contrôles chinois sur les terres rares",
+   "why": "Risque de rupture d'aimants pour les moteurs, radars et actionneurs."
+  },
+  {
+   "d": "2026-12",
+   "seg": "civil",
+   "t": "Bilan des livraisons Airbus 2026 (objectif ≈ 870)",
+   "why": "Mesure de la capacité réelle de la chaîne d'approvisionnement."
+  },
+  {
+   "d": "2026-12",
+   "seg": "spatial",
+   "t": "Contrat ESA de MaiaSpace (European Launcher Challenge)",
+   "why": "Place de la France dans les nouveaux lanceurs."
+  },
+  {
+   "d": "2026-12",
+   "seg": "defense",
+   "t": "Choix de la France pour l'avion de combat d'après 2040",
+   "why": "Suite de l'abandon du volet avion du SCAF."
+  },
+  {
+   "d": "2026-12",
+   "seg": "defense",
+   "t": "Choix polonais pour 24 hélicoptères SAFE (TrekkerM ou H145M)",
+   "why": "Place d'Airbus Helicopters dans les achats financés par SAFE."
+  },
+  {
+   "d": "2026-12",
+   "seg": "spatial",
+   "t": "Reprise des lancements d'Ariane 6 après l'anomalie de turbopompe",
+   "why": "Fiabilité de l'accès autonome européen à l'espace."
+  },
+  {
+   "d": "2027-06",
+   "seg": "civil",
+   "t": "Retour à la normale des moteurs Pratt & Whitney annoncé après 2027",
+   "why": "Condition de la cadence 75 de l'A320."
+  },
+  {
+   "d": "2027-09",
+   "seg": "spatial",
+   "t": "Décision de Bruxelles sur la fusion spatiale Bromo (pas avant le 2e semestre 2027)",
+   "why": "Structure future de l'industrie européenne des satellites."
+  },
+  {
+   "d": "2029",
+   "seg": "spatial",
+   "t": "Livraison des 66 premiers satellites IRIS² (Airbus, Thales Alenia Space)",
+   "why": "Premier jalon de la connectivité souveraine."
+  },
+  {
+   "d": "2030",
+   "seg": "civil",
+   "t": "ReFuelEU : 6 % de carburants durables obligatoires",
+   "why": "Débouché garanti pour la production française de SAF."
+  },
+  {
+   "d": "2026-11",
+   "seg": "defense",
+   "t": "Discussions Airbus-BAE Systems sur l'entrée de l'Allemagne dans le GCAP",
+   "why": "Un oui isolerait la France sur le futur avion de combat."
+  },
+  {
+   "d": "2026-11",
+   "seg": "spatial",
+   "t": "Dépôt du dossier Bromo auprès de la Commission européenne",
+   "why": "Début de l'examen qui décidera de la fusion spatiale."
+  }
+ ],
+ "signals": [
+  {
+   "id": "a20261030-1",
+   "k": "actu",
+   "d": "2026-10-29",
+   "seg": "defense",
+   "m": "sys",
+   "n": "manque",
+   "imp": 3,
+   "geo": "FR",
+   "t": "L'Allemagne envisage de rejoindre le GCAP",
+   "r": "Après l'abandon de l'avion SCAF, l'Allemagne envisage de rejoindre le GCAP (Royaume-Uni, Italie, Japon) ; Airbus et BAE Systems doivent en discuter dans les prochaines semaines, sans décision à ce stade.",
+   "why": "Si Berlin rejoint ce programme concurrent, la France risque de se retrouver seule pour financer son futur avion de combat, faute de grand partenaire européen.",
+   "s": "",
+   "act": [
+    "Airbus",
+    "BAE Systems",
+    "Leonardo",
+    "Dassault Aviation"
+   ],
+   "orig": "",
+   "src": "Defence Industry Europe, 29 oct. 2026",
+   "u": "https://defence-industry.eu/germany-weighs-gcap-entry-after-fcas-collapse-as-airbus-and-bae-systems-prepare-for-talks/",
+   "crit": {
+    "c": 2,
+    "e": 1,
+    "t": 3,
+    "p": 3
+   }
+  },
+  {
+   "id": "a20261030-2",
+   "k": "actu",
+   "d": "2026-10-28",
+   "seg": "civil",
+   "m": "comp",
+   "n": "manque",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Airbus : 323 livraisons à réussir au 4e trimestre",
+   "r": "Airbus a livré 547 avions en neuf mois et garde son objectif d'environ 870 : il lui reste environ 323 appareils à livrer au 4e trimestre, soit près de 108 par mois.",
+   "why": "La fin d'année est très chargée : la chaîne de production et les fournisseurs doivent tenir un rythme élevé, alors que les moteurs manquent encore et que des défauts de qualité ont touché l'A330neo et l'A321neo.",
+   "s": "",
+   "act": [
+    "Airbus",
+    "Pratt & Whitney"
+   ],
+   "orig": "",
+   "src": "AeroTime, oct. 2026",
+   "u": "https://www.aerotime.aero/articles/airbus-nine-month-results-deliveries-proffits/amp",
+   "crit": {
+    "c": 2,
+    "e": 2,
+    "t": 1,
+    "p": 2
+   }
+  },
+  {
+   "id": "a20261030-3",
+   "k": "actu",
+   "d": "2026-10-28",
+   "seg": "civil",
+   "m": "sys",
+   "n": "atout",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Airbus : carnet de 9 310 avions",
+   "r": "Airbus a enregistré 1 105 commandes nettes en neuf mois, contre 514 un an plus tôt, et son carnet atteint 9 310 avions fin septembre.",
+   "why": "Le carnet garantit plus de dix ans de production au rythme actuel et de la visibilité à toute la filière européenne.",
+   "s": "",
+   "act": [
+    "Airbus"
+   ],
+   "orig": "",
+   "src": "Airbus, résultats à neuf mois, repris par Aviation Defence Universe",
+   "u": "https://www.aviation-defence-universe.com/airbus-reports-nine-month-9m-2026-results/"
+  },
+  {
+   "id": "a20261030-4",
+   "k": "actu",
+   "d": "2026-10-23",
+   "seg": "civil",
+   "m": "prop",
+   "n": "atout",
+   "imp": 3,
+   "geo": "FR",
+   "t": "Safran : chiffre d'affaires en hausse de 14,7 %",
+   "r": "Safran a réalisé 9 Md€ de chiffre d'affaires au 3e trimestre (+14,7 %) et livré 1 565 moteurs LEAP en neuf mois (+26 %), en confirmant ses objectifs annuels.",
+   "why": "Le motoriste français rattrape une partie de ses retards et profite d'une maintenance moteurs en forte croissance.",
+   "s": "",
+   "act": [
+    "Safran",
+    "CFM International"
+   ],
+   "orig": "",
+   "src": "Safran, 23 oct. 2026",
+   "u": "https://www.safran-group.com/pressroom/safran-reports-its-third-quarter-2026-revenue-2026-10-23"
+  },
+  {
+   "id": "a20261030-5",
+   "k": "actu",
+   "d": "2026-10-22",
+   "seg": "defense",
+   "m": "elec",
+   "n": "atout",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Thales : 19,1 Md€ de commandes en neuf mois",
+   "r": "Thales a enregistré 19,1 Md€ de commandes en neuf mois (+15 %), dont 11,3 Md€ en défense ; ses commandes françaises bondissent de 47 %, portées par le Rafale F5.",
+   "why": "Le groupe français capte la demande de défense et sécurise des années de travail sur l'électronique du Rafale.",
+   "s": "",
+   "act": [
+    "Thales",
+    "Dassault Aviation"
+   ],
+   "orig": "",
+   "src": "Thales, 22 oct. 2026, repris par EuropaWire",
+   "u": "https://news.europawire.eu/thales-reports-e19-1-billion-in-nine-month-orders-and-e16-4-billion-in-sales-while-confirming-2026-targets/eu-press-release/2026/10/22/12/35/06/183849/"
+  },
+  {
+   "id": "a20261030-6",
+   "k": "actu",
+   "d": "2026-10-21",
+   "seg": "defense",
+   "m": "sys",
+   "n": "atout",
+   "imp": 3,
+   "geo": "FR",
+   "t": "La DGA commande quatre SAMP/T NG de plus",
+   "r": "La France a commandé quatre systèmes de défense aérienne SAMP/T NG supplémentaires, ce qui porte son total à douze, dont dix à livrer d'ici fin 2030.",
+   "why": "La France renforce une alternative européenne au Patriot américain, développée par MBDA et Thales, et elle accélère le calendrier prévu.",
+   "s": "",
+   "act": [
+    "MBDA",
+    "Thales",
+    "DGA"
+   ],
+   "orig": "",
+   "src": "Mer et Marine, oct. 2026",
+   "u": "https://www.meretmarine.com/fr/defense/la-dga-commande-quatre-systemes-supplementaires-de-defense-sol-air-sampt-ng"
+  },
+  {
+   "id": "a20261030-7",
+   "k": "actu",
+   "d": "2026-10-22",
+   "seg": "spatial",
+   "m": "sys",
+   "n": "besoin",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Bromo : vers un examen accéléré à Bruxelles",
+   "r": "La presse rapporte que Bruxelles prépare un examen accéléré de la fusion spatiale d'Airbus, Thales et Leonardo, dont le dossier doit être déposé dans les prochaines semaines ; OHB et Indra Space s'y opposent ou s'en inquiètent.",
+   "why": "L'Europe veut un acteur spatial de taille mondiale : les fournisseurs doivent anticiper une redistribution des commandes, même si l'autorisation n'est pas acquise.",
+   "s": "",
+   "act": [
+    "Airbus",
+    "Thales",
+    "Leonardo",
+    "OHB",
+    "Indra"
+   ],
+   "orig": "",
+   "src": "Startmag, oct. 2026",
+   "u": "https://en.startmag.it/spazio-e-difesa/airbus-leonardo-and-thales-accelerate-bromo-heads-towards-eu-review/"
+  },
+  {
+   "id": "a20261030-8",
+   "k": "actu",
+   "d": "2026-10-13",
+   "seg": "defense",
+   "m": "mat",
+   "n": "dependance",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Terres rares : la trêve expire le 10 novembre",
+   "r": "À l'approche de la fin de la suspension chinoise, le 10 novembre, aucune prolongation n'était confirmée fin octobre, et l'UE n'a obtenu qu'un accès maintenu au système de licences chinois.",
+   "why": "Les aimants des avions de combat et du guidage de missiles viennent presque tous de Chine : une reprise des contrôles menacerait directement la production européenne.",
+   "s": "",
+   "act": [
+    "Commission européenne"
+   ],
+   "orig": "Chine",
+   "src": "Tech Times, 13 oct. 2026",
+   "u": "https://www.techtimes.com/articles/328903/20261013/chinas-october-industrial-doctrine-formalizes-rare-earth-leverage-eu-secured-managed-access.htm",
+   "crit": {
+    "c": 3,
+    "e": 3,
+    "t": 3,
+    "p": 3
+   }
+  },
+  {
+   "id": "a20261030-9",
+   "k": "actu",
+   "d": "2026-10-26",
+   "seg": "spatial",
+   "m": "fin",
+   "n": "besoin",
+   "imp": 2,
+   "geo": "EU",
+   "t": "La Pologne veut doubler ses investissements spatiaux",
+   "r": "La Pologne a décidé de doubler ses investissements dans le spatial et veut renforcer sa coopération avec l'Allemagne dans ce domaine, sans contrat signé à ce stade.",
+   "why": "Un nouveau marché spatial s'ouvre en Pologne, mais il risque de se structurer autour de l'Allemagne si les industriels français n'y vont pas tôt.",
+   "s": "",
+   "act": [],
+   "orig": "",
+   "src": "US News, 26 oct. 2026",
+   "u": "https://www.usnews.com/news/world/articles/2026-10-26/poland-eyes-more-cooperation-with-germany-in-space-polish-minister-says"
+  },
+  {
+   "id": "a20260929-1",
+   "k": "actu",
+   "d": "2026-09-28",
+   "seg": "civil",
+   "m": "struct",
+   "n": "manque",
+   "imp": 2,
+   "geo": "EU",
+   "t": "A321neo : défaut de revêtement, environ 20 livraisons reportées au 4e trimestre",
+   "r": "Airbus a découvert un défaut d'apprêt anticorrosion sur environ 500 A321neo, dont 250 déjà livrés ; une vingtaine de livraisons de septembre glissent au 4e trimestre, l'objectif d'environ 870 livraisons étant maintenu.",
+   "why": "Un défaut de qualité dans la chaîne de production oblige à inspecter et reprendre des avions (jusqu'à neuf jours chacun), ce qui charge un 4e trimestre déjà très tendu.",
+   "s": "",
+   "act": [
+    "Airbus"
+   ],
+   "orig": "",
+   "src": "Aviación al Día, 28 sept. 2026",
+   "u": "https://aviacionaldia.com/en/2026/09/airbus-expects-drop-in-september-deliveries-following-quality-issue-on-a321neo.html",
+   "crit": {
+    "c": 2,
+    "e": 1,
+    "t": 1,
+    "p": 2
+   }
+  },
+  {
+   "id": "a20260929-2",
+   "k": "actu",
+   "d": "2026-09-18",
+   "seg": "spatial",
+   "m": "prop",
+   "n": "manque",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Ariane 6 : une anomalie de turbopompe limite 2026 à six lancements",
+   "r": "Une anomalie détectée en août sur une turbopompe du moteur d'Ariane 6 empêche Arianespace d'atteindre les huit lancements prévus en 2026 : six au plus, avec un risque de glissement vers début 2027.",
+   "why": "Le seul lanceur lourd européen, construit en France, reste fragile au moment où il doit monter en cadence pour Galileo, Amazon Leo et les satellites institutionnels.",
+   "s": "",
+   "act": [
+    "ArianeGroup",
+    "Arianespace",
+    "Safran",
+    "ESA",
+    "CNES"
+   ],
+   "orig": "",
+   "src": "Space Intel Report, 18 sept. 2026",
+   "u": "https://www.spaceintelreport.com/turbopump-issue-stalls-ariane-6-ramp-up-likely-only-1-2-more-launches-this-year/",
+   "crit": {
+    "c": 3,
+    "e": 1,
+    "t": 1,
+    "p": 2
+   }
+  },
+  {
+   "id": "a20260929-3",
+   "k": "actu",
+   "d": "2026-09-28",
+   "seg": "defense",
+   "m": "fin",
+   "n": "besoin",
+   "imp": 2,
+   "geo": "EU",
+   "t": "UE : cinq projets de défense d'intérêt commun validés, dont spatial et défense aérienne",
+   "r": "Le 28 septembre 2026, les États membres ont validé les cinq premiers projets européens de défense d'intérêt commun (drones et antidrones, spatial, défense aérienne et antimissile, flanc est, maritime), soutenus par 325 M€ du programme EDIP.",
+   "why": "Ces projets communs financés par l'UE ouvrent des marchés réservés aux industriels européens de l'antidrone, des missiles et des satellites, où la France est bien placée.",
+   "s": "",
+   "act": [
+    "Commission européenne"
+   ],
+   "orig": "",
+   "src": "Conseil de l'UE, 28 sept. 2026",
+   "u": "https://www.consilium.europa.eu/en/press/press-releases/2026/09/28/european-defence-industry-council-identifies-the-first-five-projects-of-common-interest/"
+  },
+  {
+   "id": "a20260929-4",
+   "k": "actu",
+   "d": "2026-09-23",
+   "seg": "defense",
+   "m": "sys",
+   "n": "atout",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Antidrone : la DGA commande les intercepteurs GOBI Zephyr d'Harmattan AI",
+   "r": "La DGA a notifié le 23 septembre 2026 une première commande de 50 drones intercepteurs GOBI Zephyr (2,2 kg, 350 km/h, 10 km de portée) à la start-up française Harmattan AI, avec des tranches supplémentaires possibles.",
+   "why": "La France se dote vite d'une solution antidrone nationale, retenue face à un concurrent letton : une filière souveraine qui peut aussi viser l'export européen.",
+   "s": "",
+   "act": [
+    "DGA",
+    "Harmattan AI"
+   ],
+   "orig": "",
+   "src": "Refrance, sept. 2026",
+   "u": "https://refrance.fr/drones-anti-drones-la-dga-passe-sa-premiere-commande-ferme-a-la-licorne-francaise-harmattan-ai/"
+  },
+  {
+   "id": "a20260929-5",
+   "k": "actu",
+   "d": "2026-09-12",
+   "seg": "defense",
+   "m": "prop",
+   "n": "atout",
+   "imp": 3,
+   "geo": "FR",
+   "t": "Rafale F5 : premiers contrats DGA, dont le moteur M88 T-REX de Safran",
+   "r": "La DGA a notifié les premiers contrats du Rafale F5 (radar, guerre électronique SPECTRA, liaisons, navigation) et confié à Safran la conception du moteur T-REX, 20 % plus puissant ; environ 1 Md€ d'études reste à financer pour un moteur de 11 tonnes destiné à l'avion d'après 2040.",
+   "why": "Après l'échec du SCAF avec l'Allemagne, la France avance seule sur le moteur et l'avion de combat : un plan de charge durable pour Dassault Aviation, Safran, Thales et MBDA.",
+   "s": "",
+   "act": [
+    "DGA",
+    "Dassault Aviation",
+    "Safran",
+    "Thales",
+    "MBDA"
+   ],
+   "orig": "",
+   "src": "Opex360, 4 et 12 sept. 2026",
+   "u": "https://www.opex360.com/2026/09/12/le-ministere-des-armees-va-lancer-de-nouvelles-etudes-sur-un-moteur-davion-de-combat-de-6e-generation/"
+  },
+  {
+   "id": "a20260929-6",
+   "k": "actu",
+   "d": "2026-09-23",
+   "seg": "defense",
+   "m": "sys",
+   "n": "besoin",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Rafale proposé au Portugal pour remplacer 24 F-16",
+   "r": "La France a officiellement proposé le Rafale au Portugal pour remplacer 24 F-16, face au F-35, à l'Eurofighter et au Gripen ; Dassault a signé le 23 septembre 2026 un accord de coopération avec les industriels portugais.",
+   "why": "Une nouvelle vente possible en Europe, où Lisbonne dit vouloir considérer des options européennes plutôt qu'américaines.",
+   "s": "",
+   "act": [
+    "Dassault Aviation",
+    "Thales",
+    "Safran"
+   ],
+   "orig": "",
+   "src": "Opex360, 24 sept. 2026",
+   "u": "https://www.opex360.com/2026/09/24/la-france-a-officiellement-propose-le-rafale-au-portugal/"
+  },
+  {
+   "id": "a20260929-7",
+   "k": "actu",
+   "d": "2026-09-10",
+   "seg": "spatial",
+   "m": "fin",
+   "n": "besoin",
+   "imp": 3,
+   "geo": "EU",
+   "t": "UE : 131 Md€ proposés pour la défense et l'espace en 2028-2034",
+   "r": "Au sommet spatial de Paris, le 10 septembre 2026, Ursula von der Leyen a proposé une enveloppe de 131 Md€ pour la défense, la sécurité et l'espace sur 2028-2034, cinq fois plus qu'aujourd'hui, avec une accélération d'IRIS² et un « bouclier spatial européen ».",
+   "why": "Si ce budget est adopté, il créera un marché européen massif et durable pour les satellites, lanceurs et services spatiaux, dont les industriels français sont les premiers fournisseurs.",
+   "s": "",
+   "act": [
+    "Commission européenne",
+    "ESA",
+    "CNES"
+   ],
+   "orig": "",
+   "src": "Insight EU Monitoring, sept. 2026",
+   "u": "https://ieu-monitoring.com/editorial/von-der-leyen-sets-out-eu-drive-for-space-investment-security-and-autonomy/1249397"
+  },
+  {
+   "id": "a20260929-8",
+   "k": "actu",
+   "d": "2026-09-05",
+   "seg": "spatial",
+   "m": "sys",
+   "n": "atout",
+   "imp": 2,
+   "geo": "EU",
+   "t": "Isar Aerospace atteint l'orbite lors de son deuxième vol",
+   "r": "Le 5 septembre 2026, le lanceur Spectrum de l'allemand Isar Aerospace a placé cinq petits satellites en orbite depuis la Norvège, une première pour une entreprise privée européenne.",
+   "why": "L'Europe dispose enfin d'un petit lanceur commercial opérationnel, mais c'est l'Allemagne qui prend l'avance, pas encore le français MaiaSpace.",
+   "s": "",
+   "act": [
+    "Isar Aerospace",
+    "MaiaSpace"
+   ],
+   "orig": "",
+   "src": "Isar Aerospace, sept. 2026",
+   "u": "https://isaraerospace.com/press/history-for-european-spaceflight-isar-aerospace-reaches-orbit-and-deploys-payloads-on-second-flight"
+  },
+  {
+   "id": "a01",
+   "k": "actu",
+   "d": "2026-09-07",
+   "seg": "civil",
+   "m": "sys",
+   "n": "atout",
+   "imp": 2,
+   "geo": "EU",
+   "t": "Airbus : livraisons en hausse de 9 % à fin août (475 avions)",
+   "s": "57 avions livrés en août. L'objectif de 2026 est maintenu à environ 870 livraisons, soit +10 % sur un an. La charge est garantie pour toute la chaîne française.",
+   "act": [
+    "Airbus"
+   ],
+   "orig": "",
+   "src": "Aviación al Día, sept. 2026",
+   "u": "https://aviacionaldia.com/en/2026/09/airbus-posts-9-rise-in-aircraft-deliveries-through-august-stays-on-track-for-full-year-target.html",
+   "r": "Airbus a livré 475 avions de janvier à août 2026, 9 % de plus qu'en 2025, et vise toujours environ 870 livraisons sur l'année.",
+   "why": "La demande et la production progressent : le premier constructeur mondial garantit du travail à toute la filière européenne."
+  },
+  {
+   "id": "a02",
+   "k": "actu",
+   "d": "2026-07-30",
+   "seg": "civil",
+   "m": "prop",
+   "n": "dependance",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Pratt & Whitney reste le principal frein à la cadence de l'A320",
+   "s": "Airbus désigne le motoriste américain comme facteur limitant de sa montée en cadence en 2026 et 2027. Il n'attend un retour à la normale qu'après 2027.",
+   "act": [
+    "Airbus",
+    "Pratt & Whitney"
+   ],
+   "orig": "États-Unis",
+   "src": "Airbus, résultats du 1er semestre 2026",
+   "u": "https://www.airbus.com/en/newsroom/press-releases/2026-07-airbus-reports-half-year-h1-2026-results",
+   "r": "Airbus désigne les moteurs Pratt & Whitney comme principal frein à la hausse de sa production d'A320 en 2026 et 2027.",
+   "why": "Une partie des moteurs de l'avion le plus vendu d'Europe dépend d'un fournisseur américain en difficulté, que l'Europe ne contrôle pas.",
+   "crit": {
+    "c": 3,
+    "e": 3,
+    "t": 3,
+    "p": 2
+   }
+  },
+  {
+   "id": "a03",
+   "k": "actu",
+   "d": "2026-07-30",
+   "seg": "civil",
+   "m": "comp",
+   "n": "besoin",
+   "imp": 3,
+   "geo": "FR",
+   "t": "A320 : 70 à 75 avions par mois visés fin 2027",
+   "s": "La cadence doit se stabiliser à 75 par mois. Les fournisseurs de rang 1 à 3 doivent augmenter leurs capacités, leurs stocks et leurs effectifs, avec des opportunités en usinage, en traitements de surface et en contrôle.",
+   "act": [
+    "Airbus",
+    "Safran",
+    "GIFAS"
+   ],
+   "orig": "",
+   "src": "Airbus, résultats du 1er semestre 2026",
+   "u": "https://www.airbus.com/en/newsroom/press-releases/2026-07-airbus-reports-half-year-h1-2026-results",
+   "r": "Airbus veut produire 70 à 75 A320 par mois fin 2027, puis se stabiliser à 75.",
+   "why": "Pour suivre, les fournisseurs devront produire plus de pièces, stocker davantage et recruter : un marché ouvert aux sous-traitants capables d'augmenter leurs capacités."
+  },
+  {
+   "id": "a04",
+   "k": "actu",
+   "d": "2026-09-14",
+   "seg": "civil",
+   "m": "prop",
+   "n": "atout",
+   "imp": 3,
+   "geo": "FR",
+   "t": "Safran : note relevée à A par S&P, chiffre d'affaires 2026 attendu au-dessus de 36 Md€",
+   "s": "Contre 31,3 Md€ en 2025, et une marge du 1er semestre à 18,4 %. Le motoriste français confirme sa solidité et sa capacité à investir.",
+   "act": [
+    "Safran"
+   ],
+   "orig": "",
+   "src": "Safran, salle de presse",
+   "u": "https://www.safran-group.com/pressroom",
+   "r": "Safran voit sa note financière relevée à A et prévoit plus de 36 Md€ de chiffre d'affaires en 2026, contre 31,3 Md€ en 2025.",
+   "why": "Le motoriste français est rentable, solide et a les moyens d'investir : c'est un pilier de la position française."
+  },
+  {
+   "id": "a05",
+   "k": "actu",
+   "d": "2026-06",
+   "seg": "defense",
+   "m": "sys",
+   "n": "manque",
+   "imp": 3,
+   "geo": "EU",
+   "t": "SCAF : le volet avion de combat (NGF) abandonné par la France et l'Allemagne",
+   "s": "Selon la presse, la médiation entre Dassault et Airbus a échoué. Seul le « cloud de combat » pourrait rester commun. La France doit définir sa voie pour l'avion de combat d'après 2040.",
+   "act": [
+    "Dassault Aviation",
+    "Airbus",
+    "Indra"
+   ],
+   "orig": "",
+   "src": "Breaking Defense, juin 2026",
+   "u": "https://breakingdefense.com/2026/06/franco-german-spanish-fcas-fighter-program-dead-reports/",
+   "r": "La France et l'Allemagne ont abandonné le développement commun du futur avion de combat du SCAF après l'échec de la médiation entre Dassault et Airbus.",
+   "why": "Le grand programme européen d'avion de combat n'existe plus : la France doit trouver une autre voie, avec un risque de retard et de coûts plus élevés.",
+   "crit": {
+    "c": 2,
+    "e": 1,
+    "t": 3,
+    "p": 3
+   }
+  },
+  {
+   "id": "a06",
+   "k": "actu",
+   "d": "2026-02",
+   "seg": "defense",
+   "m": "sys",
+   "n": "atout",
+   "imp": 3,
+   "geo": "FR",
+   "t": "Rafale : carnet de 220 avions et objectif de 48 appareils par an vers 2028-2029",
+   "s": "Le carnet compte 45 avions pour la France et 175 pour l'export. D'importants accords ont été annoncés avec l'Inde et l'Ukraine. La demande est durable pour toute la chaîne Rafale (Dassault, Safran, Thales, PME).",
+   "act": [
+    "Dassault Aviation",
+    "Safran",
+    "Thales"
+   ],
+   "orig": "",
+   "src": "Forecast International, févr. 2026",
+   "u": "https://dsm.forecastinternational.com/2026/02/04/rafale-rising-production-ramp-up-and-the-road-to-the-f5-standard/",
+   "r": "Dassault a 220 Rafale en commande, dont 175 pour l'export, et vise 48 avions par an vers 2028-2029.",
+   "why": "Le Rafale se vend bien à l'étranger : des années de travail assurées pour Dassault, Safran, Thales et leurs sous-traitants français."
+  },
+  {
+   "id": "a07",
+   "k": "actu",
+   "d": "2026-03",
+   "seg": "defense",
+   "m": "comp",
+   "n": "manque",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Rafale : une production d'environ 28 avions en 2026, en deçà de la demande",
+   "s": "La montée en cadence est progressive et le pic n'est attendu qu'en fin de décennie. Les goulots d'étranglement se trouvent chez les sous-traitants et dans les compétences.",
+   "act": [
+    "Dassault Aviation"
+   ],
+   "orig": "",
+   "src": "Militarnyi, 2026",
+   "u": "https://militarnyi.com/en/news/dassault-produced-more-rafale-than-planned-demand-still-outpaces-production/",
+   "r": "Dassault ne produira qu'environ 28 Rafale en 2026, bien moins que ce que les commandes exigeraient.",
+   "why": "L'outil industriel ne suit pas la demande : manque de capacités chez les sous-traitants et de main-d'œuvre qualifiée.",
+   "crit": {
+    "c": 2,
+    "e": 1,
+    "t": 2,
+    "p": 2
+   }
+  },
+  {
+   "id": "a08",
+   "k": "actu",
+   "d": "2026-08-16",
+   "seg": "defense",
+   "m": "fin",
+   "n": "atout",
+   "imp": 3,
+   "geo": "FR",
+   "t": "LPM actualisée : effort de défense porté à 2,5 % du PIB en 2030",
+   "s": "La loi du 16 août 2026 actualise la programmation. Le budget 2026 atteint 57,1 Md€ (+13 %), avec un objectif de 3,5 % du PIB à l'horizon 2035.",
+   "act": [
+    "Ministère des Armées",
+    "DGA"
+   ],
+   "orig": "",
+   "src": "Légifrance, loi n° 2026-791",
+   "u": "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054694832",
+   "r": "La loi du 16 août 2026 porte le budget des Armées à 57,1 Md€ en 2026 et vise 2,5 % du PIB pour la défense en 2030.",
+   "why": "Des budgets en hausse et prévisibles permettent aux industriels français d'investir et d'embaucher."
+  },
+  {
+   "id": "a09",
+   "k": "actu",
+   "d": "2026-05-21",
+   "seg": "defense",
+   "m": "fin",
+   "n": "besoin",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Prêts SAFE : la Pologne (44 Md€) et la Roumanie (16,7 Md€) en tête",
+   "s": "Les 150 Md€ de prêts imposent un contenu européen. C'est une opportunité pour l'offre française, mais Rheinmetall capte déjà une large part des premières commandes.",
+   "act": [
+    "Commission européenne"
+   ],
+   "orig": "",
+   "src": "Army Recognition, mai 2026",
+   "u": "https://www.armyrecognition.com/news/army-news/2026/romania-16b-safe-defense-agreement-eu-military-procurement",
+   "r": "L'UE prête 150 Md€ aux États pour acheter européen ; la Pologne (44 Md€) et la Roumanie (16,7 Md€) en profitent le plus, avec des priorités sur les drones, l'antidrone, la défense aérienne et l'imagerie spatiale.",
+   "why": "Ces prêts imposent 65 % de composants européens : une demande réservée aux industriels européens de l'aéronautique, des missiles et du spatial."
+  },
+  {
+   "id": "a10",
+   "k": "actu",
+   "d": "2026-07-23",
+   "seg": "defense",
+   "m": "elec",
+   "n": "atout",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Thales : prises de commandes en hausse de 21 % au 1er semestre (12,5 Md€)",
+   "s": "Les commandes de défense progressent de 28 %, portées notamment par la défense aérienne. L'Europe représente 56 % des prises de commandes.",
+   "act": [
+    "Thales"
+   ],
+   "orig": "",
+   "src": "Thales, résultats semestriels 2026",
+   "u": "https://www.thalesgroup.com/en/news-centre/press-releases/thales-reports-its-2026-half-year-results",
+   "r": "Thales a enregistré 12,5 Md€ de commandes au premier semestre 2026 (+21 %), dont +28 % en défense.",
+   "why": "Le groupe français profite pleinement du réarmement européen, notamment en défense aérienne, radars et électronique embarquée."
+  },
+  {
+   "id": "a11",
+   "k": "actu",
+   "d": "2026-06",
+   "seg": "defense",
+   "m": "elec",
+   "n": "besoin",
+   "imp": 3,
+   "geo": "FR",
+   "t": "Munitions téléopérées : la DGA commande l'AKERON RCX50 à MBDA",
+   "s": "Présentée à Eurosatory 2026, cette commande répond à un besoin massif de production en série. MBDA et Thales s'appuient sur l'industrie civile pour augmenter les volumes.",
+   "act": [
+    "MBDA",
+    "Thales",
+    "DGA",
+    "Delair"
+   ],
+   "orig": "",
+   "src": "Army Recognition, Eurosatory 2026",
+   "u": "https://www.armyrecognition.com/archives/archives-defense-exhibitions/2026-archives-news-defense-exhibitions/eurosatory-2026/mbda-wins-french-dga-contract-for-akeron-rcx50-loitering-munition-for-army-and-navy",
+   "r": "L'armée française a commandé à MBDA des munitions téléopérées AKERON RCX50, à produire en grande série.",
+   "why": "Les armées veulent ces armes en grand nombre et vite : une demande nouvelle, ouverte aussi aux PME qui savent produire en volume."
+  },
+  {
+   "id": "a12",
+   "k": "actu",
+   "d": "2026-03",
+   "seg": "defense",
+   "m": "mat",
+   "n": "atout",
+   "imp": 2,
+   "geo": "EU",
+   "t": "MBDA double ses investissements : 5 Md€ sur 2026-2030",
+   "s": "Le missilier vise une production en hausse d'environ 40 % dès 2026. Cela entraîne sa chaîne française (propulsion, électronique, pyrotechnie).",
+   "act": [
+    "MBDA"
+   ],
+   "orig": "",
+   "src": "Second Line of Defense, mars 2026",
+   "u": "https://sldinfo.com/2026/03/doubling-down-on-missiles-inside-mbdas-e5-billion-bet-on-europes-defense-revival/",
+   "r": "MBDA investit 5 Md€ entre 2026 et 2030 et veut augmenter sa production de missiles d'environ 40 % dès 2026.",
+   "why": "Le leader européen des missiles se donne les moyens de produire plus, ce qui entraîne toute sa chaîne de fournisseurs."
+  },
+  {
+   "id": "a14",
+   "k": "actu",
+   "d": "2026-01",
+   "seg": "defense",
+   "m": "mat",
+   "n": "dependance",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Terres rares : pénuries attendues en 2026-2027 et échéance chinoise au 10 novembre 2026",
+   "s": "La suspension de la seconde vague de contrôles chinois prend fin le 10 novembre 2026. L'UE importe 98 % de ses aimants permanents, indispensables aux radars, actionneurs et moteurs.",
+   "act": [
+    "Commission européenne"
+   ],
+   "orig": "Chine",
+   "src": "S&P Global, janv. 2026",
+   "u": "https://www.spglobal.com/energy/en/news-research/latest-news/metals/012726-rare-earth-supply-bottlenecks-set-to-persist-in-2026",
+   "r": "La Chine peut reprendre ses restrictions sur les terres rares après le 10 novembre 2026 ; l'Europe importe 98 % de ses aimants.",
+   "why": "Ces aimants, indispensables aux radars, moteurs et actionneurs, viennent presque tous de Chine : une coupure bloquerait des chaînes de production.",
+   "crit": {
+    "c": 3,
+    "e": 3,
+    "t": 3,
+    "p": 3
+   }
+  },
+  {
+   "id": "a15",
+   "k": "actu",
+   "d": "2026-09-10",
+   "seg": "spatial",
+   "m": "num",
+   "n": "atout",
+   "imp": 3,
+   "geo": "EU",
+   "t": "IRIS² : Eutelsat attribue 5,4 Md€ de contrats et commande 229 satellites OneWeb à Airbus",
+   "s": "Le belge Aerospacelab construira 264 plateformes (2,4 Md€), Airbus et Thales Alenia Space la première couche de 66 satellites, à livrer en 2029.",
+   "act": [
+    "Eutelsat",
+    "Airbus",
+    "Thales Alenia Space",
+    "Aerospacelab"
+   ],
+   "orig": "",
+   "src": "SpaceNews, sept. 2026",
+   "u": "https://spacenews.com/eutelsat-orders-extra-oneweb-satellites-and-kicks-off-iris%c2%b2-leo-contracts/",
+   "r": "Eutelsat a attribué 5,4 Md€ de contrats pour la constellation européenne IRIS² et commandé 229 satellites OneWeb à Airbus.",
+   "why": "L'Europe construit sa propre connectivité par satellite, avec une charge de travail importante pour Airbus à Toulouse."
+  },
+  {
+   "id": "a16",
+   "k": "actu",
+   "d": "2026-08",
+   "seg": "spatial",
+   "m": "sys",
+   "n": "manque",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Nouveaux lanceurs européens : premiers contrats pour Isar, RFA et PLD, MaiaSpace encore en attente",
+   "s": "L'ESA a signé environ 544 M€ de contrats avec deux acteurs allemands (Isar 197,8 M€, RFA 186,9 M€) et un espagnol (PLD 158,9 M€). Le contrat du français MaiaSpace devait suivre : la France risque d'être en retard sur les petits lanceurs.",
+   "act": [
+    "ESA",
+    "MaiaSpace",
+    "Isar Aerospace",
+    "RFA",
+    "PLD Space"
+   ],
+   "orig": "",
+   "src": "NASASpaceFlight, août 2026",
+   "u": "https://www.nasaspaceflight.com/2026/08/esa-european-launcher-challenge-contracts/",
+   "r": "L'ESA a financé trois nouveaux lanceurs, deux allemands et un espagnol ; le français MaiaSpace attend encore son contrat.",
+   "why": "La France, historiquement leader des lanceurs, est en retard dans la course aux nouveaux petits lanceurs européens.",
+   "crit": {
+    "c": 2,
+    "e": 1,
+    "t": 2,
+    "p": 2
+   }
+  },
+  {
+   "id": "a17",
+   "k": "actu",
+   "d": "2026-04-30",
+   "seg": "spatial",
+   "m": "sys",
+   "n": "atout",
+   "imp": 2,
+   "geo": "EU",
+   "t": "Ariane 6 lance 32 satellites Amazon Leo dans sa version la plus puissante",
+   "s": "Il s'agit du 7e vol et du 2e en configuration à quatre propulseurs. Arianespace vise 6 à 8 lancements en 2026 et gagne des clients commerciaux.",
+   "act": [
+    "Arianespace",
+    "ArianeGroup",
+    "ESA",
+    "Amazon"
+   ],
+   "orig": "",
+   "src": "Arianespace",
+   "u": "https://newsroom.arianespace.com/?p=49232",
+   "r": "Ariane 6 a lancé 32 satellites pour Amazon en avril 2026 ; Arianespace prévoit 6 à 8 lancements cette année.",
+   "why": "Le lanceur européen fonctionne, monte en cadence et attire des clients commerciaux : l'accès autonome à l'espace est retrouvé."
+  },
+  {
+   "id": "a18",
+   "k": "actu",
+   "d": "2026-06-24",
+   "seg": "spatial",
+   "m": "sys",
+   "n": "besoin",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Projet Bromo : Airbus, Thales et Leonardo pressent Bruxelles d'autoriser leur fusion spatiale",
+   "s": "L'ensemble compterait environ 25 000 salariés et 6,5 Md€ de chiffre d'affaires, avec un siège à Toulouse. La décision n'est pas attendue avant le 2e semestre 2027, et l'allemand OHB s'y oppose.",
+   "act": [
+    "Airbus",
+    "Thales",
+    "Leonardo",
+    "OHB"
+   ],
+   "orig": "",
+   "src": "Project Bromo, synthèse publique",
+   "u": "https://en.wikipedia.org/wiki/Project_Bromo",
+   "r": "Airbus, Thales et Leonardo veulent fusionner leurs activités spatiales (25 000 salariés, siège à Toulouse) ; Bruxelles tranchera au plus tôt fin 2027.",
+   "why": "L'Europe a besoin d'un acteur spatial de taille mondiale face à SpaceX : un regroupement qui redistribuera les commandes aux fournisseurs."
+  },
+  {
+   "id": "a19",
+   "k": "actu",
+   "d": "2026-09-23",
+   "seg": "spatial",
+   "m": "serv",
+   "n": "besoin",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Spatial de défense souverain : la demande explose en Europe",
+   "s": "Les restrictions américaines (Starlink en Ukraine, imagerie au Moyen-Orient) poussent l'Europe à s'équiper. L'Allemagne prévoit 35 Md€ d'ici 2030 et les satellites de reconnaissance pourraient être multipliés par quatre d'ici 2035.",
+   "act": [
+    "Airbus",
+    "ICEYE",
+    "Isar Aerospace"
+   ],
+   "orig": "",
+   "src": "Defense News, 23 sept. 2026",
+   "u": "https://www.defensenews.com/global/europe/2026/09/23/europes-push-to-reduce-us-reliance-is-reshaping-the-defense-space-market/",
+   "r": "Après des restrictions américaines, les pays européens veulent leurs propres satellites militaires ; l'Allemagne prévoit 35 Md€ d'ici 2030.",
+   "why": "La demande de satellites de défense souverains explose : un marché en forte croissance pour les industriels européens."
+  },
+  {
+   "id": "a20",
+   "k": "actu",
+   "d": "2026",
+   "seg": "civil",
+   "m": "serv",
+   "n": "atout",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Carburants durables : la bioraffinerie de Grandpuits doit démarrer en 2026",
+   "s": "Sa capacité prévue est de 230 000 tonnes par an. D'autres projets suivent à Dunkerque (Rebound : Airbus, Safran, Technip, Tereos) et à Port-la-Nouvelle.",
+   "act": [
+    "TotalEnergies",
+    "Airbus",
+    "Safran",
+    "Technip Energies",
+    "Tereos"
+   ],
+   "orig": "",
+   "src": "TotalEnergies ; L'Usine Nouvelle",
+   "u": "https://totalenergies.com/features/saf-fuel-decarbonization-aviation",
+   "r": "La bioraffinerie TotalEnergies de Grandpuits doit commencer en 2026 à produire jusqu'à 230 000 tonnes de carburant d'aviation durable par an.",
+   "why": "La France se dote d'une vraie capacité de production de carburants durables, que les obligations européennes rendent indispensable."
+  },
+  {
+   "id": "f01",
+   "k": "fond",
+   "d": "2025-01",
+   "seg": "civil",
+   "m": "sys",
+   "n": "atout",
+   "imp": 3,
+   "geo": "FR",
+   "t": "Carnet de commandes Airbus au-delà de 8 000 avions",
+   "s": "Près de dix ans de production assurés. La demande tire toute la chaîne française, des équipementiers aux PME de rang 2 et 3.",
+   "act": [
+    "Airbus"
+   ],
+   "orig": "",
+   "src": "Airbus, résultats annuels 2024",
+   "u": "",
+   "r": "Airbus a plus de 8 000 avions en commande, soit près de dix ans de production.",
+   "why": "La demande est assurée pour longtemps : un socle solide pour toute la filière française."
+  },
+  {
+   "id": "f02",
+   "k": "fond",
+   "d": "2025-03",
+   "seg": "civil",
+   "m": "prop",
+   "n": "manque",
+   "imp": 3,
+   "geo": "FR",
+   "t": "Moteurs LEAP livrés en retard : des avions terminés attendent leurs moteurs",
+   "s": "Les pièces forgées et de fonderie restent le maillon le plus tendu de la chaîne des moteurs.",
+   "act": [
+    "CFM International",
+    "Safran",
+    "Airbus"
+   ],
+   "orig": "",
+   "src": "Presse spécialisée",
+   "u": "",
+   "r": "Safran et GE livrent les moteurs LEAP en retard : des A320 terminés attendent leurs moteurs.",
+   "why": "La production de pièces moteur (forge, fonderie) ne suit pas la demande : un goulot d'étranglement majeur.",
+   "crit": {
+    "c": 3,
+    "e": 2,
+    "t": 2,
+    "p": 2
+   }
+  },
+  {
+   "id": "f03",
+   "k": "fond",
+   "d": "2024-06",
+   "seg": "civil",
+   "m": "mat",
+   "n": "dependance",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Titane : sortie progressive de la dépendance à la Russie",
+   "s": "VSMPO-AVISMA était un fournisseur historique. Les industriels diversifient vers les États-Unis, le Japon et le Kazakhstan, mais les capacités de transformation européennes restent limitées.",
+   "act": [
+    "Airbus",
+    "Safran"
+   ],
+   "orig": "Russie",
+   "src": "Rapports sectoriels",
+   "u": "",
+   "r": "L'Europe achetait une grande partie de son titane aéronautique au russe VSMPO-AVISMA et cherche d'autres fournisseurs.",
+   "why": "Métal essentiel aux avions, le titane dépend encore de pays hors UE, avec peu de capacités de transformation en Europe.",
+   "crit": {
+    "c": 2,
+    "e": 3,
+    "t": 2,
+    "p": 1
+   }
+  },
+  {
+   "id": "f04",
+   "k": "fond",
+   "d": "2024",
+   "seg": "civil",
+   "m": "mat",
+   "n": "atout",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Aubert & Duval repris par Airbus, Safran et Tikehau",
+   "s": "L'opération sécurise en France la production d'alliages et de pièces forgées critiques pour l'aéronautique et la défense.",
+   "act": [
+    "Aubert & Duval",
+    "Airbus",
+    "Safran",
+    "Tikehau Capital"
+   ],
+   "orig": "",
+   "src": "Communiqués des entreprises",
+   "u": "",
+   "r": "Airbus, Safran et Tikehau ont repris Aubert & Duval, fabricant français d'alliages et de pièces forgées.",
+   "why": "Un savoir-faire critique pour les avions et la défense reste en France et sous contrôle français."
+  },
+  {
+   "id": "f05",
+   "k": "fond",
+   "d": "2024",
+   "seg": "civil",
+   "m": "mat",
+   "n": "dependance",
+   "imp": 2,
+   "geo": "EU",
+   "t": "Fibre de carbone : des capacités européennes détenues par des groupes américains et japonais",
+   "s": "Les composites des avions récents reposent sur quelques fournisseurs mondiaux. Il n'existe pas de champion européen indépendant.",
+   "act": [
+    "Hexcel",
+    "Toray"
+   ],
+   "orig": "États-Unis / Japon",
+   "src": "Analyses de marché",
+   "u": "",
+   "r": "La fibre de carbone des avions vient de quelques groupes américains et japonais, même quand elle est produite en Europe.",
+   "why": "L'Europe n'a pas de fabricant indépendant d'un matériau clé des avions modernes.",
+   "crit": {
+    "c": 3,
+    "e": 3,
+    "t": 3,
+    "p": 1
+   }
+  },
+  {
+   "id": "f06",
+   "k": "fond",
+   "d": "2025",
+   "seg": "civil",
+   "m": "comp",
+   "n": "manque",
+   "imp": 3,
+   "geo": "FR",
+   "t": "Recrutement : des dizaines de milliers de postes à pourvoir chaque année",
+   "s": "Usineurs, soudeurs, chaudronniers, techniciens de contrôle : les métiers en tension limitent la montée en cadence, surtout chez les PME.",
+   "act": [
+    "GIFAS",
+    "France Travail"
+   ],
+   "orig": "",
+   "src": "GIFAS",
+   "u": "",
+   "r": "La filière aéronautique française doit recruter des dizaines de milliers de personnes par an et peine à trouver usineurs, soudeurs et techniciens.",
+   "why": "Sans main-d'œuvre qualifiée, les usines ne peuvent pas produire plus, même avec des commandes.",
+   "crit": {
+    "c": 1,
+    "e": 1,
+    "t": 2,
+    "p": 3
+   }
+  },
+  {
+   "id": "f07",
+   "k": "fond",
+   "d": "2025-02",
+   "seg": "civil",
+   "m": "sys",
+   "n": "manque",
+   "imp": 2,
+   "geo": "EU",
+   "t": "Avion à hydrogène ZEROe repoussé au-delà de 2035",
+   "s": "La décarbonation passera d'abord par les carburants durables et l'efficacité des moteurs.",
+   "act": [
+    "Airbus"
+   ],
+   "orig": "",
+   "src": "Airbus",
+   "u": "",
+   "r": "Airbus a repoussé au-delà de 2035 son projet d'avion à hydrogène ZEROe.",
+   "why": "La technologie de rupture espérée pour décarboner l'aviation n'arrivera pas à temps : l'Europe perd une avance possible.",
+   "crit": {
+    "c": 1,
+    "e": 1,
+    "t": 3,
+    "p": 1
+   }
+  },
+  {
+   "id": "f08",
+   "k": "fond",
+   "d": "2025-01",
+   "seg": "civil",
+   "m": "serv",
+   "n": "besoin",
+   "imp": 3,
+   "geo": "EU",
+   "t": "ReFuelEU : 2 % de carburants durables en 2025, 6 % en 2030",
+   "s": "L'obligation d'incorporation crée un marché européen garanti pour les carburants d'aviation durables (SAF) et leurs technologies de production.",
+   "act": [
+    "Commission européenne",
+    "Compagnies aériennes"
+   ],
+   "orig": "",
+   "src": "Règlement (UE) 2023/2405",
+   "u": "",
+   "r": "Les compagnies aériennes doivent incorporer 2 % de carburants durables en 2025 et 6 % en 2030 dans l'UE.",
+   "why": "Cette obligation crée un marché garanti pour produire des carburants d'aviation durables."
+  },
+  {
+   "id": "f09",
+   "k": "fond",
+   "d": "2025",
+   "seg": "civil",
+   "m": "serv",
+   "n": "manque",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Carburants durables : une production française encore loin des besoins de 2030",
+   "s": "Les projets e-SAF attendent leurs décisions d'investissement et un accès à l'électricité bas carbone.",
+   "act": [
+    "TotalEnergies",
+    "Air France-KLM"
+   ],
+   "orig": "",
+   "src": "Analyses sectorielles",
+   "u": "",
+   "r": "La France produit encore peu de carburants d'aviation durables par rapport aux volumes exigés pour 2030.",
+   "why": "Les usines prévues ne suffisent pas encore : l'Europe risque d'importer ces carburants.",
+   "crit": {
+    "c": 2,
+    "e": 2,
+    "t": 3,
+    "p": 2
+   }
+  },
+  {
+   "id": "f10",
+   "k": "fond",
+   "d": "2025-08",
+   "seg": "civil",
+   "m": "fin",
+   "n": "atout",
+   "imp": 2,
+   "geo": "EU",
+   "t": "Accord UE–États-Unis : avions et pièces exemptés de droits de douane",
+   "s": "Le secteur échappe aux hausses tarifaires. C'est essentiel pour une filière très exportatrice et imbriquée avec les fournisseurs américains.",
+   "act": [
+    "Commission européenne"
+   ],
+   "orig": "",
+   "src": "Déclaration conjointe UE–États-Unis, août 2025",
+   "u": "",
+   "r": "L'UE et les États-Unis ont exempté les avions et pièces aéronautiques de droits de douane (août 2025).",
+   "why": "La filière, très exportatrice vers les États-Unis, échappe à la guerre commerciale."
+  },
+  {
+   "id": "f11",
+   "k": "fond",
+   "d": "2025",
+   "seg": "civil",
+   "m": "struct",
+   "n": "manque",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Fragilité financière des sous-traitants de rang 2 et 3",
+   "s": "Les fonds propres ont été affaiblis par la crise sanitaire et l'inflation. Beaucoup de PME peinent à financer les stocks et les investissements qu'exige la hausse des cadences.",
+   "act": [
+    "Bpifrance",
+    "GIFAS"
+   ],
+   "orig": "",
+   "src": "Bpifrance, GIFAS",
+   "u": "",
+   "r": "Beaucoup de sous-traitants aéronautiques de rang 2 et 3 manquent de fonds propres pour investir.",
+   "why": "Ces PME sont indispensables mais trop fragiles pour financer la hausse des cadences.",
+   "crit": {
+    "c": 1,
+    "e": 1,
+    "t": 2,
+    "p": 2
+   }
+  },
+  {
+   "id": "f12",
+   "k": "fond",
+   "d": "2024",
+   "seg": "civil",
+   "m": "elec",
+   "n": "dependance",
+   "imp": 2,
+   "geo": "EU",
+   "t": "Composants électroniques largement importés",
+   "s": "L'avionique dépend de fonderies asiatiques et de fournisseurs américains.",
+   "act": [
+    "Thales",
+    "Safran Electronics & Defense"
+   ],
+   "orig": "Asie / États-Unis",
+   "src": "Analyses de marché",
+   "u": "",
+   "r": "Les composants électroniques de l'avionique sont en grande partie fabriqués en Asie ou achetés aux États-Unis.",
+   "why": "L'Europe ne maîtrise pas la production de puces et composants dont dépendent ses avions.",
+   "crit": {
+    "c": 2,
+    "e": 3,
+    "t": 3,
+    "p": 2
+   }
+  },
+  {
+   "id": "f13",
+   "k": "fond",
+   "d": "2025",
+   "seg": "civil",
+   "m": "serv",
+   "n": "atout",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Maintenance (MRO) : des acteurs français parmi les leaders mondiaux",
+   "s": "Avec l'entretien moteurs, équipements et cellules, la maintenance profite d'une flotte mondiale vieillissante qui vole plus longtemps.",
+   "act": [
+    "Air France Industries KLM E&M",
+    "Safran",
+    "Thales"
+   ],
+   "orig": "",
+   "src": "Analyses sectorielles",
+   "u": "",
+   "r": "Des acteurs français comme AFI KLM E&M, Safran et Thales sont parmi les leaders mondiaux de la maintenance aéronautique.",
+   "why": "Un métier rentable et en croissance, où la France est déjà très bien placée."
+  },
+  {
+   "id": "f14",
+   "k": "fond",
+   "d": "2024-10",
+   "seg": "civil",
+   "m": "num",
+   "n": "besoin",
+   "imp": 2,
+   "geo": "EU",
+   "t": "Cybersécurité de la supply chain : obligations NIS2",
+   "s": "De nombreux sous-traitants doivent élever leur niveau de sécurité. Cela ouvre un marché de services pour les ESN et les spécialistes cyber.",
+   "act": [
+    "ANSSI"
+   ],
+   "orig": "",
+   "src": "Directive (UE) 2022/2555",
+   "u": "",
+   "r": "La directive européenne NIS2 impose aux fournisseurs de l'aéronautique de renforcer leur cybersécurité.",
+   "why": "Des milliers de sous-traitants doivent se mettre à niveau : une demande de services cyber."
+  },
+  {
+   "id": "f15",
+   "k": "fond",
+   "d": "2024",
+   "seg": "civil",
+   "m": "struct",
+   "n": "manque",
+   "imp": 2,
+   "geo": "EU",
+   "t": "Sièges et aménagements cabine : goulot d'étranglement des livraisons",
+   "s": "Les retards de certification et de production des sièges retardent des livraisons d'avions, notamment pour les appareils long-courriers.",
+   "act": [
+    "Safran Seats",
+    "Airbus"
+   ],
+   "orig": "",
+   "src": "Presse spécialisée",
+   "u": "",
+   "r": "Les retards de livraison des sièges et aménagements cabine bloquent des livraisons d'avions.",
+   "why": "Un maillon de la chaîne d'équipements n'arrive pas à suivre le rythme de production.",
+   "crit": {
+    "c": 2,
+    "e": 1,
+    "t": 1,
+    "p": 1
+   }
+  },
+  {
+   "id": "f16",
+   "k": "fond",
+   "d": "2025",
+   "seg": "civil",
+   "m": "prop",
+   "n": "atout",
+   "imp": 3,
+   "geo": "FR",
+   "t": "CFM International, motorisation leader des avions monocouloirs",
+   "s": "La coentreprise Safran–GE équipe une large part de la flotte mondiale. C'est une position de force durable pour la France, en partenariat avec les États-Unis.",
+   "act": [
+    "Safran",
+    "GE Aerospace",
+    "CFM International"
+   ],
+   "orig": "",
+   "src": "Safran",
+   "u": "",
+   "r": "CFM, coentreprise de Safran et GE, motorise une large part des avions monocouloirs du monde.",
+   "why": "Une position de leader mondial pour la France sur un produit essentiel et durable."
+  },
+  {
+   "id": "f17",
+   "k": "fond",
+   "d": "2024-07",
+   "seg": "civil",
+   "m": "struct",
+   "n": "atout",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Airbus réintègre des sites de Spirit AeroSystems, dont Saint-Nazaire",
+   "s": "Le constructeur reprend des productions d'aérostructures critiques pour sécuriser sa chaîne.",
+   "act": [
+    "Airbus",
+    "Spirit AeroSystems"
+   ],
+   "orig": "",
+   "src": "Airbus",
+   "u": "",
+   "r": "Airbus a repris des usines de son fournisseur Spirit AeroSystems, dont celle de Saint-Nazaire.",
+   "why": "Airbus sécurise la production de pièces de structure critiques en la ramenant sous son contrôle."
+  },
+  {
+   "id": "f18",
+   "k": "fond",
+   "d": "2024",
+   "seg": "spatial",
+   "m": "sys",
+   "n": "dependance",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Crise des lanceurs : l'Europe a dû recourir à SpaceX",
+   "s": "Faute de lanceur disponible, des satellites européens, dont des Galileo, ont été lancés par Falcon 9.",
+   "act": [
+    "ESA",
+    "Commission européenne",
+    "SpaceX"
+   ],
+   "orig": "États-Unis",
+   "src": "ESA",
+   "u": "",
+   "r": "Faute de lanceur européen disponible, l'Europe a fait lancer des satellites Galileo par SpaceX en 2024.",
+   "why": "Pour mettre en orbite ses satellites stratégiques, l'Europe a dû s'appuyer sur une entreprise américaine.",
+   "crit": {
+    "c": 3,
+    "e": 3,
+    "t": 1,
+    "p": 1
+   }
+  },
+  {
+   "id": "f19",
+   "k": "fond",
+   "d": "2025",
+   "seg": "spatial",
+   "m": "num",
+   "n": "dependance",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Starlink domine la connectivité en orbite basse",
+   "s": "Des armées et des opérateurs européens dépendent d'un acteur privé américain. OneWeb reste la principale alternative européenne.",
+   "act": [
+    "SpaceX",
+    "Eutelsat"
+   ],
+   "orig": "États-Unis",
+   "src": "Analyses de marché",
+   "u": "",
+   "r": "Starlink, de SpaceX, domine l'internet par satellite en orbite basse, y compris pour des armées européennes.",
+   "why": "Une infrastructure critique repose sur une entreprise privée américaine qui peut restreindre l'accès.",
+   "crit": {
+    "c": 3,
+    "e": 3,
+    "t": 3,
+    "p": 2
+   }
+  },
+  {
+   "id": "f20",
+   "k": "fond",
+   "d": "2025-06",
+   "seg": "spatial",
+   "m": "fin",
+   "n": "atout",
+   "imp": 2,
+   "geo": "FR",
+   "t": "L'État français renforce son rôle au capital d'Eutelsat",
+   "s": "L'augmentation de capital soutenue par l'État consolide le seul opérateur européen de satellites en orbite basse.",
+   "act": [
+    "Eutelsat",
+    "APE",
+    "Bpifrance"
+   ],
+   "orig": "",
+   "src": "Eutelsat, ministère de l'Économie",
+   "u": "",
+   "r": "L'État français a soutenu l'augmentation de capital d'Eutelsat, qui exploite la constellation OneWeb.",
+   "why": "La France garde un opérateur de satellites souverain, seule alternative européenne à Starlink."
+  },
+  {
+   "id": "f21",
+   "k": "fond",
+   "d": "2024",
+   "seg": "spatial",
+   "m": "comp",
+   "n": "manque",
+   "imp": 2,
+   "geo": "EU",
+   "t": "Suppressions de postes chez les fabricants de satellites",
+   "s": "Le marché des satellites de télécommunications géostationnaires s'est contracté. Airbus et Thales Alenia Space ont réduit leurs effectifs spatiaux.",
+   "act": [
+    "Airbus",
+    "Thales Alenia Space"
+   ],
+   "orig": "",
+   "src": "Communiqués des entreprises",
+   "u": "",
+   "r": "Airbus et Thales Alenia Space ont supprimé des postes dans les satellites après la chute du marché des télécoms.",
+   "why": "Des compétences spatiales se perdent alors que l'Europe aura besoin de produire plus de satellites.",
+   "crit": {
+    "c": 1,
+    "e": 1,
+    "t": 2,
+    "p": 1
+   }
+  },
+  {
+   "id": "f22",
+   "k": "fond",
+   "d": "2024",
+   "seg": "spatial",
+   "m": "elec",
+   "n": "dependance",
+   "imp": 2,
+   "geo": "EU",
+   "t": "Composants durcis pour l'espace : dépendance aux fournisseurs américains",
+   "s": "Une partie des composants résistants aux radiations est soumise à la réglementation américaine ITAR, qui peut bloquer des exportations.",
+   "act": [
+    "ESA",
+    "CNES"
+   ],
+   "orig": "États-Unis",
+   "src": "ESA, European Components Initiative",
+   "u": "",
+   "r": "Certains composants électroniques résistants aux radiations, utilisés dans l'espace, viennent des États-Unis et relèvent de la réglementation ITAR.",
+   "why": "Les États-Unis peuvent bloquer l'export de satellites européens qui contiennent ces composants.",
+   "crit": {
+    "c": 3,
+    "e": 3,
+    "t": 3,
+    "p": 2
+   }
+  },
+  {
+   "id": "f23",
+   "k": "fond",
+   "d": "2025",
+   "seg": "spatial",
+   "m": "serv",
+   "n": "besoin",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Surveillance de l'espace et défense spatiale",
+   "s": "La stratégie spatiale de défense crée des besoins en surveillance d'orbite, en capteurs et en traitement de données.",
+   "act": [
+    "Commandement de l'Espace",
+    "DGA",
+    "CNES"
+   ],
+   "orig": "",
+   "src": "Ministère des Armées",
+   "u": "",
+   "r": "La stratégie spatiale de défense française prévoit de surveiller les orbites et de protéger ses satellites.",
+   "why": "Les armées ont besoin de capteurs, de logiciels et de services de surveillance de l'espace."
+  },
+  {
+   "id": "f24",
+   "k": "fond",
+   "d": "2025-11",
+   "seg": "spatial",
+   "m": "fin",
+   "n": "atout",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Conseil ministériel de l'ESA : budget record d'environ 22 Md€",
+   "s": "Les États membres engagent des budgets en hausse pour les lanceurs, la sécurité et l'exploration.",
+   "act": [
+    "ESA",
+    "CNES"
+   ],
+   "orig": "",
+   "src": "ESA",
+   "u": "",
+   "r": "Les pays de l'ESA ont voté fin 2025 un budget record d'environ 22 Md€.",
+   "why": "Des financements publics importants et sur plusieurs années pour l'industrie spatiale européenne."
+  },
+  {
+   "id": "f25",
+   "k": "fond",
+   "d": "2024-07",
+   "seg": "spatial",
+   "m": "sys",
+   "n": "atout",
+   "imp": 3,
+   "geo": "FR",
+   "t": "Ariane 6 rend à l'Europe un accès autonome à l'espace",
+   "s": "Depuis son premier vol en juillet 2024 à Kourou, le lanceur lourd européen enchaîne les missions institutionnelles et commerciales.",
+   "act": [
+    "ArianeGroup",
+    "CNES",
+    "ESA",
+    "Arianespace"
+   ],
+   "orig": "",
+   "src": "ESA, CNES",
+   "u": "",
+   "r": "Ariane 6, lancée pour la première fois en juillet 2024 depuis Kourou, enchaîne désormais les missions.",
+   "why": "L'Europe a de nouveau son propre lanceur lourd, sans dépendre des autres pour ses satellites."
+  },
+  {
+   "id": "f26",
+   "k": "fond",
+   "d": "2023-08",
+   "seg": "defense",
+   "m": "fin",
+   "n": "atout",
+   "imp": 3,
+   "geo": "FR",
+   "t": "Loi de programmation militaire 2024-2030 : 413 Md€",
+   "s": "Cette visibilité budgétaire pluriannuelle profite aux maîtres d'œuvre et à la base industrielle et technologique de défense (BITD).",
+   "act": [
+    "Ministère des Armées",
+    "DGA"
+   ],
+   "orig": "",
+   "src": "Loi n° 2023-703",
+   "u": "",
+   "r": "La loi de programmation militaire prévoit 413 Md€ pour les armées entre 2024 et 2030.",
+   "why": "Une visibilité budgétaire longue qui permet aux industriels de défense d'investir."
+  },
+  {
+   "id": "f27",
+   "k": "fond",
+   "d": "2025",
+   "seg": "defense",
+   "m": "comp",
+   "n": "besoin",
+   "imp": 3,
+   "geo": "FR",
+   "t": "Économie de guerre : accélérer les cadences (Rafale, missiles, drones)",
+   "s": "Les besoins se reportent sur les sous-traitants en capacité, en stocks et en personnel qualifié.",
+   "act": [
+    "Dassault Aviation",
+    "MBDA",
+    "Thales",
+    "Safran"
+   ],
+   "orig": "",
+   "src": "Ministère des Armées",
+   "u": "",
+   "r": "L'État demande aux industriels de l'aéronautique de défense de produire plus vite : Rafale, missiles, drones et radars.",
+   "why": "Les grands groupes cherchent des sous-traitants capables d'augmenter leurs capacités et leurs stocks."
+  },
+  {
+   "id": "f29",
+   "k": "fond",
+   "d": "2025",
+   "seg": "defense",
+   "m": "sys",
+   "n": "dependance",
+   "imp": 3,
+   "geo": "EU",
+   "t": "F-35 et Patriot : des pays européens continuent d'acheter américain",
+   "s": "Plusieurs partenaires européens achètent des F-35 ou des systèmes Patriot, ce qui limite les débouchés européens de l'offre française.",
+   "act": [
+    "Lockheed Martin",
+    "Raytheon"
+   ],
+   "orig": "États-Unis",
+   "src": "Analyses de marché",
+   "u": "",
+   "r": "Plusieurs pays européens achètent des avions F-35 et des systèmes de défense aérienne Patriot américains plutôt qu'européens.",
+   "why": "La défense européenne reste liée aux États-Unis, ce qui ferme des marchés à l'offre française.",
+   "crit": {
+    "c": 3,
+    "e": 3,
+    "t": 3,
+    "p": 2
+   }
+  },
+  {
+   "id": "f30",
+   "k": "fond",
+   "d": "2025-04",
+   "seg": "defense",
+   "m": "sys",
+   "n": "atout",
+   "imp": 3,
+   "geo": "FR",
+   "t": "Inde : commande de 26 Rafale Marine",
+   "s": "Nouveau succès à l'export après les Émirats arabes unis et l'Indonésie.",
+   "act": [
+    "Dassault Aviation",
+    "Safran",
+    "Thales"
+   ],
+   "orig": "",
+   "src": "Dassault Aviation",
+   "u": "",
+   "r": "L'Inde a commandé 26 Rafale Marine en avril 2025.",
+   "why": "Un nouveau grand client export qui confirme la compétitivité du Rafale."
+  },
+  {
+   "id": "f31",
+   "k": "fond",
+   "d": "2025",
+   "seg": "defense",
+   "m": "sys",
+   "n": "dependance",
+   "imp": 2,
+   "geo": "EU",
+   "t": "Drones MALE : l'Eurodrone en retard, recours au Reaper américain",
+   "s": "En attendant le programme européen, les armées utilisent des drones américains, avec des contraintes d'emploi et de maintenance.",
+   "act": [
+    "Airbus",
+    "Leonardo",
+    "General Atomics"
+   ],
+   "orig": "États-Unis",
+   "src": "Rapports parlementaires",
+   "u": "",
+   "r": "En attendant l'Eurodrone, en retard, les armées européennes utilisent des drones Reaper américains.",
+   "why": "L'Europe n'a pas encore son propre drone de surveillance longue endurance.",
+   "crit": {
+    "c": 3,
+    "e": 3,
+    "t": 2,
+    "p": 1
+   }
+  },
+  {
+   "id": "f32",
+   "k": "fond",
+   "d": "2025",
+   "seg": "defense",
+   "m": "elec",
+   "n": "besoin",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Drones tactiques : une demande massive",
+   "s": "Le retour d'expérience d'Ukraine accélère les commandes. Il y a de la place pour des PME et des start-up capables de produire vite et en volume.",
+   "act": [
+    "DGA",
+    "Start-up drones"
+   ],
+   "orig": "",
+   "src": "Ministère des Armées",
+   "u": "",
+   "r": "La guerre en Ukraine a fait exploser la demande de drones tactiques.",
+   "why": "Les armées en veulent beaucoup, vite et à bas coût : une opportunité pour les PME et start-up."
+  },
+  {
+   "id": "f33",
+   "k": "fond",
+   "d": "2025-04",
+   "seg": "defense",
+   "m": "mat",
+   "n": "dependance",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Terres rares : restrictions d'exportation chinoises",
+   "s": "Les aimants permanents pour moteurs, actionneurs et guidage sont menacés. Cela touche aussi l'aéronautique civile.",
+   "act": [
+    "Commission européenne"
+   ],
+   "orig": "Chine",
+   "src": "Ministère chinois du Commerce",
+   "u": "",
+   "r": "La Chine a restreint en 2025 ses exportations de terres rares et d'aimants.",
+   "why": "Ces matériaux, essentiels aux moteurs et au guidage, viennent quasi exclusivement de Chine.",
+   "crit": {
+    "c": 3,
+    "e": 3,
+    "t": 3,
+    "p": 3
+   }
+  },
+  {
+   "id": "f34",
+   "k": "fond",
+   "d": "2025",
+   "seg": "defense",
+   "m": "fin",
+   "n": "manque",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Financement bancaire difficile pour les PME de défense",
+   "s": "Des banques et des fonds restent réticents à cause des critères ESG. Des dispositifs publics dédiés émergent pour y remédier.",
+   "act": [
+    "Bpifrance",
+    "Ministère des Armées"
+   ],
+   "orig": "",
+   "src": "Rapports parlementaires",
+   "u": "",
+   "r": "Des banques et des fonds hésitent à financer les PME de défense, à cause des critères ESG.",
+   "why": "Des entreprises utiles au réarmement peinent à trouver de l'argent pour investir.",
+   "crit": {
+    "c": 1,
+    "e": 1,
+    "t": 1,
+    "p": 2
+   }
+  }
+ ],
+ "leaders": [
+  {
+   "id": "airbus",
+   "name": "Airbus",
+   "pays": "France · Allemagne · Espagne",
+   "fr": true,
+   "segs": [
+    "civil",
+    "defense",
+    "spatial"
+   ],
+   "metier": "Avions commerciaux, hélicoptères, défense et espace",
+   "chiffre": "CA 9 mois 2026 : 50,6 Md€ · 547 livraisons · carnet de 9 310 avions",
+   "force": "Carnet de commandes record et leader mondial des avions commerciaux.",
+   "fragilite": "Cadence dépendante des motoristes (Pratt & Whitney) et d'une chaîne de sous-traitance tendue.",
+   "suivre": "323 livraisons à réussir au 4e trimestre, A320 à 75 par mois, fusion spatiale Bromo, discussions avec BAE Systems sur le GCAP.",
+   "keys": [
+    "Airbus"
+   ],
+   "u": "https://www.aviation-defence-universe.com/airbus-reports-nine-month-9m-2026-results/"
+  },
+  {
+   "id": "safran",
+   "name": "Safran",
+   "pays": "France",
+   "fr": true,
+   "segs": [
+    "civil",
+    "defense",
+    "spatial"
+   ],
+   "metier": "Moteurs d'avions, équipements, défense",
+   "chiffre": "CA 9 mois 2026 : 26,6 Md€ (+17,5 %) · 1 565 moteurs LEAP livrés (+26 %)",
+   "force": "Moteur LEAP (via CFM avec GE), maintenance moteurs très rentable.",
+   "fragilite": "Pièces forgées et de fonderie, partenariat structurant avec un groupe américain.",
+   "suivre": "Rattrapage des livraisons LEAP, moteur T-REX du Rafale F5, moteur de 6e génération, RISE, carburants durables (Rebound).",
+   "keys": [
+    "Safran",
+    "CFM International",
+    "Safran Seats",
+    "Safran Electronics & Defense"
+   ],
+   "u": "https://www.safran-group.com/pressroom/safran-reports-its-third-quarter-2026-revenue-2026-10-23"
+  },
+  {
+   "id": "thales",
+   "name": "Thales",
+   "pays": "France",
+   "fr": true,
+   "segs": [
+    "defense",
+    "spatial",
+    "civil"
+   ],
+   "metier": "Radars, électronique de défense, avionique, spatial",
+   "chiffre": "Commandes 9 mois 2026 : 19,1 Md€ (+15 %), dont 11,3 Md€ en défense",
+   "force": "Défense aérienne, radars et avionique, avec une forte demande européenne.",
+   "fragilite": "Branche spatiale en restructuration (satellites de télécommunications).",
+   "suivre": "Fusion spatiale Bromo, contrats de défense aérienne en Europe.",
+   "keys": [
+    "Thales",
+    "Thales Alenia Space"
+   ],
+   "u": "https://news.europawire.eu/thales-reports-e19-1-billion-in-nine-month-orders-and-e16-4-billion-in-sales-while-confirming-2026-targets/eu-press-release/2026/10/22/12/35/06/183849/"
+  },
+  {
+   "id": "dassault",
+   "name": "Dassault Aviation",
+   "pays": "France",
+   "fr": true,
+   "segs": [
+    "defense",
+    "civil"
+   ],
+   "metier": "Avion de combat Rafale, jets d'affaires Falcon",
+   "chiffre": "Carnet fin 2025 : 220 Rafale · ~28 livraisons en 2026",
+   "force": "Succès du Rafale à l'export et maîtrise complète d'un avion de combat.",
+   "fragilite": "Cadence limitée face à la demande, avenir incertain après l'abandon du SCAF commun.",
+   "suivre": "Montée vers 48 Rafale par an, contrats F5 notifiés, offre au Portugal, successeur national du Rafale.",
+   "keys": [
+    "Dassault Aviation"
+   ],
+   "u": "https://dsm.forecastinternational.com/2026/02/04/rafale-rising-production-ramp-up-and-the-road-to-the-f5-standard/"
+  },
+  {
+   "id": "mbda",
+   "name": "MBDA",
+   "pays": "France · Royaume-Uni · Italie · Allemagne",
+   "fr": true,
+   "segs": [
+    "defense"
+   ],
+   "metier": "Missiles et munitions téléopérées",
+   "chiffre": "5 Md€ d'investissements sur 2026-2030 · production +40 % en 2026",
+   "force": "Leader européen des missiles, gamme complète.",
+   "fragilite": "Dépend d'une chaîne pyrotechnique et électronique à dimensionner.",
+   "suivre": "Munitions téléopérées AKERON, défense aérienne en Europe, commandes financées par SAFE.",
+   "keys": [
+    "MBDA"
+   ],
+   "u": "https://sldinfo.com/2026/03/doubling-down-on-missiles-inside-mbdas-e5-billion-bet-on-europes-defense-revival/"
+  },
+  {
+   "id": "ariane",
+   "name": "ArianeGroup / Arianespace",
+   "pays": "France · Allemagne",
+   "fr": true,
+   "segs": [
+    "spatial"
+   ],
+   "metier": "Lanceurs Ariane 6 et services de lancement",
+   "chiffre": "6 lancements d'Ariane 6 au plus en 2026 (8 visés initialement)",
+   "force": "Seul accès autonome de l'Europe à l'orbite lourde.",
+   "fragilite": "Coût par lancement face à SpaceX et cadence encore limitée.",
+   "suivre": "Réparation de la turbopompe, propulseurs P160C, clients commerciaux (Amazon Leo).",
+   "keys": [
+    "ArianeGroup",
+    "Arianespace"
+   ],
+   "u": "https://newsroom.arianespace.com/?p=49232"
+  },
+  {
+   "id": "eutelsat",
+   "name": "Eutelsat (OneWeb)",
+   "pays": "France",
+   "fr": true,
+   "segs": [
+    "spatial"
+   ],
+   "metier": "Opérateur de satellites (orbite géostationnaire et basse)",
+   "chiffre": "5,4 Md€ de contrats IRIS² · 229 satellites OneWeb commandés",
+   "force": "Seule constellation européenne en orbite basse en service.",
+   "fragilite": "Rentabilité et forte dépendance au soutien public.",
+   "suivre": "Déploiement d'IRIS² (opérationnel vers 2032).",
+   "keys": [
+    "Eutelsat"
+   ],
+   "u": "https://spacenews.com/eutelsat-orders-extra-oneweb-satellites-and-kicks-off-iris%c2%b2-leo-contracts/"
+  },
+  {
+   "id": "leonardo",
+   "name": "Leonardo",
+   "pays": "Italie",
+   "fr": false,
+   "segs": [
+    "defense",
+    "spatial",
+    "civil"
+   ],
+   "metier": "Hélicoptères, électronique de défense, spatial",
+   "chiffre": "32,5 % du futur ensemble spatial Bromo",
+   "force": "Hélicoptères, électronique de défense, présence dans l'avion de combat GCAP.",
+   "fragilite": "—",
+   "suivre": "GCAP avec le Royaume-Uni et le Japon, alternative européenne au SCAF.",
+   "keys": [
+    "Leonardo"
+   ],
+   "u": "https://en.wikipedia.org/wiki/Project_Bromo"
+  },
+  {
+   "id": "rollsroyce",
+   "name": "Rolls-Royce",
+   "pays": "Royaume-Uni",
+   "fr": false,
+   "segs": [
+    "civil",
+    "defense"
+   ],
+   "metier": "Moteurs d'avions long-courriers et militaires",
+   "chiffre": "CA 1er sem. 2026 : 11,3 Md£ (+26 %)",
+   "force": "Leader des moteurs de gros-porteurs, marges en forte hausse.",
+   "fragilite": "Absent du marché des monocouloirs.",
+   "suivre": "Moteur UltraFan, retour possible sur les monocouloirs.",
+   "keys": [
+    "Rolls-Royce"
+   ],
+   "u": "https://www.rolls-royce.com/media/press-releases/2026/30-07-2026-rr-holdings-plc-2026-half-year-results.aspx"
+  },
+  {
+   "id": "mtu",
+   "name": "MTU Aero Engines",
+   "pays": "Allemagne",
+   "fr": false,
+   "segs": [
+    "civil",
+    "defense"
+   ],
+   "metier": "Modules de moteurs d'avions et maintenance moteurs",
+   "chiffre": "Partenaire du moteur GTF de Pratt & Whitney et des moteurs de l'Eurofighter",
+   "force": "Grand motoriste européen de rang 1, très présent dans la maintenance.",
+   "fragilite": "Exposé aux problèmes du moteur GTF de Pratt & Whitney.",
+   "suivre": "Retour à la normale du GTF, moteurs militaires européens après le SCAF.",
+   "keys": [
+    "MTU",
+    "MTU Aero Engines"
+   ],
+   "u": ""
+  },
+  {
+   "id": "ohb",
+   "name": "OHB",
+   "pays": "Allemagne",
+   "fr": false,
+   "segs": [
+    "spatial"
+   ],
+   "metier": "Satellites (Galileo, observation), lanceurs (via RFA)",
+   "chiffre": "Opposé au projet Bromo, lève des capitaux",
+   "force": "Acteur agile sur les satellites institutionnels.",
+   "fragilite": "—",
+   "suivre": "Recours contre Bromo, montée en puissance de RFA.",
+   "keys": [
+    "OHB",
+    "RFA"
+   ],
+   "u": "https://www.grosswald.org/europe-space-merger-project-bromo-airbus-leonardo-thales-ohb-opposition/"
+  },
+  {
+   "id": "isar",
+   "name": "Isar Aerospace",
+   "pays": "Allemagne",
+   "fr": false,
+   "segs": [
+    "spatial"
+   ],
+   "metier": "Micro-lanceur Spectrum",
+   "chiffre": "Orbite atteinte le 5 sept. 2026 · contrat ESA de 197,8 M€",
+   "force": "Premier gagnant de la compétition des nouveaux lanceurs.",
+   "fragilite": "—",
+   "suivre": "Premiers vols commerciaux, place face à MaiaSpace.",
+   "keys": [
+    "Isar Aerospace"
+   ],
+   "u": "https://www.nasaspaceflight.com/2026/08/esa-european-launcher-challenge-contracts/"
+  },
+  {
+   "id": "aerospacelab",
+   "name": "Aerospacelab",
+   "pays": "Belgique",
+   "fr": false,
+   "segs": [
+    "spatial"
+   ],
+   "metier": "Plateformes de satellites produites en série",
+   "chiffre": "Maître d'œuvre de 264 plateformes IRIS² (2,4 Md€)",
+   "force": "Nouvel entrant industriel qui produit en volume.",
+   "fragilite": "—",
+   "suivre": "Capacité à livrer à grande échelle, effet sur les fournisseurs français.",
+   "keys": [
+    "Aerospacelab"
+   ],
+   "u": "https://spacenews.com/eutelsat-orders-extra-oneweb-satellites-and-kicks-off-iris%c2%b2-leo-contracts/"
+  }
+ ],
+ "countries": [
+  {
+   "id": "DE",
+   "name": "Allemagne",
+   "pos": "moyenne",
+   "segs": [
+    "defense",
+    "spatial",
+    "civil"
+   ],
+   "budget": "Plus de 108 Md€ pour la défense en 2026, dont 22,4 Md€ d'achats d'équipements, près de trois fois plus qu'en 2025.",
+   "besoins": [
+    "Une vingtaine d'Eurofighter supplémentaires",
+    "Défense aérienne et antidrones (plusieurs centaines de systèmes)",
+    "Spatial militaire souverain : 35 Md€ prévus d'ici 2030",
+    "F-35 américains et hélicoptères lourds CH-47"
+   ],
+   "fournisseurs": "Airbus Defence and Space (Eurofighter), MTU et Hensoldt, OHB et Isar Aerospace pour le spatial, et des fournisseurs américains (F-35, CH-47, Patriot).",
+   "posTxt": "La France est présente via Airbus, Safran, Thales et MBDA, mais la relation s'est tendue après l'abandon du volet avion du SCAF, et Berlin achète aussi américain pour l'aviation de combat.",
+   "vigilance": [
+    "L'Allemagne envisage de rejoindre le GCAP, programme concurrent du futur avion français",
+    "Coopération franco-allemande sur l'avion de combat fragilisée",
+    "Achats américains (F-35, CH-47)",
+    "Montée d'acteurs spatiaux allemands (OHB, Isar, RFA)"
+   ],
+   "opportunites": [
+    "Spatial militaire : observation, connectivité, lanceurs",
+    "Sous-traitance aéronautique pour l'Eurofighter et la défense aérienne",
+    "Composants pour les systèmes antidrones et les radars"
+   ],
+   "keys": [
+    "Allemagne",
+    "allemand",
+    "OHB",
+    "Isar",
+    "RFA",
+    "MTU",
+    "Eurofighter"
+   ],
+   "src": "Grosswald, suivi des achats de défense allemands, 2026",
+   "u": "https://www.grosswald.org/germany-defence-procurement-tracker/"
+  },
+  {
+   "id": "PL",
+   "name": "Pologne",
+   "pos": "faible",
+   "segs": [
+    "defense"
+   ],
+   "budget": "Environ 4,8 % du PIB consacré à la défense en 2026. Premier bénéficiaire des prêts européens SAFE (44 Md€).",
+   "besoins": [
+    "Drones et antidrones",
+    "Imagerie spatiale",
+    "Missiles à longue portée",
+    "Hélicoptères et avions de combat",
+    "24 hélicoptères d'entraînement et de combat via SAFE (TrekkerM de Leonardo ou H145M d'Airbus), décision visée fin 2026",
+    "Spatial : décision de doubler les investissements (octobre 2026)"
+   ],
+   "fournisseurs": "Surtout américains pour l'aérien : F-35, hélicoptères Apache, Patriot. Leonardo produit des hélicoptères AW149 en Pologne (PZL-Świdnik).",
+   "posTxt": "La France est peu présente dans l'aérien polonais. Les règles SAFE (65 % de composants européens) ouvrent une fenêtre, mais Varsovie réserve plus de 80 % des dépenses SAFE à ses propres entreprises.",
+   "vigilance": [
+    "Plus de 80 % des fonds SAFE réservés aux entreprises polonaises",
+    "Fournisseurs américains installés sur l'aviation de combat et les hélicoptères",
+    "Risque d'exécution d'un budget très rapide"
+   ],
+   "opportunites": [
+    "Coentreprises avec des industriels polonais sur les drones et l'antidrone",
+    "Composants européens exigés par SAFE (65 %) : place pour les sous-traitants aéronautiques français",
+    "Imagerie spatiale, priorité affichée de SAFE",
+    "Se positionner tôt sur le spatial polonais, que Varsovie veut développer avec l'Allemagne"
+   ],
+   "keys": [
+    "Pologne",
+    "polonais"
+   ],
+   "src": "National Defense Magazine, mai 2026",
+   "u": "https://www.nationaldefensemagazine.org/articles/2026/5/26/polands-defense-spending-poised-to-skyrocket"
+  },
+  {
+   "id": "IT",
+   "name": "Italie",
+   "pos": "moyenne",
+   "segs": [
+    "defense",
+    "spatial",
+    "civil"
+   ],
+   "budget": "31,3 Md€ de budget de défense, 45,3 Md€ avec les dépenses reclassées, ce qui atteint 2 % du PIB.",
+   "besoins": [
+    "Avion de combat GCAP avec le Royaume-Uni et le Japon (625 M€ en 2026)",
+    "F-35 (735 M€ en 2026)",
+    "Hélicoptères (Leonardo)",
+    "Spatial via le projet Bromo"
+   ],
+   "fournisseurs": "Leonardo en champion national (hélicoptères, électronique, aérostructures), programmes américains (F-35).",
+   "posTxt": "Partenaire industriel important : MBDA et Thales Alenia Space sont franco-italiens, et Leonardo est associé au projet spatial Bromo. Mais l'Italie mise sur le GCAP, concurrent du futur avion français.",
+   "vigilance": [
+    "GCAP, programme concurrent du futur avion de combat français",
+    "Forte place du F-35"
+   ],
+   "opportunites": [
+    "Missiles et défense aérienne via MBDA",
+    "Spatial : fusion Bromo, siège à Toulouse",
+    "Composants pour les hélicoptères et les aérostructures"
+   ],
+   "keys": [
+    "Italie",
+    "italien",
+    "Leonardo",
+    "GCAP"
+   ],
+   "src": "Defense News, oct. 2025",
+   "u": "https://www.defensenews.com/global/europe/2025/10/09/italy-unveils-31-billion-defense-budget-with-nato-target-in-mind/"
+  },
+  {
+   "id": "ES",
+   "name": "Espagne",
+   "pos": "moyenne",
+   "segs": [
+    "defense",
+    "spatial",
+    "civil"
+   ],
+   "budget": "2 % du PIB atteint, en partie par reclassement de dépenses. Plan industriel et technologique de défense de 10,5 Md€. L'Espagne refuse l'objectif OTAN de 5 %.",
+   "besoins": [
+    "Eurofighter supplémentaires (programmes Halcón)",
+    "Électronique de défense et spatial (Indra)",
+    "Lanceurs (PLD Space, financé par l'ESA)"
+   ],
+   "fournisseurs": "Airbus Espagne (Eurofighter, avions de transport), Indra (électronique, radars), PLD Space (lanceurs).",
+   "posTxt": "Partenaire via Airbus et les programmes européens. La montée d'Indra et la volonté de garder le contrôle national limitent la place des groupes français.",
+   "vigilance": [
+    "Indra, champion national en expansion",
+    "Budget plus contraint que chez les voisins"
+   ],
+   "opportunites": [
+    "Sous-traitance pour PLD Space et le spatial espagnol",
+    "Coopérations dans l'électronique de défense et l'avionique"
+   ],
+   "keys": [
+    "Espagne",
+    "espagnol",
+    "Indra",
+    "PLD"
+   ],
+   "src": "Parlement européen ; BEI",
+   "u": "https://epthinktank.eu/2026/03/09/eu-member-states-defence-budgets-2/"
+  },
+  {
+   "id": "UK",
+   "name": "Royaume-Uni",
+   "pos": "moyenne",
+   "segs": [
+    "defense",
+    "civil"
+   ],
+   "budget": "Budget du ministère de la Défense de 68,3 Md£ en 2026-27, porté à 79,1 Md£ en 2029-30 (2,7 % du PIB en 2029).",
+   "besoins": [
+    "Avion de combat GCAP",
+    "Missiles et drones",
+    "Achats auprès des PME : +50 % d'ici 2028"
+   ],
+   "fournisseurs": "BAE Systems (GCAP), Rolls-Royce (moteurs), MBDA UK (missiles), Leonardo UK (hélicoptères, électronique), fournisseurs américains.",
+   "posTxt": "MBDA et Thales ont une forte présence britannique. Le plan d'investissement de juin 2026 favorise les entreprises ayant une présence industrielle substantielle au Royaume-Uni.",
+   "vigilance": [
+    "Préférence pour les entreprises implantées au Royaume-Uni",
+    "GCAP, concurrent du futur avion de combat français"
+   ],
+   "opportunites": [
+    "Missiles et drones, priorités affichées",
+    "Accès facilité pour les PME, surtout avec une filiale ou un partenaire britannique",
+    "Mission du GIFAS au Royaume-Uni avec environ 70 entreprises françaises (25-29 octobre 2026) : contacts à exploiter"
+   ],
+   "keys": [
+    "Royaume-Uni",
+    "britannique",
+    "Rolls-Royce",
+    "BAE",
+    "GCAP"
+   ],
+   "src": "UK Defence Investment Plan, juin 2026",
+   "u": "https://assets.publishing.service.gov.uk/media/6a44e989167a99cf0018da38/The_Defence_Investment_Plan.pdf"
+  },
+  {
+   "id": "RO",
+   "name": "Roumanie",
+   "pos": "faible",
+   "segs": [
+    "defense"
+   ],
+   "budget": "Deuxième bénéficiaire des prêts SAFE : 16,68 Md€ approuvés en mai 2026.",
+   "besoins": [
+    "Défense aérienne et antidrones",
+    "Aviation de combat (F-35 commandés aux États-Unis)",
+    "Drones"
+   ],
+   "fournisseurs": "Surtout américains pour l'aviation de combat (F-35) et la défense aérienne (Patriot).",
+   "posTxt": "La France est peu présente dans l'aérien roumain. Les premières attributions SAFE sont allées à d'autres domaines que l'aéronautique.",
+   "vigilance": [
+    "Préférence pour les systèmes américains dans l'aérien"
+   ],
+   "opportunites": [
+    "Part de l'enveloppe SAFE encore à attribuer, notamment en défense aérienne",
+    "Drones et antidrones"
+   ],
+   "keys": [
+    "Roumanie",
+    "roumain"
+   ],
+   "src": "Army Recognition, mai 2026",
+   "u": "https://www.armyrecognition.com/news/army-news/2026/romania-16b-safe-defense-agreement-eu-military-procurement"
+  },
+  {
+   "id": "BE",
+   "name": "Belgique et Pays-Bas",
+   "pos": "moyenne",
+   "segs": [
+    "defense",
+    "spatial"
+   ],
+   "budget": "Belgique : 8,34 Md€ de prêts SAFE. Défense aérienne commune avec les Pays-Bas : 3,1 Md€.",
+   "besoins": [
+    "11 F-35A supplémentaires pour la Belgique en 2026 (flotte portée à 45)",
+    "Défense aérienne : lanceurs NASAMS, antidrones, radars",
+    "Spatial : Aerospacelab (IRIS²)"
+   ],
+   "fournisseurs": "Kongsberg (NASAMS), Rheinmetall (antiaérien SkyRanger), Thales (14 radars GM200), Lockheed Martin (F-35).",
+   "posTxt": "Thales a remporté les radars de la défense aérienne commune. Le choix du F-35 limite l'aviation de combat française, mais la France propose de déployer ponctuellement des Rafale de sa dissuasion en Belgique.",
+   "vigilance": [
+    "Choix américain pour l'aviation de combat (F-35)",
+    "Aerospacelab, nouveau concurrent dans les satellites"
+   ],
+   "opportunites": [
+    "Radars et électronique de défense",
+    "Fournisseurs de sous-systèmes pour les 264 satellites IRIS² d'Aerospacelab"
+   ],
+   "keys": [
+    "Belgique",
+    "belge",
+    "Pays-Bas",
+    "néerlandais",
+    "Aerospacelab"
+   ],
+   "src": "Breaking Defense, juil. 2026",
+   "u": "https://breakingdefense.com/2026/07/belgium-splashes-3-5-billion-to-build-shared-air-defense-arsenal-with-the-netherlands/"
+  },
+  {
+   "id": "GR",
+   "name": "Grèce",
+   "pos": "forte",
+   "segs": [
+    "defense"
+   ],
+   "budget": "787,7 M€ de prêts SAFE (premier versement de 118,2 M€ en juillet 2026). Achat de 20 F-35 pour environ 3,47 Md€, avec une option pour 20 de plus.",
+   "besoins": [
+    "Modernisation de l'aviation de combat",
+    "Soutien et maintenance de la flotte Rafale",
+    "Défense aérienne"
+   ],
+   "fournisseurs": "Client du Rafale (Dassault), mais achète aussi des F-35 américains.",
+   "posTxt": "Position française forte grâce au Rafale, à consolider face au F-35.",
+   "vigilance": [
+    "F-35 en parallèle du Rafale : concurrence pour les futurs budgets"
+   ],
+   "opportunites": [
+    "Soutien et maintenance des Rafale",
+    "Équipements aéronautiques financés par SAFE"
+   ],
+   "keys": [
+    "Grèce",
+    "grec"
+   ],
+   "src": "Commission européenne, juil. 2026",
+   "u": "https://defence-industry-space.ec.europa.eu/greece-receives-first-eur1182-million-payment-under-safe-defence-instrument-2026-07-24_en"
+  }
+ ],
+ "tenders": [
+  {
+   "id": "t20261030-1",
+   "pays": "FR",
+   "acheteur": "DGA, via l'OCCAR",
+   "seg": "defense",
+   "m": "sys",
+   "statut": "attribue",
+   "objet": "Quatre systèmes de défense aérienne SAMP/T NG supplémentaires commandés à Eurosam (MBDA et Thales), pour un total de douze.",
+   "montant": "Non précisé",
+   "date": "2026-10-21",
+   "echeance": "",
+   "why": "Une commande sur plusieurs années, dix systèmes devant être livrés d'ici fin 2030, qui ouvre de la charge pour la chaîne de fournisseurs.",
+   "acces": "Se rapprocher de MBDA et de Thales pour la production du missile ASTER et du radar GF300.",
+   "src": "Mer et Marine, oct. 2026",
+   "u": "https://www.meretmarine.com/fr/defense/la-dga-commande-quatre-systemes-supplementaires-de-defense-sol-air-sampt-ng"
+  },
+  {
+   "id": "t20260929-1",
+   "pays": "EU",
+   "acheteur": "Commission européenne et États membres (EDIP)",
+   "seg": "defense",
+   "m": "fin",
+   "statut": "programme",
+   "objet": "Cinq projets européens de défense d'intérêt commun : drones et antidrones, spatial, défense aérienne et antimissile, flanc est, maritime.",
+   "montant": "325 M€ de l'EDIP",
+   "date": "2026-09-28",
+   "echeance": "",
+   "why": "Des financements européens réservés aux coopérations entre industriels de l'UE.",
+   "acces": "Rejoindre les consortiums nationaux ou européens et suivre les appels EDIP de la Commission.",
+   "src": "Conseil de l'UE, 28 sept. 2026",
+   "u": "https://www.consilium.europa.eu/en/press/press-releases/2026/09/28/european-defence-industry-council-identifies-the-first-five-projects-of-common-interest/"
+  },
+  {
+   "id": "t20260929-2",
+   "pays": "FR",
+   "acheteur": "DGA (ministère des Armées)",
+   "seg": "defense",
+   "m": "sys",
+   "statut": "attribue",
+   "objet": "Drones intercepteurs antidrones GOBI Zephyr : première tranche de 50 unités, tranches supplémentaires en option.",
+   "montant": "Non précisé",
+   "date": "2026-09-23",
+   "echeance": "",
+   "why": "Des tranches supplémentaires peuvent être activées rapidement : besoin de fournisseurs de moteurs, batteries, capteurs et électronique en volume.",
+   "acces": "Se proposer comme fournisseur de composants auprès d'Harmattan AI.",
+   "src": "Refrance, sept. 2026",
+   "u": "https://refrance.fr/drones-anti-drones-la-dga-passe-sa-premiere-commande-ferme-a-la-licorne-francaise-harmattan-ai/"
+  },
+  {
+   "id": "t20260929-3",
+   "pays": "FR",
+   "acheteur": "DGA (ministère des Armées)",
+   "seg": "defense",
+   "m": "prop",
+   "statut": "attribue",
+   "objet": "Premiers contrats du Rafale F5 : moteur M88 T-REX (Safran), radar, guerre électronique SPECTRA F5 (Thales, MBDA), liaisons et navigation.",
+   "montant": "Non précisé (développement du moteur T-REX estimé à environ 600 M€)",
+   "date": "2026-09-04",
+   "echeance": "",
+   "why": "Le développement puis la production du F5 (mise en service vers 2033-2035) vont irriguer toute la chaîne Rafale.",
+   "acces": "Se positionner auprès de Safran, Thales, MBDA et Dassault Aviation (pièces moteur, électronique, usinage).",
+   "src": "Opex360, 4 sept. 2026",
+   "u": "https://www.opex360.com/2026/09/04/la-direction-generale-de-larmement-a-notifie-les-premiers-contrats-pour-le-developpement-du-rafale-f5/"
+  },
+  {
+   "id": "t20260929-4",
+   "pays": "PL",
+   "acheteur": "Ministère polonais de la Défense (achat conjoint SAFE avec l'Italie)",
+   "seg": "defense",
+   "m": "sys",
+   "statut": "attribution",
+   "objet": "24 hélicoptères d'entraînement et de combat : AW109 TrekkerM de Leonardo face au H145M d'Airbus, production en Pologne exigée.",
+   "montant": "Non précisé (financé par les prêts SAFE)",
+   "date": "2026-09-15",
+   "echeance": "",
+   "why": "Un marché financé par SAFE, donc réservé à des appareils européens ; Airbus Helicopters est encore en lice.",
+   "acces": "Suivre la décision polonaise, visée d'ici fin 2026, et se positionner comme équipementier (moteurs, avionique) auprès du vainqueur.",
+   "src": "Grosswald, sept. 2026",
+   "u": "https://www.grosswald.org/poland-italy-final-negotiations-24-training-combat-helicopters-safe-joint-procurement-aw109-trekkerm-pzl-swidnik-kosiniak-kamysz-crosetto/"
+  },
+  {
+   "id": "t01",
+   "pays": "FR",
+   "acheteur": "DGA (ministère des Armées)",
+   "seg": "defense",
+   "m": "elec",
+   "statut": "attribution",
+   "objet": "Micro et mini-drones de moins de 150 kg, capables d'emporter jusqu'à 20 kg, notamment pour des missions logistiques.",
+   "montant": "Jusqu'à 250 M€",
+   "date": "2026-03-30",
+   "echeance": "",
+   "why": "Commande publique importante sur un marché où les armées veulent des volumes rapides.",
+   "acces": "Suivre l'attribution ; les PME peuvent candidater en groupement pour cumuler leurs capacités.",
+   "src": "Opex360, mars 2026",
+   "u": "https://www.opex360.com/2026/03/30/la-direction-generale-de-larmement-cherche-des-mini-drones-pouvant-effectuer-des-missions-logistiques/"
+  },
+  {
+   "id": "t02",
+   "pays": "FR",
+   "acheteur": "Ministère des Armées",
+   "seg": "defense",
+   "m": "elec",
+   "statut": "attribution",
+   "objet": "Fourniture de drones, d'accessoires, de composants et de prestations pour les forces armées et de sécurité.",
+   "montant": "Non précisé",
+   "date": "2026-04",
+   "echeance": "2026-06-01",
+   "why": "Accord-cadre ouvert aux fournisseurs de composants et de services, pas seulement aux fabricants de drones.",
+   "acces": "Candidatures closes le 1er juin 2026 : surveiller les prochains lots sur marches-publics.gouv.fr.",
+   "src": "Marchés Online",
+   "u": "https://www.marchesonline.com/appels-offres/avis/fourniture-de-drones-accessoires-composants-et-presta/ao-9594298-1"
+  },
+  {
+   "id": "t03",
+   "pays": "EU",
+   "acheteur": "Aerospacelab (programme IRIS²)",
+   "seg": "spatial",
+   "m": "elec",
+   "statut": "ouvert",
+   "objet": "Sélection de fournisseurs de sous-systèmes de vol pour les 264 satellites de la constellation IRIS² (consultations puis appels d'offres).",
+   "montant": "Contrat principal de 2,4 Md€",
+   "date": "2026-09",
+   "echeance": "",
+   "why": "La réglementation IRIS² impose de sous-traiter au moins 30 % de la valeur à des PME.",
+   "acces": "S'inscrire aux consultations fournisseurs publiées par Aerospacelab.",
+   "src": "Aerospacelab, achats ouverts",
+   "u": "https://www.aerospacelab.com/open-procurement-processes"
+  },
+  {
+   "id": "t04",
+   "pays": "PL",
+   "acheteur": "Ministère polonais de la Défense (prêts SAFE)",
+   "seg": "defense",
+   "m": "sys",
+   "statut": "programme",
+   "objet": "44 Md€ de prêts SAFE pour les drones, les antidrones, l'intelligence artificielle, l'imagerie spatiale et les munitions à longue portée.",
+   "montant": "44 Md€",
+   "date": "2026-03-12",
+   "echeance": "",
+   "why": "SAFE exige 65 % de composants européens, ce qui exclut en partie les fournisseurs américains et coréens habituels.",
+   "acces": "Passer par un partenaire polonais : plus de 80 % des dépenses SAFE sont réservées aux entreprises locales.",
+   "src": "National Defense Magazine, mai 2026",
+   "u": "https://www.nationaldefensemagazine.org/articles/2026/5/26/polands-defense-spending-poised-to-skyrocket"
+  },
+  {
+   "id": "t05",
+   "pays": "BE",
+   "acheteur": "Belgique et Pays-Bas",
+   "seg": "defense",
+   "m": "elec",
+   "statut": "attribue",
+   "objet": "Défense aérienne commune : 10 lanceurs NASAMS, 20 systèmes antiaériens SkyRanger et 14 radars Thales GM200.",
+   "montant": "3,1 Md€",
+   "date": "2026-07",
+   "echeance": "",
+   "why": "Succès français (Thales) qui ouvre de la sous-traitance et du soutien sur plusieurs années.",
+   "acces": "Se rapprocher de Thales pour la production et le maintien en condition des radars.",
+   "src": "Breaking Defense, juil. 2026",
+   "u": "https://breakingdefense.com/2026/07/belgium-splashes-3-5-billion-to-build-shared-air-defense-arsenal-with-the-netherlands/"
+  },
+  {
+   "id": "t06",
+   "pays": "DE",
+   "acheteur": "Bundeswehr (office d'achat BAAINBw)",
+   "seg": "defense",
+   "m": "sys",
+   "statut": "programme",
+   "objet": "Budget d'achats 2026 de la Bundeswehr : une vingtaine d'Eurofighter supplémentaires, défense aérienne et antidrones, spatial militaire (35 Md€ prévus d'ici 2030).",
+   "montant": "22,4 Md€ d'achats en 2026, tous domaines",
+   "date": "2026",
+   "echeance": "",
+   "why": "Les volumes aéronautiques et spatiaux dépassent les capacités des maîtres d'œuvre, qui ouvrent leur sous-traitance.",
+   "acces": "Viser Airbus Defence and Space (Eurofighter), OHB et les intégrateurs de défense aérienne comme client de rang 2 ou 3.",
+   "src": "Grosswald, 2026",
+   "u": "https://www.grosswald.org/germany-defence-procurement-tracker/"
+  },
+  {
+   "id": "t07",
+   "pays": "UK",
+   "acheteur": "Ministère britannique de la Défense",
+   "seg": "defense",
+   "m": "comp",
+   "statut": "programme",
+   "objet": "Plan d'investissement de défense : GCAP, missiles, drones et hausse de 50 % des achats auprès des PME d'ici 2028.",
+   "montant": "79,1 Md£ de budget en 2029-30",
+   "date": "2026-06",
+   "echeance": "",
+   "why": "Le ministère veut élargir sa base de fournisseurs, en particulier les PME.",
+   "acces": "Une présence industrielle au Royaume-Uni (filiale, partenaire) est fortement valorisée.",
+   "src": "UK Defence Investment Plan, juin 2026",
+   "u": "https://assets.publishing.service.gov.uk/media/6a44e989167a99cf0018da38/The_Defence_Investment_Plan.pdf"
+  },
+  {
+   "id": "t08",
+   "pays": "EU",
+   "acheteur": "ESA (European Launcher Challenge)",
+   "seg": "spatial",
+   "m": "sys",
+   "statut": "attribution",
+   "objet": "Contrats de développement de nouveaux lanceurs : Isar, RFA et PLD attribués ; MaiaSpace (France) en cours de finalisation.",
+   "montant": "Environ 544 M€ attribués",
+   "date": "2026-08",
+   "echeance": "",
+   "why": "Chaque lanceur retenu aura besoin d'une chaîne de fournisseurs (structures, propulsion, électronique, essais).",
+   "acces": "Se positionner comme fournisseur de MaiaSpace ou des lanceurs déjà retenus.",
+   "src": "NASASpaceFlight, août 2026",
+   "u": "https://www.nasaspaceflight.com/2026/08/esa-european-launcher-challenge-contracts/"
+  }
+ ]
+}
