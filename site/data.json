@@ -136,9 +136,202 @@
    "seg": "spatial",
    "t": "Dépôt du dossier Bromo auprès de la Commission européenne",
    "why": "Début de l'examen qui décidera de la fusion spatiale."
+  },
+  {
+   "d": "2026-12",
+   "seg": "defense",
+   "t": "Vote du budget 2027 : commande de 23 H145 D3 pour la Gendarmerie",
+   "why": "Condition de cette commande de 355 M€ à Airbus Helicopters."
   }
  ],
  "signals": [
+  {
+   "id": "c20261030-1",
+   "k": "actu",
+   "d": "2026-10-28",
+   "seg": "defense",
+   "m": "sys",
+   "n": "besoin",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Suisse : SAMP/T NG en finale face au Barak MX",
+   "r": "La Suisse a retenu deux finalistes pour son second système de défense aérienne : le SAMP/T NG franco-italien et le Barak MX israélien ; le choix final n'est pas daté.",
+   "why": "Les retards du Patriot américain ouvrent un marché européen à l'offre de MBDA et Thales, et la Suisse souhaite une production en Suisse ou en Europe.",
+   "s": "",
+   "act": [
+    "MBDA",
+    "Thales",
+    "Eurosam"
+   ],
+   "orig": "",
+   "src": "Opex360, 28 oct. 2026",
+   "u": "https://www.opex360.com/2026/10/28/surprise-en-suisse-le-choix-dun-second-systeme-de-defense-aerienne-se-fera-entre-le-samp-t-ng-et-le-barak-mx-israelien/"
+  },
+  {
+   "id": "c20261030-2",
+   "k": "actu",
+   "d": "2026-10-28",
+   "seg": "civil",
+   "m": "serv",
+   "n": "atout",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Airbus et AFI KLM E&M créent Alpha Component Solutions",
+   "r": "Airbus et Air France Industries KLM E&M ont lancé une coentreprise qui gère un stock mondial partagé de composants et leur maintenance pour l'A350 ; plus de 500 avions sont déjà sous contrat.",
+   "why": "Deux acteurs français renforcent leur position sur la maintenance d'un avion dont 1 624 exemplaires restent à livrer.",
+   "s": "",
+   "act": [
+    "Airbus",
+    "Air France Industries KLM E&M"
+   ],
+   "orig": "",
+   "src": "AeroTime, 28 oct. 2026",
+   "u": "https://www.aerotime.aero/articles/what-airbus-and-air-frances-new-joint-venture-means-for-global-a350-operators"
+  },
+  {
+   "id": "c20261030-3",
+   "k": "actu",
+   "d": "2026-10-27",
+   "seg": "defense",
+   "m": "sys",
+   "n": "manque",
+   "imp": 3,
+   "geo": "FR",
+   "t": "Le drone de combat du Rafale F5 reste incertain",
+   "r": "Devant le Sénat, la ministre des Armées a parlé au passé du drone de combat furtif annoncé en 2024 pour le Rafale F5 : aucun contrat n'était notifié à l'été 2026, et des drones collaboratifs surtout américains sont cités parmi les options.",
+   "why": "Sans programme français lancé, la France risque un retard, voire d'acheter à l'étranger une brique clé du combat aérien de demain.",
+   "s": "",
+   "act": [
+    "Dassault Aviation",
+    "DGA"
+   ],
+   "orig": "",
+   "src": "Opex360, 27 oct. 2026",
+   "u": "https://www.opex360.com/2026/10/27/le-drone-de-combat-qui-accompagnera-le-rafale-f5-ne-sera-peut-etre-pas-de-conception-francaise/",
+   "crit": {
+    "c": 2,
+    "e": 2,
+    "t": 3,
+    "p": 2
+   }
+  },
+  {
+   "id": "c20261030-4",
+   "k": "actu",
+   "d": "2026-10-26",
+   "seg": "civil",
+   "m": "fin",
+   "n": "manque",
+   "imp": 3,
+   "geo": "EU",
+   "t": "Washington conteste le prêt de la BEI à Airbus",
+   "r": "Le représentant américain au Commerce juge que le prêt de la Banque européenne d'investissement à Airbus, jusqu'à 3 Md€, crée une incertitude pour les échanges aérospatiaux ; Airbus parle d'un financement classique.",
+   "why": "La trêve sur les droits de douane aéronautiques est menacée : un retour des taxes toucherait une filière européenne très exportatrice vers les États-Unis.",
+   "s": "",
+   "act": [
+    "Airbus"
+   ],
+   "orig": "",
+   "src": "AeroTime, oct. 2026",
+   "u": "https://www.aerotime.aero/articles/us-warns-3-4-billion-airbus-loan-threatens-aircraft-trade-truce",
+   "crit": {
+    "c": 1,
+    "e": 3,
+    "t": 2,
+    "p": 2
+   }
+  },
+  {
+   "id": "c20261030-5",
+   "k": "actu",
+   "d": "2026-10-30",
+   "seg": "spatial",
+   "m": "elec",
+   "n": "dependance",
+   "imp": 2,
+   "geo": "EU",
+   "t": "IRIS² : des antennes commandées au canadien MDA Space",
+   "r": "Thales Alenia Space a lancé avec le canadien MDA Space des travaux de plus de 100 M$ sur les antennes des 66 premiers satellites d'IRIS², fabriquées à Montréal ; le contrat définitif reste à signer.",
+   "why": "Une brique clé d'un programme présenté comme souverain est confiée à un fournisseur hors UE, ce qui montre un manque de capacité ou de compétitivité européenne.",
+   "s": "",
+   "act": [
+    "Thales Alenia Space",
+    "MDA Space"
+   ],
+   "orig": "Canada",
+   "src": "Defence Industry Europe, 30 oct. 2026",
+   "u": "https://defence-industry.eu/canadas-mda-space-joins-europes-iris%c2%b2-programme-with-antenna-systems-agreement-for-66-early-delivery-satellites/",
+   "crit": {
+    "c": 2,
+    "e": 2,
+    "t": 2,
+    "p": 1
+   }
+  },
+  {
+   "id": "c20261030-6",
+   "k": "actu",
+   "d": "2026-10-30",
+   "seg": "spatial",
+   "m": "sys",
+   "n": "atout",
+   "imp": 2,
+   "geo": "FR",
+   "t": "Callisto : essais au sol lancés à Kourou",
+   "r": "Le CNES a lancé en Guyane les essais de qualification au sol de Callisto, démonstrateur de fusée réutilisable, avec une maquette de la société française CIPAL ; le DLR allemand visait un premier vol en 2027.",
+   "why": "La France prépare à Kourou une compétence réutilisable que l'Europe doit acquérir pour rester dans la course face à SpaceX.",
+   "s": "",
+   "act": [
+    "CNES",
+    "CIPAL",
+    "DLR"
+   ],
+   "orig": "",
+   "src": "European Spaceflight, 30 oct. 2026",
+   "u": "https://europeanspaceflight.com/ground-qualification-testing-begins-for-callisto-reusable-rocket-demonstrator/"
+  },
+  {
+   "id": "c20261030-7",
+   "k": "actu",
+   "d": "2026-10-29",
+   "seg": "civil",
+   "m": "prop",
+   "n": "atout",
+   "imp": 2,
+   "geo": "EU",
+   "t": "Londres soutient Rolls-Royce sur les moteurs de monocouloirs",
+   "r": "Le Royaume-Uni prévoit un programme de recherche de 2,5 Md£ sur 10 ans sur les turbines à gaz, et soutient le projet de Rolls-Royce de revenir sur les moteurs de monocouloirs ; le plan reste soumis à un accord final.",
+   "why": "L'Europe renforce sa motorisation, mais Rolls-Royce deviendrait un concurrent de plus pour Safran sur son marché le plus important.",
+   "s": "",
+   "act": [
+    "Rolls-Royce",
+    "Safran"
+   ],
+   "orig": "",
+   "src": "AeroTime, 29 oct. 2026",
+   "u": "https://www.aerotime.aero/articles/uk-rolls-royce-engine-future-narrowbody-fleet"
+  },
+  {
+   "id": "c20261030-8",
+   "k": "actu",
+   "d": "2026-10-28",
+   "seg": "defense",
+   "m": "sys",
+   "n": "besoin",
+   "imp": 1,
+   "geo": "FR",
+   "t": "Gendarmerie : 23 hélicoptères H145 D3 envisagés",
+   "r": "Si le budget 2027 est adopté, la Gendarmerie pourra commander 23 hélicoptères H145 D3 à Airbus Helicopters pour environ 355 M€, afin de remplacer ses Écureuil en fin de vie.",
+   "why": "Cette commande publique française éviterait une rupture de capacité et apporterait de la charge à Airbus Helicopters et à ses fournisseurs.",
+   "s": "",
+   "act": [
+    "Airbus Helicopters",
+    "Gendarmerie nationale"
+   ],
+   "orig": "",
+   "src": "Opex360, 28 oct. 2026",
+   "u": "https://www.opex360.com/2026/10/28/selon-un-rapport-la-flotte-de-vehicules-legers-de-la-gendarmerie-risque-de-se-heurter-a-un-mur-dobsolescence-en-2028/"
+  },
   {
    "id": "a20261030-1",
    "k": "actu",
