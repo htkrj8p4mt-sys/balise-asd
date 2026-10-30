@@ -129,7 +129,7 @@ def fetch_candidates(seen):
             key = hashlib.sha1(url.encode()).hexdigest()[:16]
             items.append({"key": key, "title": title, "summary": summary, "url": url, "source": src["name"],
                           "date": time.strftime("%Y-%m-%d", published), "ts": calendar.timegm(published),
-                          "seg": guess_seg(text), "seen": key in seen})
+                          "seg": guess_seg(re.sub(r" - [^-]+$", "", title)), "seen": key in seen})
     items.sort(key=lambda x: -x["ts"])
     return items
 
