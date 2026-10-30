@@ -179,7 +179,7 @@
     return `<section class="intro"><div class="stack"><h2>Radar de tendances</h2><p>Chaque point est un fait récent : plus il est près du centre, plus il est frais, plus il est gros, plus il compte. <b>Cliquez un point</b> pour le lire.</p></div></section>
       <div class="legend-chips">${NAT_ALL.map(n => `<button class="chip ${n}" data-act="radar-off" data-v="${n}" aria-pressed="${!st.radarOff.includes(n)}"><i></i>${NAT[n]}</button>`).join("")}</div>
       <div class="radar-wrap">
-        <div class="radar-box"><svg class="radar" viewBox="0 0 640 640" role="img" aria-label="Radar des tendances">
+        <div class="radar-box"><svg class="radar" viewBox="-90 0 820 640" role="img" aria-label="Radar des tendances">
           <circle cx="320" cy="320" r="280" class="r-bg"/>
           <g class="sweep"><path d="M320 320 L320 40 A280 280 0 0 1 518 122 Z"/></g>
           ${rings}${spokes}${ringL}${labels}${dots}
