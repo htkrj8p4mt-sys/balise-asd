@@ -2,6 +2,41 @@
  "updated": "2026-10-30",
  "items": [
   {
+   "t": "PATMAR : le surcoût de 65 % de l’Airbus A321XLR impose-t-il de réexaminer le Falcon 10X de Dassault ?",
+   "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9jeGNqSTRHdGVIX2hoT0lXOUZZTnI2YkdqanVRWnpyeWctUmhqZ3FtdmNQVkNPMF9FRUM3ZERYQUZZOEpXR2l2NGZNM1JWNld4UVZWVEg5ajczeWtkMC1iMmJEdjdVaDgxdE5BOG96MEk0M3M?oc=5",
+   "src": "Meta-Defense",
+   "d": "2026-10-30",
+   "seg": "civil"
+  },
+  {
+   "t": "Un hélicoptère italien de transport CH-47 Chinook s’est écrasé en Bosnie-Herzégovine",
+   "u": "https://www.opex360.com/2026/10/30/un-helicoptere-italien-de-transport-ch-47-chinook-sest-ecrase-en-bosnie-herzegovine/",
+   "src": "Opex360",
+   "d": "2026-10-30",
+   "seg": "civil"
+  },
+  {
+   "t": "Le canadien MDA Space rejoint le programme européen IRIS² avec un accord sur les antennes de 66 satellites",
+   "u": "https://defence-industry.eu/canadas-mda-space-joins-europes-iris%c2%b2-programme-with-antenna-systems-agreement-for-66-early-delivery-satellites/",
+   "src": "Defence Industry Europe",
+   "d": "2026-10-30",
+   "seg": "spatial"
+  },
+  {
+   "t": "Atlantic Airways commande deux Airbus A320neo",
+   "u": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQeEs0ZjhLb3ZQM25QcUdoQkluTkxQY1diaVN2NGFsdFh0blB6V0R4ckdwSUJSSlpzQUd0c2NRTDhuR2ctR1FPbDlLR3JZT29iMEdaVzY2TkxqclNhVGRJd3ZGUEZuZW9lV1BwaUcwZllVRGFtWDdjYnVnN2FYWDhoemR3MlBBV09rTXNUSXZZWDU?oc=5",
+   "src": "Aerobuzz",
+   "d": "2026-10-30",
+   "seg": "civil"
+  },
+  {
+   "t": "Le premier Falcon 8X Archange français de renseignement entre en essais militaires",
+   "u": "https://www.aerotime.aero/articles/france-falcon-8x-archange-spy-jet-evreux",
+   "src": "AeroTime",
+   "d": "2026-10-30",
+   "seg": "defense"
+  },
+  {
    "t": "Début des essais de qualification au sol de Callisto, démonstrateur de fusée réutilisable",
    "u": "https://europeanspaceflight.com/ground-qualification-testing-begins-for-callisto-reusable-rocket-demonstrator/",
    "src": "European Spaceflight",
