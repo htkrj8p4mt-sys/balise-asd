@@ -23,38 +23,26 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
     outputs:
       changed: ${{ steps.commit.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
-      - name: Vérifier la clé API
-        id: key
-        run: |
-          if [ -z "$ANTHROPIC_API_KEY" ]; then
-            echo "::warning::Le secret ANTHROPIC_API_KEY n'est pas configuré : pas de collecte."
-            echo "ok=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "ok=true" >> "$GITHUB_OUTPUT"
-          fi
       - uses: actions/setup-python@v5
-        if: steps.key.outputs.ok == 'true'
         with:
           python-version: "3.12"
       - run: pip install -r scripts/requirements.txt
-        if: steps.key.outputs.ok == 'true'
       - name: Collecter
-        if: steps.key.outputs.ok == 'true'
         run: python scripts/collect.py
       - name: Mettre à jour la synthèse
-        if: steps.key.outputs.ok == 'true' && github.event.schedule == '37 5 * * 1'
+        if: github.event.schedule == '37 5 * * 1'
         run: python scripts/collect.py --overview
       - name: Enregistrer
         id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/data.json scripts/seen.json 2>/dev/null || true
+          git add site/data.json site/flux.json scripts/seen.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else

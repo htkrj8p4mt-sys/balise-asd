@@ -4,13 +4,14 @@ Veille et market intelligence sur l'aéronautique et le spatial, civils et milit
 
 ## Fonctionnement
 
-1. `.github/workflows/veille.yml` se lance toutes les heures.
-2. `scripts/collect.py` lit les flux de `scripts/sources.json` et envoie les nouveaux articles à l'API Claude, qui les classe et les résume.
-3. Les résultats sont ajoutés à `site/data.json`, puis le dossier `site/` est publié sur GitHub Pages.
+`.github/workflows/veille.yml` lance `scripts/collect.py` toutes les heures, puis publie le dossier `site/` sur GitHub Pages.
+
+- **Sans clé :** le flux direct (`site/flux.json`, à partir de `scripts/sources.json`) et les appels d'offres de l'API publique TED.
+- **Avec une clé Groq gratuite :** les articles sont aussi résumés, expliqués et classés dans `site/data.json`.
 
 ## Configuration
 
-Ajouter la clé API dans **Settings → Secrets and variables → Actions**, sous le nom `ANTHROPIC_API_KEY`. Ne jamais la mettre dans le code.
+Créer une clé sur https://console.groq.com, puis l'ajouter dans **Settings → Secrets and variables → Actions** sous le nom `GROQ_API_KEY`. Ne jamais la mettre dans le code.
 
 ## Ajouter une source
 

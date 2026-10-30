@@ -1,8 +1,12 @@
-"""Collecteur de Balise ASD : lit les flux d'actualité, fait classer les nouveaux
-articles par Claude et les ajoute à site/data.json.
+"""Collecteur de Balise ASD, sans service payant.
 
-  python scripts/collect.py              ajoute les nouveaux signaux
-  python scripts/collect.py --dry-run    affiche les articles retenus, sans appeler l'API
+Toutes les heures :
+- le flux direct (site/flux.json) et les appels d'offres TED sont mis à jour, sans aucune clé ;
+- si GROQ_API_KEY est défini, l'IA gratuite de Groq classe et résume les nouveaux articles
+  dans site/data.json. Sans clé, cette étape est simplement ignorée.
+
+  python scripts/collect.py              lance la collecte
+  python scripts/collect.py --dry-run    affiche les articles retenus, sans rien écrire
   python scripts/collect.py --overview   réécrit la synthèse de l'état des lieux
 """
 import calendar
@@ -12,6 +16,8 @@ import os
 import re
 import sys
 import time
+import urllib.error
+import urllib.request
 from datetime import date
 from pathlib import Path
 
@@ -20,8 +26,13 @@ DATA = ROOT / "site" / "data.json"
 SEEN = ROOT / "scripts" / "seen.json"
 SOURCES = ROOT / "scripts" / "sources.json"
 
-MODEL = os.environ.get("BALISE_MODEL", "claude-opus-5-5")
+FLUX = ROOT / "site" / "flux.json"
+GROQ_URL = "https://api.groq.com/openai/v1"
+MODEL_PREFERENCE = ["gpt-oss-120b", "llama-4-maverick", "llama-3.3-70b", "gpt-oss-20b", "llama"]
 MAX_ITEMS = int(os.environ.get("BALISE_MAX_ITEMS", "30"))
+BATCH = 10
+MAX_FLUX = 200
+TED_CPV = "35600000 34700000"
 MAX_AGE_DAYS = 3
 MAX_SIGNALS = 300
 
@@ -31,78 +42,28 @@ NATS = ["atout", "besoin", "manque", "dependance"]
 PAYS = ["FR", "EU", "DE", "PL", "IT", "ES", "UK", "RO", "BE", "GR"]
 STATUTS = ["ouvert", "attribution", "programme", "attribue"]
 
-# Filtre gratuit avant l'appel à l'API : l'article doit concerner l'Europe ou un acteur suivi.
-RELEVANT = re.compile(
-    r"airbus|safran|thales|dassault|rafale|mbda|ariane|arianespace|eutelsat|oneweb|iris²|iris2|leonardo|"
-    r"rolls-royce|mtu aero|ohb|isar aerospace|rocket factory|maiaspace|latitude|aerospacelab|daher|latécoère|latecoere|"
-    r"figeac|gifas|\besa\b|\bcnes\b|\bdga\b|gcap|scaf|fcas|eurofighter|eurodrone|bromo|samp/t|aster|harmattan|"
-    r"\bsafe\b|edip|refueleu|commission européenne|european commission|"
-    r"france|français|french|europe|allemagne|germany|german|pologne|poland|polish|italie|italy|italian|espagne|spain|"
-    r"spanish|royaume-uni|\buk\b|british|roumanie|romania|belgique|belgium|pays-bas|netherlands|dutch|grèce|greece",
-    re.I)
+# Filtres appliqués avant tout : l'article doit parler d'aéronautique ou de spatial ET concerner l'Europe.
+ACTORS = (r"airbus|safran|thales|dassault|rafale|mbda|ariane|arianespace|eutelsat|oneweb|iris²|iris2|leonardo|"
+          r"rolls-royce|mtu aero|\bohb\b|isar aerospace|rocket factory|maiaspace|latitude|aerospacelab|daher|latécoère|latecoere|"
+          r"figeac|gifas|\besa\b|\bcnes\b|\bdga\b|gcap|scaf|fcas|eurofighter|eurodrone|bromo|samp/t|harmattan")
+AERO = re.compile(ACTORS + r"|avion|aircraft|aéronaut|aeronaut|aerospace|aérospatial|spatial|satellite|lanceur|launcher|rocket|fusée|"
+                  r"drone|missile|hélicoptère|helicopter|moteur d.avion|aero.?engine|jet\b|fighter|défense aérienne|air defen", re.I)
+EUROPE = re.compile(ACTORS + r"|france|français|french|europ|allemagne|germany|german|pologne|poland|polish|italie|italy|italian|"
+                    r"espagne|spain|spanish|royaume-uni|\buk\b|british|roumanie|romania|belgique|belgium|pays-bas|netherlands|dutch|grèce|greece", re.I)
+OUT_OF_SCOPE = re.compile(r"\b(tank|tanks|chars?|howitzer|obus|frégates?|frigates?|submarines?|sous-marins?|remorqueurs?|corvettes?|blindés?)\b", re.I)
 # Sites de faible qualité et pages sans information repérés dans les agrégateurs.
-NOISE = re.compile(r"horticulture-abadie|cours action|cotation bourse", re.I)
-OUT_OF_SCOPE = re.compile(r"\b(tank|tanks|char de combat|chars|howitzer|obus|frégate|frigate|submarine|sous-marin)\b", re.I)
+NOISE = re.compile(r"horticulture-abadie|cours action|cotation bourse|journée en hausse|stock (gains|heads|eases|trades)", re.I)
+SPACE = re.compile(r"spatial|satellite|lanceur|launcher|rocket|fusée|ariane|\besa\b|\bcnes\b|eutelsat|iris²|orbit|space", re.I)
+DEFENSE = re.compile(r"rafale|missile|mbda|dga\b|défense|defen[cs]e|military|militaire|fighter|drone|scaf|fcas|gcap|eurofighter|armée|air force", re.I)
 
-SIGNAL_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "signals": {"type": "array", "items": {
-            "type": "object",
-            "properties": {
-                "idx": {"type": "integer"},
-                "seg": {"type": "string", "enum": SEGS},
-                "m": {"type": "string", "enum": MAILS},
-                "n": {"type": "string", "enum": NATS},
-                "imp": {"type": "integer", "enum": [1, 2, 3]},
-                "geo": {"type": "string", "enum": ["FR", "EU"]},
-                "t": {"type": "string"},
-                "r": {"type": "string"},
-                "why": {"type": "string"},
-                "act": {"type": "array", "items": {"type": "string"}},
-                "orig": {"type": "string"},
-                "c": {"type": "integer", "enum": [1, 2, 3]},
-                "e": {"type": "integer", "enum": [1, 2, 3]},
-                "delai": {"type": "integer", "enum": [1, 2, 3]},
-                "p": {"type": "integer", "enum": [1, 2, 3]},
-            },
-            "required": ["idx", "seg", "m", "n", "imp", "geo", "t", "r", "why", "act", "orig", "c", "e", "delai", "p"],
-            "additionalProperties": False,
-        }},
-        "tenders": {"type": "array", "items": {
-            "type": "object",
-            "properties": {
-                "idx": {"type": "integer"},
-                "pays": {"type": "string", "enum": PAYS},
-                "acheteur": {"type": "string"},
-                "seg": {"type": "string", "enum": SEGS},
-                "m": {"type": "string", "enum": MAILS},
-                "statut": {"type": "string", "enum": STATUTS},
-                "objet": {"type": "string"},
-                "montant": {"type": "string"},
-                "echeance": {"type": "string"},
-                "why": {"type": "string"},
-                "acces": {"type": "string"},
-            },
-            "required": ["idx", "pays", "acheteur", "seg", "m", "statut", "objet", "montant", "echeance", "why", "acces"],
-            "additionalProperties": False,
-        }},
-    },
-    "required": ["signals", "tenders"],
-    "additionalProperties": False,
-}
 
-OVERVIEW_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "bref": {"type": "array", "items": {"type": "string"}},
-        **{s: {"type": "object",
-               "properties": {"fr": {"type": "string"}, "eu": {"type": "string"}},
-               "required": ["fr", "eu"], "additionalProperties": False} for s in SEGS},
-    },
-    "required": ["bref", *SEGS],
-    "additionalProperties": False,
-}
+def guess_seg(text):
+    return "spatial" if SPACE.search(text) else "defense" if DEFENSE.search(text) else "civil"
+
+
+JSON_FORMAT = """Réponds uniquement avec un objet JSON de cette forme :
+{"signals":[{"idx":0,"seg":"civil|spatial|defense","m":"mat|elec|prop|struct|sys|num|serv|comp|fin","n":"atout|besoin|manque|dependance","imp":1,"geo":"FR|EU","t":"...","r":"...","why":"...","act":["..."],"orig":"","c":1,"e":1,"delai":1,"p":1}],
+ "tenders":[{"idx":0,"pays":"FR|EU|DE|PL|IT|ES|UK|RO|BE|GR","acheteur":"...","seg":"...","m":"...","statut":"ouvert|attribution|programme|attribue","objet":"...","montant":"...","echeance":"","why":"...","acces":"..."}]}"""
 
 SYSTEM = """Tu es analyste en market intelligence pour la plateforme Balise ASD, consacrée à l'aéronautique et au spatial, civils et militaires, du point de vue de la France et de l'Europe.
 
@@ -127,7 +88,9 @@ Pour chaque article pertinent et réellement nouveau, renvoie un signal :
 
 Si l'article décrit un appel d'offres, un programme de dépenses ou un contrat attribué qui ouvre de la sous-traitance, ajoute aussi une entrée dans tenders : objet en une phrase, montant (ou « Non précisé »), echeance au format AAAA-MM-JJ ou chaîne vide, why = pourquoi c'est une opportunité, acces = comment une entreprise française peut se positionner.
 
-N'invente rien. Plusieurs articles sur le même fait donnent un seul signal. Ne reprends pas un fait déjà présent dans la liste des signaux existants. Si rien n'est pertinent, renvoie des listes vides."""
+N'invente rien. Plusieurs articles sur le même fait donnent un seul signal. Ne reprends pas un fait déjà présent dans la liste des signaux existants. Si rien n'est pertinent, renvoie des listes vides.
+
+""" + JSON_FORMAT
 
 
 def load_json(path, default):
@@ -143,8 +106,9 @@ def clean(text, limit=1200):
 
 
 def fetch_candidates(seen):
+    """Renvoie (articles récents et pertinents, dont ceux déjà vus)."""
     import feedparser
-    items, now = [], time.time()
+    items, by_url, now = [], set(), time.time()
     for src in json.loads(SOURCES.read_text("utf-8")):
         feed = feedparser.parse(src["url"], agent="BaliseASD/1.0 (+https://github.com/htkrj8p4mt-sys/balise-asd)")
         if feed.bozo and not feed.entries:
@@ -152,46 +116,119 @@ def fetch_candidates(seen):
             continue
         for e in feed.entries:
             url = e.get("link", "")
-            if not re.match(r"^https?://", url):
-                continue
-            key = hashlib.sha1(url.encode()).hexdigest()[:16]
-            if key in seen:
-                continue
             published = e.get("published_parsed") or e.get("updated_parsed")
-            if not published or now - calendar.timegm(published) > MAX_AGE_DAYS * 86400:
+            if not re.match(r"^https?://", url) or url in by_url or not published:
+                continue
+            if now - calendar.timegm(published) > MAX_AGE_DAYS * 86400:
                 continue
             title, summary = clean(e.get("title", ""), 300), clean(e.get("summary", ""))
             text = f"{title} {summary}"
-            if not RELEVANT.search(text):
-                seen[key] = 1
+            if not (AERO.search(text) and EUROPE.search(text)) or OUT_OF_SCOPE.search(title) or NOISE.search(title):
                 continue
-            if OUT_OF_SCOPE.search(title) or NOISE.search(title):
-                seen[key] = 1
-                continue
+            by_url.add(url)
+            key = hashlib.sha1(url.encode()).hexdigest()[:16]
             items.append({"key": key, "title": title, "summary": summary, "url": url, "source": src["name"],
-                          "date": time.strftime("%Y-%m-%d", published), "ts": calendar.timegm(published)})
+                          "date": time.strftime("%Y-%m-%d", published), "ts": calendar.timegm(published),
+                          "seg": guess_seg(text), "seen": key in seen})
     items.sort(key=lambda x: -x["ts"])
-    return items[:MAX_ITEMS]
+    return items
 
 
-def ask_claude(system, prompt, schema, effort="low"):
-    import anthropic
-    client = anthropic.Anthropic()
-    response = client.beta.messages.create(
-        model=MODEL,
-        max_tokens=16000,
-        betas=["server-side-fallback-2026-07-01"],
-        fallbacks="default",
-        system=system,
-        output_config={"effort": effort, "format": {"type": "json_schema", "schema": schema}},
-        messages=[{"role": "user", "content": prompt}],
-    )
-    print(f"Tokens : {response.usage.input_tokens} en entrée, {response.usage.output_tokens} en sortie")
-    if response.stop_reason == "refusal":
-        raise RuntimeError("Requête refusée par le modèle")
-    if response.stop_reason == "max_tokens":
-        raise RuntimeError("Réponse tronquée")
-    return json.loads(next(b.text for b in response.content if b.type == "text"))
+def update_flux(items):
+    """Flux direct : titres et liens, sans analyse, disponible sans aucune clé."""
+    flux = load_json(FLUX, {"items": []})
+    known = {i["u"] for i in flux["items"]}
+    fresh = [{"t": i["title"], "u": i["url"], "src": i["source"], "d": i["date"], "seg": i["seg"]} for i in items if i["url"] not in known]
+    merged = sorted(fresh + flux["items"], key=lambda i: i["d"], reverse=True)[:MAX_FLUX]
+    if fresh:
+        save_json(FLUX, {"updated": date.today().isoformat(), "items": merged})
+    print(f"Flux direct : {len(fresh)} nouvel(s) article(s)")
+
+
+def ted_text(value):
+    if isinstance(value, dict):
+        value = value.get("fra") or value.get("FRA") or value.get("eng") or value.get("ENG") or next(iter(value.values()), "")
+    if isinstance(value, list):
+        value = value[0] if value else ""
+    return clean(str(value or ""), 400)
+
+
+def update_ted(data):
+    """Appels d'offres aéronautiques et spatiaux ouverts, depuis l'API publique de TED."""
+    body = {"query": f"classification-cpv IN ({TED_CPV}) SORT BY publication-date DESC",
+            "fields": ["publication-number", "notice-title", "buyer-name", "buyer-country", "publication-date"],
+            "limit": 15, "page": 1, "scope": "ACTIVE"}
+    req = urllib.request.Request("https://api.ted.europa.eu/v3/notices/search", json.dumps(body).encode(),
+                                 {"Content-Type": "application/json", "Accept": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            notices = json.load(r).get("notices", [])
+    except Exception as exc:  # une panne de TED ne doit pas bloquer le reste de la collecte
+        print(f"TED indisponible : {exc}", file=sys.stderr)
+        return False
+    iso = {"FRA": "FR", "DEU": "DE", "POL": "PL", "ITA": "IT", "ESP": "ES", "GBR": "UK", "ROU": "RO", "BEL": "BE", "NLD": "BE", "GRC": "GR"}
+    tenders = []
+    for n in notices:
+        num, title = n.get("publication-number"), ted_text(n.get("notice-title"))
+        if not num or not title or OUT_OF_SCOPE.search(title):
+            continue
+        country = ted_text(n.get("buyer-country"))
+        tenders.append({"id": f"ted-{num}", "pays": iso.get(country, "EU"), "acheteur": ted_text(n.get("buyer-name")) or "Non précisé",
+                        "seg": guess_seg(title) if SPACE.search(title) else "defense" if DEFENSE.search(title) else "civil", "m": "sys", "statut": "ouvert",
+                        "objet": title, "montant": "Voir l'avis", "date": str(n.get("publication-date", ""))[:10], "echeance": "",
+                        "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+                        "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+                        "src": "TED, Union européenne", "u": f"https://ted.europa.eu/fr/notice/-/detail/{num}"})
+    others = [t for t in data.get("tenders", []) if not t["id"].startswith("ted-")]
+    new = tenders + others
+    changed = {t["id"] for t in new} != {t["id"] for t in data.get("tenders", [])}
+    data["tenders"] = new
+    print(f"TED : {len(tenders)} avis ouverts")
+    return changed
+
+
+def groq_call(path, key, payload=None):
+    req = urllib.request.Request(GROQ_URL + path, json.dumps(payload).encode() if payload else None,
+                                 {"Authorization": f"Bearer {key}", "Content-Type": "application/json", "User-Agent": "BaliseASD/1.0"})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        return json.load(r)
+
+
+def pick_model(key):
+    if os.environ.get("BALISE_MODEL"):
+        return os.environ["BALISE_MODEL"]
+    ids = [m["id"] for m in groq_call("/models", key)["data"] if m.get("active", True)]
+    for wanted in MODEL_PREFERENCE:
+        for i in ids:
+            if wanted in i and "guard" not in i:
+                return i
+    raise RuntimeError(f"Aucun modèle adapté parmi {ids}")
+
+
+def ask_ai(key, model, system, prompt):
+    out = groq_call("/chat/completions", key, {
+        "model": model, "temperature": 0.2, "response_format": {"type": "json_object"},
+        "messages": [{"role": "system", "content": system}, {"role": "user", "content": prompt}]})
+    print(f"Tokens ({model}) : {out.get('usage', {}).get('total_tokens')}")
+    return json.loads(out["choices"][0]["message"]["content"])
+
+
+def valid_signal(s):
+    """Le modèle gratuit ne garantit pas le format : on vérifie chaque champ avant publication."""
+    try:
+        return (s["seg"] in SEGS and s["m"] in MAILS and s["n"] in NATS and s["geo"] in ("FR", "EU") and s["imp"] in (1, 2, 3)
+                and all(isinstance(s[k], str) and s[k].strip() for k in ("t", "r", "why")) and isinstance(s.get("act", []), list)
+                and isinstance(s["idx"], int) and all(s.get(k, 1) in (1, 2, 3) for k in ("c", "e", "delai", "p")))
+    except (KeyError, TypeError):
+        return False
+
+
+def valid_tender(t):
+    try:
+        return (t["pays"] in PAYS and t["seg"] in SEGS and t["m"] in MAILS and t["statut"] in STATUTS and isinstance(t["idx"], int)
+                and all(isinstance(t[k], str) and t[k].strip() for k in ("acheteur", "objet", "why", "acces")))
+    except (KeyError, TypeError):
+        return False
 
 
 def apply_result(data, items, result):
@@ -200,8 +237,8 @@ def apply_result(data, items, result):
     added_s, added_t = 0, 0
     known = {s.get("u") for s in data["signals"] if s.get("u")}
     new_signals = []
-    for i, s in enumerate(result.get("signals", []), 1):
-        if not 0 <= s.get("idx", -1) < len(items):
+    for s in result.get("signals", []):
+        if not valid_signal(s) or not 0 <= s["idx"] < len(items):
             continue
         it = items[s["idx"]]
         if it["url"] in known or not s["r"].strip() or not s["why"].strip():
@@ -209,26 +246,26 @@ def apply_result(data, items, result):
         known.add(it["url"])
         sig = {"id": f"a{today}-{it['key'][:8]}", "k": "actu", "d": it["date"], "seg": s["seg"], "m": s["m"], "n": s["n"],
                "imp": s["imp"], "geo": s["geo"], "t": s["t"].strip(), "r": s["r"].strip(), "why": s["why"].strip(), "s": "",
-               "act": s["act"], "orig": s["orig"].strip() if s["n"] == "dependance" else "",
+               "act": [str(a) for a in s.get("act", [])], "orig": str(s.get("orig", "")).strip() if s["n"] == "dependance" else "",
                "src": f"{it['source']}, {it['date']}", "u": it["url"]}
         if s["n"] in ("manque", "dependance"):
-            sig["crit"] = {"c": s["c"], "e": s["e"], "t": s["delai"], "p": s["p"]}
+            sig["crit"] = {"c": s.get("c", 2), "e": s.get("e", 2), "t": s.get("delai", 2), "p": s.get("p", 2)}
         new_signals.append(sig)
         added_s += 1
     data["signals"] = new_signals + data["signals"]
 
     known_t = {t.get("u") for t in data.get("tenders", [])}
     for t in result.get("tenders", []):
-        if not 0 <= t.get("idx", -1) < len(items):
+        if not valid_tender(t) or not 0 <= t["idx"] < len(items):
             continue
         it = items[t["idx"]]
         if it["url"] in known_t:
             continue
         known_t.add(it["url"])
-        echeance = t["echeance"] if re.match(r"^\d{4}-\d{2}-\d{2}$", t["echeance"]) else ""
+        echeance = str(t.get("echeance", "")) if re.match(r"^\d{4}-\d{2}-\d{2}$", str(t.get("echeance", ""))) else ""
         data.setdefault("tenders", []).insert(0, {
             "id": f"t{today}-{it['key'][:8]}", "pays": t["pays"], "acheteur": t["acheteur"], "seg": t["seg"], "m": t["m"],
-            "statut": t["statut"], "objet": t["objet"], "montant": t["montant"], "date": it["date"], "echeance": echeance,
+            "statut": t["statut"], "objet": t["objet"], "montant": str(t.get("montant") or "Non précisé"), "date": it["date"], "echeance": echeance,
             "why": t["why"], "acces": t["acces"], "src": f"{it['source']}, {it['date']}", "u": it["url"]})
         added_t += 1
 
@@ -244,52 +281,74 @@ def apply_result(data, items, result):
 def collect(dry_run=False):
     seen = load_json(SEEN, {})
     items = fetch_candidates(seen)
-    print(f"{len(items)} article(s) à analyser")
+    todo = [i for i in items if not i["seen"]][:MAX_ITEMS]
+    print(f"{len(items)} article(s) pertinents, {len(todo)} à analyser")
     if dry_run:
-        for i, it in enumerate(items):
-            print(f"[{i}] {it['date']} {it['source']} : {it['title']}")
+        for i, it in enumerate(todo):
+            print(f"[{i}] {it['date']} {it['source']} [{it['seg']}] : {it['title']}")
         return
-    if not items:
-        save_json(SEEN, seen)
-        return
+    update_flux(items)
     data = load_json(DATA, None)
-    existing = "\n".join(f"- {s.get('d')} : {s.get('r') or s.get('t')}" for s in data["signals"][:60])
-    articles = "\n\n".join(f"[{i}] {it['date']} · {it['source']}\nTitre : {it['title']}\nExtrait : {it['summary']}" for i, it in enumerate(items))
-    result = ask_claude(SYSTEM, f"Signaux déjà présents :\n{existing}\n\nArticles à analyser :\n\n{articles}", SIGNAL_SCHEMA)
-    added_s, added_t = apply_result(data, items, result)
-    # Les articles ne sont marqués comme vus qu'une fois l'analyse réussie.
-    for it in items:
-        seen[it["key"]] = 1
-    if len(seen) > 5000:
-        seen = dict(list(seen.items())[-4000:])
-    save_json(SEEN, seen)
-    if added_s or added_t:
+    changed = update_ted(data)
+    key = os.environ.get("GROQ_API_KEY")
+    if not key:
+        print("Pas de GROQ_API_KEY : analyse par IA ignorée.")
+    elif todo:
+        model = pick_model(key)
+        added_s = added_t = 0
+        existing = "\n".join(f"- {s.get('r') or s.get('t')}" for s in data["signals"][:25])
+        for n in range(0, len(todo), BATCH):
+            batch = todo[n:n + BATCH]
+            articles = "\n\n".join(f"[{i}] {it['date']} · {it['source']}\nTitre : {it['title']}\nExtrait : {it['summary'][:500]}" for i, it in enumerate(batch))
+            try:
+                result = ask_ai(key, model, SYSTEM, f"Signaux déjà présents :\n{existing}\n\nArticles à analyser :\n\n{articles}")
+            except (urllib.error.URLError, json.JSONDecodeError, KeyError) as exc:
+                # Les articles restent à traiter : ils seront repris au passage suivant.
+                print(f"Analyse interrompue : {exc}", file=sys.stderr)
+                break
+            a, b = apply_result(data, batch, result)
+            added_s, added_t = added_s + a, added_t + b
+            for it in batch:
+                seen[it["key"]] = 1
+            time.sleep(20)  # reste sous la limite gratuite de débit
+        print(f"{added_s} signal(s) et {added_t} marché(s) ajoutés")
+        changed = changed or bool(added_s or added_t)
+        if len(seen) > 5000:
+            seen = dict(list(seen.items())[-4000:])
+        save_json(SEEN, seen)
+    if changed:
         data["updated"] = date.today().isoformat()
         save_json(DATA, data)
-    print(f"{added_s} signal(s) et {added_t} marché(s) ajoutés")
 
 
 def refresh_overview():
+    key = os.environ.get("GROQ_API_KEY")
+    if not key:
+        print("Pas de GROQ_API_KEY : synthèse inchangée.")
+        return
     data = load_json(DATA, None)
-    recent = sorted(data["signals"], key=lambda s: s["d"], reverse=True)[:80]
-    lines = "\n".join(f"- [{s['seg']} · {s['n']} · {s.get('geo', '')} · {s['d']}] {s.get('r') or s['t']}" for s in recent)
-    prompt = f"""Voici la synthèse actuelle et les signaux de veille les plus récents de la plateforme.
+    recent = sorted(data["signals"], key=lambda s: s["d"], reverse=True)[:40]
+    lines = "\n".join(f"- [{s['seg']} · {s['n']} · {s['d']}] {s.get('r') or s['t']}" for s in recent)
+    prompt = f"""Voici la synthèse actuelle et les signaux de veille les plus récents.
 Réécris la synthèse pour qu'elle reflète la situation actuelle, en français simple et sans rien inventer.
-bref : exactement 3 phrases, une pour l'aéronautique civile, une pour le spatial, une pour la défense aéronautique et spatiale.
-civil, spatial, defense : fr = position de la France, eu = position de l'Europe, 2 à 3 phrases chacune.
+Réponds uniquement avec un objet JSON : {{"bref":["civil","spatial","défense"],"civil":{{"fr":"...","eu":"..."}},"spatial":{{"fr":"...","eu":"..."}},"defense":{{"fr":"...","eu":"..."}}}}.
+bref : exactement 3 phrases. fr = position de la France, eu = position de l'Europe, 2 à 3 phrases chacune.
 
 Synthèse actuelle :
 {json.dumps(data['overview'], ensure_ascii=False)}
 
 Signaux :
 {lines}"""
-    overview = ask_claude("Tu es analyste en market intelligence sur l'aéronautique et le spatial, en France et en Europe. Périmètre strict : ni terrestre ni naval.",
-                          prompt, OVERVIEW_SCHEMA, effort="medium")
-    if len(overview.get("bref", [])) == 3:
-        data["overview"] = overview
+    ov = ask_ai(key, pick_model(key), "Tu es analyste en market intelligence sur l'aéronautique et le spatial, en France et en Europe. Périmètre strict : ni terrestre ni naval.", prompt)
+    ok = (isinstance(ov.get("bref"), list) and len(ov["bref"]) == 3 and all(isinstance(x, str) for x in ov["bref"])
+          and all(isinstance(ov.get(s), dict) and ov[s].get("fr") and ov[s].get("eu") for s in SEGS))
+    if ok:
+        data["overview"] = ov
         data["updated"] = date.today().isoformat()
         save_json(DATA, data)
         print("Synthèse mise à jour")
+    else:
+        print("Synthèse invalide : version précédente conservée", file=sys.stderr)
 
 
 if __name__ == "__main__":

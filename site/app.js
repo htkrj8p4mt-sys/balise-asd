@@ -42,7 +42,7 @@
 
   // ---------- État ----------
   let DATA = null, signals = [];
-  const TABS = [["etat", "État des lieux"], ["news", "Nouveautés"], ["alertes", "Mes alertes"], ["ent", "Mon entreprise"], ["carte", "Cartographie"], ["pays", "Pays"], ["marches", "Marchés & appels d'offres"], ["leaders", "Leaders européens"], ["dep", "Carte des dépendances"], ["risques", "Matrice des risques"], ["methode", "Méthode"]];
+  const TABS = [["etat", "État des lieux"], ["flux", "Flux direct"], ["news", "Nouveautés"], ["alertes", "Mes alertes"], ["ent", "Mon entreprise"], ["carte", "Cartographie"], ["pays", "Pays"], ["marches", "Marchés & appels d'offres"], ["leaders", "Leaders européens"], ["dep", "Carte des dépendances"], ["risques", "Matrice des risques"], ["methode", "Méthode"]];
   const MATS = [
     ["titane", "Titane", ["titane"]], ["alu", "Aluminium et alliages", ["alumin", "alliage"]], ["carbone", "Composites, fibre de carbone", ["carbone", "composite"]],
     ["terres", "Terres rares, aimants", ["terres rares", "aimant"]], ["elec", "Électronique, semi-conducteurs", ["électroni", "composant", "puce", "semi-conducteur"]],
@@ -733,6 +733,18 @@ Reste prudent et signale ce qu'il faudrait vérifier.`;
     render();
   }
 
+  // ---------- Flux direct ----------
+  let FLUX = null;
+  function renderFlux() {
+    if (!FLUX) return `<p class="msg">Chargement du flux…</p>`;
+    const list = FLUX.items.filter(i => !st.fluxSeg || i.seg === st.fluxSeg);
+    return `<section class="intro"><div class="stack"><h2>Flux direct</h2>
+      <p>Les derniers articles repérés automatiquement toutes les heures, avec leur source. Ils ne sont pas encore analysés : le secteur est déduit de mots-clés et peut se tromper.</p></div></section>
+      <div class="seg-ctl" role="group" aria-label="Secteur">${[["", "Tous"], ...SEG].map(([k, l]) => `<button data-act="flux-seg" data-v="${k}" aria-pressed="${(st.fluxSeg || "") === k}">${l}</button>`).join("")}</div>
+      <p class="count">${list.length} article(s)${FLUX.updated ? " · dernier ajout le " + esc(fmtD(FLUX.updated)) : ""}</p>
+      <div class="feed">${list.map(i => `<article class="tcard flux"><div class="sig-meta"><span class="when-i">${esc(fmtD(i.d))}</span><span class="pill tag">${esc(segName(i.seg))}</span></div><b>${link(i.u, i.t)}</b><span class="src">Source : ${esc(i.src)}</span></article>`).join("") || `<p class="msg">Aucun article pour l'instant : le flux se remplit au prochain passage.</p>`}</div>`;
+  }
+
   // ---------- Mes alertes ----------
   function renderAlerts() {
     if (!hasProfile()) return `<section class="intro"><div class="stack"><h2>Mes alertes</h2><p>Les alertes ne montrent que ce qui concerne votre entreprise : vos maillons, vos clients, vos matières, vos marchés et vos mots-clés.</p></div></section>
@@ -822,7 +834,7 @@ Reste prudent et signale ce qu'il faudrait vérifier.`;
   function renderMethod() {
     return `<section class="intro"><div class="stack"><h2>Méthode</h2><p>Comment la veille devient un outil de market intelligence.</p></div></section>
       <div class="results"><div class="cols">
-        <div class="box"><h3>1 · Collecter</h3><p>Chaque jour, une veille automatique recherche l'actualité du secteur (résultats, contrats, programmes, réglementation, pénuries), les appels d'offres et les décisions des pays européens, et ajoute les faits marquants, datés et sourcés.</p></div>
+        <div class="box"><h3>1 · Collecter</h3><p>Toutes les heures, une veille automatique recherche l'actualité du secteur (résultats, contrats, programmes, réglementation, pénuries), les appels d'offres et les décisions des pays européens, et ajoute les faits marquants, datés et sourcés.</p></div>
         <div class="box"><h3>2 · Classer</h3><p>Chaque signal est rattaché à un secteur, à un maillon de la chaîne de valeur, à une portée (France ou Europe) et à une lecture : force, fragilité ou besoin du marché, avec un impact de 1 à 3.</p></div>
         <div class="box"><h3>3 · Agréger</h3><p>La cartographie mesure séparément les trois lectures dans chaque case. Le bilan oppose les fragilités aux forces pour donner l'état, de « point fort » à « fragile ».</p></div>
         <div class="box"><h3>4 · Décider</h3><p>L'état des lieux, les pays, les marchés, les leaders et les échéances donnent la vue d'ensemble. « Mon entreprise » croise tout cela avec votre profil pour calculer votre exposition et vos opportunités, et « Mes alertes » vous signale ce qui vous concerne.</p></div>
@@ -842,7 +854,7 @@ Reste prudent et signale ce qu'il faudrait vérifier.`;
   function render() {
     const app = document.getElementById("app");
     if (!DATA) return;
-    const view = { etat: renderEtat, news: renderNews, carte: renderMap, leaders: renderLeaders, dep: renderDeps, risques: renderRisk, ent: renderCompany, alertes: renderAlerts, pays: renderCountries, marches: renderTenders, methode: renderMethod }[st.tab] || renderEtat;
+    const view = { etat: renderEtat, news: renderNews, flux: renderFlux, carte: renderMap, leaders: renderLeaders, dep: renderDeps, risques: renderRisk, ent: renderCompany, alertes: renderAlerts, pays: renderCountries, marches: renderTenders, methode: renderMethod }[st.tab] || renderEtat;
     const y = window.scrollY;
     app.innerHTML = `<div class="wrap">${renderTop()}${renderTabs()}<main>${view()}</main>
       <footer class="foot"><span>Balise ASD · veille du ${esc(fmtD(DATA.updated))}</span><span>Sources citées sur chaque signal. Lectures générées à vérifier.</span></footer></div>
@@ -855,6 +867,7 @@ Reste prudent et signale ce qu'il faudrait vérifier.`;
     const b = e.target.closest("[data-act]"); if (!b) return;
     const a = b.dataset.act;
     if (a === "tab") { go(b.dataset.v); st.sel = null; st.flash = null; render(); window.scrollTo(0, 0); }
+    else if (a === "flux-seg") { st.fluxSeg = b.dataset.v; render(); }
     else if (a === "mode") { st.mode = b.dataset.v; render(); }
     else if (a === "cell" || a === "open-sig") { st.sel = { seg: b.dataset.seg, m: b.dataset.m }; render(); }
     else if (a === "close") { st.sel = null; render(); }
@@ -920,6 +933,8 @@ Reste prudent et signale ce qu'il faudrait vérifier.`;
   });
 
   // ---------- Chargement ----------
+  fetch("flux.json", { cache: "no-store" }).then(r => r.ok ? r.json() : { items: [] }).catch(() => ({ items: [] }))
+    .then(f => { FLUX = { updated: f.updated, items: f.items || [] }; if (st.tab === "flux" && DATA) render(); });
   fetch("data.json", { cache: "no-store" })
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(d => { DATA = d; signals = Array.isArray(d.signals) ? d.signals : []; render(); })
