@@ -59,6 +59,7 @@
     tf: { statut: "", pays: "" },
     cSel: null,
     newsView: "analyse",
+    etatSeg: "civil",
   };
   function emptyDraft() {
     return { raw: "", t: "", s: "", d: new Date().toISOString().slice(0, 10), seg: "civil", m: "sys", n: "besoin", geo: "FR", imp: "2", act: "", orig: "", src: "", u: "" };
@@ -141,13 +142,13 @@
   function renderEtat() {
     const ov = DATA.overview || {};
     const latest = signals.filter(s => s.k === "actu").sort(byDate).slice(0, 5);
-    const kpis = (DATA.kpis || []).map(k => `<div class="kpi">
+    const kpis = (DATA.kpis || []).filter(k => k.seg === st.etatSeg).map(k => `<div class="kpi">
         <span class="eyebrow">${esc(segName(k.seg))}</span>
         <span class="kpi-v">${esc(k.value)}</span>
         <span class="kpi-l">${esc(k.label)}</span>
         <span class="kpi-n">${esc(k.note || "")} ${srcInfo(k.u, "Source")}</span>
       </div>`).join("");
-    const segSections = SEG.map(([sk, sl]) => {
+    const segSections = SEG.filter(([sk]) => sk === st.etatSeg).map(([sk, sl]) => {
       const list = signals.filter(s => s.seg === sk);
       const vf = verdict(stats(list.filter(s => s.geo === "FR"))), ve = verdict(stats(list.filter(s => s.geo !== "FR")));
       const o = ov[sk] || {};
@@ -169,19 +170,20 @@
         <div class="fam-cols">${cols}</div>
       </section>`;
     }).join("");
-    const watch = (DATA.watch || []).slice().sort((a, b) => dateKey(a.d).localeCompare(dateKey(b.d))).map(w => `<li>
+    const watch = (DATA.watch || []).filter(w => w.seg === st.etatSeg).sort((a, b) => dateKey(a.d).localeCompare(dateKey(b.d))).map(w => `<li>
         <span class="mono w-d">${esc(fmtD(w.d))}</span>
         <div><span class="pill tag">${esc(segName(w.seg))}</span> <b>${esc(w.t)}</b><p class="note">${esc(w.why)}</p></div>
       </li>`).join("");
     return `<section class="intro"><div class="stack"><span class="eyebrow">Au ${esc(fmtD(DATA.updated))}</span><h2>État des lieux du marché</h2>
-        <p>La synthèse s'appuie sur les faits de fond toujours valables et sur les actualités des derniers mois. Chaque secteur sépare les forces, les fragilités et les besoins du marché.</p></div></section>
+        <p>La situation actuelle du marché. Choisissez un secteur pour voir la position de la France et de l'Europe, puis les forces, les fragilités et les besoins.</p></div></section>
       <div class="brief">
         <div class="box"><h3>En bref</h3><ul class="bullets">${(ov.bref || []).map(b => `<li>${esc(b)}</li>`).join("")}</ul></div>
-        <div class="box"><h3>Dernières nouveautés</h3>${latest.map(s => sigLine(s, true)).join("")}<button class="link" data-act="tab" data-v="news">Toutes les actualités</button></div>
+        <div class="box"><h3>Dernières actualités</h3>${latest.map(s => sigLine(s, true)).join("")}<button class="link" data-act="tab" data-v="news">Toutes les actualités</button></div>
       </div>
+      <div class="seg-ctl etat-switch" role="group" aria-label="Secteur">${SEG.map(([k, l]) => `<button data-act="etat-seg" data-v="${k}" aria-pressed="${st.etatSeg === k}">${l}</button>`).join("")}</div>
       <div class="kpis">${kpis}</div>
       ${segSections}
-      <section class="box"><h3>Échéances à surveiller</h3><ol class="watch">${watch}</ol></section>`;
+      <section class="box"><h3>Échéances à surveiller</h3><ol class="watch">${watch || `<li><p class="note">Aucune échéance pour ce secteur.</p></li>`}</ol></section>`;
   }
 
   // ---------- Cartographie ----------
@@ -673,6 +675,7 @@ ${raw.slice(0, 8000)}`;
     const b = e.target.closest("[data-act]"); if (!b) return;
     const a = b.dataset.act;
     if (a === "tab") { go(b.dataset.v); st.sel = null; st.flash = null; render(); window.scrollTo(0, 0); }
+    else if (a === "etat-seg") { st.etatSeg = b.dataset.v; render(); }
     else if (a === "news-view") { st.newsView = b.dataset.v; render(); }
     else if (a === "flux-seg") { st.fluxSeg = b.dataset.v; render(); }
     else if (a === "mode") { st.mode = b.dataset.v; render(); }

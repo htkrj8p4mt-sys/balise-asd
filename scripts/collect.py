@@ -17,6 +17,7 @@ import re
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import date
 from pathlib import Path
@@ -27,6 +28,8 @@ SEEN = ROOT / "scripts" / "seen.json"
 SOURCES = ROOT / "scripts" / "sources.json"
 
 FLUX = ROOT / "site" / "flux.json"
+TRANSLATIONS = ROOT / "scripts" / "translations.json"
+MAX_TRANSLATE_CHARS = 1500  # par passage : le service gratuit limite le volume quotidien
 GROQ_URL = "https://api.groq.com/openai/v1"
 MODEL_PREFERENCE = ["gpt-oss-120b", "llama-4-maverick", "llama-3.3-70b", "gpt-oss-20b", "llama"]
 MAX_ITEMS = int(os.environ.get("BALISE_MAX_ITEMS", "30"))
@@ -52,7 +55,7 @@ EUROPE = re.compile(ACTORS + r"|france|français|french|europ|allemagne|germany|
                     r"espagne|spain|spanish|royaume-uni|\buk\b|british|roumanie|romania|belgique|belgium|pays-bas|netherlands|dutch|grèce|greece", re.I)
 OUT_OF_SCOPE = re.compile(r"\b(tank|tanks|chars?|howitzer|obus|frégates?|frigates?|submarines?|sous-marins?|remorqueurs?|corvettes?|blindés?)\b", re.I)
 # Sites de faible qualité et pages sans information repérés dans les agrégateurs.
-NOISE = re.compile(r"horticulture-abadie|cours action|cotation bourse|journée en hausse|stock (gains|heads|eases|trades)", re.I)
+NOISE = re.compile(r"horticulture-abadie|aerocontact|cours action|cotation bourse|journée en hausse|baisse pour|l.action .* (gagne|perd)|stock (gains|heads|eases|trades)", re.I)
 SPACE = re.compile(r"spatial|satellite|lanceur|launcher|rocket|fusée|ariane|\besa\b|\bcnes\b|eutelsat|iris²|orbit|space", re.I)
 DEFENSE = re.compile(r"rafale|missile|mbda|dga\b|défense|defen[cs]e|military|militaire|fighter|drone|scaf|fcas|gcap|eurofighter|armée|air force", re.I)
 
@@ -132,21 +135,71 @@ def fetch_candidates(seen):
                 continue
             by_url.add(url)
             key = hashlib.sha1(url.encode()).hexdigest()[:16]
-            items.append({"key": key, "title": title, "summary": summary, "url": url, "source": src["name"],
+            source = src["name"]
+            if source.startswith("Google"):  # le titre se termine par le nom du média d'origine
+                head, _, media = title.rpartition(" - ")
+                if head and media:
+                    title, source = head, media
+            items.append({"key": key, "title": title, "summary": summary, "url": url, "source": source,
                           "date": time.strftime("%Y-%m-%d", published), "ts": calendar.timegm(published),
                           "seg": guess_seg(re.sub(r" - [^-]+$", "", title)), "seen": key in seen})
     items.sort(key=lambda x: -x["ts"])
     return items
 
 
-def update_flux(items):
+FRENCH = re.compile(r"\b(le|la|les|des|du|une|un|et|pour|sur|dans|avec|au|aux|de)\b", re.I)
+
+
+def looks_french(text):
+    return bool(re.search(r"[éèêàçù]", text)) or len(FRENCH.findall(text)) >= 2
+
+
+class Translator:
+    """Traduit vers le français avec le service gratuit MyMemory, sans clé. Les résultats sont gardés
+    en mémoire ; en cas d'échec ou de limite atteinte, le texte d'origine reste affiché et sera repris."""
+
+    def __init__(self):
+        self.cache = load_json(TRANSLATIONS, {})
+        self.left = MAX_TRANSLATE_CHARS
+
+    def __call__(self, text):
+        if not text or text in self.cache:
+            return self.cache.get(text, text)
+        if looks_french(text) or self.left < len(text) or len(text) > 480:
+            return text
+        url = "https://api.mymemory.translated.net/get?" + urllib.parse.urlencode({"q": text, "langpair": "Autodetect|fr"})
+        try:
+            with urllib.request.urlopen(url, timeout=20) as r:
+                out = json.load(r)
+            result = clean(out["responseData"]["translatedText"], 500)
+            if out.get("quotaFinished") or out.get("responseStatus") in (403, 429) and "DISTINCT" not in str(out.get("responseDetails")) or "MYMEMORY WARNING" in result:
+                self.left = 0  # limite du jour atteinte : on reprendra plus tard
+                return text
+            if out.get("responseStatus") != 200 or not result or out["responseData"].get("detectedLanguage") == "fr":
+                self.cache[text] = text  # déjà en français ou intraduisible : inutile de redemander
+                return text
+        except Exception as exc:
+            print(f"Traduction indisponible : {exc}", file=sys.stderr)
+            self.left = 0
+            return text
+        self.left -= len(text)
+        self.cache[text] = result
+        return result
+
+    def save(self):
+        save_json(TRANSLATIONS, self.cache)
+
+
+def update_flux(items, translate):
     """Flux direct : titres et liens, sans analyse, disponible sans aucune clé."""
     flux = load_json(FLUX, {"items": []})
     known = {i["u"] for i in flux["items"]}
     fresh = [{"t": i["title"], "u": i["url"], "src": i["source"], "d": i["date"], "seg": i["seg"]} for i in items if i["url"] not in known]
     merged = sorted(fresh + flux["items"], key=lambda i: i["d"], reverse=True)[:MAX_FLUX]
-    if fresh:
-        save_json(FLUX, {"updated": date.today().isoformat(), "items": merged})
+    # On repart de tous les titres pour reprendre ceux qui n'ont pas pu être traduits plus tôt.
+    translated = [dict(i, t=translate(i["t"])) for i in merged]
+    if fresh or translated != merged:
+        save_json(FLUX, {"updated": date.today().isoformat(), "items": translated})
     print(f"Flux direct : {len(fresh)} nouvel(s) article(s)")
 
 
@@ -158,7 +211,15 @@ def ted_text(value):
     return clean(str(value or ""), 400)
 
 
-def update_ted(data):
+def ted_title(title, translate):
+    """Les titres TED ont la forme « Pays – Catégorie – Titre » : seul le titre est dans la langue d'origine."""
+    parts = title.split(" – ", 2)
+    if len(parts) < 3:
+        return translate(title)
+    return " – ".join(parts[:2] + [translate(parts[2])])
+
+
+def update_ted(data, translate):
     """Appels d'offres aéronautiques et spatiaux ouverts, depuis l'API publique de TED."""
     body = {"query": f"classification-cpv IN ({TED_CPV}) SORT BY publication-date DESC",
             "fields": ["publication-number", "notice-title", "buyer-name", "buyer-country", "publication-date"],
@@ -175,12 +236,16 @@ def update_ted(data):
     tenders = []
     for n in notices:
         num, title = n.get("publication-number"), ted_text(n.get("notice-title"))
+        try:  # certains avis arrivent avec des accents mal encodés
+            title = title.encode("latin-1").decode("utf-8")
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            pass
         if not num or not title or OUT_OF_SCOPE.search(title) or not TED_TOPIC.search(title):
             continue
         country = ted_text(n.get("buyer-country"))
         tenders.append({"id": f"ted-{num}", "pays": iso.get(country, "EU"), "acheteur": ted_text(n.get("buyer-name")) or "Non précisé",
                         "seg": "defense" if AIR_FORCE.search(ted_text(n.get("buyer-name"))) else guess_seg(title), "m": "sys", "statut": "ouvert",
-                        "objet": title, "montant": "Voir l'avis", "date": str(n.get("publication-date", ""))[:10], "echeance": "",
+                        "objet": ted_title(title, translate), "montant": "Voir l'avis", "date": str(n.get("publication-date", ""))[:10], "echeance": "",
                         "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
                         "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
                         "src": "TED, Union européenne", "u": f"https://ted.europa.eu/fr/notice/-/detail/{num}"})
@@ -292,9 +357,11 @@ def collect(dry_run=False):
         for i, it in enumerate(todo):
             print(f"[{i}] {it['date']} {it['source']} [{it['seg']}] : {it['title']}")
         return
-    update_flux(items)
+    translate = Translator()
+    update_flux(items, translate)
     data = load_json(DATA, None)
-    changed = update_ted(data)
+    changed = update_ted(data, translate)
+    translate.save()
     key = os.environ.get("GROQ_API_KEY")
     if not key:
         print("Pas de GROQ_API_KEY : analyse par IA ignorée.")

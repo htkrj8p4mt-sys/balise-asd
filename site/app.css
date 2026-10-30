@@ -381,3 +381,7 @@ footer.foot { border-top: 1px solid var(--line); padding-top: 14px; display: fle
 .tcard.flux { border-left-color: var(--line); }
 .tcard.flux .src-link { color: var(--ink); text-decoration: none; }
 .tcard.flux .src-link:hover { color: var(--accent); text-decoration: underline; }
+
+/* État des lieux par secteur */
+.etat-switch { justify-self: start; }
+.etat-switch button { padding: 9px 18px; font-family: var(--display); font-size: 16px; font-weight: 600; letter-spacing: .03em; text-transform: uppercase; }
