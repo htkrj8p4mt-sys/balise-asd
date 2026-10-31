@@ -2,6 +2,76 @@
  "updated": "2026-10-31",
  "items": [
   {
+   "t": "Airbus U.S. démontre le transfert de contrôle à distance pour l'UH-72 sans pilote dans le programme logistique du Corps des Marines",
+   "u": "https://defence-industry.eu/airbus-u-s-demonstrates-remote-control-handover-for-unmanned-uh-72-in-marine-corps-logistics-program/",
+   "src": "Defence Industry Europe",
+   "d": "2026-10-31",
+   "seg": "civil"
+  },
+  {
+   "t": "Le Rafale M réussit ses premiers essais à bord du porte-avions indien INS Vikrant",
+   "u": "https://www.opex360.com/2026/10/31/le-rafale-m-reussit-ses-premiers-essais-a-bord-du-porte-avions-indien-ins-vikrant/",
+   "src": "Opex360",
+   "d": "2026-10-31",
+   "seg": "defense"
+  },
+  {
+   "t": "Rafale : pourquoi l’avion de combat de Dassault séduit toujours sur la scène internationale",
+   "u": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNNGVNazZhVnczV1F5bUN5S1ZBZ0ZkTlRJZXNVTmgyeW50bF9sVHJJeFFRLVdlUU43aFhQR2dpX0lxLThkRHQwQjJrQXV6MGpqelBpSDdPTGpzWUlLcFNvUFc4Y0NGQU9ZWDYxNjRrTkZrRXFRN1BUaVFIa2Rfd3dtdVpfNzBOUVU0YlFYUldzT2tzdGFZbDhxb041ZlBqMWQ3MHpmeWZha0s4R2VLNVJPVnYyc1lrU3lmZi1JZmVOeGZWRlB2aHdOR2JpOHJzM3hR?oc=5",
+   "src": "Europe Infos",
+   "d": "2026-10-31",
+   "seg": "defense"
+  },
+  {
+   "t": "Le Français Safran peut craindre le retour de « l’enfant prodigue » avec l’arrivée imminente du moteur de monocouloir UltraFan 30 de Rolls-Royce",
+   "u": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPZzZwRW1pM01Ma24xaE1Xd25vOWxHZDg5RC0xSE9ONm9uTkEtZWI2eGtEOFRTMUVsdXNBcU1JVUR0U1hORTNkcXlCdTNhSmctZWhvRS1zWWlQdGxLVmpqV1lPQzQtbUlubkNQSG1lMUljcGhsY2RPUWhwbktFMHJheHhQUzFDQ0p5LVpHVmotVlFZNVphR3FlVTRMYkcxdG1nRWVjaWRnUlY2YUVaX0RLVHp6SlVuSzVfWUFtWUQzMFlZekpvRHYwR1J4NlExSGVPZ05sRHo0bmwzNzdrQmFBT3A4azFYaDIzbnNLamhDUkJTNlFfT0dIZF9aa0sydw?oc=5",
+   "src": "Media24.fr",
+   "d": "2026-10-31",
+   "seg": "civil"
+  },
+  {
+   "t": "Alors que rejoindre le programme GCAP s'avère complexe, l'Allemagne doit trouver un autre modèle pour le successeur de l'Eurofighter",
+   "u": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5sdk05NmtIMmVYVUZyZWppLTFjM19DamFEME5HNXdxTy1NRkZaalY3a05jN25EaWJhQk5UdDRwMkl1TVpVWEpkX3JwUXF2R2YxdW1RVTZkenp6SEtRTXdYWkJ6Sjc3QWRYSVFSbWxzQV81bnFiRnZqLWRFMXlxUQ?oc=5",
+   "src": "Meta-Defense",
+   "d": "2026-10-31",
+   "seg": "defense"
+  },
+  {
+   "t": "Défense aérienne : la Suisse offre une seconde chance au SAMP/T de MBDA et Thales",
+   "u": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOYWVGdFVGZk16S0ZCS2tkY2RJUXhPcmNxcWRRTU15UkFhVEpXcUVjV1FWUE9ERDV6WnZKbjJpUWZ4ZTBVM1A0V0l1QXEtaFQ5dGNpdUxrcFM3Snhyd3pnTTc5bU54dFRZXzlKQlFMVHpoalUzZUVveW5TbFpfTV9OamJtWDhBVFRSM01Pd1JjWGlzLUJVSllpbmdMUzBNV281WFFERnNSWFVtQkQwR1oyaENOMUtycEtHZ0V3MkR4MzVKUGRHRHoybHhHNlNpMnlGekNaNXJITnRfSUt6b0RkM2NrUmpGNFl0TXd2QUN5RQ?oc=5",
+   "src": "La Tribune",
+   "d": "2026-10-31",
+   "seg": "defense"
+  },
+  {
+   "t": "Le coût du futur avion de patrouille maritime est passé de 2,8 à 4,6 milliards, et son lancement est compromis",
+   "u": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOVFJURTZkNDFSR3psUEpLa2h5U1Bzcnp3VXV5X3RpQVI5V29zbzFIbUZraWYya2lEZFNmamZLckV5cUV0MGhtLTEydE9fOUZVWXItckNvdF9YVDRaOUNTMVU5bHZHOTJtQ0FWaERHN3o4SVFPUUZJWFR3dGJseWJuUy1xZDJkYVlYaXhkc3NFUlRIelpzUGQyOWZ2aTdxSzhWN3U4dnFQTnhjeDZON1F3RllxUF9LVHAzNzc5WnB1aXBPN2o1NEhqOERUUUkxTEdFMUUyVTJmWkVQNjVC?oc=5",
+   "src": "Lavoixdefrance.fr",
+   "d": "2026-10-30",
+   "seg": "civil"
+  },
+  {
+   "t": "\"On va tout changer, sauf la forme de l'avion\": en quoi consiste l'accord entre la France et les Émirats arabes unis pour le futur avion de combat Rafale?",
+   "u": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxQaktmSVBIRVFmdnJmZHJYNlRNakkwVkV3V20ySHpWeTlYVlFkQ212dnNiLTg3ZGJrc1hXSzVOQ1hqbklsZXh0SnFNUlppeFZ3RVJFU0FSTTREZnFYUjMtLV9qRmV2SUpreGc1YWhkRzRYMVZiRll3aE9DaGlQblZaMjlxa3FGOVJscVc3eDRuTDl0T2VLbTQwQjd5enBZVzNjWlZ3ZzhmLXgwZkZkMXhkRWxRMVp4LUJUcDFXNXdsOWJIWkM4SjZuUlF5b014SUl2NGdMN0psVlI4NzM3a1p5eGd1OUhBY0xkbHM4TDg4WkNnT0NzSURVTzJfcXI3Z1phRF8tc2tya2xRYk1SWEswa0VnVUtqc29lYXdzcUtCNll2dTBkS3Q0bkV5dDVzRWtzRVNqa05McWl2TkxoeWtObHRPTQ?oc=5",
+   "src": "BFM",
+   "d": "2026-10-30",
+   "seg": "defense"
+  },
+  {
+   "t": "Après le Rafale, la France seule face aux géants",
+   "u": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFAxYkxaUVVILVEtRjJQVVpRRXFwamxRRWZpVllvOFN3azd1V1dRZndjQlg3VV9uOW8xZnB5RVp3RnAzdHR3N0QzeTFCdFJPcWRaM2FSZGctUG5ncllCNUE?oc=5",
+   "src": "L'Essentiel de l'Éco",
+   "d": "2026-10-30",
+   "seg": "defense"
+  },
+  {
+   "t": "Coentreprise de Thalès et Safran, OEM Services est placée en liquidation judiciaire",
+   "u": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPcUtzVldUWElnV2diTzZ5VHBnNFBFX3c5SWd1WlU1dGRaY0J5RDVJRm9MRTcxajFhSTRMWnBmaW0zSlRYemxOQzQ4WFV6MTdoQy1WczVHS1NMM05OY3g0WXdyWHlsQXN2U0hENU1nRzFZS0s4TnhSTkg3NGZ5RUFWMVN5Z2ZDdk15bjgyNDBpRkViNlhFSDh2TTkyS0pfaVktTE5wOFB5MXZsUF9zTk96OUJpcmFqT2xGNXhKVXREVWZXZHpCYkpZcFhyaHBBc080dEJHVVVMbw?oc=5",
+   "src": "Les Echos",
+   "d": "2026-10-30",
+   "seg": "civil"
+  },
+  {
    "t": "Dassault Aviation cède 0,26%",
    "u": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNcjFVeTlEb0hZNm1XMUhaX1lnenRmcl9ITDVmbDEzVkpoMlRMOFEyQWZLRWxRd2RuR2ZnLWhuRGJkbmhIamhFX2FFZ0xFRmFEcXNXNFQwTnI5ZjNGMm9ibW50SlFxclV5ZjA0dC1VMjQ2UmMzTHdGSHFELUNaUWdKTnVuWlpCNXVJQzNzQlZ2WjdLdw?oc=5",
    "src": "Boursier.com",
@@ -111,6 +181,20 @@
    "u": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOekI2aUUwTExoYUdCUlVRY0RZQVd4UmZ4VHJqdXNRUzkyb2pPYnczcXY0Ynh4VlY5NXhCRU95VFJjVVBEekFRZjN1MGw1Q21RbnhlZkZteHZHNWdtUHcxT0hHOENLOC1rZFhlbjg3YlQ0NGJudTdnMzRmQjRLYldLVTdxYlZidkMtZ1hEZ1U2LXV4ejZWeTZMM2ZGbnl4aHllLWZucS1ibjFGYmxCSzJkREtLZGZBODhFOERQRXdhU3lpTjhEMldQWElxUXZfSG03NVRMYmpkQ0pjaXRpbGRiR1hXVlNkYnVRU1htbE1NNzA1M0N4TXg4NTRqcFVpZWxsYmxzQmk4YzBwUQ?oc=5",
    "src": "Le Journal de l'Aviation",
    "d": "2026-10-30",
+   "seg": "civil"
+  },
+  {
+   "t": "Le Dassault Aviation Rafale F4 se rapproche de sa méga commande indienne.",
+   "u": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNNk1wOWx5MGRSaGo0Zk5Jd3UxWU1MUjdCQ3BCcHlub2I3NGIzYU53YzVDb1JBYm9pMHFlVVByUFZwUG52VmRWM2c1YWtNTFRRclpvbnZ5alo5cmtiQW9tcTV0U0xkUGlvM19fVGlrd0NySW96WEVQZXIzLVVZaWhOenVtOGJWSjc3bHNYU3NZY2VLUENBWHVYTFo5VWI4VmpIc3pOSXk4V2owWGFwS25ITDBKMGRHVkkySklLcg?oc=5",
+   "src": "Avionslegendaires.net",
+   "d": "2026-10-29",
+   "seg": "defense"
+  },
+  {
+   "t": "Les poids-lourds français de l’aéronautique s’envolent en 2026",
+   "u": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNeUwtdi1QejFneTJkX1p3NHR0QlRQaUEzTHEtT3JnMWFpc2RHeW8wN3lLZDJkMlIybHFMSGJHWU9DZEg0TjRnRzNTcUtDd3BNUTNsbFRGSHdEcDkwdGVBVzh1UFJUX0RlRFNyeHJoaGdHb0UtZzQwbXhYYnpYZXdlVjI5eG1Gb2xrY0FXb3pjRTBLbnRWTjdtYWY5aw?oc=5",
+   "src": "Aerobuzz",
+   "d": "2026-10-29",
    "seg": "civil"
   },
   {
