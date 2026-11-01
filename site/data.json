@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-10-30",
+ "updated": "2026-11-01",
  "overview": {
   "bref": [
    "Aéronautique civile : la demande est record (carnet Airbus de 9 310 avions). La France est forte, mais Airbus doit livrer environ 323 avions au 4e trimestre pour tenir son objectif, et la cadence reste bridée par les moteurs, les pièces forgées et le manque de main-d'œuvre.",
@@ -3044,6 +3044,70 @@
  ],
  "tenders": [
   {
+   "id": "ted-759026-2026",
+   "pays": "FR",
+   "acheteur": "Direction Générale de l’Armement / DOMN / Service des achats d'armement",
+   "seg": "defense",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "France – Missiles – Fourniture de systèmes VL MICA, de munitions MICA et prestations associées pour les besoins des armées françaises et d’Etats Partenaires, membres ou non de l’Union Européenne",
+   "montant": "Voir l'avis",
+   "date": "2026-11-02",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/759026-2026"
+  },
+  {
+   "id": "ted-756653-2026",
+   "pays": "ES",
+   "acheteur": "Consejería de Área de Medio Ambiente, Clima, Energía y Conocimiento del Cabildo de Gran Canaria",
+   "seg": "defense",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Espagne – Aéronefs sans pilote – Alertagran 7: sistema Integral de Drones de Emergencias",
+   "montant": "Voir l'avis",
+   "date": "2026-11-02",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/756653-2026"
+  },
+  {
+   "id": "ted-758265-2026",
+   "pays": "DE",
+   "acheteur": "Deutsches Zentrum für Luft- und Raumfahrt e.V. (DLR)",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Allemagne – Moteurs d'aéronefs – Acquisition de 80 moteurs de fusée à propergol solide RED KITE",
+   "montant": "Voir l'avis",
+   "date": "2026-11-02",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/758265-2026"
+  },
+  {
+   "id": "ted-758290-2026",
+   "pays": "PL",
+   "acheteur": "3 Regionalna Baza Logistyczna Wydział Techniki Lotniczej",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Pologne – Pièces détachées pour aéronefs – Fourniture de matériels techniques, de consommables et de produits à usage unique pour aéronefs",
+   "montant": "Voir l'avis",
+   "date": "2026-11-02",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/758290-2026"
+  },
+  {
    "id": "ted-753622-2026",
    "pays": "PL",
    "acheteur": "3 Regionalna Baza Logistyczna Wydział Techniki Lotniczej",
@@ -3076,6 +3140,22 @@
    "u": "https://ted.europa.eu/fr/notice/-/detail/753548-2026"
   },
   {
+   "id": "ted-754865-2026",
+   "pays": "ES",
+   "acheteur": "Presidencia de European Aviation College, S.A.",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Espagne – Simulateurs de vol – Fourniture d'un simulateur de vol FNPT II et de 4 entraîneurs de vol pour l'école de pilotes ADVENTIA",
+   "montant": "Voir l'avis",
+   "date": "2026-10-30",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/754865-2026"
+  },
+  {
    "id": "ted-756321-2026",
    "pays": "ES",
    "acheteur": "Jefatura de Asuntos Económicos del Mando de Apoyo Logístico",
@@ -3106,22 +3186,6 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/754838-2026"
-  },
-  {
-   "id": "ted-754865-2026",
-   "pays": "ES",
-   "acheteur": "Presidencia de European Aviation College, S.A.",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Espagne – Simulateurs de vol – Fourniture d'un simulateur de vol FNPT II et de 4 entraîneurs de vol pour l'école de pilotes ADVENTIA",
-   "montant": "Voir l'avis",
-   "date": "2026-10-30",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/754865-2026"
   },
   {
    "id": "ted-754245-2026",
@@ -3188,22 +3252,6 @@
    "u": "https://ted.europa.eu/fr/notice/-/detail/751876-2026"
   },
   {
-   "id": "ted-748876-2026",
-   "pays": "IT",
-   "acheteur": "Di r e z i o n e d e g l i Armame n t i Ae r o n a u t i c i e p e r l ’Ae r o n a v i g a b i l i t à",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Italie – Simulateurs de vol – Acquisition d'un simulateur de parachutisme en réalité virtuelle pour renforcer la capacité d'aérolargage de la défense",
-   "montant": "Voir l'avis",
-   "date": "2026-10-28",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/748876-2026"
-  },
-  {
    "id": "ted-746780-2026",
    "pays": "EU",
    "acheteur": "Estado Maior da Força Aérea",
@@ -3234,6 +3282,22 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/747331-2026"
+  },
+  {
+   "id": "ted-748876-2026",
+   "pays": "IT",
+   "acheteur": "Di r e z i o n e d e g l i Armame n t i Ae r o n a u t i c i e p e r l ’Ae r o n a v i g a b i l i t à",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Italie – Simulateurs de vol – Acquisition d'un simulateur de parachutisme en réalité virtuelle pour renforcer la capacité d'aérolargage de la défense",
+   "montant": "Voir l'avis",
+   "date": "2026-10-28",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/748876-2026"
   },
   {
    "id": "ted-746083-2026",
@@ -3300,22 +3364,6 @@
    "u": "https://ted.europa.eu/fr/notice/-/detail/743216-2026"
   },
   {
-   "id": "ted-741351-2026",
-   "pays": "EU",
-   "acheteur": "Ministerstvo vnútra Slovenskej republiky",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Slovaquie – Hélicoptères – Matériel d'hélicoptères : hélicoptères de moyen tonnage",
-   "montant": "Voir l'avis",
-   "date": "2026-10-27",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/741351-2026"
-  },
-  {
    "id": "ted-743050-2026",
    "pays": "EU",
    "acheteur": "Lietuvos Respublikos aplinkos ministerijos Aplinkos projektų valdymo agentūra",
@@ -3330,6 +3378,22 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/743050-2026"
+  },
+  {
+   "id": "ted-741351-2026",
+   "pays": "EU",
+   "acheteur": "Ministerstvo vnútra Slovenskej republiky",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Slovaquie – Hélicoptères – Matériel d'hélicoptères : hélicoptères de moyen tonnage",
+   "montant": "Voir l'avis",
+   "date": "2026-10-27",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/741351-2026"
   },
   {
    "id": "ted-738120-2026",
@@ -3426,54 +3490,6 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/730122-2026"
-  },
-  {
-   "id": "ted-730655-2026",
-   "pays": "EU",
-   "acheteur": "Digitális Kormányzati Ügynökség Zártkörűen Működő Részvénytársaság",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Hongrie – Aéronefs sans pilote – Achat de drones (DRON23)",
-   "montant": "Voir l'avis",
-   "date": "2026-10-22",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/730655-2026"
-  },
-  {
-   "id": "ted-727982-2026",
-   "pays": "FR",
-   "acheteur": "UNIVERSITE DE MAYOTTE",
-   "seg": "defense",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "France – Aéronefs sans pilote – Fourniture, livraison et mise en service d’équipements scientifiques de laboratoire, d’un drone modulable et d’un capteur bathymétrique au profit de l'Université de Mayotte",
-   "montant": "Voir l'avis",
-   "date": "2026-10-21",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/727982-2026"
-  },
-  {
-   "id": "ted-728690-2026",
-   "pays": "DE",
-   "acheteur": "Landesamt für Zentrale Polizeiliche Dienste Nordrhein-Westfalen",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Allemagne – Aéronefs sans pilote – Achat de grands systèmes de drones pour la police de Rhénanie-du-Nord-Westphalie",
-   "montant": "Voir l'avis",
-   "date": "2026-10-21",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/728690-2026"
   },
   {
    "id": "t20261030-1",
