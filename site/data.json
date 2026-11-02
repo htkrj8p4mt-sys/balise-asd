@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-01",
+ "updated": "2026-11-02",
  "overview": {
   "bref": [
    "Aéronautique civile : la demande est record (carnet Airbus de 9 310 avions). La France est forte, mais Airbus doit livrer environ 323 avions au 4e trimestre pour tenir son objectif, et la cadence reste bridée par les moteurs, les pièces forgées et le manque de main-d'œuvre.",
@@ -3044,6 +3044,38 @@
  ],
  "tenders": [
   {
+   "id": "ted-763599-2026",
+   "pays": "FR",
+   "acheteur": "UNIVERSITE DE MAYOTTE",
+   "seg": "defense",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "France – Aéronefs sans pilote – Fourniture, livraison et mise en service d’équipements scientifiques de laboratoire, d’un drone modulable et d’un capteur bathymétrique au profit de l'Université de Mayotte",
+   "montant": "Voir l'avis",
+   "date": "2026-11-03",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/763599-2026"
+  },
+  {
+   "id": "ted-761767-2026",
+   "pays": "PL",
+   "acheteur": "Mazowiecki Urząd Wojewódzki w Warszawie",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Pologne – Aéronefs sans pilote – Achat ainsi que la livraison d'avions sans pilote avec des logiciels et des équipements supplémentaires dans le cadre de la mise en œuvre des tâches de protection civile et de protection civile.",
+   "montant": "Voir l'avis",
+   "date": "2026-11-03",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/761767-2026"
+  },
+  {
    "id": "ted-759026-2026",
    "pays": "FR",
    "acheteur": "Direction Générale de l’Armement / DOMN / Service des achats d'armement",
@@ -3188,22 +3220,6 @@
    "u": "https://ted.europa.eu/fr/notice/-/detail/754838-2026"
   },
   {
-   "id": "ted-754245-2026",
-   "pays": "ES",
-   "acheteur": "Rectorado de la Universidad de Sevilla",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Espagne – Aéronefs sans pilote – Drones de transport de petites et moyennes marchandises pour le centre d'innovation CUAM de l'université de Séville",
-   "montant": "Voir l'avis",
-   "date": "2026-10-30",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/754245-2026"
-  },
-  {
    "id": "ted-752841-2026",
    "pays": "EU",
    "acheteur": "Cyprus Police",
@@ -3218,6 +3234,22 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/752841-2026"
+  },
+  {
+   "id": "ted-754245-2026",
+   "pays": "ES",
+   "acheteur": "Rectorado de la Universidad de Sevilla",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Espagne – Aéronefs sans pilote – Drones de transport de petites et moyennes marchandises pour le centre d'innovation CUAM de l'université de Séville",
+   "montant": "Voir l'avis",
+   "date": "2026-10-30",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/754245-2026"
   },
   {
    "id": "ted-749183-2026",
@@ -3364,22 +3396,6 @@
    "u": "https://ted.europa.eu/fr/notice/-/detail/743216-2026"
   },
   {
-   "id": "ted-743050-2026",
-   "pays": "EU",
-   "acheteur": "Lietuvos Respublikos aplinkos ministerijos Aplinkos projektų valdymo agentūra",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Lituanie – Aéronefs sans pilote – Ensemble d'équipements au sol pour scanner le relief, stocker, traiter et analyser les données",
-   "montant": "Voir l'avis",
-   "date": "2026-10-27",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/743050-2026"
-  },
-  {
    "id": "ted-741351-2026",
    "pays": "EU",
    "acheteur": "Ministerstvo vnútra Slovenskej republiky",
@@ -3394,6 +3410,22 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/741351-2026"
+  },
+  {
+   "id": "ted-743050-2026",
+   "pays": "EU",
+   "acheteur": "Lietuvos Respublikos aplinkos ministerijos Aplinkos projektų valdymo agentūra",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Lituanie – Aéronefs sans pilote – Ensemble d'équipements au sol pour scanner le relief, stocker, traiter et analyser les données",
+   "montant": "Voir l'avis",
+   "date": "2026-10-27",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/743050-2026"
   },
   {
    "id": "ted-738120-2026",
@@ -3442,54 +3474,6 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/740864-2026"
-  },
-  {
-   "id": "ted-738175-2026",
-   "pays": "PL",
-   "acheteur": "Komenda Stołeczna Policji",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Pologne – Aéronefs sans pilote – Fourniture de drones",
-   "montant": "Voir l'avis",
-   "date": "2026-10-26",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/738175-2026"
-  },
-  {
-   "id": "ted-734282-2026",
-   "pays": "RO",
-   "acheteur": "Inspectoratul General de Aviatie al M.A.I.",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Roumanie – Aéronefs sans pilote – Fourniture de systèmes de drones",
-   "montant": "Voir l'avis",
-   "date": "2026-10-23",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/734282-2026"
-  },
-  {
-   "id": "ted-730122-2026",
-   "pays": "EU",
-   "acheteur": "The Finnish Border Guard",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Finlande – Véhicules aériens sans pilote – Achat de micro-drones",
-   "montant": "Voir l'avis",
-   "date": "2026-10-22",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/730122-2026"
   },
   {
    "id": "t20261030-1",
