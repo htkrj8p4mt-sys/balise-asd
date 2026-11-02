@@ -2,6 +2,97 @@
  "updated": "2026-11-02",
  "items": [
   {
+   "t": "La Roumanie fait appel à Thales pour renforcer la surveillance de son espace aérien",
+   "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPMkwxeThrSnl5ZFhTSU9XM2pQbWNIN3VwNXl6eERrbXIwbGZGZHdyYmlIWkFjc3VzcmZid0lHSjNIbHAzSm5NUXFUWnR3RU1jSEFVTWFpaDZOMG02VmVNVFFWMXNBSkhqQUFFYVI5Z3Z2VzBCTlM1NGZQVU80ZzRNV0QxX1R4akdIRldfNDVOWDVzZHJkaUFIVkJVWDVaYVlWNkRfN3VOTTQzTXgxLUo1ZndhdUdGbWdYTGJac0NIVGs?oc=5",
+   "src": "Aerobuzz",
+   "d": "2026-11-02",
+   "seg": "spatial"
+  },
+  {
+   "t": "La Lituanie reçoit le premier radar multifonctions GM200 MM/C de Thales pour sa division nationale",
+   "u": "https://defence-industry.eu/lithuania-receives-first-thales-gm200-mm-c-multifunction-radar-for-its-national-division/",
+   "src": "Defence Industry Europe",
+   "d": "2026-11-02",
+   "seg": "civil"
+  },
+  {
+   "t": "Un Rafale Marine réalise un premier appontage sur le porte-avions indien INS Vikrant",
+   "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQdlJzYVlOakUtREVHWVpMMExnZTBfa29nYTF1VnJNb095eEVCejNzWE1JdWxiamJtWTNoSXBrNXlDamhpMU9NUmxfZHRpamdLbWZMMThlWWkyR0owblFReE9sN2NaTFdqU1pzeF9SanU0RHJoZF9DemhBSkVsbXVXQnZmS1dWdk9kNnpKbEhRUkRMYURlUmlxc2wtYmlIUUQzWTVuM3Iza3lFcEgtR0xVR1o4cC1KVzhqU0dHWXdTRUQ4clVRWlYyYU5McWg5dndFVnNxQjhDTDY5NlBmMzJXSXc2NDB3R2hFSVM2TmRNUzlVdkxFN3NhdXBiTlQ?oc=5",
+   "src": "Le Journal de l'Aviation",
+   "d": "2026-11-02",
+   "seg": "defense"
+  },
+  {
+   "t": "Airbus Defence and Space signe avec EPCOR pour le soutien des APU de la flotte mondiale d’A330 MRTT",
+   "u": "https://news.google.com/rss/articles/CBMinAJBVV95cUxORUNtT2EtTDRCRUI0Qnd0TTVnYVpFODVtWE1BZnhsYVBFdEdvWHhvS3NINjQzd04wUGpLdzVrS1AwTVJFSTUwTkN2SHlwN043dW1aX0ZGTFZlbFhZNXg2bkRKbzFRX0d6RFFQdTJ5cVR5YjBEbE1TMmw0amtYSHNwYUFIbHI4MlNpY1EwaHNwVEFFcFBoa2tsUGRFMGlERDJra2lNYVVoSnZCOHRqTGN6VnZNV3VFaHViXzRUTVJnbXkxYlNuUWpuY3Y1TnlMOF9GQUlkeWFFUk9INUI3Q0FfRExiV1RiRDducjVBRXhFUTFfVnF3MkMzZGIwWU8yaW9Ia3NWeEtOLVJRQzJXUDZqejJIT1p0eElBN2FQVw?oc=5",
+   "src": "Le Journal de l'Aviation",
+   "d": "2026-11-02",
+   "seg": "spatial"
+  },
+  {
+   "t": "DGA Essais en vol a reçu un Rafale F4.1 « ABE » pour préparer le standard F5",
+   "u": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQNWU5b1F4YlBrb3pYWVFwdDZVVmpBSkJOZ21sT3ltbklZbkxWTUFucy1jTnd0cXZhcVNCQ2VtV3ZrdktTMjc1dkdIcjBhcXNqdTVsdjNVWDlDSzY1TTNKN2w3UGp2dVVQbzd2aktZWHBIQXdoTVBMQ1BadFVLbFRkMnFRbFBEbUhXbjBDQ1VJMXlfaS11ZmdHS19SeGs5dFdXWEJZOVZrUVAtNGlKcU5LTGpLdw?oc=5",
+   "src": "Zone Militaire",
+   "d": "2026-11-02",
+   "seg": "defense"
+  },
+  {
+   "t": "DGA Essais en vol a reçu un Rafale F4.1 « ABE » pour préparer le standard F5",
+   "u": "https://www.opex360.com/2026/11/02/dga-essais-en-vol-a-recu-son-premier-rafale-f4-1-pour-preparer-le-standard-f5/",
+   "src": "Opex360",
+   "d": "2026-11-02",
+   "seg": "defense"
+  },
+  {
+   "t": "Rafale F5 : la DGA réceptionne son premier avion banc d’essais dédié aux futures évolutions",
+   "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPaHlsTlV6MUpnbXFjd2tEV0RFY0pYTnVUblB5NEh1azBWNjE0RmpMZjZyUkc3LWVOYWl2R010VDd6X29rYVJIQ0o3YzROczNCU2s3VTh0MTVzaHVlRXA3d2xNbTA4clQwQVczQmxhQ1c2TUpybE1CY3ZObmlHQ0lINFNfOHhKTUlMZkJQRmpQQ1VtSjFNUlExcEJuTmtxb3c1T21XREpaVHozdVVVWFIwblZpWWNpNzlqZ3dzWFFn?oc=5",
+   "src": "Actu Aero",
+   "d": "2026-11-02",
+   "seg": "defense"
+  },
+  {
+   "t": "Aéronautique : Un Rafale laboratoire pour le standard F5",
+   "u": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNFN0eFNBWWdlVHV2VXNDaWN3Mzkxa18zVjdEcnpHQTMwTFhuTTgwVzZaWjZiLVpmaHlzaFk1Y0F4RU1ZNXdsQXlPZV9CMmVjVEt1UUpGaXNOUUctNkZoWEJLN2RnbmJsaHN0Z1lpcGFiRlpKc2lheHF5MWxuRzItc0Z2dmhEMGMzbDNRN3Y0YXk0MHZBaVdtQWJnRXhYWXpyWHBHc2dFZ1BVNHpEdy15Mmd3dFoxemg2SXNqcA?oc=5",
+   "src": "Presse Agence",
+   "d": "2026-11-02",
+   "seg": "defense"
+  },
+  {
+   "t": "L'armée française vient de recevoir un Rafale pas comme les autres, qui va préparer le futur Rafale F5",
+   "u": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOTks4ZWd0WkJGcnJxYUNFZ3IwUGh0bEpxQ0w0ajJqWHl4TzBCcnNiWUVEd3MtTXZoV3NsS0NiZ3dTWGFnbkl6VEF1cW9YX1AzeHZTbHRhR3pDUjM0RjVoRGxfUm5QclUwaXQ5RGw2V05NSTBPRTJVOXJkNXNsX2xPSXVNd0ZaVDhzY2NONktkVjFodkNvVUY1Nm9wXzBxV2c4d3h4VVB2SF9OWHYteGphVEYybkx5czBpemVPNjNweklkbUVRWHR6U1hWUHlucWpfWDZ1UGxPdmdTWDU1cEdZ?oc=5",
+   "src": "Clubic",
+   "d": "2026-11-02",
+   "seg": "defense"
+  },
+  {
+   "t": "La DGA réceptionne le premier Rafale destiné aux essais du standard F5",
+   "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOTEFLd2R6RVBTYkU5bDNMYnBLUVdsbTViTW1Ldm43RUwzajVRYnFfTGVDNDd3QjlLR01fVlBUYjRCaUQ4clBHMHdfbEhCS0tPQ3d5S1c1Y1A2N0JRcGJqbXBudG0xMFp4Mk9OTHFXX1RTTVdEdG00V0dZa3RfTktzWmNuUncxZGFDcDJBZjBra3ZNYlJZMmY3TWtKNnNCbWpjUVd6eG9WSTFiYUhyNkY5eWtlSEZ6SlZnTXFCNGFtOGNHMGVZaHRqQ0dYZUpGMU1SQTFhMm1XZzZyUmNfQjFNejdXYndpaFnSAecBQVVfeXFMTkxBS3dkekVQU2JFOWwzTGJwS1FXbG01Yk1tS3ZuN0VMM2o1UWJxX0xlQzQ3d0I5S0dNX1ZQVGI0QmlEOHJQRzB3X2xIQktLT0N3eUtXNWNQNjdCUXBiam1wbnRtMTBaeDJPTkxxV19UU01XRHRtNFdHWWt0X05Lc1pjblJ3MWRhQ3AyQWYwa2t2TWJSWTJmN01rSjZzQm1qY1FXenhvVkkxYmFIcjZGOXlrZUhGekpWZ01xQjRhbThjRzBlWWh0akNHWGVKRjFNUkExYTJtV2c2clJjX0IxTXo3V2J3aWhZ?oc=5",
+   "src": "Boursorama",
+   "d": "2026-11-02",
+   "seg": "defense"
+  },
+  {
+   "t": "SriLankan Airlines : l’affaire Airbus rattrape le fils de l’ancien président",
+   "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPcm1wc0locXRXd2cwZ3NyaFJwc2kzSV9sUTVhaDJpOUJaT3c0bk10dlhpWmNBQUcySFNWSHdkLXdndE5zTG9wbDhkVXM5S3VEV1p6bmVrTEtCa2ZQUmloVkJwWEtuZ2phVmp1dHRoWTdBQmlPWTVYZDJMdmo4bkVOQ0NyR2ZyaEhnYnRUaTFPOGY0OVNEd2J2VWZDdWtFMVBfYlc4czdDY3gyWWdXNVJ2Z2E3NVdVWHpGRUpteWt3VlU?oc=5",
+   "src": "Air Journal",
+   "d": "2026-11-02",
+   "seg": "civil"
+  },
+  {
+   "t": "L'US Navy sélectionne la filiale Thales pour un contrat de 53,9 millions $ de systèmes de chasse aux mines à distance",
+   "u": "https://defence-industry.eu/u-s-navy-selects-thales-subsidiary-for-53-9-million-remote-mine-hunting-systems-contract/",
+   "src": "Defence Industry Europe",
+   "d": "2026-11-02",
+   "seg": "civil"
+  },
+  {
+   "t": "Safran et Aura Aero préparent la propulsion hybride d’ERA",
+   "u": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQdnlQb1NMVXkxSDhRenNIejBUUC1oa3R2TzlOTUpsazM4M08yQXJDOU4tVzQzQjVOWGVPTG1GYUNSNG9BZHBHb0FVd0ZtVUFvamdhUXo3dkp4SndhNkRiVDVPc1lzZVQtS1htd1JHcHZfT3dSX2xQbEljQ25GUjJmZnZibTJhNFk1VThzbkdmWDRQUzdRc1k1Q3A5ZTc?oc=5",
+   "src": "La Gazette France",
+   "d": "2026-11-02",
+   "seg": "civil"
+  },
+  {
    "t": "Et les Émirats arabes unis vont finalement monter à bord du Rafale F5",
    "u": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPTFMybjNuU3R5WHlxeHQ0UXpiZVh4VEY5VEZ1UmNzUUZ4UXJESzNDOGp3VTFOeGk3cXpmcExjcEMzMnNJV1JLd3ZiTDhOZG95NTA2OXFoanBGYWxxOWhpV29kZWVTcURqZjZyUFNYaGJVYmRERm5lZkFYLU5hSHkxd3p6V091SE9fSlFhMFFqTHNId0hobGo4Yi03MGNvaXYzVk5LclpnY2J2eHhhclZkMW1meDQ1THl5bkRzTVMybzBablVxZC14LVhIQjhMZEZZeDhlS2JJc0w3akxRckZyOF9B?oc=5",
    "src": "La Tribune",
