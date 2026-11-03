@@ -1,6 +1,20 @@
 {
- "updated": "2026-11-02",
+ "updated": "2026-11-03",
  "items": [
+  {
+   "t": "L'Allemagne commande deux unités de pompiers Patriot pour remplacer les systèmes de défense aérienne fournis à l'Ukraine",
+   "u": "https://defence-industry.eu/germany-orders-two-patriot-fire-units-to-replace-air-defence-systems-supplied-to-ukraine/",
+   "src": "Defence Industry Europe",
+   "d": "2026-11-03",
+   "seg": "defense"
+  },
+  {
+   "t": "MBDA construira un démonstrateur laser aéroporté pour l'Allemagne afin d'évaluer les futures capacités d'armement des avions",
+   "u": "https://defence-industry.eu/mbda-to-build-airborne-laser-demonstrator-for-germany-to-assess-future-aircraft-weapons-capability/",
+   "src": "Defence Industry Europe",
+   "d": "2026-11-02",
+   "seg": "defense"
+  },
   {
    "t": "Safran affirme que sa technologie de navigation soutiendra trois programmes français de dissuasion nucléaire",
    "u": "https://defence-industry.eu/safran-says-its-navigation-technology-will-support-three-french-nuclear-deterrence-programmes/",
