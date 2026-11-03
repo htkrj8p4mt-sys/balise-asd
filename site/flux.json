@@ -2,6 +2,76 @@
  "updated": "2026-11-03",
  "items": [
   {
+   "t": "La Suède reçoit des missiles Taurus de l'Allemagne pour des frappes en profondeur des Gripen",
+   "u": "https://www.aerotime.aero/articles/sweden-receives-taurus-missiles-germany-gripen",
+   "src": "AeroTime",
+   "d": "2026-11-03",
+   "seg": "defense"
+  },
+  {
+   "t": "La marine française autorise le drone Airbus Aliaca VTOL pour le service à bord",
+   "u": "https://www.aerotime.aero/articles/french-navy-airbus-aliaca-vtol-drone-qualified",
+   "src": "AeroTime",
+   "d": "2026-11-03",
+   "seg": "defense"
+  },
+  {
+   "t": "Airbus prévoit que le Vietnam aura besoin d'environ 1 000 avions au cours des 20 prochaines années.",
+   "u": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOZk95YXlNMi16dnlZNVJudy1tVHpqdVdvZzBOcHBsTi1BSWl1MUl2dVBpcUVaVWxqdTIwcGV4Z212ZWViN1RaaUlXUUI1d0JxMlFHSTBhb2VPaktHRmN5dmphWHc5V2ZCc0t6OXk0Wm8xZ2RQZnRUNWVPU19xVURMLWxSRzRvWUxYYjBCVndFRnczcHZB?oc=5",
+   "src": "Vietnam.vn",
+   "d": "2026-11-03",
+   "seg": "civil"
+  },
+  {
+   "t": "DETUMBLER : la solution de stabilisation passive du spin d'Airbus",
+   "u": "https://spacenews.com/detumbler-airbus-passive-spin-stabilization-solution/",
+   "src": "SpaceNews",
+   "d": "2026-11-03",
+   "seg": "civil"
+  },
+  {
+   "t": "L'Allemagne utilise MBDA pour développer un démonstrateur d'arme laser aéroporté",
+   "u": "https://www.aerotime.aero/articles/germany-mbda-airborne-laser-weapon-demonstrator",
+   "src": "AeroTime",
+   "d": "2026-11-03",
+   "seg": "defense"
+  },
+  {
+   "t": "Air Corsica se transforme et étudie l’introduction d’un nouvel Airbus A320 en 2027",
+   "u": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNem8wZzdMVXRITDRqUHNZQmlrX3hvTHJlUWljRDVLazNCaWM4bEdCeTY5NEtHVVc0Ym9XLTZ5b3lZZzFKS1pyUnBjQjlKMklYV2d6SXFYQW9qWUNCTXk2RHlteEJ5TEJmRUZ3OEZRRGVrODR6WVZuOGZ3cnI1MHBoZDJ4dk5YWWNPMmYtNm85c251d0IycnlMbDNQUXlELVZheGJPWjJYN2taVlZzUUV4Nm5hUHd1ckpIQ3pJekdGNVl4MVA5Wm02RXlMLXNUOEc1OElJenpXaTBBUy03ZzdQNTNxWFdJUkZ2Z3p0OWFxYXB4ZC1kY2hnT2Z6SVNsN0RkVE9pR2JXbw?oc=5",
+   "src": "Le Journal de l'Aviation",
+   "d": "2026-11-03",
+   "seg": "civil"
+  },
+  {
+   "t": "Airbus et Air France s’associent et leur nouveau système pourrait faire économiser des millions d'euros sur plus de 500 A350",
+   "u": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRmtSVXNtNlNNc2Z3UWlFVjdIRm5rSkNoZlIwSGZXc244R3RKSnVrQXdCTUtuaEh5SUUteENBVXRCajBpQlV3eURMbS1fR2kxci1uemZEQzByRFZUcUNRQU54elRUSU9VaG9UVjZLNHFhUEo1N2ZwN0Q5VTRVd3BkT0xmYXF0Z0RPeWRseVFUS1Z3QW5sZkZLbzRpMi1EUGtsRUVuWW9WZGk1Y28?oc=5",
+   "src": "AquitaineOnLine",
+   "d": "2026-11-03",
+   "seg": "civil"
+  },
+  {
+   "t": "Rafale : 19 ans après avoir choisi le F-16, le Maroc pourrait enfin donner sa chance à Dassault",
+   "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPbmxYcG0zaVo5bl90WVp5WUxGWjByZHI1QTQ5UVU2TVNjWDNVZWFVRWVsWFAzNF9NcEdLZGd6d0xxbE85ZWV3OE1kbnpIWjBlSVRKTnVrc3RTMHVaNnJONFhuYmJmcTFrcUM5MS1VNDFwZEkwV1pkMDIzZnJEVWFDQy1zcFdKQkdja0RBNktZblJ4c0NkWlY2TzlZa1IzeGY5alRybmFRbVFTZWZLTHU5YzJOUnVWcUp0YnotR1VuWWxNc2RT?oc=5",
+   "src": "BuzzArena",
+   "d": "2026-11-03",
+   "seg": "defense"
+  },
+  {
+   "t": "France-Israël. L'apport majeur d'Elbit Systems au cockpit des derniers avions d'affaires de Dassault Aviation.",
+   "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOMXk0ZHBpbUxuUm9IdFZiaWhLRF9LZXlXeHJSTFdWMjVDMDF0bWtudnBFejVpRlNOb1ZSaFZubEdKVzlDMGR1b3JTMlBPRVQ2d1ZUbDI0bXNYSU1nR19pSVBBUU1Xb2d0OXYyckxteW52UTZubTFXRWUzQmRtT21WRFFxVE9FSXhZNFV2T1RscVdMRXY5Nk5kd1ZySUFiMDkya0FsVF9ndlppWXo2Rm1kODIwNnFrVnE2bWltbWZreFZPbnAwR0I0bHVIdFNyYzZRWWVGdm5TLWl5Zw?oc=5",
+   "src": "IsraelValley",
+   "d": "2026-11-03",
+   "seg": "civil"
+  },
+  {
+   "t": "HII et Thales démontrent une chasse aux mines autonome avec des systèmes de détection et de neutralisation intégrés",
+   "u": "https://defence-industry.eu/hii-and-thales-demonstrate-autonomous-mine-hunting-with-integrated-detection-and-neutralization-systems/",
+   "src": "Defence Industry Europe",
+   "d": "2026-11-03",
+   "seg": "civil"
+  },
+  {
    "t": "L'Allemagne commande deux unités de pompiers Patriot pour remplacer les systèmes de défense aérienne fournis à l'Ukraine",
    "u": "https://defence-industry.eu/germany-orders-two-patriot-fire-units-to-replace-air-defence-systems-supplied-to-ukraine/",
    "src": "Defence Industry Europe",
