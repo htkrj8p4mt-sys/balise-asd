@@ -3044,20 +3044,52 @@
  ],
  "tenders": [
   {
-   "id": "ted-766841-2026",
-   "pays": "EU",
-   "acheteur": "Totalförsvarets Forskningsinstitut, Foi",
-   "seg": "defense",
+   "id": "ted-771302-2026",
+   "pays": "PL",
+   "acheteur": "Politechnika Poznańska",
+   "seg": "civil",
    "m": "sys",
    "statut": "ouvert",
-   "objet": "Suède – Avions, missiles et spationefs militaires – Robot quadrupède (à quatre pattes)",
+   "objet": "Pologne – Aéronefs sans pilote – Livraison d'aéronefs sans pilote (UAV) avec équipement, configuration, instruction sur le tas",
    "montant": "Voir l'avis",
-   "date": "2026-11-04",
+   "date": "2026-11-05",
    "echeance": "",
    "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/766841-2026"
+   "u": "https://ted.europa.eu/fr/notice/-/detail/771302-2026"
+  },
+  {
+   "id": "ted-767817-2026",
+   "pays": "PL",
+   "acheteur": "Lotnicze Pogotowie Ratunkowe",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Pologne – Services de réparation et d'entretien de moteurs d'aéronefs – Prise en charge de 60 jeux de buses d'injecteurs de moteur de type PW206B2+, PW206B3 installés dans les hélicoptères EC135P2+ et EC135P3",
+   "montant": "Voir l'avis",
+   "date": "2026-11-05",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/767817-2026"
+  },
+  {
+   "id": "ted-768631-2026",
+   "pays": "EU",
+   "acheteur": "Valsts robežsardze",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Lettonie – Aéronefs sans pilote – Livraison de kits d'avions sans pilote et formation du personnel",
+   "montant": "Voir l'avis",
+   "date": "2026-11-05",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/768631-2026"
   },
   {
    "id": "ted-766615-2026",
@@ -3074,6 +3106,22 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/766615-2026"
+  },
+  {
+   "id": "ted-766841-2026",
+   "pays": "EU",
+   "acheteur": "Totalförsvarets Forskningsinstitut, Foi",
+   "seg": "defense",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Suède – Avions, missiles et spationefs militaires – Robot quadrupède (à quatre pattes)",
+   "montant": "Voir l'avis",
+   "date": "2026-11-04",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/766841-2026"
   },
   {
    "id": "ted-767012-2026",
@@ -3236,22 +3284,6 @@
    "u": "https://ted.europa.eu/fr/notice/-/detail/758290-2026"
   },
   {
-   "id": "ted-753548-2026",
-   "pays": "ES",
-   "acheteur": "Consejera Insular Delegada de Accesibilidad, Informática, Nuevas Tecnologías y Planificación y Proyectos Estratégicos del Cabildo Insular de Fuerteventura",
-   "seg": "defense",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Espagne – Services de formation de personnel – Conception, animation et gestion complète d'un plan de formation sur les drones",
-   "montant": "Voir l'avis",
-   "date": "2026-10-30",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/753548-2026"
-  },
-  {
    "id": "ted-753622-2026",
    "pays": "PL",
    "acheteur": "3 Regionalna Baza Logistyczna Wydział Techniki Lotniczej",
@@ -3266,6 +3298,22 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/753622-2026"
+  },
+  {
+   "id": "ted-753548-2026",
+   "pays": "ES",
+   "acheteur": "Consejera Insular Delegada de Accesibilidad, Informática, Nuevas Tecnologías y Planificación y Proyectos Estratégicos del Cabildo Insular de Fuerteventura",
+   "seg": "defense",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Espagne – Services de formation de personnel – Conception, animation et gestion complète d'un plan de formation sur les drones",
+   "montant": "Voir l'avis",
+   "date": "2026-10-30",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/753548-2026"
   },
   {
    "id": "ted-754865-2026",
@@ -3458,22 +3506,6 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/748887-2026"
-  },
-  {
-   "id": "ted-747345-2026",
-   "pays": "EU",
-   "acheteur": "Lunds universitet",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Suède – Aéronefs pilotés – Système de drone complet et équipements associés",
-   "montant": "Voir l'avis",
-   "date": "2026-10-28",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/747345-2026"
   },
   {
    "id": "t20261030-1",

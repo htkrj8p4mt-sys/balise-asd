@@ -2,6 +2,41 @@
  "updated": "2026-11-04",
  "items": [
   {
+   "t": "SNC se retire de la compétition des entraîneurs de l'US Navy, laissant l'équipe Textron-Leonardo comme seul concurrent",
+   "u": "https://www.flightglobal.com/fixed-wing/2026/11/snc-withdraws-from-us-navy-trainer-competition-leaving-textron-leonardo-team-as-sole-competitor/",
+   "src": "FlightGlobal",
+   "d": "2026-11-04",
+   "seg": "civil"
+  },
+  {
+   "t": "Airbus abandonne le Wingman au profit du drone U760 Ravenstorm",
+   "u": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQVlBCU3hvRGJqeHFwYXhLcUtTY2VpcjRlamlKOUZyTWEzOTd2bTlsekJhdTZsbG5nU3dLTEpzdUZWbkduOHl2ekU2NGphSlpMZXgyUzhkSHVqalQxRjdfckwtd2NsUG1EZnZyaTlpa0hudklEWlJfU0lZWGhSMk1rYTJUamppUDZxejhTMU85TjNZTzZaYXc?oc=5",
+   "src": "https://www.avion-chasse.fr/",
+   "d": "2026-11-04",
+   "seg": "defense"
+  },
+  {
+   "t": "Dassault Aviation progresse de 0,20%",
+   "u": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOUENBWlZqNzZCc21BcHl1THJOdHZjdk13SldLZzVNcTR6RFJ3cjZJRWIySm1naHVOdE1yTERZMjktWkhMWW9ZYnVJekVDRm0wWlNxRTlCRlF0SUpwal9Dc1JEVjJwRk95RHZ3OEFWTUlwUEp2eEhtQVZwUy1JWVEySHVicnA4R2JWZlJDenpqblJBdw?oc=5",
+   "src": "Boursier.com",
+   "d": "2026-11-04",
+   "seg": "civil"
+  },
+  {
+   "t": "AerFin acquiert 44 Boeing 737NG de Qantas dans une transaction record",
+   "u": "https://www.flightglobal.com/aerospace/2026/11/aerfin-acquires-44-qantas-boeing-737ngs-in-record-transaction/",
+   "src": "FlightGlobal",
+   "d": "2026-11-04",
+   "seg": "civil"
+  },
+  {
+   "t": "Prochaine échéance proche pour l'acquisition d'un « fidèle ailier » d'Apache au Royaume-Uni",
+   "u": "https://www.flightglobal.com/defence/2026/11/next-deadline-nears-for-uk-apache-loyal-wingman-acquisition/",
+   "src": "FlightGlobal",
+   "d": "2026-11-04",
+   "seg": "civil"
+  },
+  {
    "t": "Safran va fournir les turboréacteurs du drone de combat supersonique canadien Falcon",
    "u": "https://www.opex360.com/2026/11/04/safran-va-fournir-les-turboreacteurs-du-drone-de-combat-supersonique-canadien-falcon/",
    "src": "Opex360",
@@ -105,6 +140,13 @@
    "src": "AeroTime",
    "d": "2026-11-04",
    "seg": "spatial"
+  },
+  {
+   "t": "Centrales inertielles : Safran équipe la dissuasion nucléaire française",
+   "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNazBNQ2VoT1ZEbzB4TjAyNndvQVZiTzhDcHl6a1FSMVg1MlFNUDgxb0N3VWh0V2FTZzdqRzlEdGg3Sk1PRDR6TV9jbXRTQ0xvejM1OWZwMzBCMnZSdnpEbWdSeWdKblowck9EWlNxaTN6ZXB0UGVaZ0FmZk5FQjRqZ2dtN01SOFk2RjB1ZFY4UWFheGZjdUZac3NXZ3ItRXJ1bU9oMlowLVcyeGJtMFZjRm1CcXZPYjdKTExDRzBLNWxIQmRnUVNoeGptbGw?oc=5",
+   "src": "Air&Cosmos",
+   "d": "2026-11-03",
+   "seg": "civil"
   },
   {
    "t": "Thales repense le combat naval face aux nouvelles menaces",
