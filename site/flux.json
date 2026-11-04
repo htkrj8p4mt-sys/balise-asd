@@ -2,6 +2,62 @@
  "updated": "2026-11-04",
  "items": [
   {
+   "t": "Fincantieri et Leonardo renforcent leur partenariat naval pour développer les activités italiennes et étrangères",
+   "u": "https://defence-industry.eu/fincantieri-and-leonardo-strengthen-naval-partnership-to-develop-italian-and-overseas-business/",
+   "src": "Defence Industry Europe",
+   "d": "2026-11-04",
+   "seg": "civil"
+  },
+  {
+   "t": "La France lance la fusée-sonde SyLEx pour tester la technologie du missile M51.4",
+   "u": "https://www.aerotime.aero/articles/france-sylex-rocket-test-m51-4-missile",
+   "src": "AeroTime",
+   "d": "2026-11-04",
+   "seg": "spatial"
+  },
+  {
+   "t": "Euronaval : un atelier sur l'ingénierie système basée sur les modèles numériques coorganisé par Dassault Systèmes ce mercredi à 13H45",
+   "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOTEtaODFHNGtDWnVwUXJoT01QMXBWOGNrR0xsVk1rcjcxdXJ3UE00NFo4UzY0TjZSd1E4cWViN1A5dmRRbjFOVk1ITC13UnhhMjVfRUxyeWRSS3puN2laQ25BY0VQMlNSV0NPeTNlbkttcThFSzFRTTJ1ajcxNk5FLW8yUXZ4Nlp6aEpkVUFVaHhidFBqcldXcjMzdDZtbUVGMzdGR0hTY3VwZnZJM1R4eWtyS0FhUW1QenZmQmNmNzlGMWpvaTdCc3RiU0E?oc=5",
+   "src": "Mer et Marine",
+   "d": "2026-11-03",
+   "seg": "civil"
+  },
+  {
+   "t": "Rafale F5 : pourquoi l'armée française vient de recevoir un Rafale qui ne partira jamais au combat",
+   "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOV2tnOEQ0X2FNNkliYnI1MFdndmUtdWF0bjBqM2ptbnQ0SnRndVFycTAzbTFXZENsTzluMVVrMjIzR0phWHVpWmFXMUNlYVNJejVhTFRCamEyMF9wNXNPT3U3STNKY2pMYjRJYlNiNllqREt4VEFVQmhmNUMydF9xbUVYdjk1MC1nX1huRVRwLVFLOExoeFl6cG1Kb0ZzMVlOSVZyS05nN3Q5cWZqbUNpZUxZNDFLbm1jYjN3WVFR?oc=5",
+   "src": "Numerama",
+   "d": "2026-11-03",
+   "seg": "defense"
+  },
+  {
+   "t": "Le Rafale F5 se prépare : la DGA reçoit son laboratoire volant",
+   "u": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNRWg3WHdlWWNJbDRNdk1yUHJjREtNd1pZSVNsVjhOcVZ6N2c0ZHVJVnF1X3ZaWHJ6U3hlRWtGM1JBak1nejRtYXFOZnZLQzNjb0wySkVBdzJ5RXYzNFhGUExpYktzU29ydzlia3Z3YkhLcjdkWlhCYnBad1c3eUNfcEt4aldZQVFjdm1tRG4yMVRvOEIycTVaVGprOWhEejZw0gGmAUFVX3lxTE0ySEV3RFFYc1E1VkNuY0ZrU3dXYTJiVEc1b2swTmxJa2trSlk2a3lwLUF3cmZZb1FPNnpiTUJrd0hsaHQyX1RqS2ZCN1NTQjdTdVR1UjJjenRTWEdtamkzbjMzdVRoTUJQenVnMklWWkpXT3lHUGdZWHIyZV9qOVZucEdacFNtRnlQemwtQ2dYblRpbnk4Q2JtYkRRc1BRWDU5QXdvWFE?oc=5",
+   "src": "Génération NT",
+   "d": "2026-11-03",
+   "seg": "defense"
+  },
+  {
+   "t": "« Un laboratoire volant » : l’armée française réceptionne un nouveau Rafale pas comme les autres",
+   "u": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVFRTSVpONlZnaWtZXzRWLWs5XzRKc3VBYlFoZTVIUF9OdDU0OHdxU25EM3VVREFicGpWcWduai1SdEdlZnR2anBCQ0tQYnY5TkhOa0VWZU5qTnlWcllGUXc5T3l3VHlBUm5KTXdiNmdjdVRaM09VbVN5bzR0NnlPbGxza0t3SVprOVFielRLb3ZlZHF1c3VCajJGNXJGNEZwYW82ZjRMd0R6Yk5rQ21B?oc=5",
+   "src": "Presse-citron",
+   "d": "2026-11-03",
+   "seg": "defense"
+  },
+  {
+   "t": "Rafale : le retour de l’hypothèse marocaine",
+   "u": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9oa1Z3X2E5WHFKbTVmeUlkVTBvYmlPT05jM1dBU3dGdVpuWDRucGFKVGZmUmI1UzRqd1c5R182NVZVNlVkWG5QUWJHaXk4bkhzUkYweVFCM2tycHpfdk56bmNZUEtzRUcwUFJkNXhUbmh3S05KdVJfUHctMUkybDg?oc=5",
+   "src": "L'Essentiel de l'Éco",
+   "d": "2026-11-03",
+   "seg": "defense"
+  },
+  {
+   "t": "La DGA reçoit le Rafale B374 pour les essais du standard F5",
+   "u": "https://news.google.com/rss/articles/CBMiekFVX3lxTFB2MFh3ZWJkdzZJR2N0bjVCclRPNUdhZ0xCU09zc2l0RldqWGVNbHFuZnpTSFN6cVZSQXBRYUNqRy1LWWxueGpEOGFQVjZ1YzZBQVFNWWNib1phNlI1WmJSM2QtemdGd3U1SVg5c2E2ZTB4N3lPVy1hZmJB?oc=5",
+   "src": "Armees.com",
+   "d": "2026-11-03",
+   "seg": "defense"
+  },
+  {
    "t": "La filiale de Thales décroche un contrat de l'US Navy pour des modules de chasse aux mines à distance",
    "u": "https://breakingdefense.com/2026/11/thales-subsidiary-lands-us-navy-contract-for-remote-mine-hunting-modules/",
    "src": "Breaking Defense",
@@ -146,6 +202,20 @@
    "u": "https://defence-industry.eu/germany-orders-two-patriot-fire-units-to-replace-air-defence-systems-supplied-to-ukraine/",
    "src": "Defence Industry Europe",
    "d": "2026-11-03",
+   "seg": "defense"
+  },
+  {
+   "t": "Airbus étend les services numériques Skywise avec des outils de formation pour les pilotes",
+   "u": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOUHJTRXdlVkVQQk52cnRmdVhTdmJ1M3dvcnNBemxSUXJQS2NOTDdZdjhSMG5VRndUTXlMNTBvQ3MtZWtLZE00THdrMFBxNnlMQUtpT2dXMDl3TTlqMFVTbkRWTTYxajVGZ0FCcTBkQlg5NXlId1U2QkFMMzR4Z1RVblpyVHB5MWd6OTNseXJZeUU5bkFyQUE5WDlsWHdHQWdhbXJlc0hnVm5RVm1Vc0lPNWhvYmJpaDJVUllxNjhleTlyOWNCMEE?oc=5",
+   "src": "TradingView",
+   "d": "2026-11-02",
+   "seg": "civil"
+  },
+  {
+   "t": "La DGA réceptionne le premier Rafale destiné aux essais du standard F5",
+   "u": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNREpRUTdtaUZ3RkNvWG53eGdQNkF4R25pNVNJUXp2c2h2X3d6ZGEySFVacVdUYmo2V3BIRDVVUUJxMlJGTHlEMmZLdXJHZVRwSUo0LW11d3ZUam9EeWppZFR4U1V2TVJLYXc3VHJnakVEMVBaN2V6YXRNZzdkQkJRcUJnZ3BjWTZ6UDhlLWl1MUd0cVhpWjZTOGtmWFQwZ2NHcXNKNmFEZUNSdTZLTGM5QWVVRTREd2NFT3RreHBXLXdpSzF6YV9MZkIzQQ?oc=5",
+   "src": "Zonebourse",
+   "d": "2026-11-02",
    "seg": "defense"
   },
   {
