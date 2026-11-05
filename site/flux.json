@@ -2,6 +2,48 @@
  "updated": "2026-11-05",
  "items": [
   {
+   "t": "Saildrone encre un accord avec le constructeur naval norvégien Umoe Mandal pour produire des USV",
+   "u": "https://breakingdefense.com/2026/11/saildrone-inks-agreement-with-norwegian-shipbuilder-umoe-mandal-to-produce-usvs/",
+   "src": "Breaking Defense",
+   "d": "2026-11-05",
+   "seg": "defense"
+  },
+  {
+   "t": "Cork prend la chaleur pour que les données de DRACO puissent survivre",
+   "u": "https://spacenews.com/cork-takes-the-heat-so-dracos-data-can-survive/",
+   "src": "SpaceNews",
+   "d": "2026-11-05",
+   "seg": "civil"
+  },
+  {
+   "t": "Airbus Services : du FHS à Skywise, une offre en pleine expansion pour accompagner les opérateurs",
+   "u": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxORjlqenVlR1M5XzJBZnpkZXppSEIyUzZzclNmQ1ZvNUlJVTBFa3Bzd09wVzRMQno2YnBkakdUNFFidjN2V0FlVXhZYm00WEY5NTA5U1JqemxOSFFSOVJSc19rYk0xaExCWk9jWThNYmd3MFhTMUVCOHVqdTk2NTZHXzJ0a0FyT1FiSlJVWFJ0bGRfTTZIRXV5RkZrbm9Dc0lRRm43djB1LVhsakxKaGMzZExDY0ptVHotSTY2bUMtSFRoemZmRHFDVExrZ25ESVREaUpoU2VxaTFoVmdrM3haSC1XLS1JUE9FbDRpeDVfVzJSaVlmMlE4?oc=5",
+   "src": "Le Journal de l'Aviation",
+   "d": "2026-11-05",
+   "seg": "civil"
+  },
+  {
+   "t": "HOP! investit 4 millions d’euros pour la maintenance des Airbus A220 d’Air France à Clermont-Ferrand",
+   "u": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNZi1KaTE1R0xTbGVQZlJYaVVRQVpxMkNtREp2SlViNGlCNUdaNmtTbGdUNjBSd0NOMXFSVDZyZ2FsSkY4MDhiOUdoTFYwcHI4SnU2b3hOVWwyMmJFT0FPNi01OFEwNU0xczNJdC03UFNGMVNiRHZRSXlJV0tHYzUyN0JPeTRPNE04Vjc0THA0ZU9US1RqakVPSGotcEYtejVJSmtmaGhyUTlQNlZ2UGNoSDFKdC1IbUJRYXN5aUV4RVVhQTk3VkpHZk1yWk1GS0JuMmg0SG8tQjlLaEFpemFIV3FrY214T1pRTUlVa1MycGRoeExvNURkRlQ5emFRUHlWaHlHczNMLVFMN05makJueG9mc2p2QQ?oc=5",
+   "src": "Le Journal de l'Aviation",
+   "d": "2026-11-05",
+   "seg": "civil"
+  },
+  {
+   "t": "Dassault Systèmes : déclaration du nombre d'actions et de droits de vote au 31 octobre 2026",
+   "u": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNU1Z0c3Zhb2NPOUpTa3JlNWwtajA4QkVWOVg3bG12OXVqWkFlczhfRGtwN2F2U1FiZldVdVNfbTlhVGNyR2lheHhHU1B5MUw2Zk5HLWhCU3RqQ0lpeDBSM21fWHozNm9uYl9xb0cxaVdRbE5xY3dJTEVYZlhvcnB5NXJZWjFxLTBrRy1DNzFLMmphd2VMNzBrd1BwOTU1bUtsang1ZWphT3ZsdFZFMWU4?oc=5",
+   "src": "Yahoo Finance France",
+   "d": "2026-11-05",
+   "seg": "civil"
+  },
+  {
+   "t": "Le ministère des Armées va notifier un accord-cadre à MBDA pour acquérir davantage de missiles mer-mer Exocet",
+   "u": "https://www.opex360.com/2026/11/05/le-ministere-des-armees-va-notifier-un-accord-cadre-a-mbda-pour-acquerir-davantage-de-missiles-mer-mer-exocet/",
+   "src": "Opex360",
+   "d": "2026-11-05",
+   "seg": "defense"
+  },
+  {
    "t": "Ventes d'Eurofighter Eyes de 200 avions supplémentaires",
    "u": "https://breakingdefense.com/2026/11/eurofighter-eyes-sales-of-200-additional-aircraft/",
    "src": "Breaking Defense",
@@ -76,6 +118,13 @@
    "u": "https://www.aerotime.aero/articles/retired-jet-engines-powering-ai-data-centers",
    "src": "AeroTime",
    "d": "2026-11-05",
+   "seg": "civil"
+  },
+  {
+   "t": "« Nos investissements pourraient ne pas avoir lieu ou avoir lieu ailleurs » : le futur de l'aéronautique française troublé par les doutes sur le soutien de l'Etat",
+   "u": "https://news.google.com/rss/articles/CBMivgJBVV95cUxNY2c4bTdxN1EzQm9jVXVIZjlUZkNPWXhWalFvYlZyQ2JWR0Y2T1ZqRm5ON210WFJTdWRablh1X3RPU0tSR1Y3ajNXR19HRFJ4azNEMXlwTUpDejFlc1MwNnQxU1QtOUk1ZDQzWDR0QTZvZnVwUTlvbFBCSzFqUFpoMzdhRkMwdTZ5c2dkU2lEVDNURm9sZDNjQlI2dXQ2bjR1b1JJaU9NeTl4YkgzQ1prVk5LU04yUms3UnBybC1GUi15ZmE1LTJEd2l6cER6c2swblpXY1pBekZfZzRwd3YtSXFwM2NjbjBOZ2ZQNElDTnM0WldzNnV6Z282cTZfb1R6dlFQajVSaXJUR2NRSmdZaWtwQVFGZGhqeHhrQ2w5MG1ud2ltZHR4ajJPdEphQ1hqV2p4WURnckJ1Ylo1b1E?oc=5",
+   "src": "Les Echos",
+   "d": "2026-11-04",
    "seg": "civil"
   },
   {
@@ -1351,55 +1400,6 @@
    "src": "AeroTime",
    "d": "2026-10-28",
    "seg": "civil"
-  },
-  {
-   "t": "Airbus et Air France-KLM créent un pool mondial de composants pour l’A350",
-   "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNXzZxZTVmYkRMLWRSOU95d1Zfb1hXMmdJNFBxb3BEMXpnei1teEpGME1pbnBtQjRKRVoteEp0WEw1UHpqRlRuR1BoeHpveUN6b2MwSmlNTFV4SC0wREpBeVFabFM3bjlvemwzUHU3THlncktpMWtiVS0zODhvN0tvdDZMSmxfd2NVdVRRU1BzcmNCdGJzRm1YYmlBSWtTZEFiWHoyUHhTdHFZSXQwa2xRYlM1RmZRM1RmZEFRU0JkVWQ?oc=5",
-   "src": "Air Journal",
-   "d": "2026-10-28",
-   "seg": "civil"
-  },
-  {
-   "t": "Bombardier signe un protocole d'accord avec BAE Systems alors que le Canada étudie un rôle dans le GCAP",
-   "u": "https://www.aerotime.aero/articles/bombardier-bae-systems-combat-air-mou-canada-gcap",
-   "src": "AeroTime",
-   "d": "2026-10-28",
-   "seg": "defense"
-  },
-  {
-   "t": "Ce que la nouvelle coentreprise d'Airbus et d'Air France change pour les exploitants d'A350 dans le monde",
-   "u": "https://www.aerotime.aero/articles/what-airbus-and-air-frances-new-joint-venture-means-for-global-a350-operators",
-   "src": "AeroTime",
-   "d": "2026-10-28",
-   "seg": "civil"
-  },
-  {
-   "t": "Les États-Unis estiment qu'un prêt de 3,4 Md$ à Airbus menace la trêve commerciale aéronautique",
-   "u": "https://www.aerotime.aero/articles/us-warns-3-4-billion-airbus-loan-threatens-aircraft-trade-truce",
-   "src": "AeroTime",
-   "d": "2026-10-28",
-   "seg": "civil"
-  },
-  {
-   "t": "Le drone de combat qui accompagnera le Rafale F5 ne sera peut-être pas de conception française",
-   "u": "https://www.opex360.com/2026/10/27/le-drone-de-combat-qui-accompagnera-le-rafale-f5-ne-sera-peut-etre-pas-de-conception-francaise/",
-   "src": "Opex360",
-   "d": "2026-10-27",
-   "seg": "defense"
-  },
-  {
-   "t": "Atlantic Airways commande de nouveaux Airbus pour passer à une flotte entièrement composée d'A320neo",
-   "u": "https://www.aerotime.aero/articles/atlantic-airways-orders-new-airbus-all-a320neo-fleet",
-   "src": "AeroTime",
-   "d": "2026-10-27",
-   "seg": "civil"
-  },
-  {
-   "t": "Le programme hypersonique INVICTUS de l'ESA franchit sa première grande revue",
-   "u": "https://europeanspaceflight.com/esas-invictus-hypersonic-programme-clears-first-major-review/",
-   "src": "European Spaceflight",
-   "d": "2026-10-27",
-   "seg": "spatial"
   }
  ]
 }
