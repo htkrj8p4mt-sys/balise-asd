@@ -2,6 +2,69 @@
  "updated": "2026-11-05",
  "items": [
   {
+   "t": "Ventes d'Eurofighter Eyes de 200 avions supplémentaires",
+   "u": "https://breakingdefense.com/2026/11/eurofighter-eyes-sales-of-200-additional-aircraft/",
+   "src": "Breaking Defense",
+   "d": "2026-11-05",
+   "seg": "defense"
+  },
+  {
+   "t": "OHB remporte un contrat de 554 millions de € pour le satellite Sentinel-3 de nouvelle génération",
+   "u": "https://europeanspaceflight.com/ohb-awarded-e554-million-contract-for-next-gen-sentinel-3-satellite/",
+   "src": "European Spaceflight",
+   "d": "2026-11-05",
+   "seg": "spatial"
+  },
+  {
+   "t": "Les menaces à la bombe ont touché au moins 16 vols à travers l'Europe, déclenchant des escortes de chasseurs",
+   "u": "https://www.aerotime.aero/articles/bomb-threats-europe-flights-fighter-escorts-diversions",
+   "src": "AeroTime",
+   "d": "2026-11-05",
+   "seg": "defense"
+  },
+  {
+   "t": "Le ministère des Armées loue deux navires civils pour doter la Marine nationale d’une capacité hauturière de guerre des mines",
+   "u": "https://www.opex360.com/2026/11/05/le-ministere-des-armees-loue-deux-navires-civils-pour-doter-la-marine-nationale-dune-capacite-hauturiere-de-guerre-des-mines/",
+   "src": "Opex360",
+   "d": "2026-11-05",
+   "seg": "defense"
+  },
+  {
+   "t": "Le Rafale va continuer d’enrichir Dassault pour longtemps grâce à ce marché discret et verrouillé qui pèse 200 millions / an rien que pour la France",
+   "u": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPc1JPRUdiZUMxRGg5ZnduQjZoaWlGZjFOVExqZS0yYUxuVnVkTDZTSlczTzZkWF9iRVRGckJBWFY5YkRCdWxpaElrMFIwREEzeVlwRjJEc3otSWlPR2dRQVRDMTJCWk5SZjVjVzdkeF9nYklEdUsyRmdYNXV2OHp2M0xLbjFkUTZVOW1VcGxxSWJEbHNFU0RQZndmYjI3eFgzcjEzSS1fRGo?oc=5",
+   "src": "AquitaineOnLine",
+   "d": "2026-11-05",
+   "seg": "defense"
+  },
+  {
+   "t": "RFA Tideforce approvisionne les deux transporteurs britanniques sur un déploiement de 7 500 milles dans l'Atlantique Nord et l'Arctique",
+   "u": "https://defence-industry.eu/rfa-tideforce-supplies-both-uk-carriers-on-7500-mile-north-atlantic-and-arctic-deployment/",
+   "src": "Defence Industry Europe",
+   "d": "2026-11-05",
+   "seg": "civil"
+  },
+  {
+   "t": "La France vient de recevoir son 73e et dernier Rafale d’une commande passée en 2021, mais cet avion de chasse ne rejoindra jamais un escadron de combat",
+   "u": "https://news.google.com/rss/articles/CBMilAJBVV95cUxNelhfWFNRbExHY0FYNzYzUjYyVnpGaUdoeUtDQzZCLXVNeHN0LTlwVjBPd0dOeWQwRWJic3JCMjBoY1phZW13TXNfQ1Q5NnNkVU1DQjFyQndPeGZfai1tNTN0YXN5RnFGMUxyUDBTVFdLVTBVMmRqWi12NDRiZDVTY3RBV1pEWXRMckdiTTNBZTRCT3lmblpOMFJsUVFVc0pCSVZicUZDc21HcU1PT21IcUsyVG5ROVhTYXpNTHctM21ZYm9Kd1l5UTJBZkpTTDdaczhQa0xwZnllN1ZEWXJ3cGRmdHpZdi1xdlFtT2N1UDRzU2FLVU5wSlNzUzlxUklPeFZVWVJ5YlFVeVZKZkJQenZDOE4?oc=5",
+   "src": "Lavoixdefrance.fr",
+   "d": "2026-11-05",
+   "seg": "defense"
+  },
+  {
+   "t": "Des riverains de la rue des Blés se plaignent du bruit émis par l'entreprise Safran à Herstal",
+   "u": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPTHR5LWY1cl83SG02RlpFanhOMUo1cVVSOElRNUtuS3g4dlJCb2dlX19uaEw1RmNvcllBYVpHdFRIRnBVWlgzUlNUREJtYnotZGdKb252WUFlWGVPZXE1YUxBV2E4LTZWRGJXdTY1T0RxdmJCdlF5Uk5uR1Y5VTlHRmh1LURpck9iRE5nc0RaaVg4UDVHX0xnSlZLV28wZ0l1Ql9kSHJnM2gtUWFPYXViVEVWTDNCNlRBUUxDbVdfZXVLWnBCN3Y4V3lSbUZHSXY1VkUyQzJzUXZHTVZObF9kMDNmYWpTYVBjRE05cWJwLUJyUE9JUGNQRm9QOWFJQQ?oc=5",
+   "src": "DHnet",
+   "d": "2026-11-05",
+   "seg": "civil"
+  },
+  {
+   "t": "Safran mise sur un moteur bon marché pour conquérir les drones de combat",
+   "u": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOQzNKSHFjUk5CNWExWGtpeVJvTG02VzVYTGp5bHhDT2FweVpUWWJUWHJpcEJ2bjZHRkU3MFNlWXhzZWg5Z09Wb0VDRm5DcFVrZTVGRWcyejMyM0tuR1pURUg5ekJRWTVhZXhuazBkcU1OSnRzWHlvM19VcnZlRjJkTnV3bjc0UU51U2tLZzBWNmVYNmVLSDZxT3RJSGU4WXRwa3ZPTXVYY1p1QQ?oc=5",
+   "src": "L'Essentiel de l'Éco",
+   "d": "2026-11-05",
+   "seg": "defense"
+  },
+  {
    "t": "De l'aviation numérique aux ressources humaines : Airbus renforce sa présence au Vietnam.",
    "u": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMWpkLTZhSTZGVHd6ajB1N1k5clZWb3BVVEFSaWZuRnJoaGg3M3Uxd0JHRWJQd3F0ZkdYX293TDMxV215UFpiQTRvUC1JVC1oc2pRS3FMaTJfMlF2Z0VhYl93YXFTZnJVaGstZkNueG5LRWRkMVV1bmJpNmUxN0pUQzNFY1hpSThXVmdKTjFuaFV1WVkw?oc=5",
    "src": "Vietnam.vn",
@@ -14,6 +77,13 @@
    "src": "AeroTime",
    "d": "2026-11-05",
    "seg": "civil"
+  },
+  {
+   "t": "Drone U760 Ravenstorm : Airbus a-t-il trouvé le ticket d’entrée de l’Allemagne dans le GCAP ?",
+   "u": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9ESjg5aGlOSENYbEZKNVJoQTFsM05oQTRTSmtUN2NpTllPVzFkWmx3eC1yWE50ZVJ0LWVSN2hKeWt3bEFSeVhLSU5OZDJYQ2NpaVBUUVZ5ZGljUWV2YzkxVmVNWnRjRUVZOXBjbDd6bkhQS3dQWkR1WW9YYw?oc=5",
+   "src": "Meta-Defense",
+   "d": "2026-11-04",
+   "seg": "defense"
   },
   {
    "t": "Dassault Aviation progresse de 0,20%",
