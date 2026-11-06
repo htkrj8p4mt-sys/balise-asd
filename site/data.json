@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-04",
+ "updated": "2026-11-06",
  "overview": {
   "bref": [
    "Aéronautique civile : la demande est record (carnet Airbus de 9 310 avions). La France est forte, mais Airbus doit livrer environ 323 avions au 4e trimestre pour tenir son objectif, et la cadence reste bridée par les moteurs, les pièces forgées et le manque de main-d'œuvre.",
@@ -3044,6 +3044,54 @@
  ],
  "tenders": [
   {
+   "id": "ted-771893-2026",
+   "pays": "RO",
+   "acheteur": "Inspectoratul General de Aviatie al M.A.I.",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Roumanie – Aéronefs sans pilote – Fourniture de systèmes de drones",
+   "montant": "Voir l'avis",
+   "date": "2026-11-06",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/771893-2026"
+  },
+  {
+   "id": "ted-774577-2026",
+   "pays": "EU",
+   "acheteur": "MINISTRSTVO ZA NOTRANJE ZADEVE",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Slovénie – Services de réparation et d'entretien d'hélicoptères – Marché public pour l'attribution d'un marché de services après le PO pour la fourniture de biens et la prestation de services dans la maintenance d'hélicoptères, de moteurs et d'équipements dédiés d'hélicoptères de la police slovène, n ° 430-156/2026",
+   "montant": "Voir l'avis",
+   "date": "2026-11-06",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/774577-2026"
+  },
+  {
+   "id": "ted-771966-2026",
+   "pays": "DE",
+   "acheteur": "Polizei Berlin",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Allemagne – Aéronefs sans pilote – PolBln 331_26 EU 25 Drones avec accessoires",
+   "montant": "Voir l'avis",
+   "date": "2026-11-06",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/771966-2026"
+  },
+  {
    "id": "ted-771302-2026",
    "pays": "PL",
    "acheteur": "Politechnika Poznańska",
@@ -3156,22 +3204,6 @@
    "u": "https://ted.europa.eu/fr/notice/-/detail/764513-2026"
   },
   {
-   "id": "ted-764641-2026",
-   "pays": "RO",
-   "acheteur": "Ministerul Mediului, Apelor si Padurilor",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Roumanie – Avions – Fourniture d'aéronefs destinés à obtenir des données LiDAR/photogrammétriques pour la surveillance, le contrôle et la surveillance des forêts, au moyen d'un système d'information intégré, obligation établie par PNRR, Composante 7 - Numérisation, numérisation dans le domaine de l'environnement, \"",
-   "montant": "Voir l'avis",
-   "date": "2026-11-04",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/764641-2026"
-  },
-  {
    "id": "ted-765047-2026",
    "pays": "ES",
    "acheteur": "Jefatura de Asuntos Económicos del Mando de Apoyo Logístico",
@@ -3186,6 +3218,22 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/765047-2026"
+  },
+  {
+   "id": "ted-764641-2026",
+   "pays": "RO",
+   "acheteur": "Ministerul Mediului, Apelor si Padurilor",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Roumanie – Avions – Fourniture d'aéronefs destinés à obtenir des données LiDAR/photogrammétriques pour la surveillance, le contrôle et la surveillance des forêts, au moyen d'un système d'information intégré, obligation établie par PNRR, Composante 7 - Numérisation, numérisation dans le domaine de l'environnement, \"",
+   "montant": "Voir l'avis",
+   "date": "2026-11-04",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/764641-2026"
   },
   {
    "id": "ted-763599-2026",
@@ -3364,22 +3412,6 @@
    "u": "https://ted.europa.eu/fr/notice/-/detail/754838-2026"
   },
   {
-   "id": "ted-752841-2026",
-   "pays": "EU",
-   "acheteur": "Cyprus Police",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Chypre – Véhicules aériens sans pilote – Acquisition et mise en œuvre de deux systèmes de drones pour la surveillance des frontières (F.D 77/2026)",
-   "montant": "Voir l'avis",
-   "date": "2026-10-30",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/752841-2026"
-  },
-  {
    "id": "ted-754245-2026",
    "pays": "ES",
    "acheteur": "Rectorado de la Universidad de Sevilla",
@@ -3394,6 +3426,22 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/754245-2026"
+  },
+  {
+   "id": "ted-752841-2026",
+   "pays": "EU",
+   "acheteur": "Cyprus Police",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Chypre – Véhicules aériens sans pilote – Acquisition et mise en œuvre de deux systèmes de drones pour la surveillance des frontières (F.D 77/2026)",
+   "montant": "Voir l'avis",
+   "date": "2026-10-30",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/752841-2026"
   },
   {
    "id": "ted-749183-2026",
@@ -3474,38 +3522,6 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/748876-2026"
-  },
-  {
-   "id": "ted-746083-2026",
-   "pays": "EU",
-   "acheteur": "Danish Ministry of Defence Acquisition and Logistics Organisation",
-   "seg": "defense",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Danemark – Missiles de croisière lancés par air/à partir du sol/à partir de la mer – Missiles de croisière à longue portée",
-   "montant": "Voir l'avis",
-   "date": "2026-10-28",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/746083-2026"
-  },
-  {
-   "id": "ted-748887-2026",
-   "pays": "BE",
-   "acheteur": "Veiligheidsregio Drenthe",
-   "seg": "spatial",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Pays-Bas – Satellites de communication – Achat de satellites BCM",
-   "montant": "Voir l'avis",
-   "date": "2026-10-28",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/748887-2026"
   },
   {
    "id": "t20261030-1",

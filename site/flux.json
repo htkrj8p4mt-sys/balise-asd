@@ -1,6 +1,13 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "items": [
+  {
+   "t": "Dassault Aviation finit en légère baisse",
+   "u": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOSmg2S09jYjFiNGRaS2poazdPcTJMdUtCVzhkVlBqb3hKNmtkQm5kUG1iT2F6aTdnRVVnZm9mR012YUh0X0xqRnJibktEVmEwR2cyeHJzejRoSTVLbjNVVVo3dmszWlgxRWdyb2pBNjN5aXF0MGJlRTRUVkJ1dXVKV3FpdUFxUVhnN1A2NjdMVm9HaktkZWFWS1JPakdidy0zSDlJ?oc=5",
+   "src": "Boursier.com",
+   "d": "2026-11-05",
+   "seg": "civil"
+  },
   {
    "t": "Saildrone encre un accord avec le constructeur naval norvégien Umoe Mandal pour produire des USV",
    "u": "https://breakingdefense.com/2026/11/saildrone-inks-agreement-with-norwegian-shipbuilder-umoe-mandal-to-produce-usvs/",
@@ -1391,13 +1398,6 @@
    "t": "Comment General Atomics voit l'avenir des drones en Europe",
    "u": "https://breakingdefense.com/2026/10/how-general-atomics-views-europes-unmanned-future/",
    "src": "Breaking Defense",
-   "d": "2026-10-28",
-   "seg": "civil"
-  },
-  {
-   "t": "Discover Airlines retire son dernier Airbus A330-200, le premier avion qu'elle ait exploité",
-   "u": "https://www.aerotime.aero/articles/discover-airlines-retires-last-airbus-a330-200",
-   "src": "AeroTime",
    "d": "2026-10-28",
    "seg": "civil"
   }
