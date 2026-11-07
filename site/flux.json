@@ -2,11 +2,67 @@
  "updated": "2026-11-07",
  "items": [
   {
+   "t": "GCAP : le Royaume-Uni invite l’Allemagne, mais quelle place reste-t-il pour Airbus ?",
+   "u": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBmVTlHZ2h6bXhidGR6eTdTaWJyVnprNks3bnRQYXBWYVZQVEU1Nlo0NWNvbVNjZjNQS2NjY2RfbXFGNkhzeUI0dktzWVFXX3AxSm5MNVV4Z1JNRG0wejI4Nm83UzFpdmNHbHRNYVpScFhWcXRPdDJ3RjdjT0c?oc=5",
+   "src": "Meta-Defense",
+   "d": "2026-11-07",
+   "seg": "defense"
+  },
+  {
+   "t": "Le chasseur-bombardier F-35B a largué un missile air-air [inerte] METEOR pour la première fois",
+   "u": "https://www.opex360.com/2026/11/07/le-chasseur-bombardier-f-35b-a-largue-un-missile-air-air-inerte-meteor-pour-la-premiere-fois/",
+   "src": "Opex360",
+   "d": "2026-11-07",
+   "seg": "defense"
+  },
+  {
+   "t": "Il y a 50 ans jour pour jour, le Falcon 50 de Dassault prennait son premier envol.",
+   "u": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPWEZUc29oWk4wWGRTbl9NMlhlTDBZXzJmVHRRSzU5TXlLZ0ZOd2pObW13SkxDVDRvQVd4enpTaGszNGVfMDJBbXkxamdKOU5Nc0YzZkd6UkFyVml5aWNKekNoZUZrdkUtSktXYmhOakx6aTQxY2NwTENpU0NUSDh5Ui1kVWw0VWl2SUYwa0o4aFFDUlpmVHVUaHQyVmRFcGlTX0lwRW5UM0NLdWNM?oc=5",
+   "src": "Theatrum Belli",
+   "d": "2026-11-07",
+   "seg": "civil"
+  },
+  {
+   "t": "À son tour, Sierra Nevada renonce à l’appel d’offres de l’US Navy pour remplacer l’avion d’entraînement T45C Goshawk",
+   "u": "https://www.opex360.com/2026/11/07/a-son-tour-sierra-nevada-renonce-a-lappel-doffres-de-lus-navy-pour-remplacer-lavion-dentrainement-t45c-goshawk/",
+   "src": "Opex360",
+   "d": "2026-11-07",
+   "seg": "civil"
+  },
+  {
+   "t": "Les Rafale Marine indiens ouvrent la voie pour l'intégration d'armes nouvelles pour le programme MRFA",
+   "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5nb255cldrUVhkNHpxVTFycFZlSkhHWHZTTVBUVEVxVWdjUEVWNHB6SWllNGY5LWJJWjY3dTZvbjV3Y1ZWUURNQWFUanV5c3dsbEpJU0ZYdWRLRFZ0WkJPYkRjckpLX0poOEM0R3kwckp5WDQ?oc=5",
+   "src": "Meta-Defense",
+   "d": "2026-11-07",
+   "seg": "defense"
+  },
+  {
+   "t": "L’Eurofighter vise plus de 250 ventes potentielles face au Rafale",
+   "u": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPeHBzSUZ0SjUxVXRVdnNaYVlBeVJpVVF3Z2xIOElCNFRtaEhTczdLOThMSDh4bkFRYmtwZ0RPREV3bnRJOE1idkJvVG82ZFFtVWVoOWYtMkZLQnpVcWVTR0lpWnFSaXJhbDlDZkxiNGJOek4wMWp2OUU2UTZaQjFDSnNqMDMwbjlRMm0tX1A1T3ZRRHNBZ3dvbA?oc=5",
+   "src": "https://www.avion-chasse.fr/",
+   "d": "2026-11-07",
+   "seg": "defense"
+  },
+  {
+   "t": "Ils sont les gardiens de la mémoire d'Airbus : comment cette équipe veille sur le patrimoine du géant de l'aéronautique",
+   "u": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPZU9KNmhSS0FkYWg4WXN5cC1PSmc5RFdPMjRfWldvUUJHNWVCQl8wSWlCQjAzSDNVZHF1S29MM05KZFAxb2lTaWhlM0R5ZjJ6bFJGWFNaLTRPckhzdlVNR2JubmxhdW0teVFXRDJzUGtQc05qVi13amV5eTkwNGtPVXotNUhDTWJOaEozcE4yNDZQb3VrMHVjR3U1dzNLaVdqRlRTYjFvcGZXd0xiSHp0dDFUT2Z2SXFCcG8xQVg0SkZnS0FxUWtPa1M4RENGbHVMTmtZZE9Cdy1lWFY5a3JvS1NGdWhpaEVDZEt6aXdqWnJwT3JJLVd0VVFwR0pYVk9wTlE?oc=5",
+   "src": "Actu.fr",
+   "d": "2026-11-07",
+   "seg": "civil"
+  },
+  {
    "t": "Le Dassault-Breguet Falcon 50 a aujourd’hui 50 ans !",
    "u": "https://news.google.com/rss/articles/CBMingFBVV95cUxOdUdUNnA3MWJjY2o2bHZsNXRweGJZdW9uaDQwb19yU1V3UVdRUmhrbXB5cnpfSjV1Yk5WaHdGOGZRWWNXSUNBQXNuaFhuSkhxMG5CQUY4eWtmb2lwdV9DOHNISDhNSFZCcllfMUxyRVp1RXBJelFLS1JMOE1WaVZnY2Y3cVVfcThFU09LSldjc1VfMXZNZFFTQXhDWmotZw?oc=5",
    "src": "Avionslegendaires.net",
    "d": "2026-11-07",
    "seg": "civil"
+  },
+  {
+   "t": "Nationaliser la fusée Ariane, quitter l'Otan, refuser les 5% du PIB pour la défense, construire un avion spatial... Le programme de Mélenchon pour l'armée française",
+   "u": "https://news.google.com/rss/articles/CBMizgJBVV95cUxPYnpENl9EWUF6dF9LNFFLb29IV1dUQUh4M1lpMDBpaUg2OUhNUk0xUEN5X3M2OFZwOGxvTVNJSWxjWVRNcWdSZVM2eHdNcmh1T3YxNl9RQjVwQUQwOF8tT1NBb1JfX0NGTXo1MFl4YmJVckJpcWstR1g5NXhuWGlteXZ3NmtIUktDR01QMVlfdWp0V3NGTzhrRnI2R0VoemI4R2QwcjBPOThkM0NWTTljVFZ0MXItbmFaZ2dJNTBZWUFDR2t5Rl8yT2hJR25GejNEOWY4eHpYazRaVlg0T2VwYVlKd2dyRzRXR0ItcEZISVJ2Y1BlRm1DcGlScW1PN2prQ251R3cyY0s4V1lzVGNlNV9CUjJIeFV2MXpvSFFNZTNsV1psNERfdEc0VURTSWgzTjA5SGs0YlZOMU5LX1RVRHBZYWl5aG93aElNd0ZR?oc=5",
+   "src": "BFM",
+   "d": "2026-11-06",
+   "seg": "spatial"
   },
   {
    "t": "Dassault Aviation perd 0,53%",
@@ -1344,62 +1400,6 @@
    "src": "AeroTime",
    "d": "2026-10-30",
    "seg": "civil"
-  },
-  {
-   "t": "Freins carbone : Safran agrandit son site de production en Malaisie",
-   "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOU0w5dFdxTHQtaTlRTFNyTTNfSGQ3MVc3c2t0aWdrYUg1bXBTVGpVZUV3dzFIX0RCY0J1SmJiSHN6Yy1WMXowTDRaeFpiWVhQbzNCc1ZtVl9xcXVXVUN1V2drTnpJR3gwdzRZSm9HRk9vVG5ubzZQX3pOdGdNVjV2OTNMSmdubURJSjhqUDNkR21NSlJjdHJpT3ZxNGQtVWNvTmo5U3F5WHk4NUw0clc1SHFJMWZOZzF6ekx6bTNOR0cxcEhMdGd3c2FMUGstZjVnTEE?oc=5",
-   "src": "Air&Cosmos",
-   "d": "2026-10-30",
-   "seg": "civil"
-  },
-  {
-   "t": "Airbus maintient ses objectifs malgré un ralentissement au troisième trimestre",
-   "u": "https://news.google.com/rss/articles/CBMiigJBVV95cUxOekI2aUUwTExoYUdCUlVRY0RZQVd4UmZ4VHJqdXNRUzkyb2pPYnczcXY0Ynh4VlY5NXhCRU95VFJjVVBEekFRZjN1MGw1Q21RbnhlZkZteHZHNWdtUHcxT0hHOENLOC1rZFhlbjg3YlQ0NGJudTdnMzRmQjRLYldLVTdxYlZidkMtZ1hEZ1U2LXV4ejZWeTZMM2ZGbnl4aHllLWZucS1ibjFGYmxCSzJkREtLZGZBODhFOERQRXdhU3lpTjhEMldQWElxUXZfSG03NVRMYmpkQ0pjaXRpbGRiR1hXVlNkYnVRU1htbE1NNzA1M0N4TXg4NTRqcFVpZWxsYmxzQmk4YzBwUQ?oc=5",
-   "src": "Le Journal de l'Aviation",
-   "d": "2026-10-30",
-   "seg": "civil"
-  },
-  {
-   "t": "Le Dassault Aviation Rafale F4 se rapproche de sa méga commande indienne.",
-   "u": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNNk1wOWx5MGRSaGo0Zk5Jd3UxWU1MUjdCQ3BCcHlub2I3NGIzYU53YzVDb1JBYm9pMHFlVVByUFZwUG52VmRWM2c1YWtNTFRRclpvbnZ5alo5cmtiQW9tcTV0U0xkUGlvM19fVGlrd0NySW96WEVQZXIzLVVZaWhOenVtOGJWSjc3bHNYU3NZY2VLUENBWHVYTFo5VWI4VmpIc3pOSXk4V2owWGFwS25ITDBKMGRHVkkySklLcg?oc=5",
-   "src": "Avionslegendaires.net",
-   "d": "2026-10-29",
-   "seg": "defense"
-  },
-  {
-   "t": "Les poids-lourds français de l’aéronautique s’envolent en 2026",
-   "u": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNeUwtdi1QejFneTJkX1p3NHR0QlRQaUEzTHEtT3JnMWFpc2RHeW8wN3lLZDJkMlIybHFMSGJHWU9DZEg0TjRnRzNTcUtDd3BNUTNsbFRGSHdEcDkwdGVBVzh1UFJUX0RlRFNyeHJoaGdHb0UtZzQwbXhYYnpYZXdlVjI5eG1Gb2xrY0FXb3pjRTBLbnRWTjdtYWY5aw?oc=5",
-   "src": "Aerobuzz",
-   "d": "2026-10-29",
-   "seg": "civil"
-  },
-  {
-   "t": "Rafale : l’avion de chasse français réussit une première historique sur un porte-avions indien",
-   "u": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPZjFNVHdCeWZyNEpFSUpadldIM0t2b2JISVczeURzNTMxc2QwbFRqODQ1VFU1WUFSb1pZTGZGMDR4bXU2ZHFSQVdQcnJOYWJmYWNaVmt3dkE3QmVFSWpDcE5Fd1FwUGtpd3Rfa2h1a2dBNWRyLWYwa0dNWmxKMklmWjdkSWFkTzNOZV9zUU05aHZ4VXMwRmMyaFRWbXlxSnFXSGJHZXAtcE90ZmNzbDFWNFhtU0lWRzRlLU5QSVIyNUVFbXBERGgyTFJoRQ?oc=5",
-   "src": "Paris Match",
-   "d": "2026-10-29",
-   "seg": "defense"
-  },
-  {
-   "t": "Le drone furtif qui doit faire du Rafale un système de combat",
-   "u": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQaDJQeHB3X2FxTFVjbGwzNFFWaW9saDc2bEx2RTJnNmdjcF9yU2otUTZLSnRfTEpEVUw0UnNQeklWM25EUHlTWWZWUWx2UkxNcFhRQWFHX2EzRmpoRDhwanhtMHN5UWkxMk9rdF9vbzl1enFuZlhPUFRETHZicTl1VjRwN1E5STRyUkxRb2tEY1o1d0ZEbExuR3pWWQ?oc=5",
-   "src": "L'Essentiel de l'Éco",
-   "d": "2026-10-29",
-   "seg": "defense"
-  },
-  {
-   "t": "Quel avion de combat pour demain? Airbus plaide pour \"un programme de coopération\" et \"veut faire partie de cette solution pour l'Europe\"",
-   "u": "https://news.google.com/rss/articles/CBMirAJBVV95cUxOOFRSOHh5Z1NyZTJNYURTZFFPNUprSUZjZ2FaSGdTN3pTWjBQVHZDMmVHb3ZjZmRZVUUxMXlnZUxfV3hqUkxGZDJqbDlmS0Y5c3dZLU9scHdDRkJZdUZrZUdZZ2JtSGRLZzE2YkJyOHdjaFFZcE9FblptUFJtZU1fS084UWI1dENoZzJVZ1JCQTdGX0dLbkF6ZDk4bkxCT0hfY090N2xMUzN3RVpwdEdjVllWSVNDNHdSNzhkSU5yQmkxcnZMN25zUW1VSXZIRXp2Ml9OQTVrX21ZcGNBWnRpT3NSTkRHX3QxWkN2WGNqWno4c0xFWVR4U0ZnempZYTI5VkJQeXNTblQyMGh0ZVpGeDZMeFpUWnNoRXZraTRwV1dnUUE3U2ZPaUExeno?oc=5",
-   "src": "BFM",
-   "d": "2026-10-29",
-   "seg": "civil"
-  },
-  {
-   "t": "Airbus envisage une entrée dans le GCAP alors que les plans européens évoluent - Actualités et statistiques",
-   "u": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPNHQtSmRneGthbnozZkdFWnR4bktXb1FWNGNCRXNBNlg2enV2YUkxbmk0SE1FQXB4cGtSbWRXZnlXX0lYUUQ3czlGSEFhdUdDYzdLNFhoQlZORVhUTHRoUFpJS3pVRUNkMVE2Z0ZuWElXbWU4T1RPWDJ4MHUwamFZRFV1MzV3aW5hTVRwSS1ueTBHbDVj?oc=5",
-   "src": "IndexBox",
-   "d": "2026-10-29",
-   "seg": "defense"
   }
  ]
 }
