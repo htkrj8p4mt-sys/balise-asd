@@ -1,6 +1,20 @@
 {
- "updated": "2026-11-06",
+ "updated": "2026-11-07",
  "items": [
+  {
+   "t": "Dassault Aviation perd 0,53%",
+   "u": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQX002cG9PY3pJVHlrX0NLM1RnaTRtY1g4Y2RRWjU1YTJkQ0E5emF3Z0tRQjJtcVVVUExTOXNkQnVOTXh5OXU4N3BmTEdaSGpLWkxTazdsRTlJTTFSX3dkOV9nZXB5cmRpQmc3U0xIODlhQVJobFNqc2hkVWJFVnZaQTJ2WlJkaV9SNmltVks3TkhRZw?oc=5",
+   "src": "Boursier.com",
+   "d": "2026-11-06",
+   "seg": "civil"
+  },
+  {
+   "t": "La compagnie aérienne HOP!, filiale d’Air France, investit 4 millions d’euros dans une troisième ligne de maintenance des Airbus A220 à Clermont-Ferrand",
+   "u": "https://news.google.com/rss/articles/CBMizwJBVV95cUxPbWM2am1KeWxqSUtGVXE2WTM2VGtuM05LT2ZENkhFcnZOY2dzRWVpLU5lc3UweUFsaXg4bkFOcU5pU0tkdGJ4UnMxTk9vM0tqT1RKUmhZR0FCY1ZqVW41ZFRVWkdYTkJ1R1IzaUYyWnYxamZDYjROQjB6QmhfaUQ3Rkp3MS1ialJFbko3M09mcExoeG1Ya0ZMVzU5Y3ZMVUtNSW9rM3hLTXlLU29kZkJLZmlBMlV1Q2lWTnBQbVR3eWJ4UDMxX0hZUFV6ZXlhV0J4MnRORzNoVFFrWmhNeE8xcks4ZGMxMWRUTExjdTVOZ2NmUy1jUzgwTklhY1UwckVsUXJaZ0hGSW9ybFd0WjFVdEZYZUJmaVBaZHlwVzQtbnNqanZTb0YyZDVNOUNBUnZxbDRIakNrM1VBNS1iaXVhdHNrbXNMNlhHajU0VEFqRQ?oc=5",
+   "src": "L'Usine Nouvelle",
+   "d": "2026-11-06",
+   "seg": "civil"
+  },
   {
    "t": "Les Forces royales Air reçoivent à Kénitra leur deuxième avion de transport militaire Airbus C295",
    "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOTmdYQzZHdnMydk0temNqaFNLQ2dkcUQ2OXktMlJBN3g4ZTJhY01aTDdUNGkzU0I5ZVlLR3prUDdoY0I3MV9RNjR4b3VodUlhX0xhd2s1YW5VOVBNQy1UOGJJS0EzdVR1Zm9kb3UxbHU0bFBzbFpWWEdBcjJQenpaeUlwZ1lSZF9wWEt6bTFkYjRSWm5veHFrOHlLYUk4ZlpYeThLdVEwYmRERlk2NUg2QXEtQzVFMXFMZUJJcWZDS3g?oc=5",
@@ -1384,20 +1398,6 @@
    "t": "Airbus vise un accord sur le chasseur UK-Japon-Italie après l'échec du projet rival",
    "u": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZUdMYkhjRXpPRkxRVmxfUnlqUEE1ejRfSnllanR5Y2FSMFFaVXdFSm55aGRobTJ3alpBeGVhRmd3dzFuM2dZMEJ0cFNETV9LeHZydlVreFJ4bGo4WnJDdGdETW5PQ29LUVpWSTUxNU45SWNnTnl5VE9zSkdBanAzTXV6TFRPMklFYjVoRnh3?oc=5",
    "src": "Yahoo Finance France",
-   "d": "2026-10-29",
-   "seg": "civil"
-  },
-  {
-   "t": "Entretien avec le responsable du programme Rafale à la DGA : « Le standard F5 constitue une véritable rénovation à mi-vie",
-   "u": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQQjhBS29EalNfNld0UldWcVlidmNzSnFwTVktSnpueExPMS1iU0hhcDNmVnhYRGt0Y2VjUzBZR3RrdnRYUkpPMnJDRDFsQXRVc3NldTRNTVZla0ZCclJlVmNkUGxyREQtb050MUF4MWpiYmxDdG1kU2pRVkl5c3VMbTlCeTJ3RXB0RzdSNEg1T1pNTnZUU2VScWlnbGYzREVRdlBIQW9IZW11bzQ1enltekNYMWlRYmFsQ3RiSk9PVnhYZTZaRE9lcmJyUWxQOW5CNEE?oc=5",
-   "src": "Mer et Marine",
-   "d": "2026-10-29",
-   "seg": "defense"
-  },
-  {
-   "t": "Radar : la Roumanie renouvelle sa confiance à Thales",
-   "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNd21hY0VIWVpRaExUR2VVOWRzWlhJLThZbDgwcmpCZGVlRmdnQXpYTnMxTWVNZFF0OXdvSUxBbFl5QV9QSkJuMHl6bHFnMmF2bzAxZGwzQU1IWlczYlMyajNMMmJ4MmhPazhKcnpaY0VKdHNadldiYmc3LWNEQ3pqclJxckFDS1BlYTZFQVRvSk1VR19BTUctU0xlRlIzcEliZmZoSG9ld1BEUV9sMjh1b0tOLWt0OVl5dnhyYXN4WFc?oc=5",
-   "src": "Air&Cosmos",
    "d": "2026-10-29",
    "seg": "civil"
   }
