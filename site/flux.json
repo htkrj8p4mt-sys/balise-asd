@@ -1,6 +1,13 @@
 {
- "updated": "2026-11-07",
+ "updated": "2026-11-08",
  "items": [
+  {
+   "t": "RTX scouts fournisseurs allemands, vise à construire plus de 1 000 missiles Tomahawk par an",
+   "u": "https://defence-industry.eu/rtx-scouts-german-suppliers-aims-to-build-more-than-1000-tomahawk-missiles-a-year/",
+   "src": "Defence Industry Europe",
+   "d": "2026-11-07",
+   "seg": "defense"
+  },
   {
    "t": "GCAP : le Royaume-Uni invite l’Allemagne, mais quelle place reste-t-il pour Airbus ?",
    "u": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBmVTlHZ2h6bXhidGR6eTdTaWJyVnprNks3bnRQYXBWYVZQVEU1Nlo0NWNvbVNjZjNQS2NjY2RfbXFGNkhzeUI0dktzWVFXX3AxSm5MNVV4Z1JNRG0wejI4Nm83UzFpdmNHbHRNYVpScFhWcXRPdDJ3RjdjT0c?oc=5",
@@ -1393,13 +1400,6 @@
    "src": "European Spaceflight",
    "d": "2026-10-30",
    "seg": "spatial"
-  },
-  {
-   "t": "Leonardo choisit le logiciel Hivemind de Shield AI pour rendre autonome son hélicoptère sans pilote Proteus",
-   "u": "https://defence-industry.eu/leonardo-selects-shields-hivemind-to-develop-proteus-autonomy-for-naval-missions/",
-   "src": "Defence Industry Europe",
-   "d": "2026-10-30",
-   "seg": "civil"
   }
  ]
 }
