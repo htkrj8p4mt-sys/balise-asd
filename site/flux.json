@@ -2,6 +2,41 @@
  "updated": "2026-11-08",
  "items": [
   {
+   "t": "CFM remporte un contrat de moteur pour 101 avions de la famille A320neo de l'Est de la Chine",
+   "u": "https://www.aerotime.aero/articles/cfm-wins-engine-deal-for-101-china-eastern-a320neo-family-jets",
+   "src": "AeroTime",
+   "d": "2026-11-08",
+   "seg": "civil"
+  },
+  {
+   "t": "L'écart de départ de l'A350 d'Air France le rapproche de l'A321 américain à LAX",
+   "u": "https://www.aerotime.aero/articles/air-france-a350-departure-deviation-brings-it-close-to-american-a321-at-lax",
+   "src": "AeroTime",
+   "d": "2026-11-08",
+   "seg": "civil"
+  },
+  {
+   "t": "« L’avion tourne comme une horloge » : on a volé à bord du tout nouvel Airbus A220 d’Air France venu du Canada",
+   "u": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNZ3NKVmg2bmZ1SUZBOVpEQnhTUEt2SHUwcXRBQmtpMUJZbnNWWW5DalNFXzhKUmdsVjhYQ01YVGo2UUZ2bzZfS1BVM003OUJSSy1jd2o0LVZWTHZ5b1ZHdGhQLVQ1SzJiMlhvUzJHQ3loNHlCQ1FlSXpMUktnWXlPXzFpY2sxREkwQzJjVDkxVmpmTkVoWTZBOW9VMUFScUwwa2ZrWEZLa1MyVTBvZXRuVU1SclRXelNGYmxEcHRaWm82em9VckNKNExhdThZbE0tZy1acUJuRDdqYjN3aG44c2hLaGx0M055WU80dG9Wa1lZb1pOQUhfSFNFNWNvSUxhY2MtOW9TMmc2S28?oc=5",
+   "src": "Le Parisien",
+   "d": "2026-11-08",
+   "seg": "civil"
+  },
+  {
+   "t": "L’A380 n’est pas encore mort : Airbus a transformé un exemplaire abandonné en laboratoire volant pour tester un moteur encore jamais vu sur un avion de ligne",
+   "u": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPX3FOWDJIcUVsdllGcW1fMGVDUk1OcFhRblMwWjhVSlkwNUx4eXBVUkM3YkFIa1ctci0zVjVJYV9zblVDYXRFR242OHJCWXpVbXlGNkYycldUWDJzLUstUXRfSThRN2FzVzBSSUhIYXBZSHYzZnEzdktQTkUza1hwcmd5ZEtPd1M2ZnI5d3FRYk10NmhBVVlvN0QydmZNUkY1?oc=5",
+   "src": "AquitaineOnLine",
+   "d": "2026-11-08",
+   "seg": "civil"
+  },
+  {
+   "t": "Air Arabia Maroc : à 12,5 mètres au-dessus de la mer, un Airbus A320 a frôlé la catastrophe à Catane",
+   "u": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQcl94TjIwa1ZUd1h6TUFqQV84ZW1XZlVTaHM0dHdFQ1hpdjhkRnlfVFAwR3NMbUg5VFpkUHRlYks5MVlUNkxPdHBlOTV6QlZuLUtBNy1zbFdnZGllVENaMnBkdFJQVjhrUm5JLWMzdUNZOVQzeUp1U3c3cVAxcjRjcnQ4bzVjYVk2QlRhVGxTS3ZOVE9OQXpSM1FUSzJhZEpjemtjWVRiMzBxdHJaR1FlQ2NHbUJJVi1pZFVRYWZNVjJGNTRNV29vdjRwN2ZjZk1qMER0U1lOb25RSERjUk1vSg?oc=5",
+   "src": "Air Journal",
+   "d": "2026-11-08",
+   "seg": "civil"
+  },
+  {
    "t": "RTX scouts fournisseurs allemands, vise à construire plus de 1 000 missiles Tomahawk par an",
    "u": "https://defence-industry.eu/rtx-scouts-german-suppliers-aims-to-build-more-than-1000-tomahawk-missiles-a-year/",
    "src": "Defence Industry Europe",
@@ -62,6 +97,20 @@
    "u": "https://news.google.com/rss/articles/CBMingFBVV95cUxOdUdUNnA3MWJjY2o2bHZsNXRweGJZdW9uaDQwb19yU1V3UVdRUmhrbXB5cnpfSjV1Yk5WaHdGOGZRWWNXSUNBQXNuaFhuSkhxMG5CQUY4eWtmb2lwdV9DOHNISDhNSFZCcllfMUxyRVp1RXBJelFLS1JMOE1WaVZnY2Y3cVVfcThFU09LSldjc1VfMXZNZFFTQXhDWmotZw?oc=5",
    "src": "Avionslegendaires.net",
    "d": "2026-11-07",
+   "seg": "civil"
+  },
+  {
+   "t": "Société DASSAULT AVIATION AM Euronext Paris : Secteur d'activité, Actionnaire, PDG et Capitalisation",
+   "u": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE94d3FacXliQ2d5TzdxS0hUVDlhTHU1ZDRYOURRdmtOZHUyRjVHUUxZdFNOMzREeU10aHNCejBkNFU4ZkxsX05RSGJMbTZHb1Fybl91ajRzbXR1OWZUMHROSFhhYU8?oc=5",
+   "src": "Boursorama",
+   "d": "2026-11-06",
+   "seg": "civil"
+  },
+  {
+   "t": "Action Airbus SE | Cours AIR Bourse Euronext Paris",
+   "u": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFB2Zm5SNU81UHZVLXJCWll1Z1lXbUJveG9fVmRaQjAxanIzZHQ3ZjhISHJOVE5Fd0V0cncwTUZEak1OTmszNFZXUVQ2cjBEWTlyVUwwajlqZTlPemdLMHFEczY3VXF2UQ?oc=5",
+   "src": "Zonebourse",
+   "d": "2026-11-06",
    "seg": "civil"
   },
   {
@@ -1349,55 +1398,6 @@
    "t": "Le français Asman Technology s’apprête à faire voler le DSLR MK1, un drone MALE dédié à la guerre électronique",
    "u": "https://www.opex360.com/2026/10/30/le-francais-asman-technology-sapprete-a-faire-voler-le-dslr-mk1-un-drone-male-dedie-a-la-guerre-electronique/",
    "src": "Opex360",
-   "d": "2026-10-30",
-   "seg": "defense"
-  },
-  {
-   "t": "La Gendarmerie nationale devra encore patienter pour renouveler ses FAMAS, qui ne seront plus opérationnels en 2030",
-   "u": "https://www.opex360.com/2026/10/30/la-gendarmerie-nationale-devra-encore-patienter-pour-renouveler-ses-famas-qui-ne-seront-plus-operationnels-en-2030/",
-   "src": "Opex360",
-   "d": "2026-10-30",
-   "seg": "civil"
-  },
-  {
-   "t": "Dassault Aviation cède 0,26%",
-   "u": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMEYxUU1KUDBtTXVuRGR1cW1DaFhHTW5LRmZrN0FrdlN4eFcwbjZPbjZVTkVzakdWQXZfd25Obm11djh1RWR6MVhCaWxSQTJzQVVXQUpyVEN0NnUyWWxwbDI2VHBNNmlVbGRaWHlZb0Y0TTVIbVJhUldGSDJZdGZ3Zl81Z0NHQTRONFZQaURsUjB0dw?oc=5",
-   "src": "Boursier.com",
-   "d": "2026-10-30",
-   "seg": "civil"
-  },
-  {
-   "t": "PATMAR : le surcoût de 65 % de l’Airbus A321XLR impose-t-il de réexaminer le Falcon 10X de Dassault ?",
-   "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9jeGNqSTRHdGVIX2hoT0lXOUZZTnI2YkdqanVRWnpyeWctUmhqZ3FtdmNQVkNPMF9FRUM3ZERYQUZZOEpXR2l2NGZNM1JWNld4UVZWVEg5ajczeWtkMC1iMmJEdjdVaDgxdE5BOG96MEk0M3M?oc=5",
-   "src": "Meta-Defense",
-   "d": "2026-10-30",
-   "seg": "civil"
-  },
-  {
-   "t": "Un hélicoptère italien de transport CH-47 Chinook s’est écrasé en Bosnie-Herzégovine",
-   "u": "https://www.opex360.com/2026/10/30/un-helicoptere-italien-de-transport-ch-47-chinook-sest-ecrase-en-bosnie-herzegovine/",
-   "src": "Opex360",
-   "d": "2026-10-30",
-   "seg": "civil"
-  },
-  {
-   "t": "Le canadien MDA Space rejoint le programme européen IRIS² avec un accord sur les antennes de 66 satellites",
-   "u": "https://defence-industry.eu/canadas-mda-space-joins-europes-iris%c2%b2-programme-with-antenna-systems-agreement-for-66-early-delivery-satellites/",
-   "src": "Defence Industry Europe",
-   "d": "2026-10-30",
-   "seg": "spatial"
-  },
-  {
-   "t": "Atlantic Airways commande deux Airbus A320neo",
-   "u": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQeEs0ZjhLb3ZQM25QcUdoQkluTkxQY1diaVN2NGFsdFh0blB6V0R4ckdwSUJSSlpzQUd0c2NRTDhuR2ctR1FPbDlLR3JZT29iMEdaVzY2TkxqclNhVGRJd3ZGUEZuZW9lV1BwaUcwZllVRGFtWDdjYnVnN2FYWDhoemR3MlBBV09rTXNUSXZZWDU?oc=5",
-   "src": "Aerobuzz",
-   "d": "2026-10-30",
-   "seg": "civil"
-  },
-  {
-   "t": "Le premier Falcon 8X Archange français de renseignement entre en essais militaires",
-   "u": "https://www.aerotime.aero/articles/france-falcon-8x-archange-spy-jet-evreux",
-   "src": "AeroTime",
    "d": "2026-10-30",
    "seg": "defense"
   }
