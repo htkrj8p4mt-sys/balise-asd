@@ -65,6 +65,13 @@
    "seg": "civil"
   },
   {
+   "t": "Dassault Aviation : retombe sur le support des 19,65",
+   "u": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPeDAxRnNsV3F4NWhyQnIxNW1fcko5SFlIeHotXzIzcGxhVFVsMnlaX2k5UG9nd04xOUJDelRRejh5T2lwOTFaYTVmS0E4Zk4yZkNMSDJBcnU2SHhqMlpPQVN5NFAyUGJhczdwa1hpMUp3eEhiTEN5QVNXYW1MMS1nSXJlT1dOTEZaTUFjTXV2ck1Yc2tZcXRyVkF6RmZjY3NNR1FQUnoyekE1d19obFRBOVVlcjN0cFM3SWFLV0NxNW9EVTZzVDVZ0gHMAUFVX3lxTE1aU2R1Uk51UTZaN1I4ajJpc19KMkV2cy1zcUtVRGlsVGRlWVh6MGZCd2tmYWx2WjJISHhyMF95NVpGX056dkxOLXJoSURjZWJ2NHBFYk1xYUZET3FUQ1lSSVNWYUQ0M2N1TkEtcUNyQk1sVUFWenFpYmVKemF5Smlvb093TjZyMllVZHdfNWRFV1RXNGktbFlDOTFzWVNnVGtQVEFKTmd5WFhHSG5RZ1hZT05LZDFEV2FTaUg5ZFVoY0x3dGx1OEFSQ1JXMQ?oc=5",
+   "src": "Boursorama",
+   "d": "2026-11-06",
+   "seg": "civil"
+  },
+  {
    "t": "Airbus A330-900 : capacité portée à 480 sièges face au 787-10",
    "u": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPZEFORmFIbEpwV1BoaERiRnZvbFIzYTFGYUpXNDRxb0RkNEJib3VIRGlsRUF4Q2lBYjBxUVZLajJpTENlblpfMGxHUEZmOGVLcG5TdWhuY0ZSekZycVpBcDFzVGprbzRURkxFU0pBSm5tdWFWdmdHMWRPUDVfVFpEdC1nQlRmV0hWWk5KVQ?oc=5",
    "src": "AeroMorning.com",
@@ -1393,13 +1400,6 @@
    "src": "AeroTime",
    "d": "2026-10-30",
    "seg": "defense"
-  },
-  {
-   "t": "Début des essais de qualification au sol de Callisto, démonstrateur de fusée réutilisable",
-   "u": "https://europeanspaceflight.com/ground-qualification-testing-begins-for-callisto-reusable-rocket-demonstrator/",
-   "src": "European Spaceflight",
-   "d": "2026-10-30",
-   "seg": "spatial"
   }
  ]
 }
