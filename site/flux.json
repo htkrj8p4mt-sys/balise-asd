@@ -2,6 +2,62 @@
  "updated": "2026-11-10",
  "items": [
   {
+   "t": "Les hélicoptères espagnols NH90 volent d'abord en direct de l'OTAN en Roumanie",
+   "u": "https://www.aerotime.aero/articles/spanish-nh90-helicopters-first-nato-scramble-romania",
+   "src": "AeroTime",
+   "d": "2026-11-10",
+   "seg": "civil"
+  },
+  {
+   "t": "DLR va acheter 80 moteurs-fusées de sondage de cerf-volant rouge",
+   "u": "https://europeanspaceflight.com/dlr-to-purchase-80-red-kite-sounding-rocket-motors/",
+   "src": "European Spaceflight",
+   "d": "2026-11-10",
+   "seg": "spatial"
+  },
+  {
+   "t": "Lufthansa reçoit son premier A350-1000, son 700ème Airbus",
+   "u": "https://www.aerotime.aero/articles/lufthansa-receives-first-a350-1000-its-700th-airbus-aircraft",
+   "src": "AeroTime",
+   "d": "2026-11-10",
+   "seg": "civil"
+  },
+  {
+   "t": "Lufthansa prend livraison de son premier Airbus A350-1000",
+   "u": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOMVk5LU0yNF9QNnlqbW14cmg3WENnMC1BaGZBNDB5YjJlbzdmWW4yVml3WklIVzl5UHhBY2Rid05JU056Nkd0MktuamVRenpfM0J3aWRWUWhjSEFNLS1MU1ZRZ19QdGpKVm1iUzJBbXVUMWl3ZVozbnBEdENyTXRjdGc2LWdHMFFKRVFoM3dxSklfd0JDenoySmRYaVNKUHZMREZNSXFncmNZdw?oc=5",
+   "src": "Aerobuzz",
+   "d": "2026-11-10",
+   "seg": "civil"
+  },
+  {
+   "t": "Lufthansa reçoit son 1er Airbus A350-1000",
+   "u": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOa002MmljY3NlZmM5U3VLVFllclZ3WXY4NUNXY2J2RXB1NmR1bENPa19HTEdfdVo5MnpzZnduUm5ta3pxTTRSdWFJU3NqY011aFB1QW9pYl8ySkdfMklmNTJxRWlfN1ZpT3JLUUpOa1ZCU0g5dDdja0NMMFNXTzlaM3B0M0FuU24yRnhjTDdwYzFaRnliQUM3eDFlbUNHcGRibDJMRktGRmhjcm9TbmtPdE9oamhZQ1E2THFXVFlWdU1nV0lZb2lWcHM0dFNqUHpfUWpj?oc=5",
+   "src": "Le Journal de l’Aviation",
+   "d": "2026-11-10",
+   "seg": "civil"
+  },
+  {
+   "t": "Pistorius impute l'effondrement du SCAF à l'industrie, « trop d'idéologie",
+   "u": "https://www.aerotime.aero/articles/pistorius-fcas-collapse-ideology-contracts",
+   "src": "AeroTime",
+   "d": "2026-11-10",
+   "seg": "defense"
+  },
+  {
+   "t": "Safran dévoile FleetLife, sa nouvelle solution de maintenance prédictive pour équipements",
+   "u": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNQS1hVXJfWDZEaXBHckUxSTJha25TcVBjdVBsUFYySS1pV0w1QVhRVmt6cXlmUXo5OU5TOFhHcHhfOWVCWkhuUkZ1UWU2dTNsTG5pa2ZyLUVSR0tXNkxNSjREWkNDTVpmOFhwd0V2bmhIcG5CUW9WZjZwWFUzTThSMWhlcGZiNVJaekhVWkxmaHRsSmVrSDB6eHNFZkp5b2pNcDhjOTdKX19vWlcxLXJ0NEJuM3ZPdm12SXc3TXM0VWJzaFRrdDFIODFlX0hUbzA4TWJfbUxJaC1QNzQ5RmJ3ZlIxYVNESXdCY1JnbWJiQQ?oc=5",
+   "src": "Le Journal de l’Aviation",
+   "d": "2026-11-10",
+   "seg": "civil"
+  },
+  {
+   "t": "Thales confirme l’acquisition de radars GM200 MM/C par la Belgique",
+   "u": "https://www.opex360.com/2026/11/10/thales-confirme-lacquisition-de-radars-gm200-mm-c-par-la-belgique/",
+   "src": "Opex360",
+   "d": "2026-11-10",
+   "seg": "civil"
+  },
+  {
    "t": "Les hélicoptères NH90 d'Espagne font leur première course de défense aérienne de l'OTAN après l'alerte par drone en Roumanie",
    "u": "https://defence-industry.eu/nh90-helicopters-from-spain-make-first-nato-air-defence-scramble-after-drone-alert-in-romania/",
    "src": "Defence Industry Europe",
@@ -48,6 +104,20 @@
    "u": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPMnp3VmRZbGticzMtZ0licFlhcTlHaFV0aGdRZEZ1SDNvQ2VwOERRZDBFbnFKVG5tLWo1dmNtSGFtbUxXSS0zVl9BZllWbUxXYy04QWRKMjNyYzNRUXc5WTgyMzFPQ2wzQ0wwd1FZZ3NuMlBLdzhpNENHemF2TjV5UHAyN0Vpa1V0aW13Qm9MaDFRS2xMajRGU01NaGVFaWxFSHQ1RUhLY0hscWQtQlQ2bi1VSDV1VFJyc0Jfb1ZSRTdJdjR4LXVESTBveU85TjVTVVlnSkNsN1ViUVYtNTEtTEIzQ0F4al9CVnc?oc=5",
    "src": "Capital.fr",
    "d": "2026-11-10",
+   "seg": "defense"
+  },
+  {
+   "t": "Dassault Aviation sélectionne Eaton pour les technologies de systèmes hydrauliques et de circuits carburant du jet d’affaires ultra-long-courrier Falcon 10X",
+   "u": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOcVNKZjBRSWVRNDVZVVFzblIweDhQZ0dzQndQRUZtYzN4c2FjcnF3XzB1QVRPRHZ6bjQ4aWpTQVZEdjlNU1dvNXlkSFJ1RmhPb1VqUURMbFFrLVdTOXMxVmxhdVI3X3ZZYThmQkptczBDQm9hNm9STHZaVExZQzBoa3Z5MHJhRnlQbm5GQUs4a2xuQ0l5N2Z3bnB4UkFUYUl5UTgyQUF3eWVEcHNsa3JiNWwwSXM1X2owQVhPd0ZpVGR0cUpSQXZMbHFqZElMaDc2QnVtRFNzcHNuSUJiVHA2dlNxa1F4amY2Q0VvMlllOW00UQ?oc=5",
+   "src": "Zonebourse Suisse",
+   "d": "2026-11-09",
+   "seg": "civil"
+  },
+  {
+   "t": "Le Rafale F4 pousse le L-39NG Skyfox dans les bras de la Serbie.",
+   "u": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYjF2M2RjU1J6MFAxWG8yZFdCVDdLeWNiWFBCY2N0dGxlV2ZsQ2cxMmdrc2d0TEFtQV9Mek5jMWVTeE9BSTFGY1BseE5USGdYNkxGYVFwLW4yS2FTei13ZlVJSEJJdG83LWd1NUNUSE1hd0xHOC1fWGJ3SlVXYWlaTE1naE5YV195ZWJIS0dlR2VQTm9vMzdKSlkxcWpWaWxEN1VyRWpvVG00aTZZLUtraw?oc=5",
+   "src": "Avionslegendaires.net",
+   "d": "2026-11-09",
    "seg": "defense"
   },
   {
@@ -1328,76 +1398,6 @@
    "t": "La DGA reçoit son premier Rafale banc d’essais, futur laboratoire volant du standard F5.",
    "u": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWTlSbzVWTHZPVnZYdmJhSmJSZ1o5VjRKZWVaUjVqOXRmVktDR1pfTG52Tmw3S21FVHprbzk5Z3ZVMjJXQnJmMklwcjdJOENTSHhhR1Vub0kzb0l2SU9IcEF1bDJVVXlkdHMyVTd2TWpCNHpDVXJLeUgwREFTNGtvNzliVkpETGRwQVNBMkRnSWk1VzE1bm1COFBRbjYxZkNOQVVrQ25QTGtsSlYyMFkxVFl0Yw?oc=5",
    "src": "Theatrum Belli",
-   "d": "2026-11-02",
-   "seg": "defense"
-  },
-  {
-   "t": "La Roumanie fait appel à Thales pour renforcer la surveillance de son espace aérien",
-   "u": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPMkwxeThrSnl5ZFhTSU9XM2pQbWNIN3VwNXl6eERrbXIwbGZGZHdyYmlIWkFjc3VzcmZid0lHSjNIbHAzSm5NUXFUWnR3RU1jSEFVTWFpaDZOMG02VmVNVFFWMXNBSkhqQUFFYVI5Z3Z2VzBCTlM1NGZQVU80ZzRNV0QxX1R4akdIRldfNDVOWDVzZHJkaUFIVkJVWDVaYVlWNkRfN3VOTTQzTXgxLUo1ZndhdUdGbWdYTGJac0NIVGs?oc=5",
-   "src": "Aerobuzz",
-   "d": "2026-11-02",
-   "seg": "spatial"
-  },
-  {
-   "t": "La Lituanie reçoit le premier radar multifonctions GM200 MM/C de Thales pour sa division nationale",
-   "u": "https://defence-industry.eu/lithuania-receives-first-thales-gm200-mm-c-multifunction-radar-for-its-national-division/",
-   "src": "Defence Industry Europe",
-   "d": "2026-11-02",
-   "seg": "civil"
-  },
-  {
-   "t": "Un Rafale Marine réalise un premier appontage sur le porte-avions indien INS Vikrant",
-   "u": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQdlJzYVlOakUtREVHWVpMMExnZTBfa29nYTF1VnJNb095eEVCejNzWE1JdWxiamJtWTNoSXBrNXlDamhpMU9NUmxfZHRpamdLbWZMMThlWWkyR0owblFReE9sN2NaTFdqU1pzeF9SanU0RHJoZF9DemhBSkVsbXVXQnZmS1dWdk9kNnpKbEhRUkRMYURlUmlxc2wtYmlIUUQzWTVuM3Iza3lFcEgtR0xVR1o4cC1KVzhqU0dHWXdTRUQ4clVRWlYyYU5McWg5dndFVnNxQjhDTDY5NlBmMzJXSXc2NDB3R2hFSVM2TmRNUzlVdkxFN3NhdXBiTlQ?oc=5",
-   "src": "Le Journal de l'Aviation",
-   "d": "2026-11-02",
-   "seg": "defense"
-  },
-  {
-   "t": "Airbus Defence and Space signe avec EPCOR pour le soutien des APU de la flotte mondiale d’A330 MRTT",
-   "u": "https://news.google.com/rss/articles/CBMinAJBVV95cUxORUNtT2EtTDRCRUI0Qnd0TTVnYVpFODVtWE1BZnhsYVBFdEdvWHhvS3NINjQzd04wUGpLdzVrS1AwTVJFSTUwTkN2SHlwN043dW1aX0ZGTFZlbFhZNXg2bkRKbzFRX0d6RFFQdTJ5cVR5YjBEbE1TMmw0amtYSHNwYUFIbHI4MlNpY1EwaHNwVEFFcFBoa2tsUGRFMGlERDJra2lNYVVoSnZCOHRqTGN6VnZNV3VFaHViXzRUTVJnbXkxYlNuUWpuY3Y1TnlMOF9GQUlkeWFFUk9INUI3Q0FfRExiV1RiRDducjVBRXhFUTFfVnF3MkMzZGIwWU8yaW9Ia3NWeEtOLVJRQzJXUDZqejJIT1p0eElBN2FQVw?oc=5",
-   "src": "Le Journal de l'Aviation",
-   "d": "2026-11-02",
-   "seg": "spatial"
-  },
-  {
-   "t": "DGA Essais en vol a reçu un Rafale F4.1 « ABE » pour préparer le standard F5",
-   "u": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQNWU5b1F4YlBrb3pYWVFwdDZVVmpBSkJOZ21sT3ltbklZbkxWTUFucy1jTnd0cXZhcVNCQ2VtV3ZrdktTMjc1dkdIcjBhcXNqdTVsdjNVWDlDSzY1TTNKN2w3UGp2dVVQbzd2aktZWHBIQXdoTVBMQ1BadFVLbFRkMnFRbFBEbUhXbjBDQ1VJMXlfaS11ZmdHS19SeGs5dFdXWEJZOVZrUVAtNGlKcU5LTGpLdw?oc=5",
-   "src": "Zone Militaire",
-   "d": "2026-11-02",
-   "seg": "defense"
-  },
-  {
-   "t": "DGA Essais en vol a reçu un Rafale F4.1 « ABE » pour préparer le standard F5",
-   "u": "https://www.opex360.com/2026/11/02/dga-essais-en-vol-a-recu-son-premier-rafale-f4-1-pour-preparer-le-standard-f5/",
-   "src": "Opex360",
-   "d": "2026-11-02",
-   "seg": "defense"
-  },
-  {
-   "t": "Rafale F5 : la DGA réceptionne son premier avion banc d’essais dédié aux futures évolutions",
-   "u": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPaHlsTlV6MUpnbXFjd2tEV0RFY0pYTnVUblB5NEh1azBWNjE0RmpMZjZyUkc3LWVOYWl2R010VDd6X29rYVJIQ0o3YzROczNCU2s3VTh0MTVzaHVlRXA3d2xNbTA4clQwQVczQmxhQ1c2TUpybE1CY3ZObmlHQ0lINFNfOHhKTUlMZkJQRmpQQ1VtSjFNUlExcEJuTmtxb3c1T21XREpaVHozdVVVWFIwblZpWWNpNzlqZ3dzWFFn?oc=5",
-   "src": "Actu Aero",
-   "d": "2026-11-02",
-   "seg": "defense"
-  },
-  {
-   "t": "Aéronautique : Un Rafale laboratoire pour le standard F5",
-   "u": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNFN0eFNBWWdlVHV2VXNDaWN3Mzkxa18zVjdEcnpHQTMwTFhuTTgwVzZaWjZiLVpmaHlzaFk1Y0F4RU1ZNXdsQXlPZV9CMmVjVEt1UUpGaXNOUUctNkZoWEJLN2RnbmJsaHN0Z1lpcGFiRlpKc2lheHF5MWxuRzItc0Z2dmhEMGMzbDNRN3Y0YXk0MHZBaVdtQWJnRXhYWXpyWHBHc2dFZ1BVNHpEdy15Mmd3dFoxemg2SXNqcA?oc=5",
-   "src": "Presse Agence",
-   "d": "2026-11-02",
-   "seg": "defense"
-  },
-  {
-   "t": "L'armée française vient de recevoir un Rafale pas comme les autres, qui va préparer le futur Rafale F5",
-   "u": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOTks4ZWd0WkJGcnJxYUNFZ3IwUGh0bEpxQ0w0ajJqWHl4TzBCcnNiWUVEd3MtTXZoV3NsS0NiZ3dTWGFnbkl6VEF1cW9YX1AzeHZTbHRhR3pDUjM0RjVoRGxfUm5QclUwaXQ5RGw2V05NSTBPRTJVOXJkNXNsX2xPSXVNd0ZaVDhzY2NONktkVjFodkNvVUY1Nm9wXzBxV2c4d3h4VVB2SF9OWHYteGphVEYybkx5czBpemVPNjNweklkbUVRWHR6U1hWUHlucWpfWDZ1UGxPdmdTWDU1cEdZ?oc=5",
-   "src": "Clubic",
-   "d": "2026-11-02",
-   "seg": "defense"
-  },
-  {
-   "t": "La DGA réceptionne le premier Rafale destiné aux essais du standard F5",
-   "u": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOTEFLd2R6RVBTYkU5bDNMYnBLUVdsbTViTW1Ldm43RUwzajVRYnFfTGVDNDd3QjlLR01fVlBUYjRCaUQ4clBHMHdfbEhCS0tPQ3d5S1c1Y1A2N0JRcGJqbXBudG0xMFp4Mk9OTHFXX1RTTVdEdG00V0dZa3RfTktzWmNuUncxZGFDcDJBZjBra3ZNYlJZMmY3TWtKNnNCbWpjUVd6eG9WSTFiYUhyNkY5eWtlSEZ6SlZnTXFCNGFtOGNHMGVZaHRqQ0dYZUpGMU1SQTFhMm1XZzZyUmNfQjFNejdXYndpaFnSAecBQVVfeXFMTkxBS3dkekVQU2JFOWwzTGJwS1FXbG01Yk1tS3ZuN0VMM2o1UWJxX0xlQzQ3d0I5S0dNX1ZQVGI0QmlEOHJQRzB3X2xIQktLT0N3eUtXNWNQNjdCUXBiam1wbnRtMTBaeDJPTkxxV19UU01XRHRtNFdHWWt0X05Lc1pjblJ3MWRhQ3AyQWYwa2t2TWJSWTJmN01rSjZzQm1qY1FXenhvVkkxYmFIcjZGOXlrZUhGekpWZ01xQjRhbThjRzBlWWh0akNHWGVKRjFNUkExYTJtV2c2clJjX0IxTXo3V2J3aWhZ?oc=5",
-   "src": "Boursorama",
    "d": "2026-11-02",
    "seg": "defense"
   }
