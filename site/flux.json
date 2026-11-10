@@ -1,6 +1,34 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "items": [
+  {
+   "t": "H160M Guépard, U145, drones tactiques : Airbus Helicopters a exposé sa stratégie lors d'Euronaval",
+   "u": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNZXMybUhTVkM2ZEhTSlBCamJQWEtGTnFlM3Z4NHFjQWVydFlOR2s3YzM0eFNXUkx4eGNVbzZSdFFFWEg0b0hPSHFveTVGMzJPTndNLVZ4ZlRrUDBYQTloOEQ2QXlPS1VUcVhfdHlrSHNRQU5JbFd2Sm44Ml9uaDZRd2w3cXVtSEtQMHBqcXpJMXp3ZHRaYUQ0dUc0bWU5Rm55MThycUtpT2UyeHJ0enltZGR1RUJhUXdPaDlvdWJnOHBKOHR3dURTYTJ0dWs?oc=5",
+   "src": "Mer et Marine",
+   "d": "2026-11-09",
+   "seg": "defense"
+  },
+  {
+   "t": "VietJet retourne devant un tribunal britannique pour un litige de dette aérienne de 250 millions de $",
+   "u": "https://www.aerotime.aero/articles/vietjet-heads-back-to-uk-court-over-250-million-in-aircraft-debt",
+   "src": "AeroTime",
+   "d": "2026-11-09",
+   "seg": "civil"
+  },
+  {
+   "t": "La société allemande STARK affirme que son patrouilleur non habité Vanta 24 Baltic peut transporter des missiles anti-navires",
+   "u": "https://defence-industry.eu/german-company-stark-says-its-uncrewed-vanta-24-baltic-patrol-vessel-can-carry-anti-ship-missiles/",
+   "src": "Defence Industry Europe",
+   "d": "2026-11-09",
+   "seg": "defense"
+  },
+  {
+   "t": "Eaton a été retenue pour le Falcon 10X de Dassault afin de contribuer à ses objectifs de performance et d’efficacité en carburant",
+   "u": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNeVAteS0yTE5USTljZ0JoUVhSeHBpcjZmZExCbHQxRVBMWVoxdjU0MldnNGZhSmdOQ1FhWHdOcXNxWkl2OG92VEFVcFNKYy13NHVITk5sRUE5RG54clpmNHhqNmdoX0JtQzNsNzNHdTNCUE9qTmdyU25YVzJHd1RfZkdqa3JmekpRQlpXdC1WVkFTVDl2Tk1acEtjcDNpR2tfSnhtMHNqcUtGVEpzNGVZMng2YlV1b0RFMDJQWmk0T013RzhZSkVaTUw5UGNvNUo4ZVEzR0stYjlRcFJhOWFnN25GTmdtLTc2VlNVb3hTcWFqYU0?oc=5",
+   "src": "Zonebourse",
+   "d": "2026-11-09",
+   "seg": "civil"
+  },
   {
    "t": "Le ministère des Armées lance la réalisation de deux satellites d’observation IRIS pour 1,5 milliard d’euros",
    "u": "https://www.opex360.com/2026/11/09/le-ministere-des-armees-lance-la-realisation-de-deux-satellites-dobservation-iris-pour-15-milliard-deuros/",
@@ -1372,34 +1400,6 @@
    "src": "Defence Industry Europe",
    "d": "2026-11-01",
    "seg": "spatial"
-  },
-  {
-   "t": "De l'APKWS au LADAC : la France se joint à la course aux fusées à guidage laser bon marché pour abattre des drones",
-   "u": "https://defence-industry.eu/from-apkws-to-ladac-france-joins-the-race-for-cheap-laser-guided-rockets-to-down-drones/",
-   "src": "Defence Industry Europe",
-   "d": "2026-11-01",
-   "seg": "spatial"
-  },
-  {
-   "t": "Rafale F5 : L'Avion de Combat Français Qui Fascine",
-   "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNQm43T2w5a0VEMkNiaHdJVUpqdGVCdjNrZFJVUE9NSDAwRFVaQ21Rc3RmMjdaUHRFUC1iMVZGdWZYNDJ1RTJ5bWMzWmRpSW56SUF2QjZDNmEta1ZqZGszX0ZlckdmWE40M1FTRVpYVmwyTlBzb0l6amRhWDc0RzJGdHpSWUZfRnlFaWc3SlNIVk1WVjctdEtSQ0xMak5peUh4eTR6QlZSek1VMnZReWhHWGVUdkZjMWlDdVlkTzVkcVpYSGhBWkhzcDVyNkVLTUQwNUhwRk1XR0NPdw?oc=5",
-   "src": "focuSur.fr",
-   "d": "2026-11-01",
-   "seg": "defense"
-  },
-  {
-   "t": "Asman Technology prépare le vol du DSLR MK1 : ce drone français de guerre électronique que personne n'attendait divise déjà les experts défense",
-   "u": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPVHZCczA3cXR0eTBJSnpMTFNIV0JPWEtsQ0xLTlV2WVRPQkFQblphQkJCSDZSSHp6dk5jNVJZcTYtMUhqcTkyb2ZHWjh3eVhyemVqakZvU0xSanM2YmphWWRvVHdpWDdUMnhJQnY1UjNCR0c0UENpNG1sM3FHOEVQYXBfRm1QM1otM2RhN3U0dGt2YTMtTU9GSVJlUThwRlBCWFVRVWs2SzJOQlp3eHVTLTdZS2tyZVktNGdTODNZTGlDaG5rNG1sSWtnVUVKR25VMVIyMS1IcWxjUVBFdVdNSHZfT0tLSjNyRldpT0hZSkxLZw?oc=5",
-   "src": "Armees.com",
-   "d": "2026-11-01",
-   "seg": "defense"
-  },
-  {
-   "t": "Après un exploit à -25°C sur la banquise du Groenland, cet Airbus A400M de l'armée française atterrit à Perpignan",
-   "u": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNT2pNcWxvR18yY19XY3A0UVVUTm05aDN2WVNkdmJRNjFodHlISHNEemlvWjlzcUcxUlZiZTZSX3lIbXROSE9JcGdNSjBfWUthVm1JVUo5amZma0Nxd3Q2bjA3b0Nwa2tDb2ZPaGNUNi16elJ2cDFyMDFkY2JpV3FhZ25OZmhTVHY5RENKakkwalc1bHg3NzJWUHU0Nm5nYUZsS0N4SXNNa3JaMTk1Q081QmUtR0VmUG9sNmtEcHRUSURjdlJFNDhaTg?oc=5",
-   "src": "Armees.com",
-   "d": "2026-11-01",
-   "seg": "defense"
   }
  ]
 }
