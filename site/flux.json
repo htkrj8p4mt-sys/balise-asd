@@ -2,6 +2,20 @@
  "updated": "2026-11-10",
  "items": [
   {
+   "t": "La France attribue un contrat de 1,7 milliard de $ à l'équipe Airbus-Thales pour de nouveaux satellites militaires",
+   "u": "https://breakingdefense.com/2026/11/france-awards-1-7-billion-contract-to-airbus-thales-team-for-new-military-satellites/",
+   "src": "Breaking Defense",
+   "d": "2026-11-10",
+   "seg": "spatial"
+  },
+  {
+   "t": "La décision par satellite du Royaume-Uni se profile à l'horizon alors que la lutte politique se réchauffe",
+   "u": "https://breakingdefense.com/2026/11/uk-satellite-decision-looms-as-political-fight-heats-up/",
+   "src": "Breaking Defense",
+   "d": "2026-11-10",
+   "seg": "spatial"
+  },
+  {
    "t": "Les hélicoptères espagnols NH90 volent d'abord en direct de l'OTAN en Roumanie",
    "u": "https://www.aerotime.aero/articles/spanish-nh90-helicopters-first-nato-scramble-romania",
    "src": "AeroTime",
@@ -1386,20 +1400,6 @@
    "src": "Le Journal de l'Aviation",
    "d": "2026-11-02",
    "seg": "civil"
-  },
-  {
-   "t": "L'ESA soutiendra les démonstrations de vol d'appoint réutilisables dirigées par l'industrie",
-   "u": "https://europeanspaceflight.com/esa-to-support-industry-led-reusable-booster-flight-demonstrations/",
-   "src": "European Spaceflight",
-   "d": "2026-11-02",
-   "seg": "spatial"
-  },
-  {
-   "t": "La DGA reçoit son premier Rafale banc d’essais, futur laboratoire volant du standard F5.",
-   "u": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPWTlSbzVWTHZPVnZYdmJhSmJSZ1o5VjRKZWVaUjVqOXRmVktDR1pfTG52Tmw3S21FVHprbzk5Z3ZVMjJXQnJmMklwcjdJOENTSHhhR1Vub0kzb0l2SU9IcEF1bDJVVXlkdHMyVTd2TWpCNHpDVXJLeUgwREFTNGtvNzliVkpETGRwQVNBMkRnSWk1VzE1bm1COFBRbjYxZkNOQVVrQ25QTGtsSlYyMFkxVFl0Yw?oc=5",
-   "src": "Theatrum Belli",
-   "d": "2026-11-02",
-   "seg": "defense"
   }
  ]
 }
