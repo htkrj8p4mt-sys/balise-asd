@@ -2,6 +2,27 @@
  "updated": "2026-11-11",
  "items": [
   {
+   "t": "Les actionnaires d’easyJet approuvent l’offre publique d’achat d’Apollo d’un montant de 5,7 milliards de livres sterling",
+   "u": "https://www.aerotime.aero/articles/easyjet-shareholders-approve-apollo-takeover",
+   "src": "AeroTime",
+   "d": "2026-11-11",
+   "seg": "civil"
+  },
+  {
+   "t": "Dassault Aviation cède 1,54%",
+   "u": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSG40cVJxVEd4ZnQ1R0pFQ3NKT3RjLWg0RkVUT1pVb1QyS0g4NEZMejJyMHRSX3ZYUmM0WDNFV3ZUQW5JS01vLXhacVd0dWozaTQyeWxCdm9ycWF1MTRCcU5vcUthVEVBY1l6UERLNVRBV25IQjBITHlyZ2hsTk54RTl6WFM0aVNORzR3UmFqLVVJQQ?oc=5",
+   "src": "Boursier.com",
+   "d": "2026-11-11",
+   "seg": "civil"
+  },
+  {
+   "t": "L'action Dassault Aviation bute sous sa résistance des 312,40 €",
+   "u": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPdjdTcmZqWk1BdTBRM1pBN3NaLWJ0RHpycjRjQ21sWEFPZHFfUnppRWZIU01leGxqZms5aUFrTXhHRkJxcklWRExvSDNFTnpHNFBKcWhLcG9aaUUwaFF4a1dHSkFzVlRtTm1qdnc4Qml0Z3U5bzV3STFadlJoQjJBZ0F5WjZXUUZHMWpkQ3pWZWkyeFZ5VXAwaFNBd19Id1RMQklXaTRzN2pFMl9vNnJtOXppSEc?oc=5",
+   "src": "Idéal Investisseur",
+   "d": "2026-11-11",
+   "seg": "civil"
+  },
+  {
    "t": "La deuxième guerre des avions spatiaux est déclarée : Dream Chaser décroche son feu vert, Dassault entre dans la course avec VORTEX",
    "u": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxONDdFVjQ3Z1Vma3ZMdnBlMWNrUU5IOTNxSllqNWhXYVdLa3c1eEZpdU5SN2psc1dQbHRvclAxeVJiSkpSR291bURMdWhZdERiMks0d2dndEt1cWxoSFpCYW1UdWdERlc2bUl6S0hQRkgzNkdYODV0Zi1oTVZQSXljeEh6LW82ajR4R2RuVEMzR3RqZTY2cHg5V2tXNXdRbWtHeGlCdWRiMUFTZFNnLXFxNEprZUpqN3hnWmZNczNqOHRwWDlDMzIzN1ZNUDdLTnFnOU5xVWFDTTUtOGd1LWg3bW5pY2ZJWG1DNmpqb1BjWDQ?oc=5",
    "src": "Media24.fr",
@@ -70,6 +91,20 @@
    "src": "AeroTime",
    "d": "2026-11-11",
    "seg": "civil"
+  },
+  {
+   "t": "Los Angeles : un avion d’Air France frôle un appareil d’American Airlines",
+   "u": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPWmpHSk9iQ0wtZDEtSHg4SmFJWEhocVFXTWU2MGxhZUpmZFI0dkl4ekZNY1E0N1FYbWw5U1Nka2Q4QnVEN01OMWVxcjRSdjQ5b1dlblpUdXNucmQ1SmJrQUk5TFBjRjhRTC1SS3NSWVNEX1ZxdWJKbndkVzM3RnB6LTR0cnRlOGwwcWVSeDV5QWY0QmhsTDNnSA?oc=5",
+   "src": "BENIN WEB TV",
+   "d": "2026-11-10",
+   "seg": "civil"
+  },
+  {
+   "t": "Défense : Airbus et Thales Alenia Space vont réaliser la prochaine génération de satellites militaires d’observation pour les armées françaises",
+   "u": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxOVm4xZllwZzJGeDAzcXBReTdWTUt4d2hDYUI2TGkwWUpsbDRHci1VZGd6b1VLN2tJcWxFYVB4US1xYjBpdTZZNm5HVXhOb1Jqa0Y0c05xWFJNelBXMFBhREhESUwtZm4wN1g3R0FHbmUyLVNwSVQycUJRWVJJc2pwbXJJMERteFBPU1o2dExoVndwbENmYk5tNERuYlZxeDQ0Wm0yQlYtQ3Q4YXBYLTFPWENQcDlRUm9URDhYeWJIcTY3ZGI4NXFyX1NsWEphZ2NuTjZDaDY1UURHdmJxVjh5akNLZk11ODNWWHdIdUx6VHVsdEI2NHNYRmVXNllSSDhxMFNhaGRuTWRZblhWdzdSVFVpaXpvODh5LVR0VkJBZkIzc1lQU3hueExzUnVLRzVGR2tjMy1IQl9rS1k?oc=5",
+   "src": "L'Usine Nouvelle",
+   "d": "2026-11-10",
+   "seg": "spatial"
   },
   {
    "t": "Plus de 24 heures dans les airs : Airbus bat le record du plus long vol de l’histoire pour un avion de ligne",
@@ -196,6 +231,13 @@
    "src": "Capital.fr",
    "d": "2026-11-10",
    "seg": "defense"
+  },
+  {
+   "t": "AAR CORP. signe un accord pluriannuel avec Airbus Avionics pour la réparation de radômes",
+   "u": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNTUdVNW1MRl9tU3ViR0RMbkthVU5TZmprcmgtdDVnNmlIZmFkaEV1aXZsc0FuNGpTSWpFZkRzVmJkcjhTSHpDSGpRczM4T0hmZjd0cmNUN1VlWnMzTWVlRFVtZWVyX0JGXzE1R0tGTTZtckpkYW5FcVJTcGRVenBTU0pSN2tpaFNFN0lvX1V3Z1pZVHRaTUFuMjhPcE5zbm43MWpGc1hHZE91WHVvT24xOFdBV3ZZemJIdVZNbTNpUjZaN0lWd19DOFdBS1MzOFYyU0RUSE5uX2poMGtyRXBwYk5n?oc=5",
+   "src": "Zonebourse",
+   "d": "2026-11-09",
+   "seg": "civil"
   },
   {
    "t": "AAR CORP. signe un accord pluriannuel avec Airbus Avionics pour la réparation de radômes",
@@ -1358,48 +1400,6 @@
    "src": "Defence Industry Europe",
    "d": "2026-11-03",
    "seg": "defense"
-  },
-  {
-   "t": "Airbus étend les services numériques Skywise avec des outils de formation pour les pilotes",
-   "u": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOUHJTRXdlVkVQQk52cnRmdVhTdmJ1M3dvcnNBemxSUXJQS2NOTDdZdjhSMG5VRndUTXlMNTBvQ3MtZWtLZE00THdrMFBxNnlMQUtpT2dXMDl3TTlqMFVTbkRWTTYxajVGZ0FCcTBkQlg5NXlId1U2QkFMMzR4Z1RVblpyVHB5MWd6OTNseXJZeUU5bkFyQUE5WDlsWHdHQWdhbXJlc0hnVm5RVm1Vc0lPNWhvYmJpaDJVUllxNjhleTlyOWNCMEE?oc=5",
-   "src": "TradingView",
-   "d": "2026-11-02",
-   "seg": "civil"
-  },
-  {
-   "t": "La DGA réceptionne le premier Rafale destiné aux essais du standard F5",
-   "u": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNREpRUTdtaUZ3RkNvWG53eGdQNkF4R25pNVNJUXp2c2h2X3d6ZGEySFVacVdUYmo2V3BIRDVVUUJxMlJGTHlEMmZLdXJHZVRwSUo0LW11d3ZUam9EeWppZFR4U1V2TVJLYXc3VHJnakVEMVBaN2V6YXRNZzdkQkJRcUJnZ3BjWTZ6UDhlLWl1MUd0cVhpWjZTOGtmWFQwZ2NHcXNKNmFEZUNSdTZLTGM5QWVVRTREd2NFT3RreHBXLXdpSzF6YV9MZkIzQQ?oc=5",
-   "src": "Zonebourse",
-   "d": "2026-11-02",
-   "seg": "defense"
-  },
-  {
-   "t": "MBDA construira un démonstrateur laser aéroporté pour l'Allemagne afin d'évaluer les futures capacités d'armement des avions",
-   "u": "https://defence-industry.eu/mbda-to-build-airborne-laser-demonstrator-for-germany-to-assess-future-aircraft-weapons-capability/",
-   "src": "Defence Industry Europe",
-   "d": "2026-11-02",
-   "seg": "defense"
-  },
-  {
-   "t": "Safran affirme que sa technologie de navigation soutiendra trois programmes français de dissuasion nucléaire",
-   "u": "https://defence-industry.eu/safran-says-its-navigation-technology-will-support-three-french-nuclear-deterrence-programmes/",
-   "src": "Defence Industry Europe",
-   "d": "2026-11-02",
-   "seg": "civil"
-  },
-  {
-   "t": "La DGA française reçoit des avions Rafale pour de futurs tests de radar et d'armes F5",
-   "u": "https://defence-industry.eu/frances-dga-receives-rafale-aircraft-for-future-f5-radar-and-weapons-testing/",
-   "src": "Defence Industry Europe",
-   "d": "2026-11-02",
-   "seg": "defense"
-  },
-  {
-   "t": "Action Airbus : faut-il investir fin 2026 ?",
-   "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE8yVUVGOGc4bFktWDMtSDdSQWtFMDdQUE9iUGowX1BFbnpyaHBaczctRG5FQWx5bGFTNWtvQTdJaGcyMUNKczFwbVg4c2dzd3Q5T0ZEYW9fa3RPQUJPZThKNA?oc=5",
-   "src": "Cafédelabourse",
-   "d": "2026-11-02",
-   "seg": "civil"
   }
  ]
 }
