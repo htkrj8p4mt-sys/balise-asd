@@ -1,6 +1,6 @@
 {
  "version": 2,
- "updated": "2026-11-10",
+ "updated": "2026-11-12",
  "overview": {
   "bref": [
    "Aéronautique civile : la demande est record (carnet Airbus de 9 310 avions). La France est forte, mais Airbus doit livrer environ 323 avions au 4e trimestre pour tenir son objectif, et la cadence reste bridée par les moteurs, les pièces forgées et le manque de main-d'œuvre.",
@@ -3044,6 +3044,38 @@
  ],
  "tenders": [
   {
+   "id": "ted-788214-2026",
+   "pays": "IT",
+   "acheteur": "TERNA S.P.A.",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Italie – Hélicoptères – Fourniture d’hélicoptères monoturbine pour les inspections aériennes des lignes électriques",
+   "montant": "Voir l'avis",
+   "date": "2026-11-12",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/788214-2026"
+  },
+  {
+   "id": "ted-788414-2026",
+   "pays": "PL",
+   "acheteur": "Lotnicze Pogotowie Ratunkowe",
+   "seg": "civil",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "Pologne – Services de réparation et d'entretien de moteurs d'aéronefs – Prise en charge de 60 jeux de buses d'injecteurs de moteur de type PW206B2+, PW206B3 installés dans les hélicoptères EC135P2+ et EC135P3",
+   "montant": "Voir l'avis",
+   "date": "2026-11-12",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/788414-2026"
+  },
+  {
    "id": "ted-784653-2026",
    "pays": "EU",
    "acheteur": "Valstybės sienos apsaugos tarnyba prie Lietuvos Respublikos vidaus reikalų ministerijos",
@@ -3252,22 +3284,6 @@
    "u": "https://ted.europa.eu/fr/notice/-/detail/768631-2026"
   },
   {
-   "id": "ted-766615-2026",
-   "pays": "FR",
-   "acheteur": "Université de Rouen Normandie",
-   "seg": "defense",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "France – Instruments géologiques et géophysiques – Acquisition d'un système d'imagerie géophysique électromagnétique (EM) aéroporté par drone (plateforme drone + un générateur d'ondes EM par injection électrique sur le sol + capteur magnétomètre)",
-   "montant": "Voir l'avis",
-   "date": "2026-11-04",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/766615-2026"
-  },
-  {
    "id": "ted-766841-2026",
    "pays": "EU",
    "acheteur": "Totalförsvarets Forskningsinstitut, Foi",
@@ -3282,6 +3298,22 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/766841-2026"
+  },
+  {
+   "id": "ted-766615-2026",
+   "pays": "FR",
+   "acheteur": "Université de Rouen Normandie",
+   "seg": "defense",
+   "m": "sys",
+   "statut": "ouvert",
+   "objet": "France – Instruments géologiques et géophysiques – Acquisition d'un système d'imagerie géophysique électromagnétique (EM) aéroporté par drone (plateforme drone + un générateur d'ondes EM par injection électrique sur le sol + capteur magnétomètre)",
+   "montant": "Voir l'avis",
+   "date": "2026-11-04",
+   "echeance": "",
+   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
+   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
+   "src": "TED, Union européenne",
+   "u": "https://ted.europa.eu/fr/notice/-/detail/766615-2026"
   },
   {
    "id": "ted-767012-2026",
@@ -3410,54 +3442,6 @@
    "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
    "src": "TED, Union européenne",
    "u": "https://ted.europa.eu/fr/notice/-/detail/758265-2026"
-  },
-  {
-   "id": "ted-758290-2026",
-   "pays": "PL",
-   "acheteur": "3 Regionalna Baza Logistyczna Wydział Techniki Lotniczej",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Pologne – Pièces détachées pour aéronefs – Fourniture de matériels techniques, de consommables et de produits à usage unique pour aéronefs",
-   "montant": "Voir l'avis",
-   "date": "2026-11-02",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/758290-2026"
-  },
-  {
-   "id": "ted-753622-2026",
-   "pays": "PL",
-   "acheteur": "3 Regionalna Baza Logistyczna Wydział Techniki Lotniczej",
-   "seg": "civil",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Pologne – Pièces détachées pour aéronefs – Fourniture de matériels techniques, de consommables et de produits à usage unique pour aéronefs",
-   "montant": "Voir l'avis",
-   "date": "2026-10-30",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/753622-2026"
-  },
-  {
-   "id": "ted-753548-2026",
-   "pays": "ES",
-   "acheteur": "Consejera Insular Delegada de Accesibilidad, Informática, Nuevas Tecnologías y Planificación y Proyectos Estratégicos del Cabildo Insular de Fuerteventura",
-   "seg": "defense",
-   "m": "sys",
-   "statut": "ouvert",
-   "objet": "Espagne – Services de formation de personnel – Conception, animation et gestion complète d'un plan de formation sur les drones",
-   "montant": "Voir l'avis",
-   "date": "2026-10-30",
-   "echeance": "",
-   "why": "Besoin publié par un acheteur public sur le portail européen des marchés (TED).",
-   "acces": "Lire l'avis complet sur TED pour vérifier les conditions et la date limite.",
-   "src": "TED, Union européenne",
-   "u": "https://ted.europa.eu/fr/notice/-/detail/753548-2026"
   },
   {
    "id": "t20261030-1",
