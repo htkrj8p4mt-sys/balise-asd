@@ -1,6 +1,48 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "items": [
+  {
+   "t": "Rafale : le prix que personne ne publie",
+   "u": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1naGtGdjdMSnJFTXo3Zk0teEJJQ2N3UlpObXJEV2ZiLTFuMl9sNE1wbFNFRGtfMXpEaHp2MHdNak0zUWRLOU1zcmg1d2FLQVNleDJCTkdvaDNFblZkeWYxRC1ndVIxckhrVExvRHFHdHRzTEtCZ0s4OHJ2TQ?oc=5",
+   "src": "L'Essentiel de l'Éco",
+   "d": "2026-11-12",
+   "seg": "defense"
+  },
+  {
+   "t": "L’ESA explique le retard dans la signature du contrat du concours MaiaSpace Launcher Challenge",
+   "u": "https://europeanspaceflight.com/esa-explains-delay-in-signing-maiaspace-launcher-challenge-contract/",
+   "src": "European Spaceflight",
+   "d": "2026-11-12",
+   "seg": "spatial"
+  },
+  {
+   "t": "Rafale en Inde : jusqu’où la France peut-elle céder ?",
+   "u": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNSV80NUxYM0loalBPQ24yN3FHSXF6OEYzRnM1VjA3VGJGenZoVjA0Y0czdzlpT1lRQVg1Sk1fMDgyQ0FZMnAwcWo4Q3c3RDBkQjRaSFNBZ3NvaFpNWGRyUzBQM0FwYzdGLUhjclRmMzZjNE1mVHpPUkMweWZNdmZUWTFkV1JJb3dTVEF1S3Y5U2Y2cEU3U1IwYVFrOGFhRFJPQnZPdlowZjBWYzA?oc=5",
+   "src": "Le Quotidien des Entreprises",
+   "d": "2026-11-12",
+   "seg": "defense"
+  },
+  {
+   "t": "Emirates conclut un accord pour acquérir six avions Airbus A380",
+   "u": "https://www.aerotime.aero/articles/emirates-airbus-a380-aircraft-lesha-bank",
+   "src": "AeroTime",
+   "d": "2026-11-12",
+   "seg": "civil"
+  },
+  {
+   "t": "Magnifica Air commande dix Airbus ACJ220-300 et vise une flotte de 17 appareils",
+   "u": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPU0VNZWVSOGc1SFI4dU11OEwzdU16dXhkWkxYVHNqNG9QY3hvTjVMTXRaM3BjYThJQzRPRFItbklZdWRPRjJJTFJNLVYyTVBFT3FnMkUwTjJMVjk3Y2N6OWRHenVzZEdlZURLQ2ViUjYwSkc5VzdlU1k4ODU3THJIeHNaNEU5VmJvQXhTSDU2eUp3dEV6NWRVMTQ0bVpoOVd0QldaQ0tiRVRmSTBkT1NONEIxT1RzMVY4WjBXOHBLbzl3SktvTHdsSUtR?oc=5",
+   "src": "Air Journal",
+   "d": "2026-11-12",
+   "seg": "civil"
+  },
+  {
+   "t": "Un A320 avec un nez d’Eurofighter dans le ciel de Manching",
+   "u": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRkZFVDhCS3pCQjhrYzVnV2FEQ1FGUlM3eEVzUjB0aWhxR2JFUWcwVWVTU1AyUDNIeHdrRWZVUkc3cjRHU015MWJxSW9KX1ZuVDlxRWZPTmtJTVBTWDhzQk1venExX25nM0VtNVhPWVlNZFdCcmlVbEtIM3pVS3RJdFRudVZYVC1NX0NTRVZzR3dScVdYWS1F?oc=5",
+   "src": "Aerobuzz",
+   "d": "2026-11-11",
+   "seg": "defense"
+  },
   {
    "t": "Les actionnaires d’easyJet approuvent l’offre publique d’achat d’Apollo d’un montant de 5,7 milliards de livres sterling",
    "u": "https://www.aerotime.aero/articles/easyjet-shareholders-approve-apollo-takeover",
@@ -90,6 +132,13 @@
    "u": "https://www.aerotime.aero/articles/cathay-pacific-orders-11-more-airbus-a330neos",
    "src": "AeroTime",
    "d": "2026-11-11",
+   "seg": "civil"
+  },
+  {
+   "t": "Lufthansa réceptionne son premier A350-1000, son 700 Airbus livrés",
+   "u": "https://news.google.com/rss/articles/CBMinwFBVV95cUxONE5ITm5faTBiUFBhWHlLQ3BzR3BzOUlhUXFtWl9vcy1wM2gwaElMbDd6Z2xWZG9nYWJFYWd4NWxXZm5Ea2lsUTc5WVlmajNaQUszaFc0VDBTX1pMZGVtanpjUTBJS2p3V1NWXzU2bmZJR05CckRlN25ieGNxcmRWOGhoTWFidVRKTVM1czhveHU2R2E0T1lPVzM3UVhNNGc?oc=5",
+   "src": "Actu Aero",
+   "d": "2026-11-10",
    "seg": "civil"
   },
   {
@@ -1351,55 +1400,6 @@
    "src": "SpaceNews",
    "d": "2026-11-03",
    "seg": "civil"
-  },
-  {
-   "t": "L'Allemagne utilise MBDA pour développer un démonstrateur d'arme laser aéroporté",
-   "u": "https://www.aerotime.aero/articles/germany-mbda-airborne-laser-weapon-demonstrator",
-   "src": "AeroTime",
-   "d": "2026-11-03",
-   "seg": "defense"
-  },
-  {
-   "t": "Air Corsica se transforme et étudie l’introduction d’un nouvel Airbus A320 en 2027",
-   "u": "https://news.google.com/rss/articles/CBMihwJBVV95cUxNem8wZzdMVXRITDRqUHNZQmlrX3hvTHJlUWljRDVLazNCaWM4bEdCeTY5NEtHVVc0Ym9XLTZ5b3lZZzFKS1pyUnBjQjlKMklYV2d6SXFYQW9qWUNCTXk2RHlteEJ5TEJmRUZ3OEZRRGVrODR6WVZuOGZ3cnI1MHBoZDJ4dk5YWWNPMmYtNm85c251d0IycnlMbDNQUXlELVZheGJPWjJYN2taVlZzUUV4Nm5hUHd1ckpIQ3pJekdGNVl4MVA5Wm02RXlMLXNUOEc1OElJenpXaTBBUy03ZzdQNTNxWFdJUkZ2Z3p0OWFxYXB4ZC1kY2hnT2Z6SVNsN0RkVE9pR2JXbw?oc=5",
-   "src": "Le Journal de l'Aviation",
-   "d": "2026-11-03",
-   "seg": "civil"
-  },
-  {
-   "t": "Airbus et Air France s’associent et leur nouveau système pourrait faire économiser des millions d'euros sur plus de 500 A350",
-   "u": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPRmtSVXNtNlNNc2Z3UWlFVjdIRm5rSkNoZlIwSGZXc244R3RKSnVrQXdCTUtuaEh5SUUteENBVXRCajBpQlV3eURMbS1fR2kxci1uemZEQzByRFZUcUNRQU54elRUSU9VaG9UVjZLNHFhUEo1N2ZwN0Q5VTRVd3BkT0xmYXF0Z0RPeWRseVFUS1Z3QW5sZkZLbzRpMi1EUGtsRUVuWW9WZGk1Y28?oc=5",
-   "src": "AquitaineOnLine",
-   "d": "2026-11-03",
-   "seg": "civil"
-  },
-  {
-   "t": "Rafale : 19 ans après avoir choisi le F-16, le Maroc pourrait enfin donner sa chance à Dassault",
-   "u": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPbmxYcG0zaVo5bl90WVp5WUxGWjByZHI1QTQ5UVU2TVNjWDNVZWFVRWVsWFAzNF9NcEdLZGd6d0xxbE85ZWV3OE1kbnpIWjBlSVRKTnVrc3RTMHVaNnJONFhuYmJmcTFrcUM5MS1VNDFwZEkwV1pkMDIzZnJEVWFDQy1zcFdKQkdja0RBNktZblJ4c0NkWlY2TzlZa1IzeGY5alRybmFRbVFTZWZLTHU5YzJOUnVWcUp0YnotR1VuWWxNc2RT?oc=5",
-   "src": "BuzzArena",
-   "d": "2026-11-03",
-   "seg": "defense"
-  },
-  {
-   "t": "France-Israël. L'apport majeur d'Elbit Systems au cockpit des derniers avions d'affaires de Dassault Aviation.",
-   "u": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOMXk0ZHBpbUxuUm9IdFZiaWhLRF9LZXlXeHJSTFdWMjVDMDF0bWtudnBFejVpRlNOb1ZSaFZubEdKVzlDMGR1b3JTMlBPRVQ2d1ZUbDI0bXNYSU1nR19pSVBBUU1Xb2d0OXYyckxteW52UTZubTFXRWUzQmRtT21WRFFxVE9FSXhZNFV2T1RscVdMRXY5Nk5kd1ZySUFiMDkya0FsVF9ndlppWXo2Rm1kODIwNnFrVnE2bWltbWZreFZPbnAwR0I0bHVIdFNyYzZRWWVGdm5TLWl5Zw?oc=5",
-   "src": "IsraelValley",
-   "d": "2026-11-03",
-   "seg": "civil"
-  },
-  {
-   "t": "HII et Thales démontrent une chasse aux mines autonome avec des systèmes de détection et de neutralisation intégrés",
-   "u": "https://defence-industry.eu/hii-and-thales-demonstrate-autonomous-mine-hunting-with-integrated-detection-and-neutralization-systems/",
-   "src": "Defence Industry Europe",
-   "d": "2026-11-03",
-   "seg": "civil"
-  },
-  {
-   "t": "L'Allemagne commande deux unités de pompiers Patriot pour remplacer les systèmes de défense aérienne fournis à l'Ukraine",
-   "u": "https://defence-industry.eu/germany-orders-two-patriot-fire-units-to-replace-air-defence-systems-supplied-to-ukraine/",
-   "src": "Defence Industry Europe",
-   "d": "2026-11-03",
-   "seg": "defense"
   }
  ]
 }
