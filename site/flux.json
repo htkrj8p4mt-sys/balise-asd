@@ -2,6 +2,34 @@
  "updated": "2026-11-13",
  "items": [
   {
+   "t": "L'armée américaine lance des drones à partir d'un véhicule terrestre sans pilote lors d'un test de tir réel en Allemagne",
+   "u": "https://defence-industry.eu/u-s-army-launches-drones-from-an-unmanned-ground-vehicle-in-live-fire-test-in-germany/",
+   "src": "Defence Industry Europe",
+   "d": "2026-11-13",
+   "seg": "defense"
+  },
+  {
+   "t": "L’AFPS dit non à la participation de MBDA et Thalès au salon de l’industrie 41 à Blois",
+   "u": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPTVlJbXV4ZkRJdDZEdTg2SUVDSVdQZEFBMTljQnVDbTFyZjRJb2JZYXFDaFUtQ25DSnFnd29JTjd3VWloZmdPLWdoU0xqdXZ3NlVEX2JpRzZMc3ozZ3FSczZzczNqYlVLNnUtLUpVbkI1NUNkeXN3Sk13SmxxdjVrZVJJX0lQTWl5aXZFTFpieTNkLUFpcW5Rd29pUF9mNDhqX3NzeDNYNXgxYnZ1WkNBVw?oc=5",
+   "src": "Association France Palestine Solidarité",
+   "d": "2026-11-13",
+   "seg": "defense"
+  },
+  {
+   "t": "Journée à l'équilibre pour Dassault Aviation",
+   "u": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbDBuVkFrTERZNlVZLUV0RUZjZ0l4S2lHcmtRWUJFUUdHQkVUVThaa3IzaUhuUVlRdk4wUUVMV3BiOXJveWw3ZGRVekU0Zm02MEFFQUl6NnljTHNQRkgtSS16b1R6alBEVHRSUFJSelFqODU2YmpJWWUwUFU5RjRFQS1zemJya2E0SzF0TWd2YzA5dUxlSUU2THREanRPNlkwMjJwa29vMFU?oc=5",
+   "src": "Boursier.com",
+   "d": "2026-11-13",
+   "seg": "civil"
+  },
+  {
+   "t": "Rolls-Royce confirme ses prévisions pour 2026, porté par la demande de gros-porteurs Airbus et par les heures de vol",
+   "u": "https://news.google.com/rss/articles/CBMiuwJBVV95cUxNWHZrMnFyTzV0b0kzbC04Si1PaExZeFAtcWRtWkZmM0RXNm9WNE1VWkZVQkNTUXlkY2tGNE5PQmtUckdHTVZqekZqckstUmJZXzJUbDRuSWlHdzJvWFgyYU45RHo1d2xuYVVBT3JDdU1FLWhTTC1ua1NJeTRWR0puckVlVzhRYzJwNEhaVnJLVVBkcFRmb0d5REFCblVzYk5sRVBVc3pINS1ERUVTTm1MeVVZLWdISHpUOExjWUpiX18ya2VpTXgzUTdHZzdBMS1ibXpacXZlbC1VUDFnbko1NVExa2Q5QlhvYWsyNjBzanBKY3R5LUVreVJUWGZSMHRmdE92UDRVMlBfMHZUOWhtdWpZcUp3eDVoR3dJV1pmWnh0WFgyQ2JVYmIwanMwazVXR29uNlVqdEdZN2M?oc=5",
+   "src": "Le Journal de l’Aviation",
+   "d": "2026-11-13",
+   "seg": "civil"
+  },
+  {
    "t": "Le Royaume-Uni va acheter trois nouveaux navires-mères de drones chasseurs de mines dans le cadre d’un accord avec la Norvège",
    "u": "https://breakingdefense.com/2026/11/uk-to-buy-three-new-mine-hunting-drone-motherships-under-norway-agreement/",
    "src": "Breaking Defense",
@@ -1372,34 +1400,6 @@
    "src": "Vietnam.vn",
    "d": "2026-11-04",
    "seg": "civil"
-  },
-  {
-   "t": "PLD Space termine le test du système de terminaison de vol MIURA 5",
-   "u": "https://europeanspaceflight.com/pld-space-completes-miura-5-flight-termination-system-test/",
-   "src": "European Spaceflight",
-   "d": "2026-11-04",
-   "seg": "spatial"
-  },
-  {
-   "t": "CAC 40 : Thales et Dassault Aviation plombés en Bourse par la large victoire des démocrates aux Etats-Unis",
-   "u": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOME9UMXpyR0pmeU55TkY3ckN5MHV0VlpYMGRsTi0wZzhMbkp1bXowdjBhaVF0VE00aHNSX0M1QXNqX0VOMjZFQzZPTWVZWjZfblhzSzNRRk5QN3IwcF9YcThYUl9UQWptdkg3SzE0RkRBUTB5QW11cEJCNGxrZ2pjWWJ4QndscnlOMXZqNDZQM0ZTNHVNWmZMOGFxeldWZ0VRS0R0WmRVUmJxUDBJYkluVnlfRE9oTWVMTDZ4QzFzOUZJOVhJOHF0U2J5bUpIZ0tKZzZ3LXhEUnBQb1E1SEZXTVJOc0U1OW5Cc0pF?oc=5",
-   "src": "Capital.fr",
-   "d": "2026-11-04",
-   "seg": "civil"
-  },
-  {
-   "t": "Fincantieri et Leonardo renforcent leur partenariat naval pour développer les activités italiennes et étrangères",
-   "u": "https://defence-industry.eu/fincantieri-and-leonardo-strengthen-naval-partnership-to-develop-italian-and-overseas-business/",
-   "src": "Defence Industry Europe",
-   "d": "2026-11-04",
-   "seg": "civil"
-  },
-  {
-   "t": "La France lance la fusée-sonde SyLEx pour tester la technologie du missile M51.4",
-   "u": "https://www.aerotime.aero/articles/france-sylex-rocket-test-m51-4-missile",
-   "src": "AeroTime",
-   "d": "2026-11-04",
-   "seg": "spatial"
   }
  ]
 }
