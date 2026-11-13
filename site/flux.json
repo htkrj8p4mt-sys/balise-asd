@@ -2,6 +2,20 @@
  "updated": "2026-11-13",
  "items": [
   {
+   "t": "L'ESA confirme que les derniers essais de Prometheus ne sont pas liés aux préparatifs du saut de Themis",
+   "u": "https://europeanspaceflight.com/esa-confirms-latest-prometheus-tests-not-connected-to-themis-hop-preparations/",
+   "src": "European Spaceflight",
+   "d": "2026-11-13",
+   "seg": "spatial"
+  },
+  {
+   "t": "Eurodrone : Airbus et Dassault vont régler leurs comptes devant un tribunal arbitral",
+   "u": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQWGxlaHp1ZGFBZXNLcnhUQ3Jpd1NMRXoxZVhHNnZ4SDZKQ2ZtNE5DTHRseTF1NEItWjEyaDBJQ3dVQXNDZVBzX2U4NkF4NEVQS2RyQ2pyLWQ0RXNQQ09CY1B1NkU1bmtKc1RaNzMxY2lJTGphY3NHczFDLTZPYmk1SDMwY0ZOTVBhS0FLaXExMVNYTS0tcDNUVjh0R25XNWJYRTA2bzFyaTFWRmFtVmRFSTR3NlE2NXc2cktvaDZmb0hGaTRPSlBfV0wyZl9pY0JJWS1Ec1VTY0RseEowd28yX3psbjZqZm9nTVBCanllaW9JdDNpOGNTdDNzYWZJM2FP?oc=5",
+   "src": "La Lettre",
+   "d": "2026-11-13",
+   "seg": "defense"
+  },
+  {
    "t": "L'Ukraine demande des systèmes Patriot et d'autres intercepteurs de défense aérienne alors que les donateurs discutent du déficit de financement pour 2027",
    "u": "https://defence-industry.eu/ukraine-requests-patriot-and-other-air-defence-interceptors-as-donors-discuss-2027-funding-gap/",
    "src": "Defence Industry Europe",
@@ -1386,20 +1400,6 @@
    "src": "L'Essentiel de l'Éco",
    "d": "2026-11-03",
    "seg": "defense"
-  },
-  {
-   "t": "La DGA reçoit le Rafale B374 pour les essais du standard F5",
-   "u": "https://news.google.com/rss/articles/CBMiekFVX3lxTFB2MFh3ZWJkdzZJR2N0bjVCclRPNUdhZ0xCU09zc2l0RldqWGVNbHFuZnpTSFN6cVZSQXBRYUNqRy1LWWxueGpEOGFQVjZ1YzZBQVFNWWNib1phNlI1WmJSM2QtemdGd3U1SVg5c2E2ZTB4N3lPVy1hZmJB?oc=5",
-   "src": "Armees.com",
-   "d": "2026-11-03",
-   "seg": "defense"
-  },
-  {
-   "t": "La filiale de Thales décroche un contrat de l'US Navy pour des modules de chasse aux mines à distance",
-   "u": "https://breakingdefense.com/2026/11/thales-subsidiary-lands-us-navy-contract-for-remote-mine-hunting-modules/",
-   "src": "Breaking Defense",
-   "d": "2026-11-03",
-   "seg": "civil"
   }
  ]
 }
