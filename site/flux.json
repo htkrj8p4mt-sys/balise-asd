@@ -1,6 +1,13 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "items": [
+  {
+   "t": "L'Ukraine demande des systèmes Patriot et d'autres intercepteurs de défense aérienne alors que les donateurs discutent du déficit de financement pour 2027",
+   "u": "https://defence-industry.eu/ukraine-requests-patriot-and-other-air-defence-interceptors-as-donors-discuss-2027-funding-gap/",
+   "src": "Defence Industry Europe",
+   "d": "2026-11-12",
+   "seg": "defense"
+  },
   {
    "t": "Quel rôle l'industrie joue-t-elle dans la volonté de l'Europe d'affirmer sa souveraineté spatiale ?",
    "u": "https://spacenews.com/what-role-does-industry-play-in-europes-space-sovereignty-push/",
@@ -1391,13 +1398,6 @@
    "t": "La filiale de Thales décroche un contrat de l'US Navy pour des modules de chasse aux mines à distance",
    "u": "https://breakingdefense.com/2026/11/thales-subsidiary-lands-us-navy-contract-for-remote-mine-hunting-modules/",
    "src": "Breaking Defense",
-   "d": "2026-11-03",
-   "seg": "civil"
-  },
-  {
-   "t": "Dassault Aviation termine à l'équilibre",
-   "u": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOb0FyWXEwNHhfc3N0VXBqWV9scDhfM2lkUzkzZnAzWHlLdW1iRTFyNHpKTlZLemo0OFlzbngzU3NrOUpycVBIbHpoeHdST3BxVVc5T25PRDItdzRnY19GUnlUQjF5RGRMTEhlNkVWamZLSGsxVk43Z1ZfQlB4MkRBWHdmckdKUHBZejhQQkhXX214OXIycEtvVTY2a00wNWFCYVZrSg?oc=5",
-   "src": "Boursier.com",
    "d": "2026-11-03",
    "seg": "civil"
   }
