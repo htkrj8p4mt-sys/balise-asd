@@ -2,6 +2,20 @@
  "updated": "2026-11-14",
  "items": [
   {
+   "t": "Le prochain lancement de Vega C se rapproche du jour de Noël, les satellites arrivant en retard",
+   "u": "https://europeanspaceflight.com/next-vega-c-launch-edges-closer-to-christmas-day-as-satellites-arrive-late/",
+   "src": "European Spaceflight",
+   "d": "2026-11-14",
+   "seg": "spatial"
+  },
+  {
+   "t": "De Mirabel à Paris: le 60e Airbus A220 d’Air France prend son envol",
+   "u": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOWnV4YVNtcGZoeFFnYUpFLXM4RmJkRTAxM2FOU1J6NDREeUNtN2R5M1JoUHVTY0huX2hDTDBFRVQxUTRoVVE5UV9EOUwyb2otbjZYb3pkcU5BMl91VzBDTnJla2ZPU2I2R1F3WFZHbWVtX1JELUsxU21nYllUYTFwdGpsTjNhTVJxX3FzQVR1TzQ?oc=5",
+   "src": "Le Devoir",
+   "d": "2026-11-14",
+   "seg": "civil"
+  },
+  {
    "t": "General Atomics entame la construction d'un centre de maintenance d'aéronefs à Nordholz, en Allemagne",
    "u": "https://defence-industry.eu/general-atomics-begins-construction-of-aircraft-maintenance-facility-in-nordholz-germany/",
    "src": "Defence Industry Europe",
@@ -1386,20 +1400,6 @@
    "src": "Defence Industry Europe",
    "d": "2026-11-04",
    "seg": "defense"
-  },
-  {
-   "t": "Des F-35A néerlandais, des Rafales français et des Gripens suédois se joignent à l'exercice de dispersion de la Finlande",
-   "u": "https://www.aerotime.aero/articles/finland-hornets-highway-strip-protective-fence-26-ace",
-   "src": "AeroTime",
-   "d": "2026-11-04",
-   "seg": "defense"
-  },
-  {
-   "t": "La Direction générale de l’armement a effectué un second tir de la fusée-sonde SyLEx avec succès",
-   "u": "https://www.opex360.com/2026/11/04/la-direction-generale-de-larmement-a-effectue-un-second-tir-de-la-fusee-sonde-sylex-avec-succes/",
-   "src": "Opex360",
-   "d": "2026-11-04",
-   "seg": "spatial"
   }
  ]
 }
